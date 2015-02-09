@@ -1,4 +1,4 @@
-package com.darwinsys.minimal;
+package com.ticketmanor.minimal;
 
 public class Hello {
 	public static void main(String[] args) {
