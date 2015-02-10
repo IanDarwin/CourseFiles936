@@ -1,6 +1,13 @@
 package com.ticketmanor;
 
-import java.util.*;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import com.ticketmanor.model.Act;
+import com.ticketmanor.model.ActType;
+import com.ticketmanor.model.Event;
 
 /** This is a heavily-cut-down version of the TicketManor EventEJB.
  * It generates fake data, not live data, but we only need it to learn
@@ -12,10 +19,10 @@ import java.util.*;
 public class EventsLister {
 	
 	/** Get events for the given day */
-	public List<Event> getEventsForDate(Date selectedDate) {
+	public List<Event> getEventsForDate(LocalDateTime selectedDate) {
 		final List<Event> events = new ArrayList<>();
 		Event e = fakeEvent();
-		e.when = selectedDate;
+		e.setDate(selectedDate);
 		events.add(e);
 		return events;
 	}
@@ -24,9 +31,8 @@ public class EventsLister {
 	public List<Event> getEventsNextNDays(int nDays) {
 		List<Event> results = new ArrayList<>();
 		Event e = fakeEvent();
-		Date d = e.when;
-		d.setDate(d.getDate() + 1);
-		e.when = d;
+		LocalDateTime d = e.getDate();
+		e.setDate(d.plusDays(1));
 		results.add(e);
 		return results;
 	}
@@ -34,9 +40,8 @@ public class EventsLister {
 	private Event fakeEvent() {
 		
 		Event e = new Event();
-		e.what = "Musical";
-		e.who = "The Twinning Sisters";
-		e.when = new Date();
+		e.setWhat(new Act(ActType.MUSICAL, "The Twinning Sisters"));
+		e.setDate(LocalDateTime.now());
 
 		return e;
 	}

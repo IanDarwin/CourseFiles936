@@ -2,11 +2,14 @@ package com.ticketmanor;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.ticketmanor.model.Event;
 
 public class EventsListerTest {
 
@@ -18,11 +21,11 @@ public class EventsListerTest {
 	}
 	@Test
 	public void testGetEventsForDate() {
-		Date d = new Date(2014-1900, 6, 6);
+		LocalDateTime d = LocalDateTime.of(2014, 6, 6, 19,00,00);
 		final List<Event> events = lister.getEventsForDate(d);
 		assertTrue(events.size() > 0);
 		Event e = events.get(0);
-		assertEquals(d, e.when);
+		assertEquals(d, e.getDate());
 	}
 
 	@Test
