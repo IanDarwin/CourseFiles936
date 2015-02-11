@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.ticketmanor</groupId>
+	<artifactId>ex31</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<inceptionYear>2015</inceptionYear>
+
+	<name>TicketManor JPA and test</name>
+	<description>JPA Demo</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<hibernate.version>4.0.1.Final</hibernate.version>
+	</properties>
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>com.ticketmanor</groupId>
+			<artifactId>datamodel</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<!-- JMS -->
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.jms</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>(4.8,5.0)</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+		<plugins>
+			<!-- Compiler plugin enforces Java compatibility and activates annotation processors -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
