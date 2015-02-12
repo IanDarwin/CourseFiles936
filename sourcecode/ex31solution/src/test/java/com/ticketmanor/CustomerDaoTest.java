@@ -1,5 +1,7 @@
 package com.ticketmanor;
 
+import static org.junit.Assert.*;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -9,49 +11,38 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class CustomerDaoTest {
 
-	static EntityManagerFactory factory;
-	CustomerDao dao;
-
-	@BeforeClass
-	public static void init() {
-		factory = Persistence.createEntityManagerFactory("ex31");
-	}
+	private static EntityManagerFactory emf;
+	private EntityManager em;
+	private EntityTransaction entityTransaction;
+	private CustomerDao testSubject;
 
 	@Before
-	public void setupDao() {
-		dao = new CustomerDao();
+	public void setUp() throws Exception {
+		testSubject = new CustomerDao();
 	}
 
 	@Test
-	public void testSave() {
-		System.out.println("CustomerDaoTest.testSave()");
-		Customer c = new Customer();
-		c.setFirstName("Gunter");
-		c.setLastName("Zarcoscys");
-		c.setCity("Toronto");
-		c.setCountry("Canada");
+	public void testSaveCustomer() {
+		em = emf.createEntityManager();
+		Customer cust = new Customer();
+		cust.setFirstName("John");
+		cust.setLastName("Doe");
+		entityTransaction = em.getTransaction();
+		entityTransaction.begin();
+		testSubject.saveCustomer(em, cust);
+		entityTransaction.commit();
+		long id = cust.getId();
+		assertTrue("Customer id was not set", id>0);
+		em = emf.createEntityManager();
+		cust = em.find(Customer.class, id);
+		assertEquals("Customer first name not stored", "John", cust.getFirstName());
+		assertEquals("Customer last name not stored", "Doe", cust.getLastName());
+	}
 
-		EntityManager em = factory.createEntityManager();
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-
-		dao.saveCustomer(em, c);
-
-		tx.commit();
-		long id = c.getId();
-		em.close();
-
-		em = factory.createEntityManager();
-		Customer c2 = em.find(Customer.class, id);
-		assertNotNull(c2);
-		assertEquals("Toronto", c2.getCity());
-		// What would we have to do to be able to write
-		// assertEquals(c, c2);
-		em.close();
-		System.out.println("We got our Customer object back!");
+	@BeforeClass
+	public static void setupResources(){
+		emf = Persistence.createEntityManagerFactory("ex31");
 	}
 }
