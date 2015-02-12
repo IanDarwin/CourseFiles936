@@ -5,13 +5,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ticketmanor</groupId>
-	<artifactId>ex31</artifactId>
+	<artifactId>ex42</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<inceptionYear>2015</inceptionYear>
 
 	<name>TicketManor JPA and test</name>
 	<description>JPA Demo</description>
+	
+	<!-- Note: the "client" here is a test client, so it is
+	in the test folder and its config in src/test/resources,
+	to avoid polluting the WAR file that is sent to the server.
+	 -->
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,6 +38,25 @@
 			<version>3.1.1</version>
 		</dependency>
 
+		<!-- App-server-dependent Client Stuff -->
+		<dependency>
+			<groupId>org.wildfly</groupId>
+			<artifactId>wildfly-ejb-client-bom</artifactId>
+			<version>8.2.0.Final</version>
+			<type>pom</type>
+			<scope>test</scope>
+		</dependency>
+		<!--
+		 ***  WARNING!!! The version of HornetMQ used here MUST agree with what
+		 *** the WildFly AS is using (which it prints out at start up).
+		 -->
+		<dependency>
+    		<groupId>org.hornetq</groupId>
+    		<artifactId>hornetq-jms-client</artifactId>
+    		<version>2.4.5.Final</version>
+    		<scope>test</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -52,6 +76,31 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<!-- Java EE AppServer: WildFly -->
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.0.2.Final</version>
+			</plugin>
+
+			<!-- Java EE AppServer: GlassFish (see https://maven-glassfish-plugin.java.net/usage.html) -->
+			<plugin>
+				<groupId>org.glassfish.maven.plugin</groupId>
+				<artifactId>maven-glassfish-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
+
+			<!-- Java EE AppServer: TomEE (see http://tomee.apache.org/tomee-maven-plugin.html) -->
+			<plugin>
+				<groupId>org.apache.openejb.maven</groupId>
+				<artifactId>tomee-maven-plugin</artifactId>
+				<version>1.7.1</version>
+				<configuration>
+					<tomeeVersion>1.7.1</tomeeVersion>
+					<tomeeClassifier>plus</tomeeClassifier>
 				</configuration>
 			</plugin>
 		</plugins>

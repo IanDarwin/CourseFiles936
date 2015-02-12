@@ -6,7 +6,7 @@
 <!--
  *** This is the LOCAL CLIENT version of persistence.xml
  -->
-<persistence-unit name="ex31">
+<persistence-unit name="ex42">
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
 	<exclude-unlisted-classes>false</exclude-unlisted-classes>

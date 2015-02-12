@@ -10,23 +10,35 @@ import javax.jms.TextMessage;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
+import org.junit.Test;
+
 import com.ticketmanor.model.FeedbackForm;
 
 public class CommentSender {
 
-	public static void main(String[] args) throws Exception {
+	@Test
+	public void main() throws Exception {
 
 		Context ctx = new InitialContext();
-		ConnectionFactory factory = (ConnectionFactory) ctx
-				.lookup("ConnectionFactory");
-		Destination destination = (Destination) ctx.lookup(Constants.QUEUE_NAME);
-		Connection connection = factory.createConnection();
+		ConnectionFactory connFactory = 
+			(ConnectionFactory) ctx.lookup("jms/RemoteConnectionFactory");
+		System.out.println("ConnectionFactory OK");
+		Destination destination = 
+			(Destination) ctx.lookup(Constants.QUEUE_NAME);
+		System.out.println("Destination OK");
+		Connection connection = connFactory.createConnection();
+		System.out.println("Connection OK");
 		Session session = connection.createSession(false,
 				Session.AUTO_ACKNOWLEDGE);
+		System.out.println("JMS Session OK");
 		MessageProducer producer = session.createProducer(destination);
+		System.out.println("MessageProducer OK");
 		
 		// This should cause a Feedback item to be logged on the server side.
 		FeedbackForm comment = new FeedbackForm();
+		comment.setCustName("Whiney Whitefoot");
+		comment.setCustEmail("ww@gmail.moc");
+		comment.setComment("I actually love your site!!");
 		ObjectMessage message = session.createObjectMessage();
 		message.setObject(comment);
 		producer.send(message);
