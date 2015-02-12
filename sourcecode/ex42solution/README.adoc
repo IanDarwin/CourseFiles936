@@ -1,4 +1,4 @@
-== Ex42solution
+== Ex42solution -- Message Driven Bean
 
 To run this at home you will have to do some configuration!
 
@@ -21,3 +21,5 @@ $ bin/jboss-cli.sh
 }
 [standalone@localhost:9990 /] quit
 $ 
+
+This is based upon https://docs.jboss.org/author/display/WFLY8/Messaging+configuration
