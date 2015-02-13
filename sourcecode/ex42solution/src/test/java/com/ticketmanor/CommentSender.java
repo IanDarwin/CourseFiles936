@@ -19,6 +19,7 @@ public class CommentSender {
 	@Test
 	public void main() throws Exception {
 
+		//T Note the ton of JMS API that we are using just to connect:
 		Context ctx = new InitialContext();
 		ConnectionFactory connFactory = 
 			(ConnectionFactory) ctx.lookup("jms/RemoteConnectionFactory");
@@ -34,18 +35,32 @@ public class CommentSender {
 		MessageProducer producer = session.createProducer(destination);
 		System.out.println("MessageProducer OK");
 		
-		// This should cause a Feedback item to be logged on the server side.
+		//T Instantiate a FeedbackForm object, populate its fields
+		// with (possibly whimsical) test data
+		//- 
 		FeedbackForm comment = new FeedbackForm();
 		comment.setCustName("Whiney Whitefoot");
 		comment.setCustEmail("ww@gmail.moc");
 		comment.setComment("I actually love your site!!");
+		//+
+		
+		//T Create an ObjectMessage, and wrap the FeedbackForm in it.
+		//-
 		ObjectMessage message = session.createObjectMessage();
 		message.setObject(comment);
-		producer.send(message);
+		//+
 		
+		//T Send the message using the producer
+		//-
+		// This should cause a Feedback item to be logged on the server side.
+		producer.send(message);
+		//+
+		
+		//-
 		// This should cause an error message on the server side.
+		// It's just here to test that you detect non-ObjectMessages in the queue.
 		TextMessage message2 = 
-			session.createTextMessage("Here is another message just to razz you");
+			session.createTextMessage("Here is a TextMessage just to razz you");
 		producer.send(message2);
 		
 		producer.close();

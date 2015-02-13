@@ -18,8 +18,9 @@ import com.ticketmanor.model.FeedbackForm;
  * annotation makes it also be a Message-Driven Bean.
  * @author Ian Darwin
  */
-@MessageDriven(mappedName=Constants.QUEUE_NAME, 
-activationConfig = {
+//T Study these annotations!
+@MessageDriven(mappedName=Constants.QUEUE_NAME,
+  activationConfig = {
 	@ActivationConfigProperty(propertyName = "destinationType",
 		propertyValue = "javax.jms.Queue"),
 	@ActivationConfigProperty(propertyName = "destination",
@@ -27,18 +28,33 @@ activationConfig = {
 	@ActivationConfigProperty(propertyName = "acknowledgeMode",
 		propertyValue = "Auto-acknowledge")
 })
-public class CommentReceiver implements MessageListener {
+public class CommentReceiver 
+	//T Make this class implement the correct interface
+	//-
+	implements MessageListener
+	//+
+	{
 
+	//T Note that this will be provided by the container
 	@PersistenceContext EntityManager em;
 	
 	@Override
+	//T Add an annotation that will ensure that this method's
+	// results get commited to the database at the end of the method.
+	//-
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
+	//+
 	public void onMessage(Message msg) {
 		if (!(msg instanceof ObjectMessage)) {
 			System.err.println(
 				"Wanted ObjectMessage but got sent a " + msg.getClass().getName());
 			return;
 		}
+		//T Recall that the message sender sends us a wrapped object
+		// Convert the incoming object to the correct type, extract
+		// the "FeedbackForm" entity from it, display the key fields using
+		// System.out.println(), and persist it to the database.
+		//-
 		ObjectMessage wrapper = (ObjectMessage) msg;
 		try {
 			FeedbackForm comment = (FeedbackForm) wrapper.getObject();
@@ -48,5 +64,6 @@ public class CommentReceiver implements MessageListener {
 		} catch (JMSException jmserr) {
 			System.err.println("Failed to get object from wrapper: " + jmserr);
 		}
+		//+
 	}
 }
