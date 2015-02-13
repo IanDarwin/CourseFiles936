@@ -1,0 +1,15 @@
+body	{
+	background-color: #ffff80; color: #000;
+}
+h1	{ color: blue; font-family: Helvetica, sans-serif; }
+p, li { font-family: sans-serif,Helvetica; font-size: 1.0em; }
+a:hover { background-color: #dbd4a6; }
+
+a.linkLocal   { color: #00ff00; } /* green */
+a.linkRemote  { color: #ff0000; } /* red  */
+
+.rowOdd		{background-color: #eeeeee; } /* E.g., for JSF datatables */
+.rowEven	{background-color: #888888; }
+
+li.booklink { list-style-image: url('img/book.gif'); }
+li.weblink { list-style-image: url('img/www.png'); }

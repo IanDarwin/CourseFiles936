@@ -1,0 +1,9 @@
+.row {
+  margin-bottom: 20px;
+}
+[class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+}
