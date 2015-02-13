@@ -1,0 +1,33 @@
+== Troubleshooting
+
+=== Maven Deployment
+
+When you run _mvn wildfly:deploy_ you should see the message "Build Success" near the end of the Maven output.
+If not, check the following:
+
+. Are you in the correct directory? Each directory has its own directory. If you invoke Maven in a directory without a pom.xml, you will see this:
+----
+ERROR] The goal you specified requires a project to execute but there is no POM in this directory.
+Please verify you invoked Maven from the correct directory. -> [Help 1]
+----
+. Is it a compilation error? If so, fix your code and try again.
+. Did any tests fail? If so, correct the code (or the test) and try again.
+. Is it a deployment error?  These will look like this:
+----
+[ERROR] Failed to execute goal org.wildfly.plugins:wildfly-maven-plugin:1.0.2.Final:deploy (default-cli) on project ticketmanor-javaee: Deployment failed and was rolled back. -> [Help 1]
+----
+
+If so, look in the console window where JBoss is running.
+This output is pretty verbose, but the error will usually be called out somewhere in the
+last hundred lines or so. In particular, look for a Java stack trace.
+With practice, the errors will become easier to track down here.
+
+==== Maven: Bad Advice
+
+On most Maven failures, Maven will print this helpful advice:
+----
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+----
+99.45% of the time you should just ignore this. Seeing a stack trace of Maven's
+internals isn't that interesting.
