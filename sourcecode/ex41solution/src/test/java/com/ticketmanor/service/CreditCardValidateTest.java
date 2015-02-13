@@ -1,3 +1,5 @@
+//Ian -- this is a test for the class Chris wrote rather than the one in the javasrc project
+
 package com.ticketmanor.service;
 
 import static org.junit.Assert.*;
