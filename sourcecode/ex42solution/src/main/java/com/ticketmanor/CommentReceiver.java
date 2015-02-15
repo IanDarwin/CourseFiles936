@@ -34,13 +34,13 @@ public class CommentReceiver
 	implements MessageListener
 	//+
 	{
-
+	
 	//T Note that this will be provided by the container
 	@PersistenceContext EntityManager em;
 	
 	@Override
 	//T Add an annotation that will ensure that this method's
-	// results get commited to the database at the end of the method.
+	// results get committed to the database at the end of the method.
 	//-
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	//+
@@ -53,7 +53,8 @@ public class CommentReceiver
 		//T Recall that the message sender sends us a wrapped object
 		// Convert the incoming object to the correct type, extract
 		// the "FeedbackForm" entity from it, display the key fields using
-		// System.out.println(), and persist it to the database.
+		// System.out.println(), and persist it to the database,
+		// using the provided EntityManager.
 		//-
 		ObjectMessage wrapper = (ObjectMessage) msg;
 		try {
@@ -61,8 +62,10 @@ public class CommentReceiver
 			System.out.println("Got sender: " + comment.getCustName() + "--" + comment.getCustEmail());
 			System.out.println("Got comment: " + comment.getComment());
 			em.persist(comment);
+			System.err.println("Feedback saved to database!");
 		} catch (JMSException jmserr) {
-			System.err.println("Failed to get object from wrapper: " + jmserr);
+			System.err.println("Failed to get feedback object from wrapper: " + jmserr);
+			jmserr.printStackTrace(System.err);
 		}
 		//+
 	}

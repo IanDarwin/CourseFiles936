@@ -1,23 +1,57 @@
-<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
-   version="1.0">
+   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2_1.xsd"
+   version="2.1">
    
 <!--
- *** This is the LOCAL CLIENT version of persistence.xml
+ *** This is the server-side version of persistence.xml
  -->
-<persistence-unit name="ex42">
+<persistence-unit name="ticketManor">
+	<!-- Uncomment one (and only one) of the following two persistence providers,
+	 *** after making sure that the given provider is on your classpath.
+	 -->
+	<!--
+	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+	-->
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
 	<exclude-unlisted-classes>false</exclude-unlisted-classes>
 
-	<properties>
-	<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
-	<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:ticketmanor;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
-	<property name="javax.persistence.jdbc.user" value="sa"/>
-	<property name="javax.persistence.jdbc.password" value="sa"/>
+	<jta-data-source>java:jboss/datasources/TicketManorDataSource</jta-data-source>
 
-	<!-- Properties specific to Hibernate -->
+	<!-- DataModel is in its own jar so you have to list the classes you need from it -->
+	<class>com.ticketmanor.model.Act</class>
+	<class>com.ticketmanor.model.ActType</class>
+	<class>com.ticketmanor.model.Address</class>
+	<class>com.ticketmanor.model.Admin</class>
+	<class>com.ticketmanor.model.Auditorium</class>
+	<class>com.ticketmanor.model.Event</class>
+	<class>com.ticketmanor.model.FeedbackForm</class>
+	<class>com.ticketmanor.model.Member</class>
+	<class>com.ticketmanor.model.Movie</class>
+	<class>com.ticketmanor.model.Order</class>
+	<class>com.ticketmanor.model.OrderItem</class>
+	<class>com.ticketmanor.model.Person</class>
+	<class>com.ticketmanor.model.Ticket</class>
+	<class>com.ticketmanor.model.Venue</class>
+	
+	<properties>
+
+	<!-- Properties for eclipselink -->
+	<!--
+	<property name="eclipselink.target-database"
+	      value="org.eclipse.persistence.platform.database.MySqlPlatform"/>
+	-->
+	<property name="eclipselink.logging.level" value="OFF"/>
+	<property name="eclipselink.orm.throw.exceptions" value="true"/>
+	<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+	<property name="eclipselink.ddl-generation.output-mode" value="database"/>
+
+	<!-- Properties for Hibernate -->
+	<!--
+	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+	-->
 	<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 	<property name="hibernate.show_sql" value="true"/>
 	<property name="hibernate.format_sql" value="false"/>

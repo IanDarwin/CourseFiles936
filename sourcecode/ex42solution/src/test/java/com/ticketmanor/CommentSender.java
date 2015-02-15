@@ -27,7 +27,9 @@ public class CommentSender {
 		Destination destination = 
 			(Destination) ctx.lookup(Constants.QUEUE_NAME);
 		System.out.println("Destination OK");
-		Connection connection = connFactory.createConnection();
+		String username = "testuser", password = "4jelBas";
+		Connection connection = connFactory.createConnection(
+				username, password);
 		System.out.println("Connection OK");
 		Session session = connection.createSession(false,
 				Session.AUTO_ACKNOWLEDGE);
@@ -56,13 +58,17 @@ public class CommentSender {
 		producer.send(message);
 		//+
 		
-		//-
 		// This should cause an error message on the server side.
 		// It's just here to test that you detect non-ObjectMessages in the queue.
 		TextMessage message2 = 
 			session.createTextMessage("Here is a TextMessage just to razz you");
 		producer.send(message2);
 		
-		producer.close();
+		connection.close();
+		session.close();
+		
+		System.err.println("Warning: JMS is one-way communication, so a green bar\n" + 
+				"is no guarantee of success. Check the server log file!");
+		
 	}
 }
