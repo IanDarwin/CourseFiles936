@@ -1,0 +1,6 @@
+com.ticketmanor.csrchat
+com.ticketmanor.dao
+com.ticketmanor.jpa
+com.ticketmanor.rest
+com.ticketmanor.service
+com.ticketmanor.ui.jsf

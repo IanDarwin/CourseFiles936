@@ -1,0 +1,24 @@
+-classpath
+'/Users/ian/workspace/TicketManorJava/datamodel/target/classes:/Users/ian/.m2/repository/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar:/Users/ian/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar:/Users/ian/.m2/repository/org/hibernate/hibernate-entitymanager/4.3.7.Final/hibernate-entitymanager-4.3.7.Final.jar:/Users/ian/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/Users/ian/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/ian/.m2/repository/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar:/Users/ian/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar:/Users/ian/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/Users/ian/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.5.Final/hibernate-commons-annotations-4.0.5.Final.jar:/Users/ian/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.5.6/jackson-core-asl-1.5.6.jar:/Users/ian/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar:/Users/ian/.m2/repository/org/hibernate/hibernate-core/4.3.7.Final/hibernate-core-4.3.7.Final.jar:/Users/ian/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar:/Users/ian/.m2/repository/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/ian/workspace/TicketManorJava/datamodel/src/main/java:/Users/ian/workspace/TicketManorJava/datamodel/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2015. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/ian/workspace/TicketManorJava/datamodel/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Data Model for TicketManor, a Demo Enterprise Application 1.0-SNAPSHOT API'
+-linkoffline
+'http://docs.oracle.com/javase/7/docs/api' '/Users/ian/workspace/TicketManorJava/datamodel/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Data Model for TicketManor, a Demo Enterprise Application 1.0-SNAPSHOT API'
