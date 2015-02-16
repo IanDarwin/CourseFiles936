@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- This is the Customer Service Rep Chat pop-up window. -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TicketManor Help Chat</title>
+<script type="text/javascript">
+
+var websocket;
+function connect() {
+	// No import needed: WebSocket is known to all modern browsers
+	websocket = new WebSocket("ws://" + window.location.host + "/csrchat");
+	websocket.onmessage = onMessage;
+}
+
+function onMessage(evt) {
+	loggit("Us", evt.data);
+}
+
+function loggit(person, message) {
+	document.getElementById("log").innerHTML.append(person + ": " + message + "\n");
+}
+
+var input = document.getElementById("input");
+function sendit() {
+	var message = input.getText();
+	websocket.send(message);
+	loggit("You", message);
+	input.setText("");
+}
+input.addEventListener("enter", sendit, false);
+
+window.addEventListener("load", connect, false);
+</script>
+</head>
+
+<body>
+
+<fieldset>
+    <legend>Chat Window:</legend>
+	<textarea id="log" rows='10' cols='80' placeholder="Chat log here" width="100%"></textarea>
+	<fieldset>
+    <legend>Your message:</legend>
+	<input id="input" size="80" placeholder="How can we help you today?"></input>
+	</fieldset>
+</fieldset>
+</body>
+</html>

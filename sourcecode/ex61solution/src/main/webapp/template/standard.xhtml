@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+<f:loadBundle basename="resources" var="msg" />
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/ember-site.css"/>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" title="style" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name='viewport' content='width=device-width, initial-scale=1'/>
+	<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+</h:head>
+
+<h:body id="index">
+<div id="header">
+	<div id="wrapper">
+		<ui:insert name="pageHeader">Page Header</ui:insert>
+	</div>
+</div>
+
+<div class="features section">
+	<ui:insert name="body">Page Body</ui:insert>
+</div>
+
+</h:body>
+
+</html>

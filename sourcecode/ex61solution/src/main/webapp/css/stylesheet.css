@@ -1,0 +1,135 @@
+/* 
+ * Adapted from the style Sheet for Ian Darwin's web site.
+ * This is the web: go ahead and borrow this page, but change it for
+ * your own web, and pass it on with the same terms of re-use.
+ */
+
+/* Attributes named after an HTML element apply to all occurrences of type.
+ * Attributes named like tr.foo only appy to tr's with class=foo.
+ * Attributes named *.main_page are only used on the home page.
+ * Attributes named *.admin_page are only used in the admin section
+ */
+
+body, button, h1, h2, h3, h4, h5, h6, input, textarea {
+    font-family : Helvetica, sans-serif;
+}
+
+/* Page attributes */
+body	{
+	background-color: #00ccff; 
+	color: #000;
+    font-size   : 12px;
+}
+body.admin_page {
+	background-color: White;
+}
+
+button.main_page {
+	font-size: 15px;
+}
+button.main_page:hover { 
+    background-color: yellow;
+}
+
+nav.top {
+	align: right;
+}
+
+/* Paragraph formats: use generic, non-vendor specific names (no Arial) */
+h1	{ color: black; }
+h2	{ color: black; }
+h3	{ color: black; }
+h4	{ color: black; }
+h5	{ color: black; }
+h6	{ color: black; }
+
+table.main_page {
+	height: 670px;
+	width: 100%;
+	margin-left: 50px;
+	margin-right: auto;
+}
+table.MainTable {
+	background-color: #fff;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0;
+}
+
+tr.home_ephemera {
+	height: 50px;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+th { background-color: #eee; font-family: Helvetica, sans-serif; }
+
+td { font-family: sans-serif,Helvetica; font-size: 1.0em; }
+
+td.home_category {
+	color: White;
+	height: 145px;
+	font-size: 2.0em;
+	text-align: center;
+}
+td.home_topics {
+	margin-left: 35px;
+	font-size: 1.0em;
+}
+td.home_topics:hover { 
+	background:#f6f6f8;
+}
+td.home_topics:hover { 
+	background:#f6f6f8;
+}
+td.TableNav {
+	background-color: #eee;
+	width: 20%;
+	vertical-align: top;
+	border: 0;
+}
+td.MainColumn {
+	width: 80%;
+	vertical-align: top;
+	border: 0;
+}
+
+p, li { font-family: sans-serif,Helvetica; font-size: 1.0em; }
+
+a:hover {
+        background-color: #dbd4a6;
+}
+
+/* Attributes named with a "#" can apply to any element but only if class= used,
+ * e.g., <p class="nav">Link: ...</p>
+ */
+
+/* Heading colors */
+#TextAbout   { color: #0000FF;	 /* blue */
+	font-family: Helvetica, sans-serif
+}
+
+/* Link colors */
+#LinkLocal   { color: #00FF00 } /* green */
+#LinkRemote  { color: #ff0000 } /* red  */
+
+#Nav	{ font-family: Helvetica, sans-serif; font-size: 0.6em }
+
+/* Row Headings */
+#rowOdd		{background-color: #eeeeee; }
+#rowEven	{background-color: #888888; }
+
+/* Pseudo-headings */
+#ph1	{ color: blue; font-family: Helvetica, sans-serif; font-weight: bold }
+
+/* List Item styles for use in lists of resources... */
+li.booklink {
+list-style-image: url('/images/book.gif')
+}
+li.fosslink {
+list-style-image: url('/images/foss.gif')
+}
+li.weblink {
+list-style-image: url('/images/www.png')
+}

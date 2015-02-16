@@ -1,0 +1,34 @@
+This is the initial design for the site.
+
+It is not specified whether these are multiple pages or SPA
+-----
+
+Normal flow:
+
+Home page -> one of:
+	Sporting Events Section
+	Concerts Section
+	Theatre Events Section
+
+	Then you see an event you like, click Shop ->
+
+	Ticket Category Selection # we're not doing reserved seating yet
+		Best
+		Better
+		Good seats - we'll pick quasi-random prices for these; need category and quantity
+
+	Checkout: Review Cart
+	Checkout: 
+		Card Number (don't ask if VISA or MC, first digits tell you), Expiry Date year, month, name on card
+		Pay # JS validate credit card before "submit"
+
+-----
+
+Out-of-flow PopUps:
+	Login when needed if not logged in yet.
+	CSR Chat
+	Create an Account
+	Others?
+
+-----
+

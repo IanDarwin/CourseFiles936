@@ -1,0 +1,32 @@
+There are a number of real e-ticket sellers.
+
+Listing here does not constitute an endorsement!
+
+== General - new ticket sales
+
+http://ticketmaster.com[TicketMaster One of the oldest ticketing sites]
+"Find and buy tickets: concerts, sports, arts, theater, broadway shows, family events at Ticketmaster.com."
+
+http://www.etickets.ca/[eTickets | Canada | Cheap Concert Tickets]
+"Canada's #1 place to buy cheap concert, sports, and event tickets online!" 
+
+http://www.ticketzoom.com/[TickeZoom: "50% Off Sports Tickets"]
+
+== General Ticket Resales
+
+http://stubhub.com/
+
+http://www.vividseats.com/
+
+== Ticket Selling Software Houses
+
+http://ticketor.com - lets you set up your ticket sales on their site with your branding
+
+https://tickit.ca/[Tickit - Online Ticket Sales System]
+"Tickit makes it easy to sell tickets online, from little bar shows to multi-gate festivals..."
+
+http://www.jboss.org/ticket-monster/[TicketMonster - Another Java EE Demo of how to build a site like ours]
+
+++++
+<a href=".">Back</a>
+++++

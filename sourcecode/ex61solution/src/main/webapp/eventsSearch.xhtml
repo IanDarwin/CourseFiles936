@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+	<body>
+
+   		<ui:composition template="/template/standard.xhtml">
+
+			<ui:define name="pageTitle">Events</ui:define>
+  
+			<ui:define name="pageHeader">Events</ui:define>
+
+			<ui:define name="body">
+				<h:messages globalOnly='true' showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
+				<h:form id="eventsForm">
+
+					<h:outputText value="Search for events for next how many days?"/>
+					<h:inputText required="true" id="nDaysTextField" value="#{eventsBean.numDays}" />
+					<h:message for="nDaysTextField" errorStyle="color:red"/>
+
+					<h:commandButton id="submit"
+						action="#{eventsBean.getEventsNextNDays}" 
+						value="Search">
+					</h:commandButton>
+					
+				</h:form>
+				<!-- The results will show up on eventsList.web -->
+			</ui:define>
+		</ui:composition>
+	</body>
+</html>

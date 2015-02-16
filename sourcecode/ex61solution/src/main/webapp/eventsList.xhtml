@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+	<body>
+
+   		<ui:composition template="/template/standard.xhtml">
+
+			<ui:define name="pageTitle">Events</ui:define>
+  
+			<ui:define name="pageHeader">Events</ui:define>
+
+			<ui:define name="body">
+				<h:messages globalOnly='true' showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
+
+				<!-- TODO Put your DataTable here -->
+
+				<!-- //- -->
+				<h:outputText rendered="#{empty eventsBean.resultList}"
+					value="No events currently selected"/>
+				<p:dataTable rendered="#{!empty eventsBean.resultList}"
+					var="event" value="#{eventsBean.resultList}">
+					<p:column>
+						<f:facet name="header">Date</f:facet>
+						<h:outputText value="#{event.date}"/>
+					</p:column>
+					<p:column>
+						<f:facet name="header">Act</f:facet>
+						<a href="eventDetails.web?id=#{event.id}">
+							<h:outputText value="#{event.what}"/>
+						</a>
+					</p:column>
+					<p:column>
+						<f:facet name="header">Place</f:facet>
+						<a href="venueDetails.web?id=#{event.venue.id}">
+							<h:outputText value="#{event.venue}"/>
+						</a>
+					</p:column>
+				</p:dataTable>
+				<!-- //+ -->
+			</ui:define>
+		</ui:composition>
+	</body>
+</html>
