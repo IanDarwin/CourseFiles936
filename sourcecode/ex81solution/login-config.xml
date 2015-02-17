@@ -1,6 +1,6 @@
 <login-config>
 	<auth-method>FORM</auth-method>
-	<realm-name>Registered Users Area</realm-name>
+	<realm-name>Administrative Area</realm-name>
 	<form-login-config>
 		<form-login-page>/admin/login.web</form-login-page>
 		<form-error-page>/admin/loginfailure.jsp</form-error-page>
