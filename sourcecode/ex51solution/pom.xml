@@ -63,13 +63,19 @@
 		</dependency>
 			 -->
 	
-		<!-- Jersey, for the JAX-RS Client impl, used in tests -->
+		<!-- For the JAX-RS Client impl, used in tests -->
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-client</artifactId>
-			<version>3.0.2.Final</version>
+			<version>3.0.10.Final</version>
 			<scope>test</scope>
-		</dependency> 	
+		</dependency>
+		<dependency>
+		    <groupId>org.jboss.resteasy</groupId>
+		    <artifactId>resteasy-jackson-provider</artifactId>
+		    <version>3.0.10.Final</version>
+		    <scope>test</scope>
+		</dependency>
 
 		<!-- And speaking of tests... -->
 		<dependency>
