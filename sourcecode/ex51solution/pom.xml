@@ -17,29 +17,78 @@
 			<artifactId>datamodel</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
+
 		<!-- Java EE API -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
 			<version>7.0</version>
+			<scope>provided</scope>
 		</dependency>
+
+		<!-- Hibernate not needed in WildFly as it is included, but prob. needed on other App Servers-->
+		<dependency>
+		  <groupId>org.hibernate</groupId>
+		  <artifactId>hibernate-core</artifactId>
+		  <version>4.3.7.Final</version>
+		  <scope>provided</scope>
+		</dependency>
+		<dependency>
+		  <groupId>org.hibernate</groupId>
+		  <artifactId>hibernate-entitymanager</artifactId>
+		  <version>4.3.7.Final</version>
+		  <scope>provided</scope>
+		</dependency>
+
 		<!-- EclipseLink and its JPA Provider -->
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>org.eclipse.persistence.core</artifactId>
 			<version>${eclipselink.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>org.eclipse.persistence.jpa</artifactId>
 			<version>${eclipselink.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Database Drivers -->
+		<!-- 
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.33</version>
+		</dependency>
+		 -->
+
+		<!-- Jersey, for the JAX-RS Client impl, used in tests -->
+		<dependency>
+    		<groupId>org.glassfish.jersey.core</groupId>
+    		<artifactId>jersey-client</artifactId>
+    		<version>2.14</version>
+    		<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>2.7</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.13</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- And speaking of tests... -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>(4.8,5.0)</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<build>
