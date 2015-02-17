@@ -61,27 +61,15 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.33</version>
 		</dependency>
-		 -->
-
+			 -->
+	
 		<!-- Jersey, for the JAX-RS Client impl, used in tests -->
 		<dependency>
-    		<groupId>org.glassfish.jersey.core</groupId>
-    		<artifactId>jersey-client</artifactId>
-    		<version>2.14</version>
-    		<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-json-jackson</artifactId>
-			<version>2.7</version>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-client</artifactId>
+			<version>3.0.2.Final</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>1.9.13</version>
-			<scope>test</scope>
-		</dependency>
+		</dependency> 	
 
 		<!-- And speaking of tests... -->
 		<dependency>
