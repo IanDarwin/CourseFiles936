@@ -14,23 +14,33 @@ import com.ticketmanor.model.Event;
 
 public class EventsEjbTest {
 
-	private String URL =
+	private String URL1 =
 		"http://localhost:8080/ex51solution/rest/events1";
 	
+	private String URL2 =
+			"http://localhost:8080/ex51solution/rest/events2";
+	
 	@Test @Ignore // Doesn't work, obscure mapping error.
-	public void testGetOneEvent() {
+	public void testGetSingleEvent1() {
 		Client cl = ClientBuilder.newClient();
-		WebTarget target = cl.target(URL + "/" + 12);
+		WebTarget target = cl.target(URL1 + "/" + 12);
 		Event e = target.request(MediaType.APPLICATION_JSON).get(Event.class);
 		System.out.println("Got one event: " + e);
-
 	}
+	
 	@Test
-	public void testGetEvents() {
+	public void testGetEvents1() {
 		Client cl = ClientBuilder.newClient();
-		WebTarget target = cl.target(URL);
+		WebTarget target = cl.target(URL1);
 		List<Event> e = target.request(MediaType.APPLICATION_JSON).get(List.class);
-		System.out.println("Got an event list: " + e);
-
+		System.out.printf("Got a list of %d events%n", e.size());
+	}
+	
+	@Test
+	public void testGetEvents2() {
+		Client cl = ClientBuilder.newClient();
+		WebTarget target = cl.target(URL2);
+		List<Event> e = target.request(MediaType.APPLICATION_JSON).get(List.class);
+		System.out.printf("Got a list of %d events%n", e.size());
 	}
 }

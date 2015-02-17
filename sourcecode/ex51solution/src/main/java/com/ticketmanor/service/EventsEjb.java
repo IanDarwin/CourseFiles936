@@ -22,7 +22,7 @@ import com.ticketmanor.model.Event;
 
 @Stateless
 @Local @Remote
-//T Annote this with a REST annotation
+//T Annotate this with a REST annotation
 //-
 @Path("events1")
 //-
