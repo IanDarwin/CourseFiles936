@@ -14,11 +14,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.ticketmanor.model.Event;
-import com.ticketmanor.model.Location;
 
 @Stateless
 @Local @Remote
@@ -30,7 +30,7 @@ public class EventsEjb {
 	
 	@PersistenceContext EntityManager em;
 	
-	//T Annotate this class for a get method, with JSON as the type
+	//T Annotate this method for a get method, with JSON as the type
 	//-
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -39,6 +39,17 @@ public class EventsEjb {
 		final TypedQuery<Event> query = 
 				em.createQuery("from Event e", Event.class);
 		return query.getResultList();
+	}
+	
+	//T Annotate this class for a get method, with JSON as the type
+	// and a single path-parameter, e.g., events1/123
+	//-
+	@GET
+	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	//-
+	public Event getEventById(@PathParam("id") long id) {
+		return em.find(Event.class, id);
 	}
 	
 	/** Get a list of Events on the given date */
