@@ -25,7 +25,7 @@ import com.ticketmanor.model.Event;
 //T Annotate this with a REST annotation
 //-
 @Path("events1")
-//-
+//+
 public class EventsEjb {
 	
 	@PersistenceContext EntityManager em;
