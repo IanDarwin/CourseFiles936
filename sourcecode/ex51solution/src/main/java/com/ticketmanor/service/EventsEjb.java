@@ -47,7 +47,7 @@ public class EventsEjb {
 	@GET
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	//-
+	//+
 	public Event getEventById(@PathParam("id") long id) {
 		return em.find(Event.class, id);
 	}
