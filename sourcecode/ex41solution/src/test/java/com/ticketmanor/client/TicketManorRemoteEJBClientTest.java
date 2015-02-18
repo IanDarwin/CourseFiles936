@@ -12,7 +12,8 @@ import com.ticketmanor.service.CreditValidateInterface;
 
 public class TicketManorRemoteEJBClientTest {
 
-	private static final String LOOKUP_STRING = "ex41solution-1.0.0-SNAPSHOT/CreditCardValidate!com.ticketmanor.service.CreditValidateInterface";
+	private static final String LOOKUP_STRING = 
+		"ex41solution-1.0.0-SNAPSHOT/CreditCardValidate!com.ticketmanor.service.CreditValidateInterface";
 
 	private InitialContext ctx;
 	

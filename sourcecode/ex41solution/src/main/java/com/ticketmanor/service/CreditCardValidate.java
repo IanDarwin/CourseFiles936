@@ -5,7 +5,10 @@ package com.ticketmanor.service;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
+//T After tests pass, annotate as a remotely-accessible stateless session bean
+//-
 @Stateless @Remote(CreditValidateInterface.class)
+//+
 public class CreditCardValidate implements CreditValidateInterface {
 	
 	/* (non-Javadoc)
@@ -13,12 +16,16 @@ public class CreditCardValidate implements CreditValidateInterface {
 	 */
 	@Override
 	public boolean validate(String cardNumberString){
+		//T Implement the algorithm
+		//-
 		if(cardNumberString == null ){return false;}
 		return(
 				cardNumberString.charAt(cardNumberString.length()-1)+"")
 				.equals(calculatecheckDigit(createDigits(cardNumberString))+"");
+		//+
 	}
 	
+	//-
 	int[] createDigits(String cardNumberString){
 		int[] digits = new int[cardNumberString.length()];
 		for(int i=0; i<cardNumberString.length();i++){
@@ -44,4 +51,5 @@ public class CreditCardValidate implements CreditValidateInterface {
 		}
 		return ret;
 	}
+	//+
 }
