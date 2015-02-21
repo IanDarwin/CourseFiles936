@@ -58,7 +58,8 @@ public class CommentSender {
 		producer.send(message);
 		//+
 		
-		// This should cause an error message on the server side.
+		// THIS WILL CAUSE AN ERROR IN THE LOG FILE ON THE SERVER.
+		// THIS IS INTENTIONAL!
 		// It's just here to test that you detect non-ObjectMessages in the queue.
 		TextMessage message2 = 
 			session.createTextMessage("Here is a TextMessage just to razz you");
