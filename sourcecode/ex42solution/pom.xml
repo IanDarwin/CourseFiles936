@@ -10,8 +10,8 @@
 	<packaging>war</packaging>
 	<inceptionYear>2015</inceptionYear>
 
-	<name>TicketManor JPA and test</name>
-	<description>JPA Demo</description>
+	<name>TicketManor MDB and test</name>
+	<description>MDB Demo</description>
 	
 	<!-- Note: the "client" here is a test client, so it is
 	in the test folder and its config in src/test/resources,
@@ -31,7 +31,7 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
-		<!-- JMS -->
+		<!-- JMS - must be compilable-against for server but provided for test(client) -->
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.jms</artifactId>
