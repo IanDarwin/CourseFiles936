@@ -11,13 +11,13 @@ public class CustomerDao {
 	public Long saveCustomer(EntityManager em, Customer cust) {
 		long newId = -1;
 		// Sorry, we didn't have time to finish this -- Acme Outsourcing
-		
+		//-
 		em.persist(cust);
 		
 		em.flush();
 		
 		newId = cust.getId();
-		
+		//+
 		return newId;
 	}
 }
