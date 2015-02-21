@@ -37,16 +37,14 @@ public class CommentSender {
 		MessageProducer producer = session.createProducer(destination);
 		System.out.println("MessageProducer OK");
 		
-		//T Instantiate a FeedbackForm object, populate its fields
+		// Instantiate a FeedbackForm object, populate its fields
 		// with (possibly whimsical) test data
-		//- 
 		FeedbackForm comment = new FeedbackForm();
 		comment.setCustName("Whiney Whitefoot");
 		comment.setCustEmail("ww@gmail.moc");
 		comment.setComment("I actually love your site!!");
-		//+
 		
-		//T Create an ObjectMessage, and wrap the FeedbackForm in it.
+		//T Create an ObjectMessage, and wrap the above FeedbackForm in it.
 		//-
 		ObjectMessage message = session.createObjectMessage();
 		message.setObject(comment);
