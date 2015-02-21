@@ -1,5 +1,3 @@
-//Ian -- this is a test for the class Chris wrote rather than the one in the javasrc project
-
 package com.ticketmanor.service;
 
 import static org.junit.Assert.*;
@@ -8,6 +6,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/** A LOCAL unit test for the credit card validation logic; make sure this
+ * passes before you try to deploy the validator as an EJB!
+ * @author Chris Mawata
+ */
 public class CreditCardValidateTest {
 
 	private CreditCardValidate testSubject;
