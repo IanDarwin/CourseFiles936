@@ -31,3 +31,38 @@ On most Maven failures, Maven will print this helpful advice:
 ----
 99.45% of the time you should just ignore this. Seeing a stack trace of Maven's
 internals isn't that interesting.
+
+==== JMS Issues With WildFly
+
+When you run ex42's CommentSender, you should see something like this:
+
+----
+1 20:38:57,478 INFO  [org.jboss.as.server] (management-handler-thread - 1) JBAS018559: Deployed "ex42solution-1.0.0-SNAPSHOT.war" (runtime-name : "ex42solution-1.0.0-SNAPSHOT.war")
+2 20:39:22,813 INFO  [stdout] (Thread-1 (HornetQ-client-global-threads-1648300319)) Got sender: Whiney Whitefoot--ww@gmail.moc
+ 20:39:22,813 INFO  [stdout] (Thread-1 (HornetQ-client-global-threads-1648300319)) Got comment: I actually love your site!!
+3 20:39:22,814 INFO  [stdout] (Thread-1 (HornetQ-client-global-threads-1648300319)) Hibernate: call next value for hibernate_sequence
+4 20:39:22,818 ERROR [stderr] (Thread-1 (HornetQ-client-global-threads-1648300319)) Feedback saved to database!
+5 20:39:22,825 INFO  [stdout] (Thread-1 (HornetQ-client-global-threads-1648300319)) Hibernate: insert into FeedbackForm (comment, custEmail, custName, date, id) values (?, ?, ?, ?, ?)
+6 20:39:22,808 ERROR [stderr] (Thread-2 (HornetQ-client-global-threads-1648300319)) Wanted ObjectMessage but got sent a org.hornetq.jms.client.HornetQTextMessage
+7 20:39:22,831 INFO  [org.jboss.as.naming] (default task-7) JBAS011806: Channel end notification received, closing channel Channel ID 52f7aa52 (inbound) of Remoting connection 573c6231 to /127.0.0.1:50304
+----
+
+. 1 is the normal deployment message
+. 2 Several debug printlns from CommentReceiver (format varies as you wrote this) dumping the form
+. 3 JPA Provider (Hibernate) getting ready to insert
+. 4 Output from CommentReceiver after giving data to JPA 
+. 5 JPA Provider trace of the insert
+. 6 This is from the second "send" that you are asked to do in CommentSender
+. 7 We closed the Session, so the other end gets notified and cleans up.
+
+Note that becuase of threading, the lines can appear in almost any order.
+In fact, line 6 often appears before line 2, because its thread has much less to do
+and finishes more quickly!
+
+If you get anything terribly different, please ask your instructor. Notice
+also the JBoss will sometimes tell you it's re-deployed your JMS but
+apparently not actually do so; add a debug statement and see if the line
+numbers in the stack trace are affected. If not, we have to stop the server,
+find and remove the deployment element near the end of
+WILDFLY_HOME/standalone/configuration/standalone-full.xml, re-start the server,
+and re-deploy the application.
