@@ -47,13 +47,13 @@ When you run ex42's CommentSender, you should see something like this:
 7 20:39:22,831 INFO  [org.jboss.as.naming] (default task-7) JBAS011806: Channel end notification received, closing channel Channel ID 52f7aa52 (inbound) of Remoting connection 573c6231 to /127.0.0.1:50304
 ----
 
-. 1 is the normal deployment message
-. 2 Several debug printlns from CommentReceiver (format varies as you wrote this) dumping the form
-. 3 JPA Provider (Hibernate) getting ready to insert
-. 4 Output from CommentReceiver after giving data to JPA 
-. 5 JPA Provider trace of the insert
-. 6 This is from the second "send" that you are asked to do in CommentSender
-. 7 We closed the Session, so the other end gets notified and cleans up.
+. Is the normal deployment message
+. Several debug printlns from CommentReceiver (format varies as you wrote this) dumping the form
+. JPA Provider (Hibernate) getting ready to insert
+. Output from CommentReceiver after giving data to JPA 
+. JPA Provider trace of the insert
+. This is from the second "send" that you are asked to do in CommentSender
+. We closed the Session, so the other end gets notified and cleans up.
 
 Note that becuase of threading, the lines can appear in almost any order.
 In fact, line 6 often appears before line 2, because its thread has much less to do
