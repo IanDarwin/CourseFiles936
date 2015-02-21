@@ -29,7 +29,7 @@ import com.ticketmanor.model.FeedbackForm;
 		propertyValue = "Auto-acknowledge")
 })
 public class CommentReceiver 
-	//T Make this class implement the correct interface
+	//T Make this class implement the correct interface to be an MDB
 	//-
 	implements MessageListener
 	//+
