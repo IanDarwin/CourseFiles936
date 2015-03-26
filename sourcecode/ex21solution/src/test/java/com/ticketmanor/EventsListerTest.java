@@ -22,7 +22,7 @@ public class EventsListerTest {
 		final List<Event> events = lister.getEventsForDate(d);
 		assertTrue(events.size() > 0);
 		Event e = events.get(0);
-		assertEquals(d, e.when);
+		assertEquals(d, e.getDate());
 	}
 
 	@Test

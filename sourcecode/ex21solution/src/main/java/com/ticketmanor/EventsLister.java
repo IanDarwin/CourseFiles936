@@ -15,7 +15,7 @@ public class EventsLister {
 	public List<Event> getEventsForDate(Date selectedDate) {
 		final List<Event> events = new ArrayList<>();
 		Event e = fakeEvent();
-		e.when = selectedDate;
+		e.setDate(selectedDate);
 		events.add(e);
 		return events;
 	}
@@ -24,9 +24,10 @@ public class EventsLister {
 	public List<Event> getEventsNextNDays(int nDays) {
 		List<Event> results = new ArrayList<>();
 		Event e = fakeEvent();
-		Date d = e.when;
-		d.setDate(d.getDate() + 1);
-		e.when = d;
+		Date d = e.getDate();
+		// Note: d.setDate takes a day-of-month, e.setDate a Date argument.
+		d.setDate(d.getDate() + nDays);
+		e.setDate(d);
 		results.add(e);
 		return results;
 	}
@@ -34,9 +35,9 @@ public class EventsLister {
 	private Event fakeEvent() {
 		
 		Event e = new Event();
-		e.what = "Musical";
-		e.who = "The Twinning Sisters";
-		e.when = new Date();
+		e.setWhat("Musical");
+		e.setWho("The Twinning Sisters");
+		e.setDate(new Date());
 
 		return e;
 	}
