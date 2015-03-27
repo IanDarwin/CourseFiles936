@@ -3,7 +3,7 @@ package com.ticketmanor;
 import javax.persistence.*;
 
 /**
- * This class contains methods for CRUD operations on Customer objects
+ * Main program for initial interaction with JPA
  */
 public class Main {
 
@@ -42,6 +42,11 @@ public class Main {
 		} else {
 			System.out.println("Arrgghh! They don't match");
 		}
+
+		// Now count how many Customers objects there are
+		Integer n = em.createQuery("select count(c) from Customer c", Integer.class).getSingleResult();
+		System.out.printf("There are %d Customers%n", n);
+		em.close();
 		
 		//+
 	}
