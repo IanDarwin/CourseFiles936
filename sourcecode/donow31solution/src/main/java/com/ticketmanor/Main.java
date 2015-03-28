@@ -44,8 +44,10 @@ public class Main {
 		}
 
 		// Now count how many Customers objects there are
-		Integer n = em.createQuery("select count(c) from Customer c", Integer.class).getSingleResult();
+		Long n = em.createQuery("select count(c) from Customer c", Long.class).getSingleResult();
 		System.out.printf("There are %d Customers%n", n);
+		
+		// All done? Close the EntityManager
 		em.close();
 		
 		//+
