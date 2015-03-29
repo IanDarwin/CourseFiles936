@@ -18,13 +18,17 @@
 				<h:form id="eventsForm">
 
 					<h:outputText value="Search for events for next how many days?"/>
+					<!-- //T Connect the number of days textfield to the bean property -->
+					<!-- //- -->
 					<h:inputText required="true" id="nDaysTextField" value="#{eventsBean.numDays}" />
+					<!-- //+ -->
 					<h:message for="nDaysTextField" errorStyle="color:red"/>
 
-					<h:commandButton id="submit"
-						action="#{eventsBean.getEventsNextNDays}" 
-						value="Search">
-					</h:commandButton>
+					<!-- //T Connect the Search button to the getEventsNextNDays method -->
+					<h:commandButton value="Search"/>
+					<!-- //- -->
+					<h:commandButton value="Search" action="#{eventsBean.getEventsNextNDays}"/>
+					<!-- //+ -->
 					
 				</h:form>
 				<!-- The results will show up on eventsList.web -->
