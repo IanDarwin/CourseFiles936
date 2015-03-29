@@ -1,55 +1,51 @@
-//Ian -- replace this with the logic in the javsrc project
-
 package com.ticketmanor.service;
 
-import javax.ejb.Remote;
-import javax.ejb.Stateless;
-
-//T After tests pass, annotate as a remotely-accessible stateless session bean
-//-
-@Stateless @Remote(CreditValidateInterface.class)
-//+
+/**
+ * Credit Card Validation
+ * Methods made non-static for use in remote EJB
+ */
 public class CreditCardValidate implements CreditValidateInterface {
-	
+
+	/** Returns a credit card string with spaces, dashes, etc., stripped out.
+	 * Consider it a token of user-friendly in an age of really really stupid web sites.
+	 * @param input The user-entered credit card string
+	 * @return The cleaned up credit card string.
+	 */
+	String clean(final String input) {
+		final StringBuffer sb = new StringBuffer();
+		for (int i = 0; i < input.length(); i++) {
+			char c = input.charAt(i);
+			if (Character.isDigit(c)) {
+				sb.append(c);
+			}
+		}
+		return sb.toString();
+	}
+
 	/* (non-Javadoc)
-	 * @see com.ticketmanor.service.CreditValidateInterface#validate(java.lang.String)
+	 * @see com.ticketmanor.service.CreditValidateInterface#isValidCard(java.lang.String)
 	 */
 	@Override
-	public boolean validate(String cardNumberString){
-		//T Implement the algorithm
-		//-
-		if(cardNumberString == null ){return false;}
-		return(
-				cardNumberString.charAt(cardNumberString.length()-1)+"")
-				.equals(calculatecheckDigit(createDigits(cardNumberString))+"");
-		//+
-	}
-	
-	//-
-	int[] createDigits(String cardNumberString){
-		int[] digits = new int[cardNumberString.length()];
-		for(int i=0; i<cardNumberString.length();i++){
-			digits[i] = Integer.parseInt(""+cardNumberString.charAt(i));
+	public boolean isValidCard(String input) {
+		input = clean(input);
+		final int len = input.length();
+		int sum = 0;
+		boolean doubleIt = false;
+
+		for (int i = len - 1; i >= 0; i--) {
+			int val = input.charAt(i) - '0';
+			int addend = 0;
+			if (doubleIt) {
+				addend = val * 2;
+				if (addend > 9) {
+					addend -= 9;
+				}
+			} else {
+				addend = val;
+			}
+			sum += addend;
+			doubleIt = !doubleIt;
 		}
-		return digits;
+		return sum % 10 == 0;
 	}
-	
-	int calculatecheckDigit(int[] digits){
-		for(int i=digits.length-2;i>=0;i=i-2){
-			int doubleDigit = digits[i]*2;
-			if(doubleDigit>9){doubleDigit = doubleDigit%10+1;}
-			digits[i] = doubleDigit;
-		}
-		digits[digits.length-1] = 0;
-		return (sumDigits(digits)*9)%10;
-	}
-	
-	int sumDigits(int[] digits){
-		int ret = 0;
-		for (int i : digits) {
-			ret+=i;
-		}
-		return ret;
-	}
-	//+
 }

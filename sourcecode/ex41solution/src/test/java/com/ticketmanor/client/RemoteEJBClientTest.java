@@ -25,16 +25,17 @@ public class RemoteEJBClientTest {
 	//T Write a test that looks up the CreditValidateInterface in JNDI,
 	// and invoke it with two sample card numbers from the local client
 	// test, one valid one and one invalid one. Use assertTrue() and assertFalse().
-	//-
+	//H Use the LOOKUP_STRING defined above!!
 	@Test
 	public void test() {
+		//-
 		try {
 			CreditValidateInterface creditCardValidate = (CreditValidateInterface)ctx.lookup(LOOKUP_STRING);
-			assertTrue("This should have been true", creditCardValidate.validate("4111111111111111"));
-			assertFalse("This should give false", creditCardValidate.validate("799273987101"));
+			assertTrue("This should have been true", creditCardValidate.isValidCard("4111111111111111"));
+			assertFalse("This should give false", creditCardValidate.isValidCard("799273987101"));
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
+		//+
 	}
-	//+
 }
