@@ -11,9 +11,12 @@ public class Main {
 	public static void main(String[] args) {
 
 		//T Set up JPA as per JavaSE way of doing things
+		//H The persistence unit name is found in src/main/resources/META-INF/persistence.xml
+		EntityManagerFactory emf = null;
+		EntityManager em = null;
 		//-
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("donow31solution");
-		EntityManager em = emf.createEntityManager();
+		emf = Persistence.createEntityManagerFactory("donow31solution");
+		em = emf.createEntityManager();
 		//+
 
 		// Create customer object
