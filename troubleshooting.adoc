@@ -7,7 +7,7 @@ If not, check the following:
 
 . Are you in the correct directory? Each directory has its own directory. If you invoke Maven in a directory without a pom.xml, you will see this:
 ----
-ERROR] The goal you specified requires a project to execute but there is no POM in this directory.
+[ERROR] The goal you specified requires a project to execute but there is no POM in this directory.
 Please verify you invoked Maven from the correct directory. -> [Help 1]
 ----
 . Is it a compilation error? If so, fix your code and try again.
