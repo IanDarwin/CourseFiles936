@@ -27,15 +27,11 @@ public class RemoteEJBClientTest {
 	// test, one valid one and one invalid one. Use assertTrue() and assertFalse().
 	//H Use the LOOKUP_STRING defined above!!
 	@Test
-	public void test() {
+	public void test() throws NamingException {
 		//-
-		try {
-			CreditValidateInterface creditCardValidate = (CreditValidateInterface)ctx.lookup(LOOKUP_STRING);
-			assertTrue("This should have been true", creditCardValidate.isValidCard("4111111111111111"));
-			assertFalse("This should give false", creditCardValidate.isValidCard("799273987101"));
-		} catch (NamingException e) {
-			e.printStackTrace();
-		}
+		CreditValidateInterface creditCardValidate = (CreditValidateInterface)ctx.lookup(LOOKUP_STRING);
+		assertTrue("This should have been true", creditCardValidate.isValidCard("4111111111111111"));
+		assertFalse("This should give false", creditCardValidate.isValidCard("799273987101"));
 		//+
 	}
 }

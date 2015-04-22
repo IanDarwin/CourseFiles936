@@ -1,9 +1,14 @@
 package com.ticketmanor.service;
 
+//-
+import javax.ejb.Stateless;
+//+
 /**
  * Credit Card Validation
- * Methods made non-static for use in remote EJB
  */
+//-
+@Stateless
+//+
 public class CreditCardValidate implements CreditValidateInterface {
 
 	/** Returns a credit card string with spaces, dashes, etc., stripped out.
