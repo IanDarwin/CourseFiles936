@@ -1,13 +1,14 @@
 package com.ticketmanor.service;
 
 //-
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 //+
 /**
  * Credit Card Validation
  */
 //-
-@Stateless
+@Stateless @Remote
 //+
 public class CreditCardValidate implements CreditValidateInterface {
 
