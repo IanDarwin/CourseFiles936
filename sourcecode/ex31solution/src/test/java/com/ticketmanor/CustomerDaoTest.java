@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import javax.persistence.Query;
 
 import org.junit.Before;
@@ -95,9 +96,9 @@ public class CustomerDaoTest {
 		testSubject.saveCustomer(em, cust);
 		entityTransaction.commit();
 		em = emf.createEntityManager();
-		Query q = em.createQuery("select c.firstName, c.lastName from Customer c where c.city = 'Reston'");
-		List<String[]> firstNameLastNameList = (List<String[]>)q.getResultList();
-		String[] firstNameLastName = firstNameLastNameList.get(0);
+		TypedQuery q = em.createQuery("select c.firstName, c.lastName from Customer c where c.city = 'Reston'", Object[].class);
+		List<Object[]> firstNameLastNameList = q.getResultList();
+		Object[] firstNameLastName = firstNameLastNameList.get(0);
 		assertEquals("Customer first name not stored", "John", firstNameLastName[0]);
 		assertEquals("Customer last name not stored", "Doe", firstNameLastName[1]);
 	}
