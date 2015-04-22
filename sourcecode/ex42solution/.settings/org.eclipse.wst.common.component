@@ -7,7 +7,7 @@
         <dependent-module archiveName="datamodel-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/datamodel/datamodel">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <property name="java-output-path" value="/ex42solution/target/classes"/>
         <property name="context-root" value="ex42solution"/>
+        <property name="java-output-path" value="/ex42solution/target/classes"/>
     </wb-module>
 </project-modules>
