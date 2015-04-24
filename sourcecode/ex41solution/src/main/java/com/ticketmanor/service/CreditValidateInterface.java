@@ -1,5 +1,9 @@
 package com.ticketmanor.service;
 
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+
+@Remote @Stateless
 public interface CreditValidateInterface {
 
 	/** This "IBM" or "Luhn" algorithm has been described as:
