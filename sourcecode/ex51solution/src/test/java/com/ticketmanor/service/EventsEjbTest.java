@@ -18,9 +18,9 @@ public class EventsEjbTest {
 		"http://localhost:8080/ex51solution/rest/events1";
 	
 	private String URL2 =
-			"http://localhost:8080/ex51solution/rest/events2";
+		"http://localhost:8080/ex51solution/rest/events2";
 	
-	@Test @Ignore // Doesn't work, obscure mapping error.
+	@Test @Ignore // Doesn't work ATM, problem mapping new LocalDateTime class
 	public void testGetSingleEvent1() {
 		Client cl = ClientBuilder.newClient();
 		WebTarget target = cl.target(URL1 + "/" + 12);
