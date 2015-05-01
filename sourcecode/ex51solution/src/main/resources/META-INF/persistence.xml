@@ -6,7 +6,7 @@
 <!--
  *** This is the server-side version of persistence.xml
  -->
-<persistence-unit name="ex51solution">
+<persistence-unit name="ticketManor">
 	<!-- Uncomment one (and only one) of the following two persistence providers,
 	 *** after making sure that the given provider is on your classpath.
 	 -->
@@ -14,6 +14,8 @@
 	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 	-->
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<exclude-unlisted-classes>false</exclude-unlisted-classes>
 
 	<jta-data-source>java:jboss/datasources/TicketManorDataSource</jta-data-source>
 
@@ -32,8 +34,6 @@
 	<class>com.ticketmanor.model.Person</class>
 	<class>com.ticketmanor.model.Ticket</class>
 	<class>com.ticketmanor.model.Venue</class>
-	
-	<exclude-unlisted-classes>false</exclude-unlisted-classes>
 	
 	<properties>
 

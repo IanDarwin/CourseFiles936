@@ -3,7 +3,7 @@
        xmlns="http://java.sun.com/xml/ns/javaee"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-
+<!-- 
 	<description>TicketManor</description>
 	<display-name>TicketManor</display-name>
 
@@ -25,4 +25,5 @@
 	<listener>
 	    <listener-class>com.ticketmanor.jpa.FakeDataLoaderListener</listener-class>
 	</listener>
+	 -->
 </web-app>
