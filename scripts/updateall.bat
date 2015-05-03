@@ -14,7 +14,7 @@ cd SourceCode
 
 rm -r ex?? donow??
 
-call \makehandsons\scripts\makehandsons.cmd .
+call \makehandsons\scripts\makehandsons.cmd *solution
 
 cd \jpademo
  git pull
