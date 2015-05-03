@@ -16,6 +16,9 @@ rm -r ex?? donow??
 
 call \makehandsons\scripts\makehandsons.cmd *solution
 
+cd \javasrc
+ git pull
+
 cd \jpademo
  git pull
 
