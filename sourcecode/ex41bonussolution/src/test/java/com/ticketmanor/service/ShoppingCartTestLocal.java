@@ -18,6 +18,7 @@ import com.ticketmanor.model.Venue;
 
 public class ShoppingCartTestLocal {
 	
+	// T Examine the fields we have set up for you.
 	protected ShoppingCart cart;
 	static final Act act = new Act(ActType.TROUPE, "The Outliers");
 	static final Venue venue = new Venue("Rectangle Square Gardens");
@@ -31,29 +32,32 @@ public class ShoppingCartTestLocal {
 
 	@Test
 	public void testAddToCart() {
+		// T Add 'product' to the cart, check that getOrderItems().size is 1
+		//-
 		cart.addToCart(product);
 		List<OrderItem> orderItems = cart.getOrderItems();
 		assertEquals(orderItems.size(), 1);
 		assertEquals(orderItems.get(0).getSellable(), product);
+		//+
 	}
 
 	@Test
 	public void testRemoveFromCart() {
+		// T Check that adding them removing a product leaves 0 items in cart
+		//-
 		cart.addToCart(product);
 		assertTrue(cart.removeFromCart(product));
 		List<OrderItem> orderItems = cart.getOrderItems();
 		assertEquals(orderItems.size(), 0);
-	}
-
-	@Test
-	public void testGetTotalPrice() {
-		assertEquals(product.getPrice(), cart.getTotalPrice(), 0.001);
-		cart.addToCart(product);
-		assertEquals(product.getPrice(), 2*cart.getTotalPrice(), 0.001);
+		//+
 	}
 
 	@Test
 	public void testGetCartSizeAndItemCount() {
+		// T Add the product TWICE to the cart; ensure that now:
+		// getCartSize() returns 1
+		// getItemCount() returns 2
+		//-
 		// "Make that a pair of tickets"
 		cart.addToCart(product);
 		cart.addToCart(product);
@@ -63,6 +67,13 @@ public class ShoppingCartTestLocal {
 
 		// Adding an existing object should bump total quantity.
 		assertEquals(2, cart.getItemCount());
+		//+
 	}
 
+	@Test
+	public void testGetTotalPrice() {
+		assertEquals(product.getPrice(), cart.getTotalPrice(), 0.001);
+		cart.addToCart(product);
+		assertEquals(product.getPrice(), 2*cart.getTotalPrice(), 0.001);
+	}
 }
