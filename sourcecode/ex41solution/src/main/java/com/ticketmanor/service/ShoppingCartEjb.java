@@ -25,12 +25,10 @@ public class ShoppingCartEjb implements ShoppingCart {
 			Sellable sellable = item.getSellable();
 			if (sellable.equals(s)) {
 				item.setQuantity(item.getQuantity() + 1);
-				System.out.println("EQ: " + item);
 				return;
 			}
 		}
 		OrderItem item = new OrderItem(s, 1);
-		System.out.println("NF: " + item);
 		cart.add(item);
 	}
 	
@@ -85,7 +83,6 @@ public class ShoppingCartEjb implements ShoppingCart {
 	public int getItemCount() {
 		int n = 0;
 		for (OrderItem oi : cart) {
-			System.out.println("GIC: " + oi);
 			n += oi.getQuantity();
 		}
 		return n;

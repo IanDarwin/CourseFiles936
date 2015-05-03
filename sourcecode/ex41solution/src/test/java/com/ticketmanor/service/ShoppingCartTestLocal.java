@@ -57,15 +57,12 @@ public class ShoppingCartTestLocal {
 	public void testGetCartSizeAndItemCount() {
 		// "Make that a pair of tickets"
 		cart.addToCart(product);
+		cart.addToCart(product);
 
 		// Adding an existing object should not change cart size!
 		assertEquals(1, cart.getCartSize());
-		
-		for (OrderItem oi : cart.getOrderItems()) {
-			System.out.println("OI: " + oi);
-		}
 
-		// Adding an existing object should bump its quantity.
+		// Adding an existing object should bump total quantity.
 		assertEquals(2, cart.getItemCount());
 	}
 
