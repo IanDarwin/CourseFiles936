@@ -65,7 +65,6 @@ public class ShoppingCartEjb implements ShoppingCart {
 		for (OrderItem item : cart) {
 			total += item.getQuantity() * item.getSellable().getPrice();
 		}
-		System.out.println("ShoppingCartEjb.getTotalPrice(): total " + total);
 		return total;
 	}
 
