@@ -1,0 +1,15 @@
+= CourseFiles936
+
+This directory contains the web pages and most of the exercise projects for
+Learning Tree Course 936, Enterprise Java Applications: JSF, EJB3, JSF and AJAX.
+
+There is one other adjacent folder, TicketManorJava, which is hosted on 
+LearningTree's GitHub account, https://github.com/LearningTree/TicketmanorJava/.
+
+There are several adjacent folders: jsfdemo jpademo clublist javasrc.
+Those other projects are hosted on the course author's github, at
+https://github.com/IanDarwin/.
+
+== Setup
+
+To set up the environment at home or work, you should try the following:
