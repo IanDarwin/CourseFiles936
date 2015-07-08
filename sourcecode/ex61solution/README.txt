@@ -1,1 +1,1 @@
-There are no files here. The work is done in the javee application instead.
+There are only two solution files here. The student work is done in the javee application instead.
