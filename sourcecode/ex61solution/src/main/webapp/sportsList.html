@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sports Listings</title>
+	<link rel="stylesheet" type="text/css" href="css/ember-site.css"/>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body class="index">
+
+<!-- Common header elements for TicketManor -->
+<div id="header">
+  <div id="wrapper">
+	<a id="logo" href="/">&nbsp;</a>
+	<ul id="nav">
+	  <li><a href="index.html">Home</a></li>
+	  <li class="active"><a href="sports.web">Sports</a></li>
+	  <li><a href="eventsSearch.web">Concerts</a></li>
+	  <li><a href="movies.web">Movies</a></li>
+	  <li id="search">
+		<form>
+		  <input type="text" id="st-search-input" class="st-search-input" />
+		</form>
+		<div id="st-results-container"></div>
+	  </li>
+	</ul>
+
+	<div id="github">
+	  <a href="https://github.com/LearningTree/TicketManorJava"><i class="icon-fork"></i>Fork Us!</a>
+	</div>
+  </div>
+</div>
+
+  <script type="text/x-handlebars">
+  <div class="features section">
+    <h2>Welcome Sports Fans!</h2>
+
+    {{outlet}}
+  </div>
+  </script>
+
+  <script type="text/x-handlebars" id="index">
+    <table border='1' width='80%'>
+    <tr><th>Date</th><th>Event</th><th>Venue</th></tr>
+    {{#each item in model}}
+      <tr><td>{{item.date}}</td><td>{{item.what.title}}</td><td>{{item.venue.name}}</td></tr>
+    {{/each}}
+    </table>
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-v2.0.0.js"></script>
+  <script src="js/libs/ember-1.9.1.js"></script>
+  <script src="js/sportsList.js"></script>
+  <!-- to activate the test runner, add the "?test" query string parameter -->
+  <script src="tests/runner.js"></script>
+</body>
+</html>
