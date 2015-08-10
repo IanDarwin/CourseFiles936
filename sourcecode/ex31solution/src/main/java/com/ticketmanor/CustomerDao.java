@@ -12,6 +12,13 @@ public class CustomerDao {
 		long newId = -1;
 		// Sorry, we didn't have time to finish this -- Acme Outsourcing
 		//-
+		if (cust == null) {
+			throw new NullPointerException("Customer may not be null");
+		}
+		if (cust.getFirstName() == null || cust.getLastName() == null) {
+			throw new NullPointerException("Customer's names may not be null");
+		}
+
 		em.persist(cust);
 		
 		em.flush();

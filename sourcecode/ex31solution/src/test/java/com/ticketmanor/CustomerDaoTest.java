@@ -12,6 +12,7 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import javax.persistence.Query;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -24,19 +25,26 @@ public class CustomerDaoTest {
 	private CustomerDao testSubject;
 
 	//T You will probably need a "before class" and a "before test" method
-	
+
 	//-
 	@BeforeClass
 	public static void setupResources(){
 		emf = Persistence.createEntityManagerFactory("ex31");
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		testSubject = new CustomerDao();
 	}
+
+	@After
+	public void cleanup() {
+		if (em != null) {
+			em.close();
+		}
+	}
 	//+
-	
+
 	//T You will need at least one method: get an EntityManager
 	// and an EntityTransaction, create a customer, save it, commit,
 	// create a new EntityManager and read back the saved customer
@@ -61,12 +69,31 @@ public class CustomerDaoTest {
 		assertEquals("Customer first name not stored", "John", cust.getFirstName());
 		assertEquals("Customer last name not stored", "Doe", cust.getLastName());
 	}
+
+	@Test(expected=NullPointerException.class)
+	public void testSaveNullCustomer() {
+		em = emf.createEntityManager();
+		Customer cust = null;
+		testSubject.saveCustomer(em, cust);
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	public void testSaveNoNameCustomer() {
+		em = emf.createEntityManager();
+		Customer cust = new Customer();
+		testSubject.saveCustomer(em, cust);
+	}
+
+	//+
+	//T Add any number of other test methods, similar to the above
+	// but exercising different test ideas, as discussed in the manual.
 	
 	//+
 	//T Add any number of other test methods, similar to the above
 	// but exercising different test ideas, as discussed in the manual.
 
 	//-
+	@Test
 	public void testRunQuery(){
 		em = emf.createEntityManager();
 		Customer cust = new Customer();
@@ -85,6 +112,7 @@ public class CustomerDaoTest {
 		assertEquals("Incorrect entry", customerList.size(), 0);
 	}
 	
+	@Test
 	public void testQueryFirstAndLastName(){
 		em = emf.createEntityManager();
 		Customer cust = new Customer();
@@ -102,6 +130,6 @@ public class CustomerDaoTest {
 		assertEquals("Customer first name not stored", "John", firstNameLastName[0]);
 		assertEquals("Customer last name not stored", "Doe", firstNameLastName[1]);
 	}
-	
+
 	//+
 }
