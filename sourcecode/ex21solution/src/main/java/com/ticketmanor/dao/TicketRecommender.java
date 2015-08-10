@@ -18,13 +18,15 @@ public class TicketRecommender {
 		final List<Ticket> availableSeats = dao.getAvailableSeats(e);
 		// Initial implementation for price-sensitive customer: lowest price first
 		// Uses modern Java "lambda expression", short for an inner class that implements Comparable.
+		// This Collections.sort() will be moved out of here by the refactoring!
 		Collections.sort(availableSeats, (t1,t2)->t1.getPrice() < t2.getPrice() ? -1 : +1);
 		//-
+		// Sorting will be delegated to this new method:
 		sortAvailableSeats(availableSeats);
 		//+
 		return availableSeats; 	// Has been sorted in place
 	}
-	
+
 	//-
 	static void sortAvailableSeats(final List<Ticket> availableSeats) {
 		Collections.sort(availableSeats, (t1,t2)->t1.getPrice() < t2.getPrice() ? -1 : +1);
