@@ -31,9 +31,8 @@ public class EventsListerTest {
 		assertTrue(events.size() > 0);
 		Event e = events.get(0);
 		assertNotNull(e);
-		// Extra points if you actually test that e.when > d, but
-		// the Date API makes that hard; one reason Java 8 (and the
-		// real TicketManor codebase) use the new LocalDateTime class.
+		// Actually test that e.when > d
+		assertTrue(e.getDate().after(d));
 	}
 
 }
