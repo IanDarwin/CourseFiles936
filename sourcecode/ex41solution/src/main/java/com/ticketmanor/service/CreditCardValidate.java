@@ -8,7 +8,7 @@ import javax.ejb.Stateless;
  * Credit Card Validation
  */
 //-
-@Stateless @Remote
+@Stateless
 //+
 public class CreditCardValidate implements CreditValidateInterface {
 
