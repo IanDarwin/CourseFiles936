@@ -17,7 +17,7 @@ import com.ticketmanor.model.FeedbackForm;
 public class CommentSender {
 
 	@Test
-	public void main() throws Exception {
+	public void testOne() throws Exception {
 
 		//T Note the ton of JMS API that we are using just to connect:
 		Context ctx = new InitialContext();
