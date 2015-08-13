@@ -47,7 +47,7 @@ public class CommentReceiver
 	public void onMessage(Message msg) {
 		if (!(msg instanceof ObjectMessage)) {
 			System.err.println(
-				"Wanted ObjectMessage but got sent a " + msg.getClass().getName());
+				"Wanted ObjectMessage but got sent a " + msg.getClass().getSimpleName());
 			return;
 		}
 		//T Recall that the message sender sends us a wrapped object
