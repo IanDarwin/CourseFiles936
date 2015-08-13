@@ -2,7 +2,7 @@ package com.ticketmanor;
 
 import java.util.*;
 
-/** This is a heavily-cut-down version of the TicketManor EventEJB.
+/** This is a heavily-cut-down version of the TicketManor EventEJB, for standalone use.
  * It generates fake data, not live data, but we only need it to learn
  * how to write unit tests for an existing class.
  * It is mostly self-contained, and uses the obsolete Date API because
