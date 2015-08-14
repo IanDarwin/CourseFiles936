@@ -18,7 +18,7 @@ public class EventsListerTest {
 	}
 	@Test
 	public void testGetEventsForDate() {
-		Date d = new Date(2014-1900, 6, 6);
+		Date d = new Date();
 		final List<Event> events = lister.getEventsForDate(d);
 		assertTrue(events.size() > 0);
 		Event e = events.get(0);
@@ -27,6 +27,7 @@ public class EventsListerTest {
 
 	@Test
 	public void testGetEventsNextNDays() {
+		Date d = new Date();
 		final List<Event> events = lister.getEventsNextNDays(3);
 		assertTrue(events.size() > 0);
 		Event e = events.get(0);
