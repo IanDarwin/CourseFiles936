@@ -23,6 +23,7 @@ import com.ticketmanor.model.Location;
 @Local @Remote
 @Path("eventsEjb")
 public class EventsEjb {
+
 	@PersistenceContext EntityManager em;
 	
 	public List<Event> getAllEvents() {
@@ -50,7 +51,7 @@ public class EventsEjb {
 				.getResultList();
 	}
 
-	@GET
+	// @GET
 	public List<Event> getEventsNextNDays(int nDays, Location locn) {
 		// XXX Doesn't handle location yet!
 		return getEventsNextNDays(nDays);
