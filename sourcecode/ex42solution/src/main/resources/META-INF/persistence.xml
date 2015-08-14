@@ -17,7 +17,7 @@
 	-->
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-    <jta-data-source>java:jboss/datasources/TicketManorDataSource</jta-data-source>
+    <jta-data-source>java:jboss/datasources/ex42DS</jta-data-source>
 
 	<!-- DataModel is in its own jar so you have to list the classes you need from it -->
 	<class>com.ticketmanor.model.Act</class>
