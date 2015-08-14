@@ -24,7 +24,7 @@ public class EventsBean {
 	/** A JSF Action handler should return the next page path as a String */
 	public String getEventsNextNDays() {
 		results = ejb.getEventsNextNDays(nDays);
-		return "eventsList.xhtml";
+		return "eventsList";
 	}
 
 	/** This method will be called to retrieve the results */
