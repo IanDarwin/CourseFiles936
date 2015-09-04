@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# status all git repos
+
+# Must run in a git-bash or equivalent real shell environment
+
+
+cd C:/
+
+for repo in TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons
+do
+	(
+	cd $repo
+	git status
+	)
+done
+

@@ -9,7 +9,7 @@
 
 cd C:/
 
-for repo in TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist
+for repo in TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons
 do
 	(
 	cd $repo
