@@ -55,7 +55,7 @@ When you run ex42's CommentSender, you should see something like this:
 . This is from the second "send" that you are asked to do in CommentSender
 . We closed the Session, so the other end gets notified and cleans up.
 
-Note that becuase of threading, the lines can appear in almost any order.
+Note that because of threading, the lines can appear in almost any order.
 In fact, line 6 often appears before line 2, because its thread has much less to do
 and finishes more quickly!
 
