@@ -11,6 +11,7 @@ for repo in TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehan
 do
 	(
 	cd $repo
+	echo === $repo ===
 	git status
 	)
 done
