@@ -20,17 +20,6 @@ public class EventsBean {
 	static final int DEFAULT_NDAYS = 5;
 	
 	private int nDays = DEFAULT_NDAYS;
-	
-	/** A JSF Action handler should return the next page path as a String */
-	public String getEventsNextNDays() {
-		results = ejb.getEventsNextNDays(nDays);
-		return "eventsList.xhtml";
-	}
-
-	/** This method will be called to retrieve the results */
-	public List<Event> getResultList() {
-		return results == null ? Collections.emptyList() : results;
-	}
 
 	public int getNumDays() {
 		return nDays;
@@ -38,5 +27,16 @@ public class EventsBean {
 
 	public void setNumDays(int nDays) {
 		this.nDays = nDays;
+	}
+	
+	/** A JSF Action handler should return the next page path as a String */
+	public String getEventsNextNDays() {
+		results = ejb.getEventsNextNDays(nDays);
+		return "eventsList";
+	}
+
+	/** This method will be called to retrieve the results */
+	public List<Event> getResultList() {
+		return results == null ? Collections.emptyList() : results;
 	}
 }

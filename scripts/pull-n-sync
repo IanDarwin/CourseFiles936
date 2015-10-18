@@ -6,7 +6,10 @@
 
 # DO NOT RUN mid-week as it will wipe out some or all of the student's work!!!
 
-for repo in TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist
+
+cd C:/
+
+for repo in TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons
 do
 	(
 	cd $repo
