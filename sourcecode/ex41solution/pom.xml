@@ -35,13 +35,6 @@
 			<scope>provided</scope>
 		</dependency> 
 
-		<!-- JMS -->
-		<dependency>
-			<groupId>org.glassfish</groupId>
-			<artifactId>javax.jms</artifactId>
-			<version>3.1.1</version>
-		</dependency>
-
 		<!-- App-server-dependent Client Stuff -->
 		<dependency>
 			<groupId>org.wildfly</groupId>
