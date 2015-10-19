@@ -6,37 +6,44 @@
 
 # DO NOT RUN mid-week as it will wipe out some or all of the student's work!!!
 
+GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons"
+INSTALL_DIRS="TicketManorJava/datamodel TicketManorJava/ticketmanor-ee makehandsons"
+TEST_DIRS="CourseFiles/*solution javasrc jpademo jsfdemo clublist makehandsons"
+
+# These two CD's are intentional, test on Unix, run on Bash-on-Windows.
+cd
 cd C:/
 
-GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons"
-MVN_DIRS="TicketManorJava CourseFiles/*solution javasrc jpademo jsfdemo clublist makehandsons"
+# Excepting the two CD commands, nothing else must fail
+set -e
 
 for repo in ${GIT_DIRS}
 do
 	(
-	cd $repo
+	cd ${repo}
 	echo === $repo ===
 	git pull
 	)
 done
 
 
-(
-cd TicketManorJava/datamodel
-mvn install
-)
-
-(
-cd makehandsons
-mvn install
-)
+# Install things we need installed
+for dir in ${INSTALL_DIRS}
+do
+	(
+	cd ${dir}
+	echo === $dir ===
+	mvn install
+	)
+done
 
 (
 cd CourseFiles/sourcecode
 ../../makehandsons/scripts/makehandsons *solution
 )
 
-for proj in ${MVN_DIRS}
+# Run Maven Test in remaining, which ensures the pre-reqs are present.
+for proj in ${TEST_DIRS}
 do
 	(
 	cd $proj
