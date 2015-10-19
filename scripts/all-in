@@ -8,7 +8,7 @@
 
 GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons"
 INSTALL_DIRS="TicketManorJava/datamodel TicketManorJava/ticketmanor-ee makehandsons"
-TEST_DIRS="CourseFiles/*solution javasrc jpademo jsfdemo clublist makehandsons"
+TEST_DIRS="CourseFiles/sourcecode/*solution javasrc jpademo jsfdemo clublist makehandsons"
 
 # These two CD's are intentional, test on Unix, run on Bash-on-Windows.
 cd
