@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# Update and build all repos while online
+
+# Must run in a git-bash or equivalent real shell environment
+
+# DO NOT RUN mid-week as it will wipe out some or all of the student's work!!!
+
+cd C:/
+
+GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons"
+MVN_DIRS="TicketManorJava CourseFiles/*solution javasrc jpademo jsfdemo clublist makehandsons"
+
+for repo in ${GIT_DIRS}
+do
+	(
+	cd $repo
+	echo === $repo ===
+	git pull
+	)
+done
+
+
+(
+cd TicketManorJava/datamodel
+mvn install
+)
+
+(
+cd makehandsons
+mvn install
+)
+
+(
+cd CourseFiles/sourcecode
+../../makehandsons/scripts/makehandsons *solution
+)
+
+for proj in ${MVN_DIRS}
+do
+	(
+	cd $proj
+	echo === $repo ===
+	# Build with Maven
+	mvn test
+	)
+done
+
