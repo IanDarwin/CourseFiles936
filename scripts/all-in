@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Update and build all repos while online
+# Update and build all repos while online.
 
 # Must run in a git-bash or equivalent real shell environment
 
