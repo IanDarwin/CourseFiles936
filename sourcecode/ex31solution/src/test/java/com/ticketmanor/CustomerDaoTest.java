@@ -77,7 +77,7 @@ public class CustomerDaoTest {
 		testSubject.saveCustomer(em, cust);
 	}
 
-	@Test(expected=IllegalArgumentException.class)
+	@Test(expected=NullPointerException.class)
 	public void testSaveNoNameCustomer() {
 		em = emf.createEntityManager();
 		Customer cust = new Customer();
