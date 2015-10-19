@@ -6,9 +6,16 @@
 
 # DO NOT RUN mid-week as it will wipe out some or all of the student's work!!!
 
+# All dirs must be up-to-date:
 GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons"
-INSTALL_DIRS="TicketManorJava/datamodel TicketManorJava/ticketmanor-ee makehandsons"
-TEST_DIRS="CourseFiles/sourcecode/*solution javasrc jpademo jsfdemo clublist makehandsons"
+# Dirs we have to do "mvn install"
+INSTALL_DIRS="TicketManorJava/datamodel makehandsons"
+# Dirs to just run mvn test in"
+TEST_DIRS="javasrc jpademo"
+# Dirs we want to wildfly:deploy
+MWD_DIRS="TicketManorJava/ticketmanor-ee CourseFiles/sourcecode/donow31solution CourseFiles/sourcecode/ex21solution CourseFiles/sourcecode/ex31solution CourseFiles/sourcecode/ex41solution CourseFiles/sourcecode/ex42solution CourseFiles/sourcecode/ex51solution CourseFiles/sourcecode/ex61solution CourseFiles/sourcecode/ex71solution CourseFiles/sourcecode/ex81solution CourseFiles/sourcecode/ex91solution jsfdemo clublist"
+# Dirs we want to wildfly:deploy but must skip tests
+MWD_SKIPTESTS_DIRS="CourseFiles/sourcecode/ex41bonussolution "
 
 # These two CD's are intentional, test on Unix, run on Bash-on-Windows.
 cd
@@ -41,6 +48,26 @@ done
 cd CourseFiles/sourcecode
 ../../makehandsons/scripts/makehandsons *solution
 )
+
+# Deploy the things that must be deployed;
+for d in ${MWD_DIRS}
+do
+	(
+	cd $d
+	echo === $d ===
+	# Build with Maven
+	mvn clean wildfly:deploy
+	)
+done
+for d in ${MWD_SKIPTESTS_DIRS}
+do
+	(
+	cd $d
+	echo === $d ===
+	# Build with Maven
+	mvn -DskipTests clean wildfly:deploy
+	)
+done
 
 # Run Maven Test in remaining, which ensures the pre-reqs are present.
 for proj in ${TEST_DIRS}
