@@ -33,7 +33,7 @@ do
 	(
 	cd ${dir}
 	echo === $dir ===
-	mvn install
+	mvn clean install
 	)
 done
 
@@ -49,7 +49,7 @@ do
 	cd $proj
 	echo === $repo ===
 	# Build with Maven
-	mvn test
+	mvn clean test
 	)
 done
 
