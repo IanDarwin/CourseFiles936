@@ -12,6 +12,8 @@ import com.ticketmanor.model.Event;
 import com.ticketmanor.model.Ticket;
 
 public class TicketRecommenderTest {
+	
+	final boolean verbose = false;
 
 	@Test
 	public void testSortAvailableSeats() {
@@ -23,15 +25,20 @@ public class TicketRecommenderTest {
 		
 		TicketRecommender.sortAvailableSeats(availableSeats);
 		Ticket currentTicket = availableSeats.get(0);
-		for(int i=1; i<availableSeats.size();i++){
+		for (int i=1; i<availableSeats.size();i++){
 			Ticket nextTicket = availableSeats.get(i);
+			if (verbose) {
+				System.out.println(
+					"TicketRecommenderTest.testSortAvailableSeats(): " +
+						nextTicket.getPrice());
+			}
 			assertTrue(currentTicket.getPrice()<=nextTicket.getPrice());
 		}
 	}
 
 	
 	//For bonus
-	class DaoImpl implements Dao{
+	class DaoImpl implements Dao {
 
 		@Override
 		public List<Ticket> getAvailableSeats(Event e) {
