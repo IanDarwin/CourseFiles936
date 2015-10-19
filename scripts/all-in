@@ -11,11 +11,11 @@ GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehands
 # Dirs we have to do "mvn install"
 INSTALL_DIRS="TicketManorJava/datamodel makehandsons"
 # Dirs to just run mvn test in"
-TEST_DIRS="CourseFiles/sourcecode/donow31solution javasrc jpademo"
+TEST_DIRS="CourseFiles/sourcecode/donow31solution CourseFiles/sourcecode/ex21solution CourseFiles/sourcecode/ex31solution javasrc jpademo"
 # Dirs we want to wildfly:deploy
-MWD_DIRS="TicketManorJava/ticketmanor-ee CourseFiles/sourcecode/ex21solution CourseFiles/sourcecode/ex31solution CourseFiles/sourcecode/ex41solution CourseFiles/sourcecode/ex42solution CourseFiles/sourcecode/ex51solution CourseFiles/sourcecode/ex61solution CourseFiles/sourcecode/ex71solution CourseFiles/sourcecode/ex81solution CourseFiles/sourcecode/ex91solution jsfdemo clublist"
+MWD_DIRS="TicketManorJava/ticketmanor-ee CourseFiles/sourcecode/ex42solution CourseFiles/sourcecode/ex51solution CourseFiles/sourcecode/ex61solution CourseFiles/sourcecode/ex71solution CourseFiles/sourcecode/ex81solution CourseFiles/sourcecode/ex91solution jsfdemo clublist"
 # Dirs we want to wildfly:deploy but must skip tests
-MWD_SKIPTESTS_DIRS="CourseFiles/sourcecode/ex41bonussolution "
+MWD_SKIPTESTS_DIRS="CourseFiles/sourcecode/ex41solution CourseFiles/sourcecode/ex41bonussolution "
 
 # These two CD's are intentional, test on Unix, run on Bash-on-Windows.
 cd
