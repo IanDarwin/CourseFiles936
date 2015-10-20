@@ -23,6 +23,9 @@ public class ShoppingCartEjb implements ShoppingCart {
 	public void addToCart(Sellable s) {
 		for (OrderItem item : cart) {
 			Sellable sellable = item.getSellable();
+			if (sellable.getPrice() == null) {
+				throw new IllegalArgumentException("Cannot add Sellable with null Price!");
+			}
 			if (sellable.equals(s)) {
 				item.setQuantity(item.getQuantity() + 1);
 				return;
@@ -63,6 +66,12 @@ public class ShoppingCartEjb implements ShoppingCart {
 	public double getTotalPrice() {
 		double total = 0;
 		for (OrderItem item : cart) {
+			if (item.getSellable() == null) {
+				throw new IllegalArgumentException("Cart item with null Sellable!");
+			}
+			if (item.getSellable().getPrice() == null) {
+				throw new IllegalArgumentException("Cart item with Sellable with null Price!");
+			}
 			total += item.getQuantity() * item.getSellable().getPrice();
 		}
 		return total;
