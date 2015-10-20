@@ -22,7 +22,7 @@ public class VenueResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Venue> getConcerts() {
-		return emf.createEntityManager().createQuery("FROM Venue").getResultList();
+		return emf.createEntityManager().createQuery("FROM Venue", Venue.class).getResultList();
 	}
 	
 	@GET

@@ -1,6 +1,5 @@
 package com.ticketmanor.jpa;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

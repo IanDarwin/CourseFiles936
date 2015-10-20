@@ -12,7 +12,6 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 import com.ticketmanor.model.Event;

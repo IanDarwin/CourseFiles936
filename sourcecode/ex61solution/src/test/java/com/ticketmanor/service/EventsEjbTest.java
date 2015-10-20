@@ -9,6 +9,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.junit.Ignore;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 import com.ticketmanor.model.Event;
@@ -35,6 +36,7 @@ public class EventsEjbTest {
 	public void testGetEvents1() {
 		Client cl = ClientBuilder.newClient();
 		WebTarget target = cl.target(URL1);
+		@SuppressWarnings("unchecked")
 		List<Event> e = target.request(MediaType.APPLICATION_JSON).get(List.class);
 		//T Prove that the list contains at least one event
 		//-
@@ -47,6 +49,7 @@ public class EventsEjbTest {
 	public void testGetEvents2() {
 		Client cl = ClientBuilder.newClient();
 		WebTarget target = cl.target(URL2);
+		@SuppressWarnings("unchecked")
 		List<Event> e = target.request(MediaType.APPLICATION_JSON).get(List.class);
 		//T Prove that the list contains at least one event
 		//-

@@ -1,10 +1,12 @@
 package com.ticketmanor.service;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.time.LocalDateTime;
 
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 import com.ticketmanor.model.Act;
 import com.ticketmanor.model.ActType;

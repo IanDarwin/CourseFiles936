@@ -1,6 +1,6 @@
 package com.ticketmanor.ui.jsf;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.time.LocalDateTime;
 

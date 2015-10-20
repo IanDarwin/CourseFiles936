@@ -9,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 import javax.persistence.Query;
 
 import org.junit.After;
@@ -108,6 +107,7 @@ public class CustomerDaoTest {
 		cust = (Customer)q.getSingleResult();
 		assertEquals("Customer last name not stored", "Doe", cust.getLastName());
 		q = em.createQuery("from Customer c where c.firstName = 'Oprah'");
+		@SuppressWarnings("unchecked")
 		List<Customer> customerList = q.getResultList();
 		assertEquals("Incorrect entry", customerList.size(), 0);
 	}
@@ -124,8 +124,7 @@ public class CustomerDaoTest {
 		testSubject.saveCustomer(em, cust);
 		entityTransaction.commit();
 		em = emf.createEntityManager();
-		TypedQuery q = em.createQuery("select c.firstName, c.lastName from Customer c where c.city = 'Reston'", Object[].class);
-		List<Object[]> firstNameLastNameList = q.getResultList();
+		List<Object[]> firstNameLastNameList = em.createQuery("select c.firstName, c.lastName from Customer c where c.city = 'Reston'", Object[].class).getResultList();
 		Object[] firstNameLastName = firstNameLastNameList.get(0);
 		assertEquals("Customer first name not stored", "John", firstNameLastName[0]);
 		assertEquals("Customer last name not stored", "Doe", firstNameLastName[1]);
