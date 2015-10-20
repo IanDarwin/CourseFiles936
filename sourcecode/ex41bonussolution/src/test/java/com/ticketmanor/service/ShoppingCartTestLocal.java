@@ -41,8 +41,8 @@ public class ShoppingCartTestLocal {
 		//-
 		cart.addToCart(product);
 		List<OrderItem> orderItems = cart.getOrderItems();
-		assertEquals(orderItems.size(), 1);
-		assertEquals(orderItems.get(0).getSellable(), product);
+		assertEquals(1, orderItems.size());
+		assertEquals(product, orderItems.get(0).getSellable());
 		//+
 	}
 
