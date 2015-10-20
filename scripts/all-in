@@ -16,6 +16,8 @@ TEST_DIRS="CourseFiles/sourcecode/donow31solution CourseFiles/sourcecode/ex21sol
 MWD_DIRS="TicketManorJava/ticketmanor-ee CourseFiles/sourcecode/ex42solution CourseFiles/sourcecode/ex51solution jsfdemo clublist"
 # Dirs we want to wildfly:deploy but must skip tests
 MWD_SKIPTESTS_DIRS="CourseFiles/sourcecode/ex41solution CourseFiles/sourcecode/ex41bonussolution CourseFiles/sourcecode/ex61solution "
+# We undeploy this so students can have the fun of deploying it.
+UNDEPLOY_DIRS="TicketManorJava/ticketmanor-ee"
 
 # These two CD's are intentional, test on Unix, run on Bash-on-Windows.
 cd
@@ -80,3 +82,16 @@ do
 	)
 done
 
+# Now starts the cleanup
+for proj in ${UNDEPLOY_DIRS}
+do
+	(
+	cd $proj
+	echo === $repo ===
+	mvn wildfly:undeploy
+	)
+done
+
+# One last bit for "mvn offline"
+echo "Showing dependency tree so dependency plugins available offline..."
+(cd ClubList; mvn dependency:tree)
