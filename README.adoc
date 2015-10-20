@@ -15,4 +15,16 @@ https://github.com/IanDarwin/.
 
 To set up the environment at home or work, you should try the following:
 
-. git clone all the projects listed above into the same directory.
+. Make sure you have Java 8, Maven 3 installed and on your PATH.
+. Git clone all the projects listed above into the same directory (in the course we use C:\ but anyplace *should* work).
+. Rename CourseFiles936 CourseFiles
+. Run the uber-script: `cd Coursefiles; sh scripts/all-in`
+The script produces tons of output so it is set to fail on the first error.
+
+----
+for d in LearningTree/TicketManorJava IanDarwin/{CourseFiles936,jsfdemo,jpademo,clublist,darwinsys-api,javasrc}
+do
+	git clone https://github.com/$d
+done
+mv CourseFiles936 CourseFiles
+---
