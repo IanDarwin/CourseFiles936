@@ -8,7 +8,9 @@ There is one other adjacent folder, TicketManorJava, which is hosted on
 LearningTree's GitHub account, https://github.com/LearningTree/TicketmanorJava/.
 
 There are several adjacent folders: jsfdemo jpademo clublist javasrc.
-Those other projects are hosted on the course author's github, at
+There is also the makehandsons project; this makes the exercises from 
+the solutions so they are always in synch.
+These projects are hosted on the course author's github, at
 https://github.com/IanDarwin/.
 
 == Setup
@@ -28,7 +30,7 @@ every Maven configuration.
 The script produces tons of output so it is set to fail on the first error.
 
 ----
-for d in LearningTree/TicketManorJava IanDarwin/{CourseFiles936,jsfdemo,jpademo,clublist,darwinsys-api,javasrc}
+for d in LearningTree/TicketManorJava IanDarwin/{CourseFiles936,makehandsons,jsfdemo,jpademo,clublist,darwinsys-api,javasrc}
 do
 	git clone https://github.com/$d
 done
