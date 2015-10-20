@@ -16,7 +16,7 @@ public class RemoteEJBClientTest extends ShoppingCartTestLocal {
 
 	private static InitialContext ctx;
 	
-	/** This is the now-familiar (we hope) factory-pattern-in-BeforeClass */
+	/** This is the now-familiar (we hope) factory-pattern-in-BeforeClass Test method */
 	@BeforeClass
 	public static void setUp() throws Exception {
 		ctx = new InitialContext();
@@ -25,7 +25,7 @@ public class RemoteEJBClientTest extends ShoppingCartTestLocal {
 	// T Create an @Before method to look up the shopping cart
 	// and assign it to the existing "cart", using the LOOKUP_STRING
 	// defined above. 
-	// H Ideally, override parents @Before method to reduce overhead
+	// H Ideally, override parent's @Before method to reduce overhead
 	//-
 	@Before @Override
 	public void init() throws Exception {
