@@ -7,7 +7,8 @@ When you rename a exXXsolution directory (which can only
 be done if chapters are moved in the CN), remember:
 
 1) Update the MA in Adapatlearn.
-2) Find all occurrences and replace most/all. REMEMBER, e.g.:
+2) Find all occurrences of the old in the new, replace most/all. 
+	REMEMBER, e.g.:
 	grep -r ex51 ex61solution/
 	If none that need to stay (e.g., back- or fwd-refs), add 'l':
 	grep -lr ex51 ex61solution/ 
