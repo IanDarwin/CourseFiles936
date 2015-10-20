@@ -16,10 +16,10 @@ import com.ticketmanor.model.Event;
 public class EventsEjbTest {
 
 	private String URL1 =
-		"http://localhost:8080/ex51solution/rest/events1";
+		"http://localhost:8080/ex61solution/rest/events1";
 	
 	private String URL2 =
-		"http://localhost:8080/ex51solution/rest/events2";
+		"http://localhost:8080/ex61solution/rest/events2";
 	
 	//-
 	@Test @Ignore // Doesn't work ATM, problem mapping new LocalDateTime class
