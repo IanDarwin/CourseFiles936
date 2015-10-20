@@ -33,5 +33,6 @@ do
 	git clone https://github.com/$d
 done
 mv CourseFiles936 CourseFiles
+# Now setup WildFly as above...
 cd Coursefiles; sh scripts/all-in
 ----
