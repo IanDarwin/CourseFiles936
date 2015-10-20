@@ -14,3 +14,8 @@ be done if chapters are moved in the CN), remember:
 	grep -lr ex51 ex61solution/ 
 	If that looks right, run through xargs replace:
 	grep -lr ex51 ex61solution/ | xargs replace ex51 ex61
+
+== Misc
+
+If you change and push the all-in script, you must git pull in
+this repo before running it under Windows.
