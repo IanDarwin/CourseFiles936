@@ -67,7 +67,7 @@ do
 	cd $d
 	echo === $d ===
 	# Build with Maven
-	mvn -DskipTests clean wildfly:deploy
+	mvn -DskipTests clean wildfly:deploy; mvn test
 	)
 done
 
