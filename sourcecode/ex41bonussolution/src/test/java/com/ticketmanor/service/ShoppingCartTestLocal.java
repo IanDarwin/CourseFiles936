@@ -16,6 +16,11 @@ import com.ticketmanor.model.Sellable;
 import com.ticketmanor.model.Ticket;
 import com.ticketmanor.model.Venue;
 
+/** 
+ * Local test: Test the logic in the given ShoppingCart, without having
+ * to deploy it into any kind of container.
+ * @author Ian Darwin
+ */
 public class ShoppingCartTestLocal {
 	
 	// T Examine the fields we have set up for you.
@@ -43,7 +48,7 @@ public class ShoppingCartTestLocal {
 
 	@Test
 	public void testRemoveFromCart() {
-		// T Check that adding them removing a product leaves 0 items in cart
+		// T Check that adding then removing a product leaves 0 items in cart
 		//-
 		cart.addToCart(product);
 		assertTrue(cart.removeFromCart(product));
@@ -72,8 +77,10 @@ public class ShoppingCartTestLocal {
 
 	@Test
 	public void testGetTotalPrice() {
+		assertEquals(0d, cart.getTotalPrice(), 0.001);
+		cart.addToCart(product);
 		assertEquals(product.getPrice(), cart.getTotalPrice(), 0.001);
 		cart.addToCart(product);
-		assertEquals(product.getPrice(), 2*cart.getTotalPrice(), 0.001);
+		assertEquals(2 * product.getPrice(), cart.getTotalPrice(), 0.001);
 	}
 }
