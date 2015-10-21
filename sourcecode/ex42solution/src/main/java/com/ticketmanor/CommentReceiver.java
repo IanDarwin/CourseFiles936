@@ -38,9 +38,10 @@ public class CommentReceiver
 	//T Note that this will be provided by the container
 	@PersistenceContext EntityManager em;
 	
-	@Override
-	//T Add an annotation that will ensure that this method's
-	// results get committed to the database at the end of the method.
+	//T Add two annotations; one to ensure that you are overriding
+	// a method correctly (as per the first todo step above) and
+	// the second that will ensure that this method's results
+	// get committed to the database at the end of the method.
 	//-
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	//+
