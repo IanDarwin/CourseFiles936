@@ -1,7 +1,6 @@
 package com.ticketmanor.service;
 
 //-
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 //+
 /**
