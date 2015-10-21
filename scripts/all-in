@@ -41,7 +41,7 @@ for dir in ${INSTALL_DIRS}
 do
 	(
 	cd ${dir}
-	echo === $dir ===
+	echo === ${dir} ===
 	mvn clean install
 	)
 done
@@ -67,16 +67,18 @@ do
 	cd $d
 	echo === $d ===
 	# Build with Maven
-	mvn -DskipTests clean wildfly:deploy; mvn test
+	mvn -DskipTests clean wildfly:deploy
+	# Now the tests are supposed to run
+	mvn test
 	)
 done
 
 # Run Maven Test in remaining, which ensures the pre-reqs are present.
-for proj in ${TEST_DIRS}
+for d in ${TEST_DIRS}
 do
 	(
-	cd $proj
-	echo === $repo ===
+	cd $d
+	echo === $d ===
 	# Build with Maven
 	mvn clean test
 	)
