@@ -19,24 +19,28 @@ To set up the environment at home or work, you should try the following
 (the implementing command examples are for Unix, Linux, Mac OS X,
 and might work on MS-Windows with CygWin or equivalent):
 
-. Make sure you have Java 8, Maven 3, and git installed and on your PATH.
-. Make sure you have Wildfly 8 installed but not running;
+* Make sure you have Java 8, Maven 3, and git installed and on your PATH.
+* Make sure you have Wildfly 8 installed but not running;
 you could use a different App Server but you'd have to change
 every Maven configuration.
-. Git clone all the projects listed above into the same directory (in the course we use C:\ but anyplace *should* work).
+* Git clone all the projects listed above into the same directory (in the course we use C:\ but anyplace *should* work).
 ----
 for repo in LearningTreeJava/TicketManorJava IanDarwin/{CourseFiles936,jsfdemo,jpademo,makehandsons,clublist,javasrc,darwinsys-api}
 do
     git clone https://github.com/$repo
 done
 ----
-. Rename CourseFiles936 CourseFiles
+* Rename CourseFiles936 CourseFiles
 ----
 mv CourseFiles936 CourseFiles
 ----
-. Copy or merge Coursefiles/configs/standalone-full.xml into wildfly
-. Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
-. If it doesn't start successfully, iterate on your configuration.
-. Run the uber-script: `cd Coursefiles; sh scripts/all-in`
-The script produces tons of output so it is set to fail on the first error.
-
+* Copy or merge Coursefiles/configs/standalone-full.xml into wildfly
+* Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
+* If it doesn't start successfully, iterate on your configuration.
+* Run the uber-script:
+----
+cd Coursefiles
+sh scripts/all-in
+----
+The script produces tons of output so it is set to fail on the first error,
+otherwise error messages would be missed.
