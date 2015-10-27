@@ -25,7 +25,7 @@ you could use a different App Server but you'd have to change
 every Maven configuration.
 * Git clone all the projects listed above into the same directory (in the course we use C:\ but anyplace *should* work).
 ----
-for repo in LearningTreeJava/TicketManorJava IanDarwin/{CourseFiles936,jsfdemo,jpademo,makehandsons,clublist,javasrc,darwinsys-api}
+for repo in LearningTree/TicketManorJava IanDarwin/{CourseFiles936,jsfdemo,jpademo,makehandsons,clublist,javasrc,darwinsys-api}
 do
     git clone https://github.com/$repo
 done
