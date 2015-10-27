@@ -44,3 +44,25 @@ sh scripts/all-in
 ----
 The script produces tons of output so it is set to fail on the first error,
 otherwise error messages would be missed.
+
+=== Eclipse Workspace
+
+The normal intention is that this folder should be the base of an Eclipse workspace.
+We dobn't yet have this set up automatically so please do the following:
+
+* mkdir .metadata .metadata/log
+* Open Eclipse
+* If it opens an existing workspace, do File->Switch Workspace. If not it will ask you for the workspace.
+* Browse to where you downloaded CourseFiles, and select (but don't double click on) CourseFiles. Click OK.
+* Then do File->New Project->new Java Project, browse to the TicketManorJava folder, select but don't double-click
+on ticketmanor-ee,
+which should cause the dialog to change the text in its bottom panel to something like
+ "The wizard will use the existing settings to configure the project". Click Finish.
+* Then for each Exercise you want, do File->New Project->New Java Project, and select the _exNN_ folder
+and follow the same procedure as for ticketmanor-ee.
+* Do the similar operation for any Solution project you want.
+* Ditto for jsfdemo, jpademo, and clublist except they should be in the folder one level up in the filesystem.
+* If you want the javasrc project (code examples from the Java Cookbook) and darwinsys-api (some helper files),
+do the same for them.
+
+At this point you should have 
