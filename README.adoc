@@ -66,4 +66,4 @@ and follow the same procedure as for ticketmanor-ee.
 * If you want the javasrc project (code examples from the Java Cookbook) and darwinsys-api (some helper files),
 do the same for them.
 
-At this point you should have 
+At this point you should have things pretty much set up as in the course.
