@@ -45,7 +45,7 @@ sh scripts/all-in
 The script produces tons of output so it is set to fail on the first error,
 otherwise error messages would be missed.
 
-=== Eclipse Workspace
+=== Eclipse Workspace Setup
 
 The normal intention is that this folder should be the base of an Eclipse workspace.
 We don't yet have this set up automatically so please do the following:
@@ -67,3 +67,8 @@ and follow the same procedure as for ticketmanor-ee.
 do the same for them.
 
 At this point you should have things pretty much set up as in the course.
+
+=== Other IDE Workspace Setup
+
+We don't provide instructions for other IDEs. If you get it working in a way that doesn't 
+interfere with it working with Eclipse and Maven, please feel free to send a Github pull request,
