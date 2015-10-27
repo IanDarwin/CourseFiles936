@@ -1,5 +1,7 @@
 = Maintenance
 
+This file is intended for use by those developing/testing the course setup and should be ignored by students.
+
 == Renames
 
 Renaming is my least-fave form of maintenance.
