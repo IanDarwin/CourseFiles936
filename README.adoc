@@ -50,7 +50,7 @@ otherwise error messages would be missed.
 The normal intention is that this folder should be the base of an Eclipse workspace.
 We don't yet have this set up automatically so please do the following:
 
-* mkdir .metadata .metadata/log # The magic that makes it a Workspace
+* mkdir .metadata .metadata/log # Only needed with older versions of this GIT repository
 * Open Eclipse
 * If it opens an existing workspace, do File->Switch Workspace. If not it will ask you for the workspace.
 * Browse to where you downloaded CourseFiles, and select (but don't double click on) CourseFiles. Click OK.
