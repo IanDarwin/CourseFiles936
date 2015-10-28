@@ -2,6 +2,7 @@ package com.ticketmanor.service;
 
 import javax.ejb.Remote;
 
+//T Annotate this interface for RMI access to the implementing EJB
 //-
 @Remote
 //+
