@@ -44,6 +44,7 @@ public class CommentReceiver
 	// get committed to the database at the end of the method.
 	//-
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
+	@Override
 	//+
 	public void onMessage(Message msg) {
 		if (!(msg instanceof ObjectMessage)) {
