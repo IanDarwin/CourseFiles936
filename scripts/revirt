@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Try to put a machine back to initial state
+
+echo "ToDo: un-modify the config files..."
+vi /wildfly/standalone/configuration/application*.properties
+# XXX make this a straight cp operation.
+
+(
+cd TicketManorJava
+git checkout -- ticketmanor-ee
+)
+
+(
+cd jpademo
+git checkout -- src/main/
+)
