@@ -10,7 +10,7 @@ cd C:/
 set -e
 
 echo "ToDo: un-modify the config files..."
-cd /wildfly/standalone/configuration
+cd wildfly/standalone/configuration
 vi application*.properties
 # XXX make this a straight cp operation.
 
