@@ -48,7 +48,7 @@ done
 
 (
 cd CourseFiles/sourcecode
-rm -r ex??/src/* donow??/src/*
+rm -rf ex??/src/* donow??/src/*
 ../../makehandsons/scripts/makehandsons *solution
 )
 
