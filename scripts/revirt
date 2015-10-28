@@ -2,6 +2,13 @@
 
 # Try to put a machine back to initial state
 
+# These two CD's are intentional, test on Unix, run on Bash-on-Windows.
+cd
+cd C:/
+
+# Excepting the two CD commands, nothing else must fail
+set -e
+
 echo "ToDo: un-modify the config files..."
 vi /wildfly/standalone/configuration/application*.properties
 # XXX make this a straight cp operation.
