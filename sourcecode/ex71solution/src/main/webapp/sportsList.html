@@ -43,7 +43,12 @@
     <table border='1' width='80%'>
     <tr><th>Date</th><th>Event</th><th>Venue</th></tr>
     {{#each item in model}}
-      <tr><td>{{item.date}}</td><td>{{item.what.title}}</td><td>{{item.venue.name}}</td></tr>
+      <!-- //T Put Handlebars items in 'td' elements inside the 'tr' (row) to format the item -->
+      <tr>
+      <!-- //- -->
+        <td>{{item.date}}</td><td>{{item.what.title}}</td><td>{{item.venue.name}}</td>
+      <!-- //+ -->
+      </tr>
     {{/each}}
     </table>
   </script>
