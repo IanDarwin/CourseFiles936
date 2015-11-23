@@ -52,7 +52,9 @@ When you run ex42's CommentSender, you should see something like this:
 . JPA Provider (Hibernate) getting ready to insert
 . Output from CommentReceiver after giving data to JPA 
 . JPA Provider trace of the insert
-. This is from the second "send" that you are asked to do in CommentSender
+. This *looks like an error but is supposed to be there*; _it is there
+to test your error handling_, and comes from the second "send" 
+that you are asked to do in CommentSender
 . We closed the Session, so the other end gets notified and cleans up.
 
 Note that because of threading, the lines can appear in almost any order.
