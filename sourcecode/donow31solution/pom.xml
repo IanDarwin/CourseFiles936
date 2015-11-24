@@ -20,6 +20,12 @@
 
 	<dependencies>
 
+		<dependency>
+			<groupId>com.ticketmanor</groupId>
+			<artifactId>datamodel</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
 		<!-- Java EE not needed, just using JPA standalone here. -->
 		<!-- EclipseLink and its JPA Provider -->
 		<dependency>
