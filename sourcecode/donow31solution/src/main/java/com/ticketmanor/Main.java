@@ -2,6 +2,8 @@ package com.ticketmanor;
 
 import javax.persistence.*;
 
+import com.ticketmanor.model.Customer;
+
 /**
  * Main program for initial interaction with JPA
  */
@@ -47,7 +49,7 @@ public class Main {
 		//+
 
 		// Now we'll check that they're the same
-		if (customer.getName().equals(customer2.getName())) {
+		if (customer.getFullName().equals(customer2.getFullName())) {
 			System.out.println("They match");
 		} else {
 			System.out.println("Arrgghh! They don't match");
