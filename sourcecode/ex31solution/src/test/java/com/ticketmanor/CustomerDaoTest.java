@@ -61,6 +61,7 @@ public class CustomerDaoTest {
 		entityTransaction.begin();
 		testSubject.saveCustomer(em, cust);
 		entityTransaction.commit();
+		em.close();
 		long id = cust.getId();
 		assertTrue("Customer id was not set", id>0);
 		em = emf.createEntityManager();
