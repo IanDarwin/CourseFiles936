@@ -38,7 +38,7 @@ public class CustomerDaoTest {
 
 	@After
 	public void cleanup() {
-		if (em != null) {
+		if (em != null && em.isOpen()) {
 			em.close();
 		}
 	}
