@@ -13,15 +13,19 @@ public class OrderBeanClient {
 	Future<Boolean> orderSent; // same as return type of EJB method
 
 	public void submitOrder() {
-	   orderSent = orders.processOrderInWarehouse();
+		orderSent = orders.processOrderInWarehouse();
 	}
 
 	public String getOrderProcessingStatus() {
-	   if (orderSent.isDone()) {
-		  return orderSent.get() ? "Processed" : "Failed";
-	   } else {
-		  return "Still processing, check back later!";
-	   }
+		try {
+			if (orderSent.isDone()) {
+				return orderSent.get() ? "Processed" : "Failed";
+			} else {
+				return "Still processing, check back later!";
+			}
+		} catch (Exception e) {
+			throw new RuntimeException("Failed to get status (" + e + ")", e);
+		}
 	}
 
 	// Might also want a 'cancel' method

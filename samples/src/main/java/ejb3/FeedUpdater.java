@@ -3,6 +3,7 @@ package ejb3;
 import javax.ejb.*;
 import javax.persistence.*;
 import java.util.*;
+import javax.annotation.PostConstruct;
 
 @Singleton
 public class FeedUpdater {	// Same data for all users

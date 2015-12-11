@@ -9,6 +9,6 @@ public class OrderBean {
    public Future<Boolean> processOrderInWarehouse() {
       boolean orderSuccessful = false;
       // do the work, setting orderSuccessful=true
-      new AsyncResult<Boolean>(orderSuccessful);
+      return new AsyncResult<Boolean>(orderSuccessful);
    }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 @Stateful
 public class CartCheckoutBean {
-	@Stateless public CreditCardValidationBean validator;
+	@EJB public CreditCardValidationBean validator;
 
 	private List<Item> cart;
 
@@ -28,7 +28,7 @@ public class CartCheckoutBean {
 	}
 
 	static class CreditCardValidationBean {
-		boolean Validate(Object o) {
+		boolean validate(Object o) {
 			return false;	// just to make it compile
 		}
 	}

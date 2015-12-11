@@ -26,10 +26,10 @@
 		<!-- Java EE API -->
 		<dependency>
 		   <groupId>javax</groupId>    
-			<artifactId>javaee-web-api</artifactId>    
+			<artifactId>javaee-api</artifactId>    
 			<version>7.0</version>  
 		</dependency> 
- 
+
 		<!-- PrimeFaces JSF Add-on -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
