@@ -1,3 +1,5 @@
+package ejb3;
+
 import javax.ejb.*;
 import java.util.concurrent.Future;
 

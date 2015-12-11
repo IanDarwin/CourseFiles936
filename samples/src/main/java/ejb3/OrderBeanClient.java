@@ -1,3 +1,5 @@
+package ejb3;
+
 import javax.ejb.*;
 import java.util.concurrent.Future;
 
@@ -15,7 +17,7 @@ public class OrderBeanClient {
 	}
 
 	public String getOrderProcessingStatus() {
-	   if (orderSent.isDone() {
+	   if (orderSent.isDone()) {
 		  return orderSent.get() ? "Processed" : "Failed";
 	   } else {
 		  return "Still processing, check back later!";

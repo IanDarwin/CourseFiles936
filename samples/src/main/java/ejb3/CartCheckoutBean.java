@@ -1,3 +1,5 @@
+package ejb3;
+
 import javax.ejb.*;
 import java.util.List;
 
@@ -7,15 +9,15 @@ public class CartCheckoutBean {
 
 	private List<Item> cart;
 
-	public boolean checkout(Customer) {
+	public boolean checkout(Customer customer) {
 		if (validator.validate(customer)) {
 			// process items in "cart" to complete order
 			return true;
 		}
 		return false;
 	}
-	
-	/** A @Remove method is needed to "disconnect" from a SFSB
+
+	/** A @Remove method is needed to "disconnect" from a SFSB */
 	@Remove
 	public void cleanup() {
 		// empty
