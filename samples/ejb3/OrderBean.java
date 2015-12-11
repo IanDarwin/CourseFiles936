@@ -3,10 +3,10 @@ import java.util.concurrent.Future;
 
 @Stateless
 public class OrderBean {
-   @Asychronous
+   @Asynchronous
    public Future<Boolean> processOrderInWarehouse() {
       boolean orderSuccessful = false;
-      // do the work
-      return orderSuccessful;
+      // do the work, setting orderSuccessful=true
+      new AsyncResult<Boolean>(orderSuccessful);
    }
 }
