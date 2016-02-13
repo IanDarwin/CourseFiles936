@@ -7,7 +7,7 @@
 <!--
  *** This is the server-side version of persistence.xml
  -->
-<persistence-unit name="ex42solution">
+<persistence-unit name="ex43solution">
 
 	<!-- Uncomment one (and only one) of the following two persistence providers,
 	 *** after making sure that the given provider is on your classpath.
@@ -17,7 +17,7 @@
 	-->
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-    <jta-data-source>java:jboss/datasources/ex42DS</jta-data-source>
+    <jta-data-source>java:jboss/datasources/ex42DS</jta-data-source> <!-- Yes this is still ex42DS, that's OK -->
 
 	<!-- DataModel is in its own jar so you have to list the classes you need from it -->
 	<class>com.ticketmanor.model.Act</class>

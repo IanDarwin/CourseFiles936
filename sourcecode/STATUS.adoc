@@ -1,0 +1,21 @@
+Things to do on the load or your dev machine when upgrading
+
+Close eclipse.
+
+cd CourseFiles
+
+git pull # megadiffs
+
+start Eclipse
+
+Window->Prefs->JBoss Tools->JBoss Central - uncheck Show at Startup. Click OK
+
+remove junitbasic
+
+new java project at donow21 # replaces junitbasic
+
+remove ex41bonus, ex41bonussolution
+
+new java project at {ex43solution, ex43clientsolution }
+
+(After running mkHandsOns you will also have to create ex43 and ex43client)
