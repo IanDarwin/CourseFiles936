@@ -25,6 +25,13 @@ public class CustomerDao {
 		
 		newId = cust.getId();
 		//+
+
+		// Hint - check that names are not null, throw an exception if so.
+
+		// Hint - save the Customer using the normal JPA method for saving
+
+		// Hint - call the EntityManager flush() method before calling getId().
+
 		return newId;
 	}
 }
