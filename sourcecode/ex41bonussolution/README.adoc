@@ -1,5 +1,0 @@
-= Ex41 Bonus solution
-
-This has to be deployed as a WAR so that the datamodel.jar file
-will be included (or else we'd have to do funny things in Maven
-to make it work, that might not fly in Eclipse).
