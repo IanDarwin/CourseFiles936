@@ -16,6 +16,13 @@ new java project at donow21 # replaces junitbasic
 
 remove ex41bonus, ex41bonussolution
 
-new java project at {ex43solution, ex43clientsolution }
+new java project at {donow21solution, ex43solution, ex43clientsolution }
 
-(After running mkHandsOns you will also have to create ex43 and ex43client)
+(After running mkHandsOns you will also have to create: donow21 ex43 ex43client)
+
+Refresh in all projects (esp ex81solution which is a total rewrite
+
+If ADT/AndMore is installed, you will get a popup when you run a unit test:
+	Select Change Workspace Settings, set JUnit Run and Debug launcher to Eclipse. 
+
+New feature: in sourcecode, do mvn compile, it will test that all the solutions compile.
