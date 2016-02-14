@@ -25,3 +25,8 @@ git checkout -- ticketmanor-ee
 cd jpademo
 git checkout -- src/main/
 )
+
+(
+cd CourseFiles/sourcecode
+rm -r */target/
+)

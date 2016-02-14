@@ -1,0 +1,14 @@
+= Scripts
+
+These are for Course 936 Team use, not for students.
+
+It may be possible to merge these two scripts.
+
+== all-in
+
+Updates all the repos, builds exercise from solutions, etc.
+
+== revirt
+
+Punishly named, this lets you reset various files to their initial state, eg., after the TE has been
+trying out some of the exercises.
