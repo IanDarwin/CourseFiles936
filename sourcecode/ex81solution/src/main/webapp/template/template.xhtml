@@ -13,15 +13,22 @@
 </h:head>
 
 <h:body id="index">
-<div id="header">
-	<div id="wrapper" style="font-size: 2.5em;">
-		<br/><ui:insert name="pageHeader">Page Header</ui:insert>
-	</div>
-</div>
 
-<div class="features section">
-	<ui:insert name="body">Page Body</ui:insert>
-</div>
+	<div id="header">
+		<div id="wrapper" style="font-size: 2.5em;">
+			<br/><ui:insert name="pageHeader">Page Header</ui:insert>
+		</div>
+	</div>
+
+	<div class="features section">
+
+		<!-- Hey JSF - got any messages for me? -->
+		<h:messages id="messages" styleClass="message"
+			errorClass="errormsg" infoClass="infomsg" warnClass="warnmsg"
+			rendered="#{showGlobalMessages != 'false'}"/>
+
+		<ui:insert name="body">Page Body</ui:insert>
+	</div>
 
 </h:body>
 
