@@ -11,11 +11,11 @@ import javax.ejb.Stateless;
  * their own discounts(!) so this has a RolesAllowed.
  */
 @Stateless
-@RolesAllowed("admin")
+@RolesAllowed("administrator")
 public class SpecialsBean {
 
 	/**
-	 * This method has RolesAllowed "admin" so if it works, you have admin privs.
+	 * This method has RolesAllowed "administrator" so if it works, you have admin privs.
 	 * It's nothing very fancy, but the fact that you can or cannot call it is 
 	 * all that matters.
 	 */
