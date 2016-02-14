@@ -14,11 +14,13 @@
 
 		<div class="text">Welcome Administrator</div>
 
-		<h:outputText value="If you can see this page, you now have unlimited power over this data! Mwahahah!!"/>
-		<p>
-		Actions:
-		</p>
-		<h:commandButton value="Create new coupon code" action="#{adminBean.getNextCouponCode()}"/>
+		<h:form>
+			<h:outputText value="If you can see this page, you now have unlimited power over this data! Mwahahah!!"/>
+			<p>
+			Actions:
+			</p>
+			<h:commandButton value="Create new coupon code" action="#{adminBean.getNextCouponCode}"/>
+		</h:form>
 
 	</ui:define>
 
