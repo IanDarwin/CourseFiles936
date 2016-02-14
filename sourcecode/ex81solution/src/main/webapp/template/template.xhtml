@@ -18,6 +18,13 @@
 		<div id="wrapper" style="font-size: 2.5em;">
 			<br/><ui:insert name="pageHeader">Page Header</ui:insert>
 		</div>
+		<div style="align:right;">
+			<h:panelGroup rendered="#{!empty request.remoteUser}">
+				<h:form id="jazz">
+					<h:commandLink action="#{authenticator.logout}" style="color:black;">Logout</h:commandLink>
+				</h:form>
+			</h:panelGroup>
+		</div>
 	</div>
 
 	<div class="features section">
