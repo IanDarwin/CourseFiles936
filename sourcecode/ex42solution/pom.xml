@@ -10,8 +10,8 @@
 	<packaging>war</packaging>
 	<inceptionYear>2015</inceptionYear>
 
-	<name>TicketManor JPA and test</name>
-	<description>JPA Demo</description>
+	<name>TicketManor Stateful Session Bean</name>
+	<url>https://learningtree.com/936</url>
 	
 	<!-- Note: the "client" here is a test client, so it is
 	in the test folder and its config in src/test/resources,

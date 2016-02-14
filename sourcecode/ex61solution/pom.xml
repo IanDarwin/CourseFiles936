@@ -6,6 +6,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+	<name>REST Service for TicketManor</name>
+	<url>https://learningtree.com/936</url>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<eclipselink.version>2.6.0-M3</eclipselink.version>

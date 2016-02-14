@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	<!--
+	 *** WARNING WARNING WARNING WARNING WARNING WARNING
+	 ***
+	 *** This is the top-level build-everything POM, mainly of use to the course team
+	 ***
+	 *** If you are editing this file as part of the work in one of the exercises,
+	 *** you are in the wrong file; do not save your changes here!!!!!!!!!!!!!!!!!
+	 ***
+	 *** Team Notes: You can use this for 'mvn compile' and 'mvn clean';
+	 *** if you want to do 'mvn test' you have to be running mysql
+	 *** and you have to pre-deploy the few remaining apps that still have
+	 *** the "client is test" pattern.
+	 -->
+	<groupId>com.ticketmanor</groupId>
+	<artifactId>sourcecode</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <name>Course 936 Parent Project</name>
+
+    <modules>
+		<module>minimal</module>
+		<module>donow21solution</module>
+		<module>donow31solution</module>
+		<module>ex21solution</module>
+		<module>ex31solution</module>
+		<module>ex41solution</module>
+		<module>ex42solution</module>
+		<module>ex43clientsolution</module>
+		<module>ex43solution</module>
+		<module>ex51solution</module>
+		<module>ex61solution</module>
+		<!-- Not ready yet <module>ex71solution</module> -->
+		<module>ex81solution</module>
+		<!-- There is no solution for ex91 because it is just copying one file in ClubList -->
+    </modules>
+</project>

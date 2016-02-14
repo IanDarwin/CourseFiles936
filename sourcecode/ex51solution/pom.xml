@@ -8,8 +8,9 @@
 	<artifactId>ex51solution</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>Java EE Server for TicketManor, a Demo Enterprise Application</name>
-	<url>http://ticketmanor.com/</url>
+
+	<name>JSF UI for TicketManor</name>
+	<url>https://learningtree.com/936</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
