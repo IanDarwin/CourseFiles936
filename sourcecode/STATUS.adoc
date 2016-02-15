@@ -6,6 +6,8 @@ cd CourseFiles
 
 git pull # megadiffs
 
+Probably a good time to run the all-in script
+
 start Eclipse
 
 Window->Prefs->JBoss Tools->JBoss Central - uncheck Show at Startup. Click OK
