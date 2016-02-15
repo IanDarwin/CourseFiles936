@@ -1,5 +1,6 @@
 == Troubleshooting
 
+
 === Maven Deployment
 
 When you run _mvn wildfly:deploy_ you should see the message "Build Success" near the end of the Maven output.
@@ -34,7 +35,7 @@ internals isn't that interesting.
 
 ==== JMS Issues With WildFly
 
-When you run ex42's CommentSender, you should see something like this:
+When you run ex43's CommentSender, you should see something like this:
 
 ----
 1 20:38:57,478 INFO  [org.jboss.as.server] (management-handler-thread - 1) JBAS018559: Deployed "ex42solution-1.0.0-SNAPSHOT.war" (runtime-name : "ex42solution-1.0.0-SNAPSHOT.war")
@@ -48,7 +49,7 @@ When you run ex42's CommentSender, you should see something like this:
 ----
 
 . Is the normal deployment message
-. Several debug printlns from CommentReceiver (format varies as you wrote this) dumping the form
+. Several debug printlns from CommentReceiver (format varies because you wrote this) dumping the form
 . JPA Provider (Hibernate) getting ready to insert
 . Output from CommentReceiver after giving data to JPA 
 . JPA Provider trace of the insert
@@ -64,7 +65,25 @@ and finishes more quickly!
 If you get anything terribly different, please ask your instructor. Notice
 also the JBoss will sometimes tell you it's re-deployed your JMS but
 apparently not actually do so; add a debug statement and see if the line
-numbers in the stack trace are affected. If not, we have to stop the server,
-find and remove the deployment element near the end of
-WILDFLY_HOME/standalone/configuration/standalone-full.xml, re-start the server,
-and re-deploy the application.
+numbers in the stack trace are affected. If not,
+the solution is to follow the steps "Cleaning Wildfly Configuration".
+
+=== Restart Issues with Wildfly
+
+When the Wildfly Server won't start after a crash, it usually means that the configuration file has gotten corrupted.
+One of the weaknesses of this version of Wildfly is that it both depends upon, and updates, the main configuration file.
+At the end of standalone-full.xml is a list of war/jar files that the server thinks should be deployed.
+Each is represented by a war file and a directory with a name in the tmp/vfs directory.
+If a crash results in the file being listed in this configuration, but not present in unpacked form in tmp/vfs,
+the server *will not start*. 
+The easy solution is to follow the "Cleaning Wildfly Configuration" steps.
+
+=== Cleaning Wildfly Configuration
+
+* Stop the server (try CTRL/C in the window where it is running).
+* Edit the file WILDFLY_HOME/standalone/configuration/standalone-full.xml
+* Find and remove ALL the deployment elements near the end of the file.
+Make *very sure* you leave it as well-formed XML.
+* Save the file
+* Re-start the server.
+* Re-deploy application(s) as needed.
