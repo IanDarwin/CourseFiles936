@@ -1,4 +1,4 @@
-== Ex42solution -- Message Driven Bean
+== Ex43solution -- Message Driven Bean
 
 To run this at home you will have to do some configuration!
 
