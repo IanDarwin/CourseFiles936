@@ -30,9 +30,10 @@ public class EventsEjbTest {
 		EventsEjb events = (EventsEjb) context.lookup("java:global/injection-of-entitymanager/EventsBean");
 
 		LocalDateTime today = LocalDateTime.now();
+		// Movies today are going to the dogs?
+		events.addEvent(new Event(new Movie("Sam Peckinpah", "Straw Dogs", 1971), today, null);
 		events.addEvent(new Event(new Movie("Quentin Tarantino", "Reservoir Dogs", 1992), today, null));
-		events.addEvent(new Event(new Movie("Joel Coen", "Fargo", 1996), today, null));
-		events.addEvent(new Event(new Movie("Joel Coen", "The Big Lebowski", 1998), today, null));
+		events.addEvent(new Event(new Movie("Walt Becker", "Old Dogs", 2009), today, null);
 
 		List<Event> list = events.getAllEvents();
 		assertEquals("List.size()", 3, list.size());
