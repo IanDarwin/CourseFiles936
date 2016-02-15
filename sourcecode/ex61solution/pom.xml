@@ -98,6 +98,23 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+
+			<!-- Configure failsafe plugin to run integration tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.12.4</version>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<!-- Java EE AppServer: WildFly -->
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>

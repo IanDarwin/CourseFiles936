@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 import com.ticketmanor.model.Event;
 
-public class EventsEjbTest {
+public class EventsRestIT {
 
 	private String URL1 =
 		"http://localhost:8080/ex61solution/rest/events1";
@@ -38,7 +38,7 @@ public class EventsEjbTest {
 		WebTarget target = cl.target(URL1);
 		@SuppressWarnings("unchecked")
 		List<Event> e = target.request(MediaType.APPLICATION_JSON).get(List.class);
-		//T Prove that the list contains at least one event
+		//T Assert that the list contains at least one event
 		//-
 		System.out.printf("Got a list of %d events%n", e.size());
 		assertTrue(e.size() > 0);
