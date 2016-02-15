@@ -12,7 +12,7 @@ import org.junit.BeforeClass;
 public class RemoteEJBClientTest extends ShoppingCartTestLocal {
 
 	private static final String LOOKUP_STRING = 
-		"ex42bonussolution-1.0.0-SNAPSHOT/ShoppingCartEjb!com.ticketmanor.service.ShoppingCart";
+		"ex42solution-1.0.0-SNAPSHOT/ShoppingCartEjb!com.ticketmanor.service.ShoppingCart";
 
 	private static InitialContext ctx;
 	
