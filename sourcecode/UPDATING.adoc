@@ -1,4 +1,6 @@
-Things to do on the load or your dev machine when upgrading
+= Updating Load Machine from 936H.2 to 936H.3
+
+Things to do on the load or your dev machine when upgrading.
 
 General: set up the command prompt to start in CourseFiles.
 
