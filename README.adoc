@@ -4,13 +4,17 @@ This directory contains the web pages and most of the exercise projects for
 http://learningtree.com[Learning Tree]'s
 http://learningtree.com/936[Course 936, Enterprise Java Applications: JSF, EJB3, JSF and AJAX].
 
+All code is copyright (C) by Learning Tree International.
+
+This code won't do you much good unless you're taking the course.
+
 There is one other adjacent folder, TicketManorJava, which is hosted on 
 LearningTree's GitHub account, https://github.com/LearningTree/TicketmanorJava/.
 
 There are several adjacent folders: jsfdemo jpademo clublist javasrc.
 There is also the makehandsons project; this makes the exercises from 
 the solutions so they are always in synch.
-These projects are hosted on the course author's github, at
+These projects are all hosted on the course author's github, at
 https://github.com/IanDarwin/.
 
 == Setup
@@ -22,9 +26,10 @@ and might work on MS-Windows with CygWin or equivalent):
 * Make sure you have Java 8, Maven 3, and git installed and on your PATH.
 * Make sure you have Wildfly 8 installed but not running;
 you could use a different App Server but you'd have to change
-every Maven configuration.
-* Git clone all the projects listed above into the same directory (in the course we use C:\ but anyplace *should* work).
+all the Maven deployment configurations (they have GlassFish and Tomcat in place but unmaintained!!).
+* Git clone all the projects listed above into a single parent directory (in the course we use C:\ but anyplace *should* work).
 ----
+cd WHERE_YOU_WANT_IT
 for repo in LearningTree/TicketManorJava IanDarwin/{CourseFiles936,jsfdemo,jpademo,makehandsons,clublist,javasrc,darwinsys-api}
 do
     git clone https://github.com/$repo
@@ -51,9 +56,9 @@ The normal intention is that this folder should be the base of an Eclipse worksp
 We don't yet have this set up automatically so please do the following:
 
 * mkdir .metadata .metadata/log # Only needed with older versions of this GIT repository
-* Open Eclipse
+* Start Eclipse
 * If it opens an existing workspace, do File->Switch Workspace. If not it will ask you for the workspace.
-* Browse to where you downloaded CourseFiles, and select (but don't double click on) CourseFiles. Click OK.
+* Browse to where you downloaded CourseFiles, and select (but don't double click on) CourseFiles/sourcecode. Click OK.
 * Then do File->New Project->new Java Project, browse to the TicketManorJava folder, select but don't double-click
 on datamodel,
 which should cause the dialog to change the text in its bottom panel to something like
