@@ -8,7 +8,7 @@ Close eclipse.
 
 cd CourseFiles
 
-git pull # megadiffs
+git pull # Important to do this first to get the latest version of all-in script!
 
 Run bash scripts/all-in to regenerate and test almost everthing. Runs for a while...
 
