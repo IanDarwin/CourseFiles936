@@ -10,6 +10,8 @@ cd CourseFiles
 
 git pull # Important to do this first to get the latest version of all-in script!
 
+Make sure wildfly server is running.
+
 Run bash scripts/all-in to regenerate and test almost everthing. Runs for a while...
 
 start Eclipse
