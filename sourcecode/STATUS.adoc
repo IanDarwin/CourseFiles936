@@ -6,25 +6,23 @@ cd CourseFiles
 
 git pull # megadiffs
 
-Probably a good time to run the all-in script
+Run bash scripts/all-in to regenerate and test almost everthing. Runs for a while...
 
 start Eclipse
 
 Window->Prefs->JBoss Tools->JBoss Central - uncheck Show at Startup. Click OK
 
-remove junitbasic
+remove junitbasic, ex41bonus, ex41bonussolution
 
-new java project at donow21 # replaces junitbasic
-
-remove ex41bonus, ex41bonussolution
-
-new java project at {donow21solution, ex43solution, ex43clientsolution }
-
-(After running mkHandsOns you will also have to create: donow21 ex43 ex43client)
+New->Java Project at donow21 (replaces junitbasic), donow21solution, ex43, ex43client, ex43solution, ex43clientsolution
+# MAKE SURE each one says "The wizard will configure..." after you type the last character!
 
 Refresh in all projects (esp ex81solution which is a total rewrite
 
-If ADT/AndMore is installed, you will get a popup when you run a unit test:
+If ADT/AndMore is installed, and you get a popup when you run a unit test:
 	Select Change Workspace Settings, set JUnit Run and Debug launcher to Eclipse. 
 
 New feature: in sourcecode, do mvn compile, it will test that all the solutions compile.
+(Probably redundant with what "all-in" does, but hey...).
+
+Should be all. I hope.
