@@ -12,7 +12,7 @@ start Eclipse
 
 Window->Prefs->JBoss Tools->JBoss Central - uncheck Show at Startup. Click OK
 
-remove junitbasic, ex41bonus, ex41bonussolution
+remove junitbasic, ex41bonus, ex41bonussolution - both from eclipse and from the filesystem!
 
 New->Java Project at donow21 (replaces junitbasic), donow21solution, ex43, ex43client, ex43solution, ex43clientsolution
 # MAKE SURE each one says "The wizard will configure..." after you type the last character!
