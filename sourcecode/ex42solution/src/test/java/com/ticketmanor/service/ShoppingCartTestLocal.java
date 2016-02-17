@@ -23,7 +23,7 @@ import com.ticketmanor.model.Venue;
  */
 public class ShoppingCartTestLocal {
 	
-	// T Examine the fields we have set up for you.
+	//T Examine the fields we have set up for you.
 	protected ShoppingCart cart;
 	static final Act act = new Act(ActType.TROUPE, "The Outliers");
 	static final Venue venue = new Venue("Rectangle Square Gardens");
@@ -37,7 +37,8 @@ public class ShoppingCartTestLocal {
 
 	@Test
 	public void testAddToCart() {
-		// T Add 'product' to the cart, check that getOrderItems().size is 1
+		//T Add 'product' to the cart, check that getOrderItems().size is 1
+		//R fail("test not implemented");
 		//-
 		cart.addToCart(product);
 		List<OrderItem> orderItems = cart.getOrderItems();
@@ -48,7 +49,8 @@ public class ShoppingCartTestLocal {
 
 	@Test
 	public void testRemoveFromCart() {
-		// T Check that adding then removing a product leaves 0 items in cart
+		//T Check that adding then removing a product leaves 0 items in cart
+		//R fail("test not implemented");
 		//-
 		cart.addToCart(product);
 		assertTrue(cart.removeFromCart(product));
@@ -59,9 +61,10 @@ public class ShoppingCartTestLocal {
 
 	@Test
 	public void testGetCartSizeAndItemCount() {
-		// T Add the product TWICE to the cart; ensure that now:
+		//T Add the product TWICE to the cart; ensure that now:
 		// getCartSize() returns 1
 		// getItemCount() returns 2
+		//R fail("test not implemented");
 		//-
 		// "Make that a pair of tickets"
 		cart.addToCart(product);
