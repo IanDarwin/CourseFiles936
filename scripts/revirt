@@ -13,13 +13,13 @@ set -e
 echo "Un-modify these config files..."
 cd wildfly/standalone/configuration
 vi application*.properties
+echo Now delete all deployments from end of file...
+vi standalone-full.xml
 # XXX make this a straight cp operation.
 )
 
 (
 cd TicketManorJava
-cd ticketmanor-ee
-mvn wildfly:undeploy
 git checkout -- ticketmanor-ee
 )
 
