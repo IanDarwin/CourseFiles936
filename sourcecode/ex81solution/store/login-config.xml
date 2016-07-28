@@ -2,8 +2,8 @@
 		<auth-method>FORM</auth-method>
 		<realm-name>Administrative Area</realm-name>
 		<form-login-config>
-			<form-login-page>/admin/login.web</form-login-page>
-			<form-error-page>/admin/loginfailure.web</form-error-page>
+			<form-login-page>/login.web</form-login-page>
+			<form-error-page>/loginfailure.web</form-error-page>
 		</form-login-config>
 	</login-config>
 
