@@ -1,0 +1,2 @@
+INSERT INTO people(ID, EMAIL, FIRSTNAME, LASTNAME, MIDDLES, CITY, COUNTRY, POSTCODE, STATE, STREET, DTYPE) VALUES(-1, null, 'Yacob','Smith', null, null, null, null, null, null, 'Customer')
+INSERT INTO CUSTOMER(ID) VALUES(-1)
