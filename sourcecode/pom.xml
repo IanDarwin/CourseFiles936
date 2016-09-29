@@ -10,7 +10,7 @@
 	 *** This is the top-level build-everything POM, mainly of use to the course team
 	 ***
 	 *** If you are editing this file as part of the work in one of the exercises,
-	 *** you are in the wrong file; do not save your changes here!!!!!!!!!!!!!!!!!
+	 *** STOP RIGHT NOW, you are in the wrong file; DO NOT save any changes here!!!!!!!!!
 	 ***
 	 *** Team Notes: You can use this for 'mvn compile' and 'mvn clean';
 	 *** if you want to do 'mvn test' you have to be running mysql
@@ -19,11 +19,11 @@
 	 -->
 	<groupId>com.ticketmanor</groupId>
 	<artifactId>sourcecode</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0</version>
-    <name>Course 936 Parent Project</name>
+	<packaging>pom</packaging>
+	<version>1.0</version>
+	<name>Course 936 Parent Project</name>
 
-    <modules>
+	<modules>
 		<module>minimal</module>
 		<module>donow21solution</module>
 		<module>donow31solution</module>
@@ -38,5 +38,5 @@
 		<!-- Not ready yet <module>ex71solution</module> -->
 		<module>ex81solution</module>
 		<!-- There is no solution for ex91 because it is just copying one file in ClubList -->
-    </modules>
+	</modules>
 </project>
