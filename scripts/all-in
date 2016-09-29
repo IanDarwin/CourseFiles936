@@ -10,14 +10,19 @@
 GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons"
 # Dirs we have to do "mvn install"
 INSTALL_DIRS="TicketManorJava/datamodel makehandsons"
-# Dirs to just run mvn test in"
+# Dirs to just run "mvn test" in
 TEST_DIRS="CourseFiles/sourcecode/donow31solution CourseFiles/sourcecode/ex21solution CourseFiles/sourcecode/ex31solution jpademo"
-# Dirs we want to wildfly:deploy
+# Dirs we want to "wildfly:deploy"
 MWD_DIRS="TicketManorJava/ticketmanor-ee CourseFiles/sourcecode/ex43solution CourseFiles/sourcecode/ex51solution jsfdemo clublist"
-# Dirs we want to wildfly:deploy but must skip tests
+# Dirs we want to "wildfly:deploy" but must skip tests
 MWD_SKIPTESTS_DIRS="CourseFiles/sourcecode/ex41solution CourseFiles/sourcecode/ex42solution CourseFiles/sourcecode/ex61solution "
-# We undeploy this so students can have the fun of deploying it.
+# We undeploy what we deployed at the end, so students can have the fun of deploying it.
 UNDEPLOY_DIRS="TicketManorJava/ticketmanor-ee"
+for d in sourcecode/ex??solution; do
+	if [ -f $d/pom.xml ]; then
+		UNDEPLOY_DIRS="${UNDEPLOY_DIRS} $d"
+	fi
+done
 
 # These two CD's are intentional, test on Unix, run on Bash-on-Windows.
 cd
