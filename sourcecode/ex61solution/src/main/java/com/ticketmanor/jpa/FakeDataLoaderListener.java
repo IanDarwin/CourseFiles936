@@ -3,7 +3,6 @@ package com.ticketmanor.jpa;
 import javax.ejb.EJB;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 
 /** Load some fake data. Tried to make this a Singleton EJB
  * but WildFly didn't run its @PostConstruct method.
@@ -11,7 +10,6 @@ import javax.servlet.annotation.WebListener;
  * it from web.xml!
  * @author Ian Darwin
  */
-@WebListener
 public class FakeDataLoaderListener implements ServletContextListener {
 
 	@EJB FakeDataLoaderEjb ejb;

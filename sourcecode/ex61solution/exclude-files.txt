@@ -1,1 +1,1 @@
-EventsResource.java
+EventsBean.java
