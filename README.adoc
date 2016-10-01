@@ -4,6 +4,8 @@ This directory contains the web pages and most of the exercise projects for
 http://learningtree.com[Learning Tree]'s
 http://learningtree.com/936[Course 936, Enterprise Java Applications: JSF, EJB3, JSF and AJAX].
 
+This is for the I.1 Revision; do not try to use this on H.3 as the chapter structure has changed!
+
 All code is copyright (C) by Learning Tree International.
 
 This code won't do you much good unless you're taking the course.
