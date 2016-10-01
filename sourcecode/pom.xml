@@ -31,11 +31,12 @@
 		<module>ex31solution</module>
 		<module>ex41solution</module>
 		<module>ex42solution</module>
-		<module>ex43clientsolution</module>
-		<module>ex43solution</module>
 		<module>ex51solution</module>
+		<module>ex52solution</module>
+		<module>ex53solution</module>
+		<module>ex53clientsolution</module>
 		<module>ex61solution</module>
-		<!-- Not ready yet <module>ex71solution</module> -->
+		<module>ex71solution</module>
 		<module>ex81solution</module>
 		<!-- There is no solution for ex91 because it is just copying one file in ClubList -->
 	</modules>
