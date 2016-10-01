@@ -15,9 +15,15 @@ import org.junit.Test;
 import com.ticketmanor.model.Event;
 import com.ticketmanor.model.Movie;
 
+/**
+ * An EJB_Container test for the EventsEjb.
+ * Runs as a Unit test since it doesn't require deployment or
+ * a running server.
+ */
 public class EventsEjbTest {
 
-	@Test @Ignore("no provider found!")
+	@Test 
+	@Ignore("no provider found!")				// XXX
 	public void test() throws Exception {
 
 		final Properties p = new Properties();
