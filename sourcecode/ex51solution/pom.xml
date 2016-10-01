@@ -20,8 +20,13 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<javase.version>1.7</javase.version>
+		<javase.version>1.8</javase.version>
 		<javaee.version>7.0</javaee.version>
+		<maven.compiler.source>${javase.version}</maven.compiler.source>
+		<maven.compiler.target>${javase.version}</maven.compiler.target>
+		<maven.compiler.testSource>${javase.version}</maven.compiler.testSource>
+		<maven.compiler.testTarget>${javase.version}</maven.compiler.testTarget>
+		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
 		<hibernate.version>4.0.1.Final</hibernate.version>
 	</properties>
 
@@ -67,14 +72,21 @@
 	<build>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
 		<plugins>
-			<!-- Compiler plugin enforces Java compatibility and activates annotation processors -->
+
+			<!-- Configure failsafe plugin to run integration tests; not in by default -->
 			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.12.4</version>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 			<!-- Java EE AppServer: WildFly -->
