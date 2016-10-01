@@ -1,4 +1,4 @@
-package com.ticketmanor.client;
+package com.ticketmanor.service;
 
 import static org.junit.Assert.*;
 
