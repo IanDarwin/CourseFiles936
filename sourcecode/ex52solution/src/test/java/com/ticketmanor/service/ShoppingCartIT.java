@@ -6,13 +6,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 
 /**
- * Let's try to re-use all the tests in the ShoppingCartTestLocal
+ * Let's try to re-use all the tests in the ShoppingCartTest
  * by subclassing it.
  */
-public class RemoteEJBClientTest extends ShoppingCartTestLocal {
+public class ShoppingCartIT extends ShoppingCartTest {
 
 	private static final String LOOKUP_STRING = 
-		"ex42solution-1.0.0-SNAPSHOT/ShoppingCartEjb!com.ticketmanor.service.ShoppingCart";
+		"ex52solution-1.0.0-SNAPSHOT/ShoppingCartEjb!com.ticketmanor.service.ShoppingCart";
 
 	private static InitialContext ctx;
 	

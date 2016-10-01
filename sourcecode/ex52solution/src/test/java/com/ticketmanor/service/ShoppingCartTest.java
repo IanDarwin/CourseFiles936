@@ -21,7 +21,7 @@ import com.ticketmanor.model.Venue;
  * to deploy it into any kind of container.
  * @author Ian Darwin
  */
-public class ShoppingCartTestLocal {
+public class ShoppingCartTest {
 	
 	//T Examine the fields we have set up for you.
 	protected ShoppingCart cart;
