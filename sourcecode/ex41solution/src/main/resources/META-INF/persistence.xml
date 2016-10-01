@@ -10,7 +10,7 @@
 			<property name="eclipselink.target-database" value="MySQL" />
 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ex41.db" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ex31.db" /><!-- ex31 NOT A TYPO -->
 			<property name="javax.persistence.jdbc.user" value="student" />
 			<property name="javax.persistence.jdbc.password" value="student" />
 			<property name="eclipselink.logging.level.sql" value="FINE" />
