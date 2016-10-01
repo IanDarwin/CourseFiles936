@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ex41</name>
-	<comment>project placeholder - work is in jpademo</comment>
-	<projects> </projects>
-	<buildSpec/>
-	<natures>
-	</natures>
+  <name>ex41solution</name>
+  <comment></comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
 </projectDescription>
