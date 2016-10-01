@@ -16,13 +16,13 @@ TEST_DIRS="CourseFiles/sourcecode/donow31solution
 	CourseFiles/sourcecode/ex31solution 
 	CourseFiles/sourcecode/ex41solution 
 	CourseFiles/sourcecode/ex42solution 
+	CourseFiles/sourcecode/ex53clientsolution 
 	jpademo"
 # Dirs we want to "wildfly:deploy"
 MWD_DIRS="TicketManorJava/ticketmanor-ee 
 	CourseFiles/sourcecode/ex51solution
 	CourseFiles/sourcecode/ex52solution
 	CourseFiles/sourcecode/ex53solution
-	CourseFiles/sourcecode/ex53clientsolution 
 	CourseFiles/sourcecode/ex61solution 
 	CourseFiles/sourcecode/ex71solution 
 	jsfdemo clublist"
