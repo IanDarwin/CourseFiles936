@@ -27,7 +27,8 @@ public class CreditCardValidate implements CreditValidateInterface {
 		return sb.toString();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * Validate the card; see algorithm.txt for details on the algorithm.
 	 * @see com.ticketmanor.service.CreditValidateInterface#isValidCard(java.lang.String)
 	 */
 	@Override
