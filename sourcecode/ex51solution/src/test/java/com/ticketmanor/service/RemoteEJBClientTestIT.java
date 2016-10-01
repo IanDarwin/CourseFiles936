@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import com.ticketmanor.service.CreditValidateInterface;
 
-public class RemoteEJBClientTest {
+public class RemoteEJBClientTestIT {
 
 	private static final String LOOKUP_STRING = 
 		"ex41solution-1.0.0-SNAPSHOT/CreditCardValidate!com.ticketmanor.service.CreditValidateInterface";
