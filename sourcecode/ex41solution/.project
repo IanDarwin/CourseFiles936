@@ -2,9 +2,8 @@
 <projectDescription>
 	<name>ex41</name>
 	<comment>project placeholder - work is in jpademo</comment>
-	<projects>
-	</projects>
-	<buildSpec>
+	<projects> </projects>
+	<buildSpec/>
 	<natures>
 	</natures>
 </projectDescription>
