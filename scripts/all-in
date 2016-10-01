@@ -13,9 +13,15 @@ INSTALL_DIRS="TicketManorJava/datamodel makehandsons"
 # Dirs to just run "mvn test" in
 TEST_DIRS="CourseFiles/sourcecode/donow31solution CourseFiles/sourcecode/ex21solution CourseFiles/sourcecode/ex31solution jpademo"
 # Dirs we want to "wildfly:deploy"
-MWD_DIRS="TicketManorJava/ticketmanor-ee CourseFiles/sourcecode/ex43solution CourseFiles/sourcecode/ex51solution jsfdemo clublist"
+MWD_DIRS="TicketManorJava/ticketmanor-ee 
+	CourseFiles/sourcecode/ex4{1,2}solution 
+	CourseFiles/sourcecode/ex5{1,2,3}solution jsfdemo clublist 
+	CourseFiles/sourcecode/ex53clientsolution 
+	CourseFiles/sourcecode/ex61solution 
+	CourseFiles/sourcecode/ex71solution 
+	jsfdemo clublist"
 # Dirs we want to "wildfly:deploy" but must skip tests
-MWD_SKIPTESTS_DIRS="CourseFiles/sourcecode/ex41solution CourseFiles/sourcecode/ex42solution CourseFiles/sourcecode/ex61solution "
+MWD_IT_TESTS_DIRS="CourseFiles/sourcecode/ex{51,52,71}"
 # We undeploy what we deployed at the end, so students can have the fun of deploying it.
 UNDEPLOY_DIRS="TicketManorJava/ticketmanor-ee"
 for d in sourcecode/ex??solution; do
@@ -73,9 +79,7 @@ do
 	cd $d
 	echo === $d ===
 	# Build with Maven
-	mvn -DskipTests clean wildfly:deploy
-	# Now the tests are supposed to run
-	mvn test
+	mvn verify
 	)
 done
 
