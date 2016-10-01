@@ -21,19 +21,15 @@ public class CommentSender {
 		Context ctx = new InitialContext();
 		ConnectionFactory connFactory = 
 			(ConnectionFactory) ctx.lookup("jms/RemoteConnectionFactory");
-		System.out.println("ConnectionFactory OK");
 		Destination destination = 
 			(Destination) ctx.lookup(Constants.QUEUE_NAME);
-		System.out.println("Destination OK");
 		String username = "testuser", password = "4jelBas";
 		Connection connection = connFactory.createConnection(
 				username, password);
-		System.out.println("Connection OK");
 		Session session = connection.createSession(false,
 				Session.AUTO_ACKNOWLEDGE);
-		System.out.println("JMS Session OK");
 		MessageProducer producer = session.createProducer(destination);
-		System.out.println("MessageProducer OK");
+		System.out.println("Boilerplate Setup Finished OK");
 		
 		// Instantiate a FeedbackForm object, populate its fields
 		// with (possibly whimsical) test data
@@ -66,6 +62,5 @@ public class CommentSender {
 		
 		System.err.println("Warning: JMS is one-way communication, so a green bar\n" + 
 				"is no guarantee of success. Check the server log file!");
-		
 	}
 }
