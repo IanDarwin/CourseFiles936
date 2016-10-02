@@ -1,5 +1,6 @@
 package com.ticketmanor;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +16,7 @@ public class Customer {
 	// REMEMBER TO ANNOTATE IT
 	// Use Eclipse to generate accessors for it.
 	//-
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private Address address;
 	//+
 	// Delete city and country
