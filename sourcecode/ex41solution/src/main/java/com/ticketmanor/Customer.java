@@ -4,13 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Customer {
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO) long id;
 	String firstName, lastName;
+	// T Create a private Address field 
+	// REMEMBER TO ANNOTATE IT
+	// Use Eclipse to generate accessors for it.
 	//-
+	@OneToOne
 	private Address address;
 	//+
 	// Delete city and country
