@@ -1,3 +1,15 @@
-== Configs
+= Configs
 
 Storehouse for key configuration files used in the deployment.
+
+== MySQL
+
+cd to wildfly base directory
+
+mkdir -p modules/system/layers/base/com/mysql/main
+
+Copy mysql-module.xml and the driver jar of the same version number into that directory.
+
+edit mysql-driver.txt into standalone/config/standaloneXXX.xml # whichever one you're using!
+
+Cross your toes, sacrifice a goatee, and restart the server.
