@@ -34,7 +34,8 @@ MWD_IT_TESTS_DIRS="
 UNDEPLOY_DIRS="TicketManorJava/ticketmanor-ee"
 for dir in sourcecode/ex*solution; do
 	if [ -f ${dir}/pom.xml ]; then
-		UNDEPLOY_DIRS="${UNDEPLOY_DIRS} ${dir}"
+		# Script is run in CourseFiles but starts in .. (aka '/'), so prepend
+		UNDEPLOY_DIRS="${UNDEPLOY_DIRS} CourseFiles/${dir}"
 	fi
 done
 
