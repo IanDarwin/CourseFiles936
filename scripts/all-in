@@ -119,7 +119,7 @@ echo "Showing dependency tree so dependency plugins available offline..."
 (cd ClubList; mvn dependency:tree)
 
 # Record the all-in run date as a kind of version control
-(echo all-in run date; date) > version.html
+(echo all-in run date; date) > CourseFiles/version.html
 
 echo "
 
