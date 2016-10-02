@@ -33,7 +33,7 @@ MWD_IT_TESTS_DIRS="
 # We undeploy what we deployed at the end, so students can have the fun of deploying it.
 UNDEPLOY_DIRS="TicketManorJava/ticketmanor-ee"
 for dir in sourcecode/ex*solution; do
-	if [ -f ${dir}/pom.xml ]; then
+	if [ grep -s wildfly-plugin ${dir}/pom.xml ]; then
 		# Script is run in CourseFiles but starts in .. (aka '/'), so prepend
 		UNDEPLOY_DIRS="${UNDEPLOY_DIRS} CourseFiles/${dir}"
 	fi
