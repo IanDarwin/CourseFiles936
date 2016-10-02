@@ -102,9 +102,14 @@ do
 	)
 done
 
-# Now starts the cleanup
+
+# Now the cleanup
 for dir in ${UNDEPLOY_DIRS}
 do
+	# Temp Debug
+	echo ////////////
+	pwd
+	echo ////////////
 	(
 	cd ${dir}
 	echo === undeploy ${dir} ===
