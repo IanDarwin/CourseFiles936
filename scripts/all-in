@@ -118,3 +118,10 @@ echo "Showing dependency tree so dependency plugins available offline..."
 
 # Record the all-in run date as a kind of version control
 (echo all-in run date; date) > version.html
+
+echo "
+
+------------------------- All done! -------------------------
+
+Rememeber to open all eclipse projects and do Project->Clean->All Projects!
+"
