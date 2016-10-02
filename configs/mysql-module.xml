@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="urn:jboss:domain:datasources:2.0" name="com.mysql">
     <resources>
-	<resource-root path="mysql-connector-java-5.1.34.jar"/>
+	<resource-root path="mysql-connector-java-5.1.33.jar"/>
     </resources>
     <dependencies>
 	<module name="javax.api"/>
