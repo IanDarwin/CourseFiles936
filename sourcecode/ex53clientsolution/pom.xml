@@ -5,10 +5,63 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ticketmanor</groupId>
-	<artifactId>ex42solution</artifactId>
+	<artifactId>ex53clientsolution</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
+	<inceptionYear>2015</inceptionYear>
 
-	<name>No Project Here!!</name>
+	<name>TicketManor's Business Partner - MDB client</name>
+	<url>https://learningtree.com/936</url>
+	
+	<!-- Note: the client here is a JNDI client
+	so it must provide the jndi.properties file to be
+	able to connect to the server...
+	 -->
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<javase.version>1.8</javase.version>
+		<maven.compiler.source>${javase.version}</maven.compiler.source>
+		<maven.compiler.target>${javase.version}</maven.compiler.target>
+		<maven.compiler.testSource>${javase.version}</maven.compiler.testSource>
+		<maven.compiler.testTarget>${javase.version}</maven.compiler.testTarget>
+		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
+		<hibernate.version>4.0.1.Final</hibernate.version>
+	</properties>
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>com.ticketmanor</groupId>
+			<artifactId>datamodel</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.jms</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+
+		<!-- App-server-dependent Client Stuff -->
+		<dependency>
+			<groupId>org.wildfly</groupId>
+			<artifactId>wildfly-ejb-client-bom</artifactId>
+			<version>8.2.0.Final</version>
+			<type>pom</type>
+		</dependency>
+
+		<!--
+		 ***  WARNING!!! The version of HornetMQ used here MUST agree with what
+		 *** the WildFly AS is using (which it prints out at start up).
+		 -->
+		<dependency>
+    		<groupId>org.hornetq</groupId>
+    		<artifactId>hornetq-jms-client</artifactId>
+    		<version>2.4.5.Final</version>
+		</dependency>
+		
+	</dependencies>
 
 </project>
