@@ -32,9 +32,9 @@ MWD_IT_TESTS_DIRS="
 	CourseFiles/sourcecode/ex71solution"
 # We undeploy what we deployed at the end, so students can have the fun of deploying it.
 UNDEPLOY_DIRS="TicketManorJava/ticketmanor-ee"
-for d in sourcecode/ex*solution; do
-	if [ -f $d/pom.xml ]; then
-		UNDEPLOY_DIRS="${UNDEPLOY_DIRS} $d"
+for dir in sourcecode/ex*solution; do
+	if [ -f ${dir}/pom.xml ]; then
+		UNDEPLOY_DIRS="${UNDEPLOY_DIRS} ${dir}"
 	fi
 done
 
@@ -53,7 +53,7 @@ do
 	git pull
 	)
 done
-
+unset repo
 
 # Install things we need installed
 for dir in ${INSTALL_DIRS}
@@ -72,42 +72,42 @@ rm -rf ex??/src/* ex*client/src/* donow??/src/*
 )
 
 # Deploy the things that must be deployed;
-for d in ${MWD_DIRS}
+for dir in ${MWD_DIRS}
 do
 	(
-	cd $d
-	echo === Deploy $d ===
+	cd ${dir}
+	echo === Deploy ${dir} ===
 	# Build with Maven
 	mvn clean wildfly:deploy
 	)
 done
-for d in ${MWD_IT_TESTS_DIRS}
+for dir in ${MWD_IT_TESTS_DIRS}
 do
 	(
-	cd $d
-	echo === Integration Test $d ===
+	cd ${dir}
+	echo === Integration Test ${dir} ===
 	# Build with Maven
 	mvn verify
 	)
 done
 
 # Run Maven Test in remaining, which ensures the pre-reqs are present.
-for d in ${TEST_DIRS}
+for dir in ${TEST_DIRS}
 do
 	(
-	cd $d
-	echo === mvn test $d ===
+	cd ${dir}
+	echo === mvn test ${dir} ===
 	# Build with Maven
 	mvn clean test
 	)
 done
 
 # Now starts the cleanup
-for proj in ${UNDEPLOY_DIRS}
+for dir in ${UNDEPLOY_DIRS}
 do
 	(
-	cd $proj
-	echo === undeploy ${repo} ===
+	cd ${dir}
+	echo === undeploy ${dir} ===
 	mvn wildfly:undeploy clean
 	)
 done
