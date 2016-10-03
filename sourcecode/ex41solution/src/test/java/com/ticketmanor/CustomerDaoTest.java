@@ -41,7 +41,9 @@ public class CustomerDaoTest {
 			em.close();
 		}
 	}
-	//+
+	//T Write a testSaveCustomer method: create a customer and an address,
+	// tie them together, get an entitymanager and save the customer
+	// (rememeber to create a transaction around your change to the database)
 
 	//-
 	@Test
@@ -67,7 +69,9 @@ public class CustomerDaoTest {
 		assertEquals("Customer first name stored", "John", cust.getFirstName());
 		assertEquals("Customer last name stored", "Doe", cust.getLastName());
 	}
+	//+
 
+	//T Examine these methods briefly (no code changes needed)
 	@Test(expected=NullPointerException.class)
 	public void testSaveNullCustomer() {
 		em = emf.createEntityManager();
@@ -82,13 +86,9 @@ public class CustomerDaoTest {
 		testSubject.saveCustomer(em, cust);
 	}
 
-	//+
 	//T Add any number of other test methods, similar to the above
 	// but exercising different test ideas, as discussed in the manual.
-	
-	//+
-	//T Add any number of other test methods, similar to the above
-	// but exercising different test ideas, as discussed in the manual.
+	// If you get lost, see the solution for some approaches.
 
 	//-
 	@Test
