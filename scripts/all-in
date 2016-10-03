@@ -6,6 +6,8 @@
 
 # DO NOT RUN mid-week as it will wipe out some or all of the student's work!!!
 
+CN_REV="I.1"
+
 # All dirs must be up-to-date:
 GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons"
 # Dirs we have to do "mvn install"
@@ -130,7 +132,7 @@ echo "Showing dependency tree so dependency plugins available offline..."
 (cd ClubList; mvn dependency:tree)
 
 # Record the all-in run date as a kind of version control
-(echo all-in run date; date) > CourseFiles/version.html
+(echo Version: all-in for Course Notes ${CN_REV} run on date; date) > CourseFiles/version.html
 
 echo "
 
