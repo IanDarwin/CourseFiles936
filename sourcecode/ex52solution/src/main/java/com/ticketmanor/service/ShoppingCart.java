@@ -7,9 +7,15 @@ import javax.ejb.Remote;
 import com.ticketmanor.model.OrderItem;
 import com.ticketmanor.model.Sellable;
 
+//T Annotate this interface for remote ejb access
+//-
 @Remote
+//+
 public interface ShoppingCart {
 
+	// T REPLACE or POPULATE this interface with the methods in ShoppingCartEJB.
+
+	//-
 	/** Add the item to the cart; if the card already has an OrderItem
 	 * for this Sellable we increment its quantity, else, we make
 	 * a new OrderItem for it, and stash that in the card.
@@ -50,5 +56,5 @@ public interface ShoppingCart {
 	 * @return The price in $ of all items.
 	 */
 	public abstract double getTotalPrice();
-
+	//+
 }
