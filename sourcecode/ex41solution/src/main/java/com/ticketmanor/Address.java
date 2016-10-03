@@ -8,12 +8,17 @@ import javax.persistence.Id;
 @Entity
 public class Address {
 	
+	//T Create an id field as well as fields like street, city, state and country.
+	//-
 	@Id @GeneratedValue(strategy=GenerationType.AUTO) long id;
 	String street;
 	String city;
 	String state;
 	String country;
+	//+
 	
+	//T Get your IDE to generate accessors for all.
+	//-
 	public String getStreet() {
 		return street;
 	}
@@ -41,5 +46,7 @@ public class Address {
 	public long getId() {
 		return id;
 	}
+	//-
 	
+	//T Optional: generate hashCode/equals, toString(), etc.
 }

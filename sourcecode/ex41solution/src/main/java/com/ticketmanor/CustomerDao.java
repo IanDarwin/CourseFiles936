@@ -11,6 +11,13 @@ public class CustomerDao {
 	public Long saveCustomer(EntityManager em, Customer cust) {
 		long newId = -1;
 		// Sorry, we didn't have time to finish this -- Acme Outsourcing
+		
+		//T - check that names are not null, throw an exception if so.
+
+		//T - save the Customer using the normal JPA method for saving
+
+		//T - call the EntityManager flush() method before calling getId().
+
 		//-
 		if (cust == null) {
 			throw new NullPointerException("Customer may not be null");
@@ -25,12 +32,6 @@ public class CustomerDao {
 		
 		newId = cust.getId();
 		//+
-
-		// Hint - check that names are not null, throw an exception if so.
-
-		// Hint - save the Customer using the normal JPA method for saving
-
-		// Hint - call the EntityManager flush() method before calling getId().
 
 		return newId;
 	}

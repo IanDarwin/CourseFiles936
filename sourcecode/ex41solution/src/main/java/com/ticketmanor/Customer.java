@@ -11,15 +11,24 @@ import javax.persistence.OneToOne;
 public class Customer {
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO) long id;
+	
 	String firstName, lastName;
-	// T Create a private Address field 
+	//T Create a private Address field 
 	// REMEMBER TO ANNOTATE IT
 	// Use Eclipse to generate accessors for it.
 	//-
 	@OneToOne(cascade=CascadeType.ALL)
 	private Address address;
+	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	//+
-	// Delete city and country
+
+	//T Delete city and country, and their accessors
 	String city;
 	String country;
 	
@@ -35,14 +44,7 @@ public class Customer {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	//-
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	//+
+
 	public String getCity() {
 		return city;
 	}
@@ -55,6 +57,8 @@ public class Customer {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	
+	// For JPA
 	public long getId() {
 		return id;
 	}
