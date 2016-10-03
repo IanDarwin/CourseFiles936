@@ -22,7 +22,7 @@ public class ShoppingCartIT extends ShoppingCartTest {
 		ctx = new InitialContext();
 	}
 	
-	// T Create an @Before method to look up the shopping cart
+	//T Create an @Before method to look up the shopping cart
 	// and assign it to the existing "cart", using the LOOKUP_STRING
 	// defined above. 
 	// H Ideally, override parent's @Before method to reduce overhead
@@ -33,5 +33,5 @@ public class ShoppingCartIT extends ShoppingCartTest {
 	}
 	//+
 
-	// T If you followed our advice above, you don't have to write any @Test methods!
+	//T If you followed our advice above, you don't have to write any @Test methods!
 }

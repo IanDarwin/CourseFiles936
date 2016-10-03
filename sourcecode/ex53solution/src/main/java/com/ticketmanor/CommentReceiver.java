@@ -47,7 +47,7 @@ public class CommentReceiver
 	@Override
 	//+
 	public void onMessage(Message msg) {
-		// T Note the following validity-checking test (no code change needed here)
+		//T Note the following validity-checking test (no code change needed here)
 		if (!(msg instanceof ObjectMessage)) {
 			System.err.println(
 				"Wanted ObjectMessage but got sent a " + msg.getClass().getSimpleName());

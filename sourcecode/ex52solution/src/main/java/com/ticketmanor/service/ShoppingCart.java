@@ -13,7 +13,7 @@ import com.ticketmanor.model.Sellable;
 //+
 public interface ShoppingCart {
 
-	// T REPLACE or POPULATE this interface with the methods in ShoppingCartEJB.
+	//T REPLACE or POPULATE this interface with the methods in ShoppingCartEJB.
 
 	//-
 	/** Add the item to the cart; if the card already has an OrderItem
