@@ -47,19 +47,22 @@ public class CommentReceiver
 	@Override
 	//+
 	public void onMessage(Message msg) {
+		// T Note the following validity-checking test (no code change needed here)
 		if (!(msg instanceof ObjectMessage)) {
 			System.err.println(
 				"Wanted ObjectMessage but got sent a " + msg.getClass().getSimpleName());
 			return;
 		}
+
 		//T Recall that the message sender sends us a wrapped object
-		// Convert the incoming object to the correct type, extract
-		// the "FeedbackForm" entity from it, display the key fields using
-		// System.out.println(), and persist it to the database,
+		// Convert (downcast) the incoming Message to the correct subtype and extract
+		// the "FeedbackForm" entity from it (needs another downcast), then display the 
+		// key fields using System.out.println(), and persist it to the database,
 		// using the provided EntityManager.
+		// Do all this inside a try-catch for JMS
 		//-
-		ObjectMessage wrapper = (ObjectMessage) msg;
 		try {
+			ObjectMessage wrapper = (ObjectMessage) msg;
 			FeedbackForm comment = (FeedbackForm) wrapper.getObject();
 			System.out.println("Got sender: " + comment.getCustName() + "--" + comment.getCustEmail());
 			System.out.println("Got comment: " + comment.getComment());
