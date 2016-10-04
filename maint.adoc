@@ -17,7 +17,9 @@ be done if chapters are moved in the CN), remember:
 	If that looks right, run through xargs replace:
 	grep -lr ex51 ex61solution/ | xargs replace ex51 ex61
 
+	This will however break datasources!
+
 == Misc
 
 If you change and push the all-in script, you must git pull in
-this repo before running it under Windows.
+this repo before running it.
