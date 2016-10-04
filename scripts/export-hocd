@@ -1,0 +1,39 @@
+#!/bin/sh
+
+cd
+
+DIRS="CourseFiles TicketManorJava jpademo jsfdemo clublist"
+TARGET_DIR=/tmp/936HOCD
+TARGET_ZIP=/tmp/936HOCD.zip
+
+rm -rf ${TARGET_DIR}
+mkdir  ${TARGET_DIR}
+
+set -ex
+
+for d in ${DIRS}
+do
+	(
+	cd $d
+	pwd
+	rm -rf bin target
+	git pull
+	git status | grep ahead && exit
+	mkdir ${TARGET_DIR}/${d}/
+	git checkout-index -a --prefix=${TARGET_DIR}/${d}/
+	)
+done
+
+cd ${TARGET_DIR}/
+
+# Generate the donow/exercise folders
+(
+	cd CourseFiles/sourcecode
+	makehandsons *solution
+)
+
+# Finally, zip it up!
+ln CourseFiles/configs/zip-readme.txt README.txt
+rm -f ${TARGET_ZIP}
+zip -rv ${TARGET_ZIP} README.txt ${DIRS}
+rm README.txt
