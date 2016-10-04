@@ -41,9 +41,11 @@ public class CustomerDaoTest {
 			em.close();
 		}
 	}
+
 	//T Write a testSaveCustomer method: create a customer and an address,
-	// tie them together, get an entitymanager and save the customer
-	// (rememeber to create a transaction around your change to the database)
+	// tie them together, get an entitymanager and save the customer.
+	// Rememeber to create a transaction around your change to the database.
+	// Also remember to annotate your test method!
 
 	//-
 	@Test
