@@ -1,12 +1,12 @@
 # Bash scripts need unix endings even on Windoze
 scripts/*    text merge=union eol=lf
-# Tell Github to ignore non-source files
+# Tell Github to ignore non-source files in bulk-ranking source language:
 # Included JavaScript
 sourcecode/ex61solution/src/main/webapp/js/libs/* linguist-vendored
 # Large HTML files generated from AsciiDoc
 troubleshooting.html linguist-documentation
 sourcecode/ex61solution/src/main/webapp/realticketsales.html linguist-documentation
-# API Dox
+# API Docs
 apidocs/javaee/com/ticketmanor/* linguist-documentation
 apidocs/javaee/com/ticketmanor/csrchat/* linguist-documentation
 apidocs/javaee/com/ticketmanor/csrchat/class-use/* linguist-documentation
