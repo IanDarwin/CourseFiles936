@@ -3,3 +3,5 @@ scripts/*    text merge=union eol=lf
 # Tell Github to ignore non-source files
 sourcecode/ex61solution/src/main/webapp/js/libs/* linguist-vendored
 apidocs/javaee/com/ticketmanor/* linguist-documentation
+sourcecode/ex61solution/src/main/webapp/realticketsales.html linguist-generated
+troubleshooting.html linguist-generated
