@@ -1,4 +1,5 @@
 # Bash scripts need unix endings even on Windoze
 scripts/*    text merge=union eol=lf
 # Tell Github to ignore non-source files
+sourcecode/ex61solution/src/main/webapp/js/libs/* linguist-vendored
 apidocs/javaee/com/ticketmanor/* linguist-documentation
