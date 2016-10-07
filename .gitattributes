@@ -21,3 +21,6 @@ apidocs/javaee/com/ticketmanor/service/class-use/* linguist-documentation
 apidocs/javaee/com/ticketmanor/ui/* linguist-documentation
 apidocs/javaee/com/ticketmanor/ui/jsf/* linguist-documentation
 apidocs/javaee/com/ticketmanor/ui/jsf/class-use/* linguist-documentation
+#
+# EXPERMIMENTAL
+sourcecode/ex61solution/src/main/webapp/* linguist-documentation
