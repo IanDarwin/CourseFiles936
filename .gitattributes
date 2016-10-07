@@ -7,6 +7,7 @@ sourcecode/ex61solution/src/main/webapp/js/libs/* linguist-vendored
 troubleshooting.html linguist-documentation
 sourcecode/ex61solution/src/main/webapp/realticketsales.html linguist-documentation
 # API Docs
+apidocs/* linguist-documentation
 apidocs/javaee/com/ticketmanor/* linguist-documentation
 apidocs/javaee/com/ticketmanor/csrchat/* linguist-documentation
 apidocs/javaee/com/ticketmanor/csrchat/class-use/* linguist-documentation
