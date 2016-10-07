@@ -8,20 +8,3 @@ troubleshooting.html linguist-documentation
 sourcecode/ex61solution/src/main/webapp/realticketsales.html linguist-documentation
 # API Docs
 apidocs/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/csrchat/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/csrchat/class-use/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/dao/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/dao/class-use/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/jpa/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/jpa/class-use/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/rest/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/rest/class-use/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/service/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/service/class-use/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/ui/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/ui/jsf/* linguist-documentation
-# apidocs/javaee/com/ticketmanor/ui/jsf/class-use/* linguist-documentation
-#
-# EXPERMIMENTAL
-sourcecode/ex61solution/src/main/webapp/* linguist-documentation
