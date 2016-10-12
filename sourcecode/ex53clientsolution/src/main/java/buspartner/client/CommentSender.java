@@ -50,8 +50,8 @@ public class CommentSender {
 		producer.send(message);
 		//+
 		
-		// THIS WILL CAUSE AN ERROR IN THE LOG FILE ON THE SERVER.
-		// THIS IS INTENTIONAL!
+		// THIS SECOND MESSAGE IS TO CAUSE AN ERROR IN THE LOG FILE ON THE SERVER.
+		// THIS IS INTENTIONAL - WE ARE TESTING YOUR MessageListener's ERROR HANDLING!
 		// It's just here to test that you detect non-ObjectMessages in the queue.
 		TextMessage message2 = 
 			session.createTextMessage("Here is a TextMessage just to razz you");
@@ -60,7 +60,7 @@ public class CommentSender {
 		connection.close();
 		session.close();
 		
-		System.err.println("Warning: JMS is one-way communication, so a green bar\n" + 
+		System.err.println("Warning: JMS is one-way communication, so 'no news'\n" + 
 				"is no guarantee of success. Check the server log file!");
 	}
 }

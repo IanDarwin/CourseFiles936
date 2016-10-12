@@ -41,7 +41,8 @@ public class CommentReceiver
 	//T Add two annotations; one to ensure that you are overriding
 	// a method correctly (as per the first todo step above) and
 	// the second that will ensure that this method's results
-	// get committed to the database at the end of the method.
+	// get committed to the database at the end of the method,
+	// i.e., that a transaction is required for this method.
 	//-
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	@Override
@@ -59,7 +60,7 @@ public class CommentReceiver
 		// the "FeedbackForm" entity from it (needs another downcast), then display the 
 		// key fields using System.out.println(), and persist it to the database,
 		// using the provided EntityManager.
-		// Do all this inside a try-catch for JMS
+		// Do all this inside a try-catch for JMS-specific exception(s).
 		//-
 		try {
 			ObjectMessage wrapper = (ObjectMessage) msg;
