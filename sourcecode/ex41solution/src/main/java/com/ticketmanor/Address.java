@@ -46,7 +46,7 @@ public class Address {
 	public long getId() {
 		return id;
 	}
-	//-
+	//+
 	
 	//T Optional: generate hashCode/equals, toString(), etc.
 }
