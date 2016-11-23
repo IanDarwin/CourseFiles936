@@ -1,6 +1,7 @@
 package com.ticketmanor;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -64,12 +65,13 @@ public class CustomerDaoTest {
 		testSubject.saveCustomer(em, cust);
 		entityTransaction.commit();
 		em.close();
-		long id = cust.getId();
-		assertTrue("Customer id was not set", id > 0);
-		id = cust.getAddress().getId();
-		assertTrue("Address id was not set", id > 0);
+		long customerId = cust.getId();
+		assertTrue("Customer id was not set", customerId > 0);
+		long addressId = cust.getAddress().getId();
+		assertTrue("Address id was not set", addressId > 0);
 		em = emf.createEntityManager();
-		cust = em.find(Customer.class, id);
+		cust = em.find(Customer.class, customerId);
+		assertNotNull("Find Saved Customer by ID " + customerId, cust);
 		assertEquals("Customer first name stored", "John", cust.getFirstName());
 		assertEquals("Customer last name stored", "Doe", cust.getLastName());
 		assertEquals("Address City stored", "Darston", cust.getAddress().getCity());
