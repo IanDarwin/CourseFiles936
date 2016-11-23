@@ -77,6 +77,8 @@ public class CustomerDaoTest {
 	//+
 
 	//T Examine these methods briefly (no code changes needed)
+	// Note that @Test(expected= allows us to test error handling
+	// WITHOUT having to write try/catch and report on errors
 	@Test(expected=NullPointerException.class)
 	public void testSaveNullCustomer() {
 		em = emf.createEntityManager();
@@ -93,7 +95,7 @@ public class CustomerDaoTest {
 
 	//T Add any number of other test methods, similar to the above
 	// but exercising different test ideas, as discussed in the manual.
-	// If you get lost, see the solution for some approaches.
+	// If you get lost, see the web hints for some approaches.
 
 	//-
 	@Test
