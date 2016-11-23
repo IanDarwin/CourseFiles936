@@ -44,7 +44,7 @@ public class CustomerDaoTest {
 
 	//T Write a testSaveCustomer method: create a customer and an address,
 	// tie them together, get an entitymanager and save the customer.
-	// Rememeber to create a transaction around your change to the database.
+	// Remember to create a transaction around your change to the database.
 	// Also remember to annotate your test method!
 
 	//-
@@ -65,11 +65,14 @@ public class CustomerDaoTest {
 		entityTransaction.commit();
 		em.close();
 		long id = cust.getId();
-		assertTrue("Customer id was not set", id>0);
+		assertTrue("Customer id was not set", id > 0);
+		id = cust.getAddress().getId();
+		assertTrue("Address id was not set", id > 0);
 		em = emf.createEntityManager();
 		cust = em.find(Customer.class, id);
 		assertEquals("Customer first name stored", "John", cust.getFirstName());
 		assertEquals("Customer last name stored", "Doe", cust.getLastName());
+		assertEquals("Address City stored", "Darston", cust.getAddress().getCity());
 	}
 	//+
 
