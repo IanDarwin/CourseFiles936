@@ -33,6 +33,7 @@ public class CustomerDaoTest {
 
 	@Before
 	public void setUp() throws Exception {
+		em = emf.createEntityManager();
 		testSubject = new CustomerDao();
 	}
 
@@ -53,7 +54,6 @@ public class CustomerDaoTest {
 	//-
 	@Test
 	public void testSaveCustomer() {
-		em = emf.createEntityManager();
 		Customer cust = new Customer();
 		cust.setFirstName("John");
 		cust.setLastName("Doe");
@@ -72,14 +72,12 @@ public class CustomerDaoTest {
 
 	@Test(expected=NullPointerException.class)
 	public void testSaveNullCustomer() {
-		em = emf.createEntityManager();
 		Customer cust = null;
 		testSubject.saveCustomer(em, cust);
 	}
 
 	@Test(expected=NullPointerException.class)
 	public void testSaveNoNameCustomer() {
-		em = emf.createEntityManager();
 		Customer cust = new Customer();
 		testSubject.saveCustomer(em, cust);
 	}
@@ -95,7 +93,6 @@ public class CustomerDaoTest {
 	//-
 	@Test
 	public void testRunQuery(){
-		em = emf.createEntityManager();
 		Customer cust = new Customer();
 		cust.setFirstName("John");
 		cust.setLastName("Doe");
@@ -115,7 +112,6 @@ public class CustomerDaoTest {
 	
 	@Test
 	public void testQueryFirstAndLastName(){
-		em = emf.createEntityManager();
 		Customer cust = new Customer();
 		cust.setFirstName("John");
 		cust.setLastName("Doe");
