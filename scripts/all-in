@@ -93,7 +93,7 @@ do
 	cd ${dir}
 	echo === Integration Test ${dir} ===
 	# Build with Maven
-	mvn verify
+	mvn clean verify
 	)
 done
 
@@ -108,8 +108,7 @@ do
 	)
 done
 
-
-# Now the cleanup
+# Now clean up
 for dir in ${CLEAN_DIRS}
 do
 	(
@@ -138,5 +137,5 @@ echo "
 
 ------------------------- All done! -------------------------
 
-Rememeber to open all eclipse projects and do Project->Clean->All Projects!
+Remember to open all Eclipse projects, do Project->Clean->All Projects, close all projects again!
 "
