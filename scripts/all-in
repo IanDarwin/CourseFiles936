@@ -93,7 +93,7 @@ do
 	cd ${dir}
 	echo === Integration Test ${dir} ===
 	# Build with Maven
-	mvn clean verify
+	mvn clean wildfly:deploy verify
 	)
 done
 
