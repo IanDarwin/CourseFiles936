@@ -1,5 +1,9 @@
 package events;
 
+/**
+ * Simplified data model class for CDI Events Demo
+ * @author Ian Darwin
+ */
 public class Recipe {
 	
 	int id = 42;
