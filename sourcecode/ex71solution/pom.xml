@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>REST Service for TicketManor</name>
+	<name>LT-JaveEE REST Service for TicketManor</name>
 	<url>https://learningtree.com/936</url>
 
 	<properties>

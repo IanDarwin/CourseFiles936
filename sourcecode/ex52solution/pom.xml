@@ -10,7 +10,7 @@
 	<packaging>war</packaging>
 	<inceptionYear>2015</inceptionYear>
 
-	<name>TicketManor Stateful Session Bean</name>
+	<name>LT-JaveEE Stateful Session Bean</name>
 	<url>https://learningtree.com/936</url>
 	
 	<properties>

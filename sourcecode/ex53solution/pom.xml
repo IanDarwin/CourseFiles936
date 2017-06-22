@@ -10,7 +10,7 @@
 	<packaging>war</packaging>
 	<inceptionYear>2015</inceptionYear>
 
-	<name>TicketManor MDB service and test</name>
+	<name>LT-JaveEE TicketManor MDB service and test</name>
 	<url>https://learningtree.com/936</url>
 	
 	<!-- Note: the "client" here is a test client, so it is

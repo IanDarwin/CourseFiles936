@@ -10,7 +10,7 @@
 	<packaging>jar</packaging>
 	<inceptionYear>2015</inceptionYear>
 
-	<name>TicketManor's Business Partner - MDB client</name>
+	<name>LT-JaveEE TicketManor's Business Partner - MDB client</name>
 	<url>https://learningtree.com/936</url>
 	
 	<!-- Note: the client here is a JNDI client

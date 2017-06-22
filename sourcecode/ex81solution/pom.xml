@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 	<inceptionYear>2015</inceptionYear>
 
-	<name>Container Managed Security</name>
+	<name>LT-JaveEE Container Managed Security</name>
 	<url>https://learningtree.com/936</url>
 
 	<properties>
