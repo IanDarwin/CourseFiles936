@@ -19,9 +19,7 @@
 				<!-- TODO Put your DataTable here -->
 
 				<!-- //- -->
-				<h:outputText rendered="#{empty eventsBean.resultList}"
-					value="No events currently selected"/>
-				<p:dataTable rendered="#{!empty eventsBean.resultList}"
+				<p:dataTable
 					var="event" value="#{eventsBean.resultList}">
 					<p:column>
 						<f:facet name="header">Date</f:facet>
