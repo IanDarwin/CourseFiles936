@@ -45,7 +45,7 @@ public class CustomerDaoTest {
 	}
 
 	//T Write a testSaveCustomer method: create a customer and an address,
-	// tie them together, get an entitymanager and save the customer.
+	// tie them together, get an entitymanager and use the DAO to save the customer.
 	// Remember to create a transaction around your change to the database.
 	// Also remember to annotate your test method!
 
