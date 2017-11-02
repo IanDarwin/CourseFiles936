@@ -48,7 +48,7 @@ done
 cd
 cd C:/
 
-# Excepting the two CD commands, nothing else must fail
+# Excepting the two CD commands, "none shall fail"
 set -e
 
 for repo in ${GIT_DIRS}
