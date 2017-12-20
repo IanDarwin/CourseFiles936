@@ -8,6 +8,7 @@
 			<id>inject-glassfish-home</id>
 			<properties>
 				<local.glassfish.home>C:\\glassfish5\\glassfish</local.glassfish.home>
+				<local.glassfish.password>changeIt</local.glassfish.password>
 			</properties>
 		</profile>
 	</profiles>
