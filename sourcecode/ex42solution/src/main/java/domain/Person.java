@@ -28,7 +28,6 @@ public class Person {
 	protected String firstName;
 	protected String lastName;
 	int version;
-	Map<PrefType,Preference> prefs;
 	// Used by JPA with SINGLE_TABLE mode; not really
 	// part of the data model; just exposed here so that
 	// import.sql will work for any inheritance strategy.
@@ -104,7 +103,6 @@ public class Person {
 				+ ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result
 				+ ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result + ((prefs == null) ? 0 : prefs.hashCode());
 		return result;
 	}
 
@@ -127,11 +125,6 @@ public class Person {
 				return false;
 		} else if (!lastName.equals(other.lastName))
 			return false;
-		if (prefs == null) {
-			if (other.prefs != null)
-				return false;
-		} else if (!prefs.equals(other.prefs))
-			return false;
 		return true;
 	}
 	
@@ -139,16 +132,4 @@ public class Person {
 	public String toString() {
 		return getName() + "#" + getId();
 	}
-
-	// XXX This should probably be in Customer
-	@OneToMany(mappedBy="person")
-	@MapKey(name="prefType")
-	public Map<PrefType, Preference> getPrefs() {
-		return prefs;
-	}
-
-	public void setPrefs(Map<PrefType, Preference> prefs) {
-		this.prefs = prefs;
-	}
-	
 }
