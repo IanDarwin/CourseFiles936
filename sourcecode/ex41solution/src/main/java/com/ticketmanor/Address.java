@@ -17,6 +17,18 @@ public class Address {
 	String country;
 	//+
 	
+	public Address() {
+		// empty
+	}
+	
+	public Address(String street, String city, String state, String country) {
+		super();
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.country = country;
+	}
+	
 	//T Get your IDE to generate accessors for all.
 	//-
 	public String getStreet() {

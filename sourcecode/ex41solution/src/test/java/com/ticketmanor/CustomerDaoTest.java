@@ -119,13 +119,15 @@ public class CustomerDaoTest {
 		Customer cust = new Customer();
 		cust.setFirstName("John");
 		cust.setLastName("Doe");
-		cust.setCity("Reston");
+		Address address = new Address(
+				"213 Main St", "Reston", "QT", "Nostate");
+		cust.setAddress(address);
 		entityTransaction = em.getTransaction();
 		entityTransaction.begin();
 		testSubject.saveCustomer(em, cust);
 		entityTransaction.commit();
 		em = emf.createEntityManager();
-		List<Object[]> firstNameLastNameList = em.createQuery("select c.firstName, c.lastName from Customer c where c.city = 'Reston'", Object[].class).getResultList();
+		List<Object[]> firstNameLastNameList = em.createQuery("select c.firstName, c.lastName from Customer c where c.address.city = 'Reston'", Object[].class).getResultList();
 		Object[] firstNameLastName = firstNameLastNameList.get(0);
 		assertEquals("Customer first name not stored", "John", firstNameLastName[0]);
 		assertEquals("Customer last name not stored", "Doe", firstNameLastName[1]);
