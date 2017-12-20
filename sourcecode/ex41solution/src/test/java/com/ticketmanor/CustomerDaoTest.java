@@ -1,6 +1,7 @@
 package com.ticketmanor;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -33,6 +34,7 @@ public class CustomerDaoTest {
 	@Before
 	public void setUp() throws Exception {
 		testSubject = new CustomerDao();
+		em = emf.createEntityManager();
 	}
 
 	@After
@@ -43,14 +45,13 @@ public class CustomerDaoTest {
 	}
 
 	//T Write a testSaveCustomer method: create a customer and an address,
-	// tie them together, get an entitymanager and save the customer.
-	// Rememeber to create a transaction around your change to the database.
+	// tie them together, get an entitymanager and use the DAO to save the customer.
+	// Remember to create a transaction around your change to the database.
 	// Also remember to annotate your test method!
 
 	//-
 	@Test
 	public void testSaveCustomer() {
-		em = emf.createEntityManager();
 		Customer cust = new Customer();
 		cust.setFirstName("John");
 		cust.setLastName("Doe");
@@ -64,38 +65,41 @@ public class CustomerDaoTest {
 		testSubject.saveCustomer(em, cust);
 		entityTransaction.commit();
 		em.close();
-		long id = cust.getId();
-		assertTrue("Customer id was not set", id>0);
+		long customerId = cust.getId();
+		assertTrue("Customer id was not set", customerId > 0);
+		long addressId = cust.getAddress().getId();
+		assertTrue("Address id was not set", addressId > 0);
 		em = emf.createEntityManager();
-		cust = em.find(Customer.class, id);
+		cust = em.find(Customer.class, customerId);
+		assertNotNull("Find Saved Customer by ID " + customerId, cust);
 		assertEquals("Customer first name stored", "John", cust.getFirstName());
 		assertEquals("Customer last name stored", "Doe", cust.getLastName());
+		assertEquals("Address City stored", "Darston", cust.getAddress().getCity());
 	}
 	//+
 
 	//T Examine these methods briefly (no code changes needed)
+	// Note that @Test(expected= allows us to test error handling
+	// WITHOUT having to write try/catch and report on errors
 	@Test(expected=NullPointerException.class)
 	public void testSaveNullCustomer() {
-		em = emf.createEntityManager();
 		Customer cust = null;
 		testSubject.saveCustomer(em, cust);
 	}
 
 	@Test(expected=NullPointerException.class)
 	public void testSaveNoNameCustomer() {
-		em = emf.createEntityManager();
 		Customer cust = new Customer();
 		testSubject.saveCustomer(em, cust);
 	}
 
 	//T Add any number of other test methods, similar to the above
 	// but exercising different test ideas, as discussed in the manual.
-	// If you get lost, see the solution for some approaches.
+	// If you get lost, see the web hints for some approaches.
 
 	//-
 	@Test
 	public void testRunQuery(){
-		em = emf.createEntityManager();
 		Customer cust = new Customer();
 		cust.setFirstName("John");
 		cust.setLastName("Doe");
@@ -115,7 +119,6 @@ public class CustomerDaoTest {
 	
 	@Test
 	public void testQueryFirstAndLastName(){
-		em = emf.createEntityManager();
 		Customer cust = new Customer();
 		cust.setFirstName("John");
 		cust.setLastName("Doe");

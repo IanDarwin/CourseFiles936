@@ -9,6 +9,8 @@ import javax.ejb.Stateless;
  * This is meant to represent an Administrative Function of
  * assigning new discount codes; we don't want end users creating
  * their own discounts(!) so this has a RolesAllowed.
+ * This will cause a SecurityException if they get to invoke the
+ * bean without correct auth due to coding errors in the web tier.
  */
 @Stateless
 @RolesAllowed("administrator")
@@ -23,7 +25,12 @@ public class SpecialsBean {
 
 		LocalDateTime now = LocalDateTime.now();
 
-		return "Special" + now.getMinute() + now.getDayOfMonth();
+		String code = "Special" + now.getMinute() + now.getDayOfMonth();
+
+		// In Real Life you would probably save "code", its discount rate, and expiry
+		// date into your database.
+
+		return code;
 
 	}
 }

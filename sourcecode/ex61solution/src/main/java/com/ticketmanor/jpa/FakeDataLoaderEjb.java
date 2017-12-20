@@ -2,7 +2,9 @@ package com.ticketmanor.jpa;
 
 import java.time.LocalDateTime;
 
-import javax.ejb.Stateless;
+import javax.annotation.PostConstruct;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
@@ -17,7 +19,7 @@ import com.ticketmanor.model.Venue;
  * The EJB JPA portion of "Load some fake data". 
  * @author Ian Darwin
  */
-@Stateless
+@Singleton @Startup
 public class FakeDataLoaderEjb {
 
 	@PersistenceContext EntityManager em;
@@ -37,6 +39,7 @@ public class FakeDataLoaderEjb {
 		new Venue("London Palladium")
 	};
 	
+	@PostConstruct
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void loadFakeData() {
 		

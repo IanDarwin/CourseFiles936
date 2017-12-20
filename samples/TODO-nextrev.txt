@@ -1,0 +1,8 @@
+
+git mv jsf $w
+
+git mv bootstrap cssdemo html5 javascript leaflet $w/
+
+Now set up for wildfly deployment
+
+Now move into sourcecode, so only one Eclipse workspace root.

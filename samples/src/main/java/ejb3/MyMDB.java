@@ -14,6 +14,7 @@ public class MyMDB implements MessageListener {
 		if (m instanceof TextMessage) {
 			try {
 				String text = ((TextMessage)m).getText();
+				System.out.println("Get this: " + text);
 			} catch (JMSException e) {
 				// Handle the error
 			}
