@@ -45,7 +45,10 @@ public class EventsRestIT {
 		//+
 	}
 	
+	//T AFTER you build the "Indirect" version (EventsResource), annotate this to be a Test
+	//-
 	@Test
+	//+
 	public void testGetEvents2() {
 		Client cl = ClientBuilder.newClient();
 		WebTarget target = cl.target(URL2);
