@@ -1,10 +1,14 @@
 package com.ticketmanor.service;
 
 import javax.interceptor.AroundInvoke;
+import javax.interceptor.Interceptor;
 import javax.interceptor.Interceptors;
 import javax.interceptor.InvocationContext;
 
+@Interceptor
 public class LoggingInterceptor {
+
+	// @AroundInvoke applies to business method; see also @AroundTimeout for timeout methods, etc.
 	@AroundInvoke
 	public Object log(InvocationContext ctx) throws Throwable {
 		log("About to call " + ctx.getMethod().getName());
@@ -13,7 +17,7 @@ public class LoggingInterceptor {
 		return o;
 	}
 	
-	@Interceptors({LoggingInterceptor.class,LoggingInterceptor.class})
+	// @Interceptors({LoggingInterceptor.class,LoggingInterceptor.class})
 	public void validateCredit() {
 		System.out.println("LoggingInterceptor.validateCredit(): I was here");
 	}
