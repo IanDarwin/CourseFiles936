@@ -10,7 +10,7 @@ import com.ticketmanor.model.Event;
 import com.ticketmanor.service.EventsEjb;
 
 @ManagedBean
-public class EventsBean {
+public class EventsBean {	 // Should be EventsJsfBean
 
 	@EJB
 	EventsEjb ejb;
@@ -31,6 +31,7 @@ public class EventsBean {
 	
 	/** A JSF Action handler should return the next page path as a String */
 	public String getEventsNextNDays() {
+		System.out.println("EventsJsfBean.getEventsNextNDays(); nDays = " + nDays);
 		results = ejb.getEventsNextNDays(nDays);
 		return "eventsList";
 	}
