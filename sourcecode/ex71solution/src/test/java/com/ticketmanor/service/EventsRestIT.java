@@ -60,4 +60,11 @@ public class EventsRestIT {
 		assertTrue(e.size() > 0);
 		//+
 	}
+
+	void time(String descr, Runnable r) {
+		long time = System.currentTimeMillis();
+		r.run();
+		long now = System.currentTimeMillis();
+		System.out.printf("%s took %d mSec%n", descr, now - time);
+	}
 }
