@@ -14,13 +14,17 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.Path;
 
+import javax.interceptor.Interceptors;
+
 import com.ticketmanor.model.Event;
 import com.ticketmanor.model.Location;
+import com.ticketmanor.service.LoggingInterceptor;
 
 /** Slightly mis-named; should be ConcertsEjb */
 @Stateless
 @Local @Remote
 @Path("eventsEjb")
+// @Interceptors(LoggingInterceptor.class)
 public class EventsEjb {
 
 	@PersistenceContext EntityManager em;
