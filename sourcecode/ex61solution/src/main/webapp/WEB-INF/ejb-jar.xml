@@ -10,8 +10,6 @@
 		</interceptor>
 	</interceptors>
 
-	FAIL
-	
 	<assembly-descriptor>
       <!-- Default interceptor that will apply to all methods for all beans in deployment -->
       <interceptor-binding>
