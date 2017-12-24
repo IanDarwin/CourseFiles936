@@ -19,7 +19,10 @@ public class FeedUpdater {	// Same data for all users
 		return list;
 	}
 
-	/* stub method to get news feeds */
+	/** Simple method to get news feeds
+	 * XXX Add EJB Timer annotations here to refresh periodically
+	 * XXX Change em to be an emf, createEntityManager inside this method
+	 */
 	List<News> getNewsFeeds() {
 		return null;
 	}
