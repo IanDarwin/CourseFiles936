@@ -13,7 +13,7 @@
 	<assembly-descriptor>
       <!-- Default interceptor that will apply to all methods for all beans in deployment -->
       <interceptor-binding>
-         <ejb-name>*</ejb-name>
+         <ejb-name>*</ejb-name>	<!-- Could also be e.g., ShoppingCartEjb -->
          <interceptor-class>com.ticketmanor.service.LoggingInterceptor</interceptor-class>
       </interceptor-binding>
    </assembly-descriptor>
