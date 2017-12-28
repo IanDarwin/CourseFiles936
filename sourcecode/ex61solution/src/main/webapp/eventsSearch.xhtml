@@ -24,11 +24,12 @@
 					<!-- //+ -->
 					<h:message for="nDaysTextField" errorStyle="color:red"/>
 
-					<!-- //T Connect the Search button to the getEventsNextNDays method -->
-					<h:commandButton value="Search"/>
+					<!-- //T Add ONE attribute to connect this Search button to the getEventsNextNDays method -->
+					<h:commandButton value="Search"
 					<!-- //- -->
-					<h:commandButton value="Search" action="#{eventsBean.getEventsNextNDays}"/>
+						action="#{eventsBean.getEventsNextNDays}"
 					<!-- //+ -->
+					/>
 					
 				</h:form>
 				<!-- The results will show up on eventsList.web -->
