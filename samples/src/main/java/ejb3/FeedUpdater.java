@@ -25,7 +25,7 @@ public class FeedUpdater {	// Same data for all users
 	 */
 	List<News> getNewsFeeds() {
 		EntityManager em = emf.createEntityManager();
-		return em.createQuery("from News order by date desc").getResultList();
+		return em.createQuery("from News order by date desc", News.class).getResultList();
 	}
 
 	private class News {
