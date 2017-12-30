@@ -8,7 +8,7 @@ import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 
 /**
- * A Logging Interceptfor for EJB3 use.
+ * A Logging Interceptor for EJB3 use.
  * Fairly basic; there's a fancier version logging with SLF4J 
  * on GitHub at https://github.com/t1/logging-interceptor
  */
@@ -31,6 +31,7 @@ public class LoggingInterceptor {
 		return o;
 	}
 	
+	/** Well, this part is no longer basic; format the argument list a bit */
 	String format(Object o) {
 		if (o instanceof String) {
 			return (String)o;
