@@ -9,7 +9,7 @@
 CN_REV="I.1"
 
 # All dirs must be up-to-date:
-GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist makehandsons"
+GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist cdi-ee-examples makehandsons"
 # Dirs we have to do "mvn install"
 INSTALL_DIRS="TicketManorJava/datamodel makehandsons"
 # Dirs to just run "mvn test" in
@@ -26,7 +26,7 @@ MWD_DIRS="TicketManorJava/ticketmanor-ee
 	CourseFiles/sourcecode/ex53solution
 	CourseFiles/sourcecode/ex61solution 
 	CourseFiles/sourcecode/ex71solution 
-	jsfdemo clublist"
+	jsfdemo clublist cdi-ee-examples"
 # Dirs we want to "wildfly:deploy" and run integration tests
 MWD_IT_TESTS_DIRS="
 	CourseFiles/sourcecode/ex51solution
