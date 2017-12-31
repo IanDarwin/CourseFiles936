@@ -6,7 +6,7 @@
 
 # DO NOT RUN mid-week as it will wipe out some or all of the student's work!!!
 
-CN_REV="I.1"
+CN_REV="J.1"
 
 # All dirs must be up-to-date:
 GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist cdi-ee-examples makehandsons"
