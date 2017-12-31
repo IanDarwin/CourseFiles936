@@ -4,10 +4,10 @@
 	version="1.0">
 
 	<persistence-unit name="ex31solution">
-		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>com.ticketmanor.Customer</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
+			<property name="javax.persistence.provider" value="org.eclipselink.jpa.provider"/>
 			<property name="eclipselink.target-database" value="MySQL" />
 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

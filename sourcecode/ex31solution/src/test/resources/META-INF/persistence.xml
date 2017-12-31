@@ -4,6 +4,7 @@
 	version="1.0">
 
 	<persistence-unit name="ex31solution">
+		<class>com.ticketmanor.Customer</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<!-- Choose one -->
