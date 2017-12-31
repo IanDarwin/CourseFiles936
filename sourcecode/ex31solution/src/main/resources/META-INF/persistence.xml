@@ -5,6 +5,7 @@
 
 	<persistence-unit name="ex31solution">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>com.ticketmanor.Customer</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="eclipselink.target-database" value="MySQL" />
