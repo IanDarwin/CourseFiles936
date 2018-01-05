@@ -8,7 +8,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import domain.Address;
-import domain.HierBottom;
 import domain.Person;
 import domain.sales.Customer;
 import domain.sales.SalesPerson;
