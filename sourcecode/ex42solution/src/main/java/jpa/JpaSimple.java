@@ -72,22 +72,9 @@ public class JpaSimple {
 
 			List<Person> list = query.getResultList();
 			System.out.println("There are " + list.size() + " persons:");
-			for (Person p : list) {
-				System.out.println(
-					p.getFirstName() + ' ' + p.getLastName());
-			}
-			System.out.println();
-			
-			// Remove an entity without actually loading it.
-			transaction = entityManager.getTransaction();
-			transaction.begin();
-			Person dp = entityManager.getReference(Person.class, id);
-			System.out.println("Removing person " + dp.getId());
-			entityManager.remove(dp);
-			transaction.commit();
-
 			// The concise way of listing Entities (Java 8)
 			entityManager.createQuery("from Person p").getResultList().forEach(System.out::println);
+			System.out.println();
 
 		} finally {	
 			if (entityManager != null)
@@ -95,6 +82,7 @@ public class JpaSimple {
 			if (entityMgrFactory != null)
 				entityMgrFactory.close();
 		}
+		System.exit(0);
 	}
 
 }
