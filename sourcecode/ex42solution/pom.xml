@@ -10,9 +10,8 @@
 	<packaging>jar</packaging>
 	<inceptionYear>2008</inceptionYear>
 
-	<name>Ian Darwin's JPA and Hibernate Demos</name>
-	<description>JPA Demo</description>
-	<url>http://darwinsys.com/java/</url>
+	<name>Exercise 4.2</name>
+	<description>Exercise 4.2</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
