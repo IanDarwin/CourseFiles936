@@ -1,5 +1,7 @@
 # Bash scripts need unix endings even on Windoze
 scripts/*    text merge=union eol=lf
+# MS-DOS batch files, OTOH, need Windoze endings
+bats/*	text merge=union eol=crlf
 # Tell Github to ignore non-source files in bulk-ranking source language:
 # Included JavaScript
 sourcecode/ex61solution/src/main/webapp/js/libs/* linguist-vendored
