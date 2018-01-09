@@ -4,7 +4,9 @@ This directory contains the web pages and most of the exercise projects for
 http://learningtree.com[Learning Tree]'s
 http://learningtree.com/936[Course 936, Enterprise Java Applications: JSF, EJB3, JSF and AJAX].
 
-This is for the I.1 Revision; do not try to use this on H.3 as the chapter structure has changed!
+The _sourcecode_ subdirectory of the current folder  is intended to be the root of an Eclipse Workspace
+
+This is for the J.1 Revision; do not try to use this earlier versions as the directory structure has changed.
 
 All code is copyright (C) by Learning Tree International.
 
@@ -55,10 +57,9 @@ otherwise error messages would be missed.
 
 === Eclipse Workspace Setup
 
-The normal intention is that this folder should be the base of an Eclipse workspace.
+The normal intention is that the _sourcecode_ subdirectory should be the base of an Eclipse workspace.
 We don't yet have this set up automatically so please do the following:
 
-* mkdir .metadata .metadata/log # Only needed with older versions of this GIT repository
 * Start Eclipse
 * If it opens an existing workspace, do File->Switch Workspace. If not it will ask you for the workspace.
 * Browse to where you downloaded CourseFiles, and select (but don't double click on) CourseFiles/sourcecode. Click OK.
