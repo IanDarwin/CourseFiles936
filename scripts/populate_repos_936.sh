@@ -1,5 +1,5 @@
 cd /c
-for repo in cdi-ee-examples clublist CourseFiles936 javasrc jsfdemo jpademo makehandsons
+for repo in cdi-ee-examples darwinsys-api clublist CourseFiles936 javasrc jsfdemo jpademo makehandsons
 do
 	git clone https://IanDarwin@github.com/IanDarwin/${repo}
 done
