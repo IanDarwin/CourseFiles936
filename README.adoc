@@ -1,10 +1,10 @@
 = CourseFiles936
 
-This directory contains the web pages and most of the exercise projects for
+This directory _CourseFiles936_ contains the web pages and exercise projects for
 http://learningtree.com[Learning Tree]'s
 http://learningtree.com/936[Course 936, Enterprise Java Applications: JSF, EJB3, JSF and AJAX].
 
-The _sourcecode_ subdirectory of the current folder  is intended to be the root of an Eclipse Workspace
+The _sourcecode_ subdirectory of the current folder is intended to be the root of an Eclipse Workspace
 
 This is for the J.1 Revision; do not try to use this earlier versions as the directory structure has changed.
 
