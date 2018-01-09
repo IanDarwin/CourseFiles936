@@ -45,7 +45,10 @@ public class EventsRestIT {
 		//+
 	}
 	
+	//T AFTER you build the "Indirect" version (EventsResource), annotate this to be a Test
+	//-
 	@Test
+	//+
 	public void testGetEvents2() {
 		Client cl = ClientBuilder.newClient();
 		WebTarget target = cl.target(URL2);
@@ -56,5 +59,12 @@ public class EventsRestIT {
 		System.out.printf("Got a list of %d events%n", e.size());
 		assertTrue(e.size() > 0);
 		//+
+	}
+
+	void time(String descr, Runnable r) {
+		long time = System.currentTimeMillis();
+		r.run();
+		long now = System.currentTimeMillis();
+		System.out.printf("%s took %d mSec%n", descr, now - time);
 	}
 }

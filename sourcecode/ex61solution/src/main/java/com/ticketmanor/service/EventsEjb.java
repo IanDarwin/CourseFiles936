@@ -21,6 +21,8 @@ import com.ticketmanor.model.Location;
 @Stateless
 @Local @Remote
 @Path("eventsEjb")
+// Following annotation NOT needed in this exercise as it is configured via XML.
+// @Interceptors(LoggingInterceptor.class)
 public class EventsEjb {
 
 	@PersistenceContext EntityManager em;

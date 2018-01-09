@@ -1,0 +1,20 @@
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<enterprise-beans/>
+
+	<interceptors>
+		<interceptor>
+			<interceptor-class>com.ticketmanor.service.LoggingInterceptor</interceptor-class>
+		</interceptor>
+	</interceptors>
+
+	<assembly-descriptor>
+      <!-- Default interceptor that will apply to all methods for all beans in deployment -->
+      <interceptor-binding>
+         <ejb-name>*</ejb-name>	<!-- Could also be e.g., ShoppingCartEjb -->
+         <interceptor-class>com.ticketmanor.service.LoggingInterceptor</interceptor-class>
+      </interceptor-binding>
+   </assembly-descriptor>
+</ejb-jar>

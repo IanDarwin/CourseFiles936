@@ -30,7 +30,7 @@ public class EventsEjb {
 	
 	@PersistenceContext EntityManager em;
 	
-	//T Annotate this method for a get method, with JSON as the type
+	//T Annotate this method for HTTP GET, with JSON as the output type
 	//-
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -41,7 +41,7 @@ public class EventsEjb {
 		return query.getResultList();
 	}
 	
-	//T Annotate this class for a get method, with JSON as the type
+	//T Annotate this method for HTTP GET, with JSON as the output type
 	// and a single path-parameter, e.g., events1/123
 	//-
 	@GET

@@ -7,7 +7,8 @@ import javax.annotation.PostConstruct;
 
 @Singleton
 public class FeedUpdater {	// Same data for all users
-	@PersistenceContext EntityManager em;
+	// Singletons must run multi-threaded:
+	@PersistenceUnit EntityManagerFactory emf;
 
 	List<News> list;
 
@@ -19,9 +20,12 @@ public class FeedUpdater {	// Same data for all users
 		return list;
 	}
 
-	/* stub method to get news feeds */
+	/** Simple method to get news feeds.
+	 * Could add EJB Timer annotations here to refresh periodically
+	 */
 	List<News> getNewsFeeds() {
-		return null;
+		EntityManager em = emf.createEntityManager();
+		return em.createQuery("from News order by date desc", News.class).getResultList();
 	}
 
 	private class News {
