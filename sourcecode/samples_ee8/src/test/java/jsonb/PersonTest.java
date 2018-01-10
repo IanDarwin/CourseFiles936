@@ -23,14 +23,11 @@ public class PersonTest {
 	
 	@BeforeAll
 	public static void beforeAll() {
-		System.out.println("PersonTest.beforeAll()");
-		System.out.println("PersonTest.beforeAll()");
 		jsonb = JsonbBuilder.create(); // omits optional configuration
 	}
 	
 	@BeforeEach
 	public void beforeTest() {
-		System.out.println("PersonTest.beforeTest()");
 		person = new Person("Top", "Dog");
 	}
 
