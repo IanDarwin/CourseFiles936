@@ -27,7 +27,12 @@ To set up the environment at home or work, you should try the following
 (the implementing command examples are for Unix, Linux, Mac OS X,
 and might work on MS-Windows with CygWin or equivalent):
 
-* Make sure you have Java (10 or 11), Maven 3, and _git_ installed and on your PATH.
+* Make sure you have 
+Java SE (8 or 9), 
+Maven 3 (https://maven.apache.org), 
+a database (https://postgresql.org/)
+and _git_ (https://git-scm.com/)
+installed and on your PATH.
 * Make sure you have Wildfly installed but not running;
 you could use a different App Server but you'd have to change
 all the Maven deployment configurations (they have GlassFish and Tomcat in place but unmaintained!!)
@@ -36,7 +41,7 @@ AND the DataSource configurations (alas, the EE spec doesn't nail down how to do
 ----
 cd WHERE_YOU_WANT_IT
 for repo in LearningTree/TicketManorJava \
-	IanDarwin/{CourseFiles936,jsfdemo,jpademo,makehandsons,clublist,javasrc,darwinsys-api}
+	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,makehandsons}
 do
     git clone https://github.com/$repo
 done
