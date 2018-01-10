@@ -3,7 +3,17 @@ package jsonb;
 import javax.json.bind.annotation.JsonbProperty;
 
 public class Person {
-	String firstName;
+
+	public String firstName;
 	@JsonbProperty(value="lastName")
-	String surName;
+	public String surName;
+
+	public Person() {
+		// empty
+	}
+
+	public Person(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.surName = lastName;
+	}
 }

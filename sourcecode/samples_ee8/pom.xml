@@ -37,7 +37,22 @@
 		   <groupId>javax</groupId>	
 			<artifactId>javaee-api</artifactId>	
 			<version>8.0</version>  
-		</dependency> 
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Some parts of that are needed at test time -->
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>yasson</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<!-- Yasson has incestuous dependency on Glassfish -->
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.json</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		
 
 		<!-- PrimeFaces JSF Add-on -->
 		<dependency>
