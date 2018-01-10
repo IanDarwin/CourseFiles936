@@ -1,13 +1,13 @@
 package jsonb;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class PersonTest {
 	
@@ -18,31 +18,35 @@ public class PersonTest {
 	
 	Person person;
 	
-	@BeforeAll
+	@BeforeClass
 	public static void beforeAll() {
+		System.out.println("PersonTest.beforeAll()");
 		System.out.println("PersonTest.beforeAll()");
 		jsonb = JsonbBuilder.create();
 	}
 	
-	@BeforeEach
+	@Before
 	public void beforeTest() {
+		System.out.println("PersonTest.beforeTest()");
 		person = new Person("Top", "Dog");
 	}
 
 	/** Test serialize */
 	@Test
 	public void testToJson() {
+		System.out.println("PersonTest.testToJson()");
 		String result = jsonb.toJson(person);
 		System.out.println(result);
-		assertEquals("toJson", STATIC_JSON, result);
+		assertEquals(STATIC_JSON, result);
 	}
 	
 	/** Test de-serialize */
 	@Test
 	public void testFromJson() {
+		System.out.println("PersonTest.testFromJson()");
 		Person p = jsonb.fromJson(STATIC_JSON, Person.class);
-		assertEquals("Top", p.firstName, "firstname");
-		assertEquals("Dog", p.surName, "last/surname");
+		assertEquals("Top", p.firstName);
+		assertEquals("Dog", p.surName);
 	}
 
 }
