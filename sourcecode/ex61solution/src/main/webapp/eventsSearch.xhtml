@@ -15,6 +15,9 @@
 
 			<ui:define name="body">
 				<h:messages globalOnly='true' showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
+
+				<p:panel>
+				<f:facet name="Header">Search Events</f:facet>
 				<h:form id="eventsForm">
 
 					<h:outputText value="Search for events for next how many days?"/>
@@ -31,6 +34,7 @@
 					<!-- //+ -->
 					
 				</h:form>
+				</p:panel>
 				<!-- The results will show up on eventsList.web -->
 			</ui:define>
 		</ui:composition>
