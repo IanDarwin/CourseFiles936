@@ -13,9 +13,9 @@
 	 *** STOP RIGHT NOW, you are in the wrong file; DO NOT save any changes here!!!!!!!!!
 	 ***
 	 *** Team Notes: You can use this for 'mvn compile' and 'mvn clean';
-	 *** if you want to do 'mvn test' you have to be running mysql
-	 *** and you have to pre-deploy the few remaining apps that still have
-	 *** the "client is test" pattern.
+	 *** if you want to do 'mvn test' you have to be running the database
+	 *** and you may have to pre-deploy any remaining apps that still have
+	 *** the "client is test" anti-pattern.
 	 -->
 	<groupId>com.ticketmanor</groupId>
 	<artifactId>sourcecode</artifactId>
