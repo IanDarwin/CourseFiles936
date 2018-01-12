@@ -6,7 +6,7 @@ http://learningtree.com/936[Course 936, Enterprise Java Applications: JSF, EJB3,
 
 The _sourcecode_ subdirectory of the current folder is intended to be the root of an Eclipse Workspace
 
-This is for the J.1 Revision; do not try to use this earlier versions as the directory structure has changed.
+This is for the J.1 Revision (Jan 2018); *do not* try to use this earlier versions as the directory structure has changed.
 
 All code is copyright (C) by Learning Tree International.
 
@@ -15,11 +15,10 @@ This code won't do you much good unless you're taking the course.
 There is one other adjacent folder, TicketManorJava, which is hosted on 
 LearningTree's GitHub account, https://github.com/LearningTree/TicketmanorJava/.
 
-There are several adjacent folders: jsfdemo jpademo clublist javasrc.
-There is also the makehandsons project; this makes the exercises from 
-the solutions so they are always in synch.
-These projects are all hosted on the course author's github, at
-https://github.com/IanDarwin/.
+There are several adjacent folders hosted on the author's github,
+https://github.com/IanDarwin/, including jsfdemo jpademo clublist javasrc.
+There is also the _makehandsons_ project which makes the hands-on exercises from 
+the solutions, so they are always in synch.
 
 == Set Up the environment at home or work
 
