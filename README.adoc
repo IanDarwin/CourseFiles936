@@ -46,16 +46,12 @@ do
     git clone https://github.com/$repo
 done
 ----
-* Rename CourseFiles936 CourseFiles
-----
-mv CourseFiles936 CourseFiles
-----
-* Copy or merge Coursefiles/configs/standalone-full.xml into wildfly
+* Copy or merge Coursefiles936/configs/standalone-full.xml into wildfly
 * Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
 * If it doesn't start successfully, iterate on your configuration.
 * Run the uber-script:
 ----
-cd Coursefiles
+cd Coursefiles936
 sh scripts/all-in
 ----
 The script produces tons of output so it is set to fail on the first error,
@@ -68,7 +64,7 @@ We don't yet have this set up automatically so please do the following:
 
 * Start Eclipse
 * If it opens an existing workspace, do File->Switch Workspace. If not it will ask you for the workspace.
-* Browse to where you downloaded CourseFiles, and select (but don't double click on) CourseFiles/sourcecode. Click OK.
+* Browse to where you downloaded CourseFiles936, and select (but don't double click on) CourseFiles936/sourcecode. Click OK.
 * Then do File->New Project->new Java Project, browse to the TicketManorJava folder, select but don't double-click
 on datamodel,
 which should cause the dialog to change the text in its bottom panel to something like

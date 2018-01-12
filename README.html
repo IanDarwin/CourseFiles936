@@ -473,7 +473,12 @@ and might work on MS-Windows with CygWin or equivalent):</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Make sure you have Java (10 or 11), Maven 3, and <em>git</em> installed and on your PATH.</p>
+<p>Make sure you have
+Java SE (8 or 9),
+Maven 3 (<a href="https://maven.apache.org" class="bare">https://maven.apache.org</a>),
+a database (<a href="https://postgresql.org/" class="bare">https://postgresql.org/</a>)
+and <em>git</em> (<a href="https://git-scm.com/" class="bare">https://git-scm.com/</a>)
+installed and on your PATH.</p>
 </li>
 <li>
 <p>Make sure you have Wildfly installed but not running;
@@ -490,7 +495,7 @@ AND the DataSource configurations (alas, the EE spec doesn&#8217;t nail down how
 <div class="content">
 <pre>cd WHERE_YOU_WANT_IT
 for repo in LearningTree/TicketManorJava \
-	IanDarwin/{CourseFiles936,jsfdemo,jpademo,makehandsons,clublist,javasrc,darwinsys-api}
+	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,makehandsons}
 do
     git clone https://github.com/$repo
 done</pre>
@@ -499,19 +504,7 @@ done</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Rename CourseFiles936 CourseFiles</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>mv CourseFiles936 CourseFiles</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Copy or merge Coursefiles/configs/standalone-full.xml into wildfly</p>
+<p>Copy or merge Coursefiles936/configs/standalone-full.xml into wildfly</p>
 </li>
 <li>
 <p>Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml</p>
@@ -526,7 +519,7 @@ done</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cd Coursefiles
+<pre>cd Coursefiles936
 sh scripts/all-in</pre>
 </div>
 </div>
@@ -549,7 +542,7 @@ We don&#8217;t yet have this set up automatically so please do the following:</p
 <p>If it opens an existing workspace, do File&#8594;Switch Workspace. If not it will ask you for the workspace.</p>
 </li>
 <li>
-<p>Browse to where you downloaded CourseFiles, and select (but don&#8217;t double click on) CourseFiles/sourcecode. Click OK.</p>
+<p>Browse to where you downloaded CourseFiles936, and select (but don&#8217;t double click on) CourseFiles936/sourcecode. Click OK.</p>
 </li>
 <li>
 <p>Then do File&#8594;New Project&#8594;new Java Project, browse to the TicketManorJava folder, select but don&#8217;t double-click
@@ -592,7 +585,7 @@ interfere with it working with Eclipse and Maven, please feel free to send a Git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-09 13:34:46 EST
+Last updated 2018-01-12 14:27:56 EST
 </div>
 </div>
 </body>

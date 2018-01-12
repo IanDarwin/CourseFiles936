@@ -29,6 +29,6 @@ git checkout -- src/main/
 )
 
 (
-cd CourseFiles/sourcecode
+cd CourseFiles936/sourcecode
 rm -r */target/
 )

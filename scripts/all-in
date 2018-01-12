@@ -9,38 +9,38 @@
 CN_REV="J.1"
 
 # All dirs must be up-to-date:
-GIT_DIRS="TicketManorJava CourseFiles javasrc jpademo jsfdemo clublist cdi-ee-examples makehandsons"
+GIT_DIRS="TicketManorJava CourseFiles936 javasrc jpademo jsfdemo clublist cdi-ee-examples makehandsons"
 # Dirs we have to do "mvn install"
 INSTALL_DIRS="TicketManorJava/datamodel makehandsons"
 # Dirs to just run "mvn test" in
-TEST_DIRS="CourseFiles/sourcecode/donow31solution 
-	CourseFiles/sourcecode/ex21solution 
-	CourseFiles/sourcecode/ex31solution 
-	CourseFiles/sourcecode/ex41solution 
-	CourseFiles/sourcecode/ex53clientsolution 
+TEST_DIRS="CourseFiles936/sourcecode/donow31solution 
+	CourseFiles936/sourcecode/ex21solution 
+	CourseFiles936/sourcecode/ex31solution 
+	CourseFiles936/sourcecode/ex41solution 
+	CourseFiles936/sourcecode/ex53clientsolution 
 	jpademo"
 # Dirs we want to "wildfly:deploy"
 MWD_DIRS="TicketManorJava/ticketmanor-ee 
-	CourseFiles/sourcecode/ex51solution
-	CourseFiles/sourcecode/ex52solution
-	CourseFiles/sourcecode/ex53solution
-	CourseFiles/sourcecode/ex61solution 
-	CourseFiles/sourcecode/ex71solution 
+	CourseFiles936/sourcecode/ex51solution
+	CourseFiles936/sourcecode/ex52solution
+	CourseFiles936/sourcecode/ex53solution
+	CourseFiles936/sourcecode/ex61solution 
+	CourseFiles936/sourcecode/ex71solution 
 	jsfdemo clublist cdi-ee-examples"
 # Dirs we want to "wildfly:deploy" and run integration tests
 MWD_IT_TESTS_DIRS="
-	CourseFiles/sourcecode/ex51solution
-	CourseFiles/sourcecode/ex52solution
-	CourseFiles/sourcecode/ex71solution"
+	CourseFiles936/sourcecode/ex51solution
+	CourseFiles936/sourcecode/ex52solution
+	CourseFiles936/sourcecode/ex71solution"
 # We undeploy what we deployed at the end, so students can have the fun of deploying it.
 CLEAN_DIRS="jpademo jsfdemo"
 UNDEPLOY_DIRS="TicketManorJava/ticketmanor-ee"
 for dir in sourcecode/ex*solution; do
 	if grep -s wildfly-plugin ${dir}/pom.xml; then
-		# Script is run in CourseFiles but starts in .. (aka '/'), so prepend
-		UNDEPLOY_DIRS="${UNDEPLOY_DIRS} CourseFiles/${dir}"
+		# Script is run in CourseFiles936 but starts in .. (aka '/'), so prepend
+		UNDEPLOY_DIRS="${UNDEPLOY_DIRS} CourseFiles936/${dir}"
 	else
-		CLEAN_DIRS="${CLEAN_DIRS} CourseFiles/${dir}"
+		CLEAN_DIRS="${CLEAN_DIRS} CourseFiles936/${dir}"
 	fi
 done
 
@@ -72,7 +72,7 @@ do
 done
 
 (
-cd CourseFiles/sourcecode
+cd CourseFiles936/sourcecode
 rm -rf ex??/src/* ex*client/src/* donow??/src/*
 ../../makehandsons/scripts/makehandsons *solution
 )
@@ -131,7 +131,7 @@ echo "Showing dependency tree so dependency plugins available offline..."
 (cd ClubList; mvn dependency:tree)
 
 # Record the all-in run date as a kind of version control
-(echo Version: all-in for Course Notes ${CN_REV} run on date; date) > CourseFiles/version.html
+(echo Version: all-in for Course Notes ${CN_REV} run on date; date) > CourseFiles936/version.html
 # And in the about page
 (
 	echo "<h1>About</h1>"
@@ -140,7 +140,7 @@ echo "Showing dependency tree so dependency plugins available offline..."
 	echo "<tr><td>Technical Editor:</td><td>Chris Mawata</td></tr>"
 	echo "</table>"
 	echo "$0 last run on $(date)"
-) > CourseFiles/about.html
+) > CourseFiles936/about.html
 
 echo "
 
