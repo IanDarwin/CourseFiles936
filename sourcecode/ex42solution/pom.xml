@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 	<inceptionYear>2008</inceptionYear>
 
-	<name>Exercise 4.2</name>
+	<name>LT-JaveEE JPA: Inheritance</name>
 	<description>Exercise 4.2</description>
 
 	<properties>
