@@ -56,7 +56,6 @@
 	</dependencies>
 
 	<build>
-		<testSourceDirectory>src/test/java</testSourceDirectory>
 		<plugins>
 			<!-- Compiler plugin enforces Java compatibility and activates annotation processors -->
 			<plugin>
