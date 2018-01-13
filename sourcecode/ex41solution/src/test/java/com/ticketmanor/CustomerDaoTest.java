@@ -28,7 +28,7 @@ public class CustomerDaoTest {
 
 	@BeforeClass
 	public static void setupResources(){
-		emf = Persistence.createEntityManagerFactory("ex41solution");
+		emf = Persistence.createEntityManagerFactory("ex41solution_test");
 	}
 
 	@Before
