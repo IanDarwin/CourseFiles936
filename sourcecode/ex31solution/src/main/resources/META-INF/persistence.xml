@@ -7,11 +7,21 @@
 		<class>com.ticketmanor.Customer</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
+			<property name="javax.persistence.provider" value="org.hibernate.ejb.HibernatePersistence"/>
+			<!--
+			<property name="javax.persistence.provider" value="org.eclipselink.jpa.provider"/>
+			-->
+
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ex31.db" />
 			<property name="javax.persistence.jdbc.user" value="student" />
 			<property name="javax.persistence.jdbc.password" value="student" />
-			<property name="javax.persistence.provider" value="org.eclipselink.jpa.provider"/>
+
+			<!-- Properties for Hibernate provider -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.show_sql" value="false"/>
+			<property name="hibernate.format_sql" value="false"/>
 			<property name="eclipselink.target-database" value="MySQL" />
 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
 			<property name="eclipselink.logging.level.sql" value="FINE" />

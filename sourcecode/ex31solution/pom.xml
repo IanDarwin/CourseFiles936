@@ -22,12 +22,42 @@
 		<maven.compiler.target>${javase.version}</maven.compiler.target>
 		<maven.compiler.testSource>${javase.version}</maven.compiler.testSource>
 		<maven.compiler.testTarget>${javase.version}</maven.compiler.testTarget>
+		<hibernate.version>4.3.8.Final</hibernate.version>
+		<hibernate.validator.version>4.3.2.Final</hibernate.validator.version>
 		<eclipselink.version>2.6.0-M3</eclipselink.version>
 	</properties>
 
 	<dependencies>
 
 		<!-- Java EE not needed, just using JPA standalone here. -->
+
+		<!-- Hibernate and its JPA Provider: test scope -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+			<exclusions>
+				<exclusion>  <!-- declare the exclusion here -->
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+			</exclusions> 
+			<scope>test</scope>
+		</dependency>
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate.validator.version}</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- EclipseLink and its JPA Provider -->
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>

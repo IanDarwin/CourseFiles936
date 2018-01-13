@@ -11,7 +11,7 @@
 			<!--
 			<property name="javax.persistence.provider" value="org.eclipselink.jpa.provider"/>
 			-->
-			<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+			<property name="javax.persistence.provider" value="org.eclipse.persistence.jpa.PersistenceProvider"/>
 
 			<!-- In-VM database for dev/test -->
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
