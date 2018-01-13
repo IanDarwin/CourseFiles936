@@ -14,7 +14,7 @@
 			<property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="" />
 
-			<!-- Choose one -->
+			<!-- Choose one provider -->
 			<!--
 			<property name="javax.persistence.provider" value="org.eclipselink.jpa.provider"/>
 			-->
