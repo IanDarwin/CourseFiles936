@@ -15,6 +15,13 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<build.plugins.plugin.version>1.0.1</build.plugins.plugin.version>
+		<javase.version>1.8</javase.version>
+		<maven.compiler.source>${javase.version}</maven.compiler.source>
+		<maven.compiler.target>${javase.version}</maven.compiler.target>
+		<maven.compiler.testSource>${javase.version}</maven.compiler.testSource>
+		<maven.compiler.testTarget>${javase.version}</maven.compiler.testTarget>
 		<eclipselink.version>2.6.0-M3</eclipselink.version>
 	</properties>
 
@@ -38,6 +45,7 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.33</version>
+			<scope>runtime</scope>
 		</dependency>
         <dependency>
             <groupId>com.h2database</groupId>
@@ -55,17 +63,4 @@
 
 	</dependencies>
 
-	<build>
-		<plugins>
-			<!-- Compiler plugin enforces Java compatibility and activates annotation processors -->
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
