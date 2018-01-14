@@ -9,7 +9,7 @@
 CN_REV="J.1"
 
 # All dirs must be up-to-date:
-GIT_DIRS="TicketManorJava CourseFiles936 javasrc jpademo jsfdemo clublist cdi-ee-examples makehandsons"
+GIT_DIRS="TicketManorJava CourseFiles936 javasrc jpademo jsfdemo clublist cdi-ee-examples makehandsons createprojects"
 # Dirs we have to do "mvn install"
 INSTALL_DIRS="TicketManorJava/datamodel makehandsons"
 # Dirs to just run "mvn test" in
