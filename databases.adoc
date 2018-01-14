@@ -19,8 +19,10 @@ It's called H2 because it is an outgrowth of the earlier Hypersonic.
 
 Postgresql is an open source SQL database that is closer in spirit and syntax
 to Oracle and, IMHO, both closer to the SQL standard, more sensible, and
-more robust, compared to other open-source databases. There are two interfaces
-to it, the command-line psql and the gui.
+more robust, compared to other open-source databases. 
+The server runs as a daemon on Unix/Linux/Mac and as a Service on MS-Windows.
+
+There are two interfaces to PostgreSQL, the command-line psql and the gui.
 
 PSQL is a command-line command that is on your path. 
 Like most command-line interfaces, PSQL is much faster than the GUI,
