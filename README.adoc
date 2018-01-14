@@ -34,9 +34,13 @@ and _git_ (https://git-scm.com/)
 installed and on your PATH.
 * Make sure you have Wildfly installed but not running;
 you could use a different App Server but you'd have to change
-all the Maven deployment configurations (they have GlassFish and Tomcat in place but unmaintained!!)
+all the Maven deployment configurations (most projects have 
+GlassFish and Tomcat in _pom.xml_, but this is unmaintained!!)
 AND the DataSource configurations (alas, the EE spec doesn't nail down how to do this).
-* Poor MS-Windows users must also install cygwin, including git and diff.
+* Poor MS-Windows users must also install cygwin, including:
+** git
+** diff
+** unzip
 * Git clone all the projects listed above into a single parent directory (in the course we use C:\ but anyplace *should* work).
 ----
 cd WHERE_YOU_WANT_IT
@@ -60,26 +64,27 @@ otherwise error messages would be missed.
 === Eclipse Workspace Setup
 
 The normal intention is that the _sourcecode_ subdirectory should be the base of an Eclipse workspace.
-We don't yet have this set up automatically so please do the following:
 
 * Start Eclipse
 * If it opens an existing workspace, do File->Switch Workspace. If not it will ask you for the workspace.
-* Browse to where you downloaded CourseFiles936, and select (but don't double click on) CourseFiles936/sourcecode. Click OK.
+Browse to where you downloaded CourseFiles936, and select (but don't double click on) CourseFiles936/sourcecode. Click OK.
 * Then do File->New Project->new Java Project, browse to the TicketManorJava folder, select but don't double-click
 on datamodel,
 which should cause the dialog to change the text in its bottom panel to something like
  "The wizard will use the existing settings to configure the project". Click Finish.
-* Repeat the above for the ticketmanor-ee project.
-* Then for each Exercise you want, do File->New Project->New Java Project, and select the _exNN_ folder
-and follow the same procedure as for ticketmanor-ee.
-* Do the similar operation for any Solution project you want.
+* Repeat the above for these projects:
+** ticketmanor-ee 
 * Ditto for jsfdemo, jpademo, and clublist except they should be in the folder one level up in the filesystem.
 * If you want the javasrc project (code examples from the Java Cookbook) and darwinsys-api (some helper files),
 do the same for them.
+* Finally you have to create the two dozen or so "ex" projects.
+Either do them all by hand as above, or, use our handy Eclipse plugin
+which you get from https://github.com/IanDarwin/CreateProjects
+Pro tip: the README there walks you through it; it's pretty easy.
 
 At this point you should have things pretty much set up as in the course.
 
-=== Other IDE Workspace Setup
+=== Using a different IDE Workspace Setup
 
 We don't provide instructions for other IDEs. If you get it working in a way that doesn't 
 interfere with it working with Eclipse and Maven, please feel free to send a Github pull request,
