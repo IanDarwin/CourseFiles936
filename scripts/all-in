@@ -67,7 +67,7 @@ do
 	(
 	cd ${dir}
 	echo === Install ${dir} ===
-	mvn -b clean install
+	mvn -B clean install
 	)
 done
 
@@ -84,7 +84,7 @@ do
 	cd ${dir}
 	echo === Deploy ${dir} ===
 	# Build with Maven
-	mvn -b clean wildfly:deploy
+	mvn -B clean wildfly:deploy
 	)
 done
 for dir in ${MWD_IT_TESTS_DIRS}
@@ -93,7 +93,7 @@ do
 	cd ${dir}
 	echo === Integration Test ${dir} ===
 	# Build with Maven
-	mvn -b clean wildfly:deploy verify
+	mvn -B clean wildfly:deploy verify
 	)
 done
 
@@ -104,7 +104,7 @@ do
 	cd ${dir}
 	echo === mvn test ${dir} ===
 	# Build with Maven
-	mvn -b clean test
+	mvn -B clean test
 	)
 done
 
@@ -114,7 +114,7 @@ do
 	(
 	cd ${dir}
 	echo === clean ${dir} ===
-	mvn -b clean
+	mvn -B clean
 	)
 done
 for dir in ${UNDEPLOY_DIRS}
@@ -122,13 +122,13 @@ do
 	(
 	cd ${dir}
 	echo === undeploy ${dir} ===
-	mvn -b wildfly:undeploy clean
+	mvn -B wildfly:undeploy clean
 	)
 done
 
 # One last bit for "mvn offline"
 echo "Showing dependency tree so dependency plugins available offline..."
-(cd ClubList; mvn -b dependency:tree)
+(cd ClubList; mvn -B dependency:tree)
 
 # Record the all-in run date as a kind of version control
 (echo Version: all-in for Course Notes ${CN_REV} run on date; date) > CourseFiles936/version.html
