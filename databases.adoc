@@ -1,0 +1,43 @@
+= Databases
+
+JPA can work with any relational SQl database. For all common database
+products there is already an adapter. If you need to connect to some
+strange datasource, you could in theory write your own adapter,
+but that's way out of scope for this week. Here we focus on the two
+SQL databases that we do use.
+
+== H2
+
+H2 is a small, fast, serverless (self-contained)
+SQL database written in Java that runs entirely in-VM. It is thus very useful for
+unit testing
+(remember, Unit Tests are supposed to be small, fast and self-contained).
+We use H2 for the tests in most of the projects.
+It's called H2 because it is an outgrowth of the earlier Hypersonic.
+
+== PostgreSQL
+
+Postgresql is an open source SQL database that is closer in spirit and syntax
+to Oracle and, IMHO, both closer to the SQL standard, more sensible, and
+more robust, compared to other open-source databases. There are two interfaces
+to it, the command-line psql and the gui.
+
+PSQL is a command-line command that is on your path. 
+Like most command-line interfaces, PSQL is much faster than the GUI,
+but requires you to know a few things. 
+Its input consists of a mixture of SQL commands
+(which may include Data Definition (DDL) commands like 'create table'),
+and psql-specific commands that begin with a backslash - \d for Describe,
+\q for Quit, and so on.
+Try the following:
+
+	psql -d ex-jpa
+	\l
+	\d
+	\d person
+	select * from person;
+	\?
+	\q
+
+The GUI interface is started from the Start Menu or the Desktop icon.
+
