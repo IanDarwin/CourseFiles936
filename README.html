@@ -482,11 +482,25 @@ installed and on your PATH.</p>
 <li>
 <p>Make sure you have Wildfly installed but not running;
 you could use a different App Server but you&#8217;d have to change
-all the Maven deployment configurations (they have GlassFish and Tomcat in place but unmaintained!!)
+all the Maven deployment configurations (most projects have
+GlassFish and Tomcat in <em>pom.xml</em>, but this is unmaintained!!)
 AND the DataSource configurations (alas, the EE spec doesn&#8217;t nail down how to do this).</p>
 </li>
 <li>
-<p>Poor MS-Windows users must also install cygwin, including git and diff.</p>
+<p>Poor MS-Windows users must also install cygwin, including:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>git</p>
+</li>
+<li>
+<p>diff</p>
+</li>
+<li>
+<p>unzip</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Git clone all the projects listed above into a single parent directory (in the course we use C:\ but anyplace <strong>should</strong> work).</p>
@@ -532,8 +546,7 @@ otherwise error messages would be missed.</p>
 <div class="sect2">
 <h3 id="_eclipse_workspace_setup">Eclipse Workspace Setup</h3>
 <div class="paragraph">
-<p>The normal intention is that the <em>sourcecode</em> subdirectory should be the base of an Eclipse workspace.
-We don&#8217;t yet have this set up automatically so please do the following:</p>
+<p>The normal intention is that the <em>sourcecode</em> subdirectory should be the base of an Eclipse workspace.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -541,10 +554,8 @@ We don&#8217;t yet have this set up automatically so please do the following:</p
 <p>Start Eclipse</p>
 </li>
 <li>
-<p>If it opens an existing workspace, do File&#8594;Switch Workspace. If not it will ask you for the workspace.</p>
-</li>
-<li>
-<p>Browse to where you downloaded CourseFiles936, and select (but don&#8217;t double click on) CourseFiles936/sourcecode. Click OK.</p>
+<p>If it opens an existing workspace, do File&#8594;Switch Workspace. If not it will ask you for the workspace.
+Browse to where you downloaded CourseFiles936, and select (but don&#8217;t double click on) CourseFiles936/sourcecode. Click OK.</p>
 </li>
 <li>
 <p>Then do File&#8594;New Project&#8594;new Java Project, browse to the TicketManorJava folder, select but don&#8217;t double-click
@@ -553,14 +564,14 @@ which should cause the dialog to change the text in its bottom panel to somethin
  "The wizard will use the existing settings to configure the project". Click Finish.</p>
 </li>
 <li>
-<p>Repeat the above for the ticketmanor-ee project.</p>
-</li>
+<p>Repeat the above for these projects:</p>
+<div class="ulist">
+<ul>
 <li>
-<p>Then for each Exercise you want, do File&#8594;New Project&#8594;New Java Project, and select the <em>exNN</em> folder
-and follow the same procedure as for ticketmanor-ee.</p>
+<p>ticketmanor-ee</p>
 </li>
-<li>
-<p>Do the similar operation for any Solution project you want.</p>
+</ul>
+</div>
 </li>
 <li>
 <p>Ditto for jsfdemo, jpademo, and clublist except they should be in the folder one level up in the filesystem.</p>
@@ -569,6 +580,12 @@ and follow the same procedure as for ticketmanor-ee.</p>
 <p>If you want the javasrc project (code examples from the Java Cookbook) and darwinsys-api (some helper files),
 do the same for them.</p>
 </li>
+<li>
+<p>Finally you have to create the two dozen or so "ex" projects.
+Either do them all by hand as above, or, use our handy Eclipse plugin
+which you get from <a href="https://github.com/IanDarwin/CreateProjects" class="bare">https://github.com/IanDarwin/CreateProjects</a>
+Pro tip: the README there walks you through it; it&#8217;s pretty easy.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -576,7 +593,7 @@ do the same for them.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_other_ide_workspace_setup">Other IDE Workspace Setup</h3>
+<h3 id="_using_a_different_ide_workspace_setup">Using a different IDE Workspace Setup</h3>
 <div class="paragraph">
 <p>We don&#8217;t provide instructions for other IDEs. If you get it working in a way that doesn&#8217;t
 interfere with it working with Eclipse and Maven, please feel free to send a Github pull request,</p>
@@ -587,7 +604,7 @@ interfere with it working with Eclipse and Maven, please feel free to send a Git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-14 14:57:22 EST
+Last updated 2018-01-14 15:55:45 EST
 </div>
 </div>
 </body>
