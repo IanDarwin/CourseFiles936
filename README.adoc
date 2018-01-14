@@ -36,11 +36,12 @@ installed and on your PATH.
 you could use a different App Server but you'd have to change
 all the Maven deployment configurations (they have GlassFish and Tomcat in place but unmaintained!!)
 AND the DataSource configurations (alas, the EE spec doesn't nail down how to do this).
+* Poor MS-Windows users must also install cygwin, including git and diff.
 * Git clone all the projects listed above into a single parent directory (in the course we use C:\ but anyplace *should* work).
 ----
 cd WHERE_YOU_WANT_IT
 for repo in LearningTree/TicketManorJava \
-	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,makehandsons}
+	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,cdi-ee-samples,makehandsons,createprojects}
 do
     git clone https://github.com/$repo
 done
