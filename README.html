@@ -503,15 +503,16 @@ AND the DataSource configurations (alas, the EE spec doesn&#8217;t nail down how
 </div>
 </li>
 <li>
-<p>Git clone all the projects listed above into a single parent directory (in the course we use C:\ but anyplace <strong>should</strong> work).</p>
+<p>Git clone all the projects into a single parent directory
+(in the course we use C:\ but anyplace <strong>should</strong> work):</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cd WHERE_YOU_WANT_IT
+<pre>cd WHERE_YOU_INATALLED
 for repo in LearningTree/TicketManorJava \
-	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,cdi-ee-samples,makehandsons,createprojects}
+	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,cdi-ee-exaamples,makehandsons,createprojects}
 do
     git clone https://github.com/$repo
 done</pre>
@@ -544,7 +545,24 @@ sh scripts/all-in</pre>
 otherwise error messages would be missed.</p>
 </div>
 <div class="sect2">
-<h3 id="_eclipse_workspace_setup">Eclipse Workspace Setup</h3>
+<h3 id="_command_line_setup">Command Line setup</h3>
+<div class="paragraph">
+<p>Add the following to your PATH:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Java (if not done automatically)</p>
+</li>
+<li>
+<p>WHERE_YOU_INSTALLED/bats (windows only)</p>
+</li>
+<li>
+<p>postgresql/bin - for psql command
+=== Eclipse Workspace Setup</p>
+</li>
+</ol>
+</div>
 <div class="paragraph">
 <p>The normal intention is that the <em>sourcecode</em> subdirectory should be the base of an Eclipse workspace.</p>
 </div>
@@ -604,7 +622,7 @@ interfere with it working with Eclipse and Maven, please feel free to send a Git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-14 15:55:45 EST
+Last updated 2018-01-14 16:03:48 EST
 </div>
 </div>
 </body>
