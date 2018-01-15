@@ -1,6 +1,18 @@
-                <datasource jndi-name="java:jboss/datasources/ex52DS" pool-name="ex42DS" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:mysql://localhost:3306/ex42.db</connection-url>
-                    <driver>mysql</driver>
+				<!-- DataSource entries for Course 576 access -->
+				<!-- TicketManor -->
+                <datasource jndi-name="java:jboss/datasources/TicketManorDataSource" pool-name="TicketManorPool" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:postgresql:ticketmanor</connection-url>
+                    <driver>postgresql</driver>
+                    <security>
+                        <user-name>student</user-name>
+                        <password>student</password>
+                    </security>
+                </datasource>
+
+				<!-- CustFeedback -->
+				<datasource jndi-name="java:jboss/datasources/CustFeedbackDataSource" pool-name="CustFeedbackPool" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:postgresql:custfeedback</connection-url>
+                    <driver>postgresql</driver>
                     <security>
                         <user-name>student</user-name>
                         <password>student</password>

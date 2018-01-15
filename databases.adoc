@@ -28,18 +28,23 @@ PSQL is a command-line command that is on your path.
 Like most command-line interfaces, PSQL is much faster than the GUI,
 but requires you to know a few things. 
 Its input consists of a mixture of SQL commands
-(which may include Data Definition (DDL) commands like 'create table'),
+(which may include Data Definition (DDL) commands like _create table;_),
 and psql-specific commands that begin with a backslash - \d for Describe,
 \q for Quit, and so on.
 Try the following:
 
-	psql -d jpa_basic
+	psql -d jpademo
 	\l
 	\d
-	\d person
-	select * from person;
+	\d mydemotable
+	select * from mydemotable;
 	\?
 	\q
+
+You can ignore any messages about "code page" issues if you don't
+use what Anglophones consider 'accented characters'.
+Note that _psql_ includes its own command history mechanism using the
+arrow keys.
 
 The GUI interface is started from the Start Menu, under PostgreSQL 10,
 choose the pgAdmin application. Expand the Servers list at the left,
@@ -65,12 +70,12 @@ These databases are used as follows:
 [options="header",cols="2,4,5"]
 |====
 |DB name|Server DataSource|Description
-|ticketmanor|TicketManorDS|Main TicketManor demo db
+|ticketmanor|TicketManorDataSource|Main TicketManor demo db
 |jpademo|n/a|jpademo project
 |jpa_basics|N/A|HO 3.x
 |jpa_aggregation|N/A|HO4.1
 |jpa_inheritance|N/A|HO4.2
-|CustFeedback|CustFeedbackDS|Customer Feedback (ex5.3, formerly ex52DS)
+|CustFeedback|CustFeedbackDataSource|Customer Feedback (ex5.3)
 |====
 
 
