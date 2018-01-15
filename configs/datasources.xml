@@ -1,20 +1,21 @@
-				<!-- DataSource entries for Course 576 access -->
+				<!-- DataSource entries for Course 936 access -->
+
 				<!-- TicketManor -->
-                <datasource jndi-name="java:jboss/datasources/TicketManorDataSource" pool-name="TicketManorPool" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:postgresql:ticketmanor</connection-url>
-                    <driver>postgresql</driver>
-                    <security>
-                        <user-name>student</user-name>
-                        <password>student</password>
-                    </security>
-                </datasource>
+				<datasource jndi-name="java:jboss/datasources/TicketManorDataSource" pool-name="TicketManorPool" enabled="true" use-java-context="true">
+					<connection-url>jdbc:postgresql:ticketmanor</connection-url>
+					<driver>postgresql</driver>
+					<security>
+						<user-name>student</user-name>
+						<password>student</password>
+					</security>
+				</datasource>
 
 				<!-- CustFeedback -->
 				<datasource jndi-name="java:jboss/datasources/CustFeedbackDataSource" pool-name="CustFeedbackPool" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:postgresql:custfeedback</connection-url>
-                    <driver>postgresql</driver>
-                    <security>
-                        <user-name>student</user-name>
-                        <password>student</password>
-                    </security>
-                </datasource>
+					<connection-url>jdbc:postgresql:custfeedback</connection-url>
+					<driver>postgresql</driver>
+					<security>
+						<user-name>student</user-name>
+						<password>student</password>
+					</security>
+				</datasource>
