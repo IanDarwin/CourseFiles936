@@ -69,9 +69,9 @@ public class CommentReceiver
 			System.out.println("Got comment: " + comment.getComment());
 			em.persist(comment);
 			System.err.println("Feedback saved to database!");
-		} catch (JMSException jmserr) {
-			System.err.println("Failed to get feedback object from wrapper: " + jmserr);
-			jmserr.printStackTrace(System.err);
+		} catch (JMSException jmsexc) {
+			System.err.println("Failed to get feedback object from wrapper: " + jmsexc);
+			jmsexc.printStackTrace(System.err);
 		}
 		//+
 	}
