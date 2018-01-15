@@ -566,14 +566,31 @@ otherwise error messages would be missed.</p>
 <p>Java (if not done automatically)</p>
 </li>
 <li>
+<p>Apache Maven 3.5.x</p>
+</li>
+<li>
 <p>WHERE_YOU_INSTALLED/bats (windows only)</p>
 </li>
 <li>
-<p>postgresql/bin - for psql command
-=== Eclipse Workspace Setup</p>
+<p>postgresql/bin - for psql command</p>
+</li>
+<li>
+<p>cygwin/bin - for Unix compatability</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>On Windows this may look something like this, though the actual path settings will vary depending on what software releases you&#8217;ve installed.</p>
+</div>
+<div id="path-setting.png" class="imageblock">
+<div class="content">
+<img src="images/path-setting.png" alt="path setting">
+</div>
+<div class="title">Figure 1. Path setting on MS-DOS (YMMV)</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_eclipse_workspace_setup">Eclipse Workspace Setup</h3>
 <div class="paragraph">
 <p>The normal intention is that the <em>sourcecode</em> subdirectory should be the base of an Eclipse workspace.</p>
 </div>
@@ -603,7 +620,7 @@ which should cause the dialog to change the text in its bottom panel to somethin
 </div>
 </li>
 <li>
-<p>Ditto for jsfdemo, jpademo, and clublist except they should be in the folder one level up in the filesystem.</p>
+<p>Ditto for cdi-ee-examples, clublist, jsfdemo, jpademo, except they should be in the folder one level up in the filesystem.</p>
 </li>
 <li>
 <p>If you want the javasrc project (code examples from the Java Cookbook) and darwinsys-api (some helper files),
@@ -633,7 +650,7 @@ interfere with it working with Eclipse and Maven, please feel free to send a Git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-14 20:51:50 EST
+Last updated 2018-01-15 10:31:30 EST
 </div>
 </div>
 </body>

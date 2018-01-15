@@ -146,5 +146,12 @@ echo "
 
 ------------------------- All done! -------------------------
 
-Remember to open all Eclipse projects, do Project->Clean->All Projects, close all projects again!
+Remember to execute the following steps:
+	In Eclipse:
+		open all non-ex* Eclipse projects;
+		refresh each one;
+		do Project->Clean->All Projects;
+		close all projects again;
+		Close the Create Projects View.
+	Close all windows but Chrome; only Home Page showing, centered.
 "
