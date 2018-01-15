@@ -2,7 +2,13 @@
 
 Storehouse for key configuration files used in the deployment.
 
-== MySQL
+== PostgreSQL
+
+cp -r modules/postgres WF_HOME/modules/system ??
+
+merge datasources.txt into the right place in WF_HOME/standalone/config/standalone-full.xml
+
+== MySQL (not tested in this release!)
 
 cd to wildfly base directory
 

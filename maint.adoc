@@ -8,7 +8,7 @@ Renaming is my least-fave form of maintenance.
 When you rename a exXXsolution directory (which can only
 be done if chapters are moved in the CN), remember:
 
-1) Update the MA in Adapatlearn.
+1) Update the MA in Adaptalearn.
 2) Find all occurrences of the old in the new, replace most/all. 
 	REMEMBER, e.g.:
 	grep -r ex51 ex61solution/
@@ -17,9 +17,7 @@ be done if chapters are moved in the CN), remember:
 	If that looks right, run through xargs replace:
 	grep -lr ex51 ex61solution/ | xargs replace ex51 ex61
 
-	This will however break datasources!
-
 == Misc
 
-If you change and push the all-in script, you must git pull in
-this repo before running it.
+If you change and push the all-in script from some other computer,
+you must git pull in this repo before running it.
