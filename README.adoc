@@ -37,20 +37,29 @@ you could use a different App Server but you'd have to change
 all the Maven deployment configurations (most projects have 
 GlassFish and Tomcat in _pom.xml_, but this is unmaintained!!)
 AND the DataSource configurations (alas, the EE spec doesn't nail down how to do this).
-* Poor MS-Windows users must also install cygwin, including:
+* MS-Windows users must also install cygwin, including:
 ** git
 ** diff
 ** unzip
 * Git clone all the projects into a single parent directory
 (in the course we use C:\ but anyplace *should* work):
 ----
-cd WHERE_YOU_INATALLED
+cd WHERE_YOU_INSTALLED
 for repo in LearningTree/TicketManorJava \
 	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,cdi-ee-exaamples,makehandsons,createprojects}
 do
     git clone https://github.com/$repo
 done
 ----
+* Create databases:
+	psql <<!
+	create user student password 'student' login nosuperuser;
+	create database ticketmanor owner student;
+	create database jpademo owner student;
+	create database jpa_basic owner student;
+	create database jpa_inheritance owner student;
+	create database jpa_aggregation owner student;
+	!
 * Copy or merge Coursefiles936/configs/standalone-full.xml into wildfly
 * Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
 * If it doesn't start successfully, iterate on your configuration.
