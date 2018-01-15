@@ -76,8 +76,17 @@ otherwise error messages would be missed.
 Add the following to your PATH:
 
 . Java (if not done automatically)
+. Apache Maven 3.5.x
 . WHERE_YOU_INSTALLED/bats (windows only)
 . postgresql/bin - for psql command
+. cygwin/bin - for Unix compatability
+
+On Windows this may look something like this, though the actual path settings will vary depending on what software releases you've installed.
+
+[[path-setting.png]]
+.Path setting on MS-DOS (YMMV)
+image::images/path-setting.png[]
+
 === Eclipse Workspace Setup
 
 The normal intention is that the _sourcecode_ subdirectory should be the base of an Eclipse workspace.
@@ -91,7 +100,7 @@ which should cause the dialog to change the text in its bottom panel to somethin
  "The wizard will use the existing settings to configure the project". Click Finish.
 * Repeat the above for these projects:
 ** ticketmanor-ee 
-* Ditto for jsfdemo, jpademo, and clublist except they should be in the folder one level up in the filesystem.
+* Ditto for cdi-ee-examples, clublist, jsfdemo, jpademo, except they should be in the folder one level up in the filesystem.
 * If you want the javasrc project (code examples from the Java Cookbook) and darwinsys-api (some helper files),
 do the same for them.
 * Finally you have to create the two dozen or so "ex" projects.
