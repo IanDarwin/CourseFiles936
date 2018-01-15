@@ -1,6 +1,7 @@
 REM hookup postgresql into wildfly
 
-cd /wildfly*/bin
+cd \wildfly*
+cd bin
 jboss-cli.bat
 connect
 module add –name=org.postgres –resources=F:postgresql-9.4.1207.jar –dependencies=javax.api,javax.transaction.api
