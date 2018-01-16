@@ -4,7 +4,7 @@
 		http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
 
-<persistence-unit name="jpademo">
+<persistence-unit name="ex42solution">
     <!-- 
     *** N.B. Both Hibernate and EclipseLink are here; one must be
     *** commented out, and the one that isn't, must be moved ahead of 
@@ -28,23 +28,13 @@
 			value="org.eclipse.persistence.platform.database.HSQLPlatform"/>
 		<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
 
-		<!-- Properties for MySQL (database must be created) -->
-		<!--
-		<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpademo.db"/>
-		<property name="javax.persistence.jdbc.user" value="student" />
-		<property name="javax.persistence.jdbc.password" value="student" />
-		<property name="eclipselink.target-database" value="MySQL"/>
-		<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
-		-->
-
-		<!-- Properties for PostgreSQL (database must be created) -->
+		<!-- Properties for PostgreSQL -->
 		<!--
 		<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql:jpademo"/>
+		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql:jpa_inheritance"/>
 		<property name="javax.persistence.jdbc.user" value="student"/>
 		<property name="javax.persistence.jdbc.password" value="student"/>
-		<property name="eclipselink.target-database" value="PostgressQL"/>
+		<property name="eclipselink.target-database" value="PostgresQL"/>
 		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 		-->
 

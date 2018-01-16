@@ -16,7 +16,7 @@
 	-->
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-    <jta-data-source>java:jboss/datasources/ex52DS</jta-data-source> <!-- Yes this is still ex52DS, that's OK -->
+    <jta-data-source>java:jboss/datasources/CustFeedbackDataSource</jta-data-source>
 
 	<!-- DataModel is in its own jar so you have to list the classes you need from it -->
 	<class>com.ticketmanor.model.Act</class>
@@ -40,7 +40,7 @@
 	<!-- Properties for eclipselink -->
 	<!--
 	<property name="eclipselink.target-database"
-	      value="org.eclipse.persistence.platform.database.MySqlPlatform"/>
+	      value="org.eclipse.persistence.platform.database.PostgreSqlPlatform"/>
 	-->
 	<property name="eclipselink.logging.level" value="OFF"/>
 	<property name="eclipselink.orm.throw.exceptions" value="true"/>
@@ -48,7 +48,7 @@
 	<property name="eclipselink.ddl-generation.output-mode" value="database"/>
 
 	<!-- Properties for Hibernate -->
-	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+	<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 	<property name="hibernate.hbm2ddl.auto" value="update"/>
 	<property name="hibernate.show_sql" value="true"/>
 	<property name="hibernate.format_sql" value="false"/>

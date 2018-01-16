@@ -12,17 +12,17 @@
 			<property name="javax.persistence.provider" value="org.eclipselink.jpa.provider"/>
 			-->
 
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ex31.db" />
+			<property name="javax.persistence.jdbc.driver" value="com.postgresqk.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgres:jpa_basics" />
 			<property name="javax.persistence.jdbc.user" value="student" />
 			<property name="javax.persistence.jdbc.password" value="student" />
 
 			<!-- Properties for Hibernate provider -->
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL"/>
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			<property name="hibernate.show_sql" value="false"/>
 			<property name="hibernate.format_sql" value="false"/>
-			<property name="eclipselink.target-database" value="MySQL" />
+			<property name="eclipselink.target-database" value="PostgreSQL" />
 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
 			<property name="eclipselink.logging.level.sql" value="FINE" />
 			<property name="eclipselink.logging.parameters" value="true" />
