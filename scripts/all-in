@@ -20,7 +20,7 @@ TEST_DIRS="CourseFiles936/sourcecode/donow31solution
 	CourseFiles936/sourcecode/ex53clientsolution 
 	jpademo"
 # Dirs we want to "wildfly:deploy"
-MWD_DIRS="site
+MWD_DIRS="CourseFiles936/site
 	TicketManorJava/ticketmanor-ee 
 	CourseFiles936/sourcecode/ex51solution
 	CourseFiles936/sourcecode/ex52solution
