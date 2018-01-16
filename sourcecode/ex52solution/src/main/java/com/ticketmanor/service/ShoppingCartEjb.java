@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.ejb.Remove;
 import javax.ejb.Stateful;
 
 import com.ticketmanor.model.OrderItem;
@@ -16,9 +17,8 @@ public class ShoppingCartEjb implements ShoppingCart {
 	
 	private List<OrderItem> cart = new ArrayList<>(5);
 	
-	/* (non-Javadoc)
-	 * @see com.ticketmanor.service.ShoppingCart#addToCart(com.ticketmanor.model.Sellable)
-	 */
+	// T What is the default transactional state and why do we not need a
+	// Transaction annotation on this method?
 	@Override
 	public void addToCart(Sellable s) {
 		for (OrderItem item : cart) {
@@ -95,5 +95,18 @@ public class ShoppingCartEjb implements ShoppingCart {
 			n += oi.getQuantity();
 		}
 		return n;
+	}
+
+	// T Imagine that there is a saveCartForLater() method that persists
+	// the user's cart into the database with JPA. What annotation(s) would it need?
+	public void saveCartForLater() {
+		// This would write cart contents to JPA
+	}
+
+	// T @Remove methods may not be transactional. What additional annotation
+	// should be applied here to say that we don't want Tx for this method?
+	@Remove
+	public void close() {
+		//
 	}
 }
