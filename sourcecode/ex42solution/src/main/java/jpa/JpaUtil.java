@@ -13,9 +13,9 @@ public class JpaUtil {
 	protected static EntityManagerFactory entityMgrFactory = null;
 	protected static EntityManager entityManager = null;
 
-	public synchronized static EntityManagerFactory getEntityManagerFactory() {
+	public synchronized static EntityManagerFactory getEntityManagerFactory(String persistenceUnitName) {
 		long time = System.currentTimeMillis();
-		entityMgrFactory = Persistence.createEntityManagerFactory("ex42solution");
+		entityMgrFactory = Persistence.createEntityManagerFactory(persistenceUnitName);
 		long time2 = System.currentTimeMillis();
 		System.out.printf("Created EntityManagerFactory in %f seconds%n", (time2 - time)/1000d);
 		return entityMgrFactory;
@@ -23,7 +23,7 @@ public class JpaUtil {
 
 	public static EntityManager getEntityManager() {
 		if (entityMgrFactory == null) {
-			getEntityManagerFactory();
+			getEntityManagerFactory("ex42solution");
 		}
 		long time2 = System.currentTimeMillis();
 		entityManager = entityMgrFactory.createEntityManager();

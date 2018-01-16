@@ -61,12 +61,14 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
+		-->
+
+		<!-- Hibernate validation - implementation of javax.validation -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.3.2.Final</version>
 		</dependency>
-		-->
 
 		<!-- Database Drivers (just leave them all listed)-->
 		<dependency>

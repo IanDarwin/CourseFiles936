@@ -15,7 +15,7 @@ public class JpaSetupTest {
 
 		System.out.println("SetupTest.setupTest");
 
-		EntityManagerFactory entityMgrFactory = JpaUtil.getEntityManagerFactory();
+		EntityManagerFactory entityMgrFactory = JpaUtil.getEntityManagerFactory("ex42solution-test");
 		EntityManager entityManager = JpaUtil.getEntityManager();
 		
 		entityManager.close();

@@ -21,7 +21,7 @@ public class JpaSimple {
 		// These two steps would be done for you
 		// were you running in an EE App Server.
 		// Or just the EntityManager injected if you were using JavaEE or Spring
-		EntityManagerFactory entityMgrFactory = JpaUtil.getEntityManagerFactory();
+		EntityManagerFactory entityMgrFactory = JpaUtil.getEntityManagerFactory("ex42solution");
 		System.out.println("EntityManagerFactory is " + entityMgrFactory.getClass().getName());
 		EntityManager entityManager = JpaUtil.getEntityManager();
 
