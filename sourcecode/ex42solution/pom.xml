@@ -50,6 +50,7 @@
 		</dependency>
 
 		<!-- Hibernate and its JPA Provider -->
+		<!--
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
@@ -65,6 +66,7 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.3.2.Final</version>
 		</dependency>
+		-->
 
 		<!-- Database Drivers (just leave them all listed)-->
 		<dependency>
