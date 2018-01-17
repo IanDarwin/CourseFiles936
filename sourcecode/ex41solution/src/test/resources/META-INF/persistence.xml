@@ -14,11 +14,11 @@
 			<property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="" />
 
-			<!-- Choose one -->
+			<!-- Choose one provider -->
 			<!--
 			<property name="javax.persistence.provider" value="org.eclipselink.jpa.provider"/>
 			-->
-			<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+			<property name="javax.persistence.provider" value="org.eclipse.persistence.jpa.PersistenceProvider"/>
 
 			<!-- Hibernate -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
