@@ -1,5 +1,7 @@
 REM hookup postgresql into wildfly
 
+REM version numbers jumped from 9.x to 42.x to avoid implying req't to be in synch w/ PostgreSQL version
+
 cd \wildfly*
 cd bin
 jboss-cli.bat
