@@ -4,9 +4,13 @@ To run this at home you will have to do some configuration!
 
 On wildfly you can set up the queue like so:
 
+----
 $ bin/jboss-cli.sh
+[standalone@localhost:9990 /] # Starts off disconnected, so connect
 [standalone@localhost:9990 /] connect
+[standalone@localhost:9990 /] # Add a Queue to JMS (does not print anything on success)
 [standalone@localhost:9990 /] jms-queue add --queue-address=feedbackQueue --entries=jms/queue/feedbackQueue,java:jboss/exported/jms/queue/feedbackQueue
+[standalone@localhost:9990 /] # So read it back just to verify (does not seem to work at present??)
 [standalone@localhost:9990 /] /subsystem=messaging/hornetq-server=default/jms-queue=feedbackQueue:read-resource                                        
 {
     "outcome" => "success",
@@ -21,5 +25,6 @@ $ bin/jboss-cli.sh
 }
 [standalone@localhost:9990 /] quit
 $ 
+----
 
 This is based upon https://docs.jboss.org/author/display/WFLY8/Messaging+configuration
