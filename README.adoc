@@ -63,6 +63,7 @@ done
 * Decide if you want JMS or not. If so, use standalone-full.xml in the following; if not, use standalone.xml
 and delete sourcecode/ex53solution
 * Merge configs/datasources into wildfly config file.
+* Download Jenkins (latest LTS jenkins.war) from jenkins.org; copy it to WILDFLY_HOME/standalone/deployments
 * Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
 (if you don't want JMS support omit the -c and the filename).
 * If it doesn't start successfully, iterate on your configuration.
