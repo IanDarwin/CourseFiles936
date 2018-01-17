@@ -60,10 +60,15 @@ done
 	create database jpa_inheritance owner student;
 	create database jpa_aggregation owner student;
 	!
-* Copy or merge Coursefiles936/configs/standalone-full.xml into wildfly
+* Decide if you want JMS or not. If so, use standalone-full.xml in the following; if not, use standalone.xml
+and delete sourcecode/ex53solution
+* Merge configs/datasources into wildfly config file.
 * Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
+(if you don't want JMS support omit the -c and the filename).
 * If it doesn't start successfully, iterate on your configuration.
-* Run the uber-script:
+* Install the database driver. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn't have 'here documents' (special form of redirection).
+For MySql or its fork MariaDB, follow the steps in configs/mysql-driver.txt.
+* Run the uber-script which, among other things, creates the exercises from the solutions:
 ----
 cd Coursefiles936
 sh scripts/all-in
@@ -79,7 +84,7 @@ Add the following to your PATH:
 . Apache Maven 3.5.x
 . WHERE_YOU_INSTALLED/bats (windows only)
 . postgresql/bin - for psql command
-. cygwin/bin - for Unix compatability
+. cygwin/bin - optional, for Unix compatability
 
 On Windows this may look something like this, though the actual path settings will vary depending on what software releases you've installed.
 

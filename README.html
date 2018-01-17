@@ -532,16 +532,25 @@ create database jpa_aggregation owner student;
 !</p>
 </li>
 <li>
-<p>Copy or merge Coursefiles936/configs/standalone-full.xml into wildfly</p>
+<p>Decide if you want JMS or not. If so, use standalone-full.xml in the following; if not, use standalone.xml
+and delete sourcecode/ex53solution</p>
 </li>
 <li>
-<p>Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml</p>
+<p>Merge configs/datasources into wildfly config file.</p>
+</li>
+<li>
+<p>Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
+(if you don&#8217;t want JMS support omit the -c and the filename).</p>
 </li>
 <li>
 <p>If it doesn&#8217;t start successfully, iterate on your configuration.</p>
 </li>
 <li>
-<p>Run the uber-script:</p>
+<p>Install the database driver. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn&#8217;t have 'here documents' (special form of redirection).
+For MySql or its fork MariaDB, follow the steps in configs/mysql-driver.txt.</p>
+</li>
+<li>
+<p>Run the uber-script which, among other things, creates the exercises from the solutions:</p>
 </li>
 </ul>
 </div>
@@ -575,7 +584,7 @@ otherwise error messages would be missed.</p>
 <p>postgresql/bin - for psql command</p>
 </li>
 <li>
-<p>cygwin/bin - for Unix compatability</p>
+<p>cygwin/bin - optional, for Unix compatability</p>
 </li>
 </ol>
 </div>
@@ -651,7 +660,7 @@ interfere with it working with Eclipse and Maven, please feel free to send a Git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-15 11:53:10 EST
+Last updated 2018-01-17 08:37:00 EST
 </div>
 </div>
 </body>
