@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 
 import com.ticketmanor.model.OrderItem;
 import com.ticketmanor.model.Sellable;
@@ -99,6 +101,9 @@ public class ShoppingCartEjb implements ShoppingCart {
 
 	// T Imagine that there is a saveCartForLater() method that persists
 	// the user's cart into the database with JPA. What annotation(s) would it need?
+	//-
+	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
+	//+
 	public void saveCartForLater() {
 		// This would write cart contents to JPA
 	}
@@ -106,6 +111,9 @@ public class ShoppingCartEjb implements ShoppingCart {
 	// T @Remove methods may not be transactional. What additional annotation
 	// should be applied here to say that we don't want Tx for this method?
 	@Remove
+	//-
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+	//+
 	public void close() {
 		//
 	}
