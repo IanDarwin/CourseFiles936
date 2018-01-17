@@ -13,14 +13,8 @@
 	<name>LT-JaveEE TicketManor MDB service and test</name>
 	<url>https://learningtree.com/936</url>
 	
-	<!-- Note: the "client" here is a test client, so it is
-	in the test folder and its config in src/test/resources,
-	to avoid polluting the WAR file that is sent to the server.
-	 -->
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<hibernate.version>4.0.1.Final</hibernate.version>
 	</properties>
 
 	<dependencies>
@@ -31,11 +25,11 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
-		<!-- JMS - must be compilable-against for server but provided for test(client) -->
+		<!-- Java EE - must be compilable-against for server but scope provided -->
 		<dependency>
-			<groupId>org.glassfish</groupId>
-			<artifactId>javax.jms</artifactId>
-			<version>3.1.1</version>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
 
