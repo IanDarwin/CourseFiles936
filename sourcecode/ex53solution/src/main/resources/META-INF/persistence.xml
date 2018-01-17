@@ -38,10 +38,8 @@
 	<properties>
 
 	<!-- Properties for eclipselink -->
-	<!--
 	<property name="eclipselink.target-database"
 	      value="org.eclipse.persistence.platform.database.PostgreSqlPlatform"/>
-	-->
 	<property name="eclipselink.logging.level" value="OFF"/>
 	<property name="eclipselink.orm.throw.exceptions" value="true"/>
 	<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
@@ -51,8 +49,7 @@
 	<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 	<!-- When this is set to 'update', the current software throws an exception
 	 *** when re-deploying the app, along the lines of "column am.amcanorder does not exist"
-	 *** If you want to make the data stay, do a web search on that message.
-	 -->
+	 *** If you want to make the data stay, do a web search on that message.  -->
 	<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 	<property name="hibernate.show_sql" value="true"/>
 	<property name="hibernate.format_sql" value="false"/>
