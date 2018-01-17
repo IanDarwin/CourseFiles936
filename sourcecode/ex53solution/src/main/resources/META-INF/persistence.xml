@@ -49,7 +49,11 @@
 
 	<!-- Properties for Hibernate -->
 	<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-	<property name="hibernate.hbm2ddl.auto" value="update"/>
+	<!-- When this is set to 'update', the current software throws an exception
+	 *** when re-deploying the app, along the lines of "column am.amcanorder does not exist"
+	 *** If you want to make the data stay, do a web search on that message.
+	 -->
+	<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 	<property name="hibernate.show_sql" value="true"/>
 	<property name="hibernate.format_sql" value="false"/>
 	<property name="hibernate.archive.autodetection" value="class"/>
