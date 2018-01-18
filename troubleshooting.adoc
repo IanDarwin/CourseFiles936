@@ -30,12 +30,12 @@ On most Maven failures, Maven will print this helpful advice:
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
 ----
-99.45% of the time you should just ignore this. Seeing a stack trace of Maven's
+99.45% of the time you should just *ignore this advice*. Seeing a stack trace of Maven's
 internals isn't that interesting.
 
 ==== JMS Issues With WildFly
 
-When you run ex43's CommentSender, you should see something like this:
+When you run ex53's CommentSender, you should see something like this:
 
 ----
 1 20:38:57,478 INFO  [org.jboss.as.server] (management-handler-thread - 1) JBAS018559: Deployed "ex42solution-1.0.0-SNAPSHOT.war" (runtime-name : "ex42solution-1.0.0-SNAPSHOT.war")
@@ -87,3 +87,9 @@ Make *very sure* you leave it as well-formed XML.
 * Save the file
 * Re-start the server.
 * Re-deploy application(s) as needed.
+
+== Database
+
+Postgresql runs as a Windows Service, so you can control it from the Services Control Panel.
+
+Its main log file is in c:\WILDFLY-DIR\standalone\log\server.log
