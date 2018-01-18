@@ -7,13 +7,6 @@
  *** This is the server-side version of persistence.xml
  -->
 <persistence-unit name="ex71solution">
-	<!-- Uncomment one (and only one) of the following two persistence providers,
-	 *** after making sure that the given provider is on your classpath.
-	 -->
-	<!--
-	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-	-->
-	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
 	<jta-data-source>java:jboss/datasources/TicketManorDataSource</jta-data-source>
 
@@ -36,6 +29,13 @@
 	<exclude-unlisted-classes>false</exclude-unlisted-classes>
 	
 	<properties>
+	<!-- Uncomment one (and only one) of the following two persistence providers,
+	 *** after making sure that the given provider is on your classpath.
+	 -->
+	<!--
+	<property name="javax.persistence.provider" value="org.eclipse.persistence.jpa.PersistenceProvider"/>
+	-->
+	<property name="javax.persistence.provider" value="org.hibernate.ejb.HibernatePersistence"/>
 
 	<!-- Properties for eclipselink -->
 	<!--
