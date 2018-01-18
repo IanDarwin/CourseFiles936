@@ -1,6 +1,6 @@
-== Troubleshooting
+= Troubleshooting
 
-=== What to ignore?
+== What to ignore?
 
 As much as we hate to advise anyone to ignore errors _ever_, we have found that
 the following errors from *Eclipse* can be ignored:
@@ -11,7 +11,7 @@ the following errors from *Eclipse* can be ignored:
 As well, some of the projects (notably Exercises 4.1 and 5.2) will have a bunch of red flags when
 first opened, because you haven't yet written the code. These will go away as you write the code.
 
-=== Maven Deployment
+== Maven Deployment
 
 When you run _mvn wildfly:deploy_ you should see the message "Build Success" near the end of the Maven output.
 If not, check the following:
@@ -33,22 +33,33 @@ This output is pretty verbose, but the error will usually be called out somewher
 last hundred lines or so. In particular, look for a Java stack trace.
 With practice, the errors will become easier to track down here.
 
-==== Maven: Bad Advice
+=== Wildfly: Out of Memory: MetaSpace
 
-On most Maven failures, Maven will print this helpful advice:
+Wildfly can run out of "MetaSpace" memory if you do a lot of redeploys. If this happens, your
+app will fail to deploy, and you'll see
+a stack trace with this message in the Wildfly console window.
+
+Do the following:
+* Type CTRL/C in the Wildfly window. Wait a minute or two.
+* Close the Wildfly window from the titlebar.
+* Start the wildfly server again from the desktop icon.
+
+=== Maven: Bad Advice
+
+On most Maven failures, Maven will print this "helpful" advice:
 ----
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
 ----
-99.45% of the time you should just *ignore this advice*. Seeing a stack trace of Maven's
-internals isn't that interesting.
+99.95% of the time you should just *ignore this advice*. Seeing a stack trace of Maven's
+internals really isn't that interesting.
 
-==== JMS Issues With WildFly
+=== JMS Issues With WildFly
 
 When you run ex53's CommentSender, you should see something like this:
 
 ----
-1 20:38:57,478 INFO  [org.jboss.as.server] (management-handler-thread - 1) JBAS018559: Deployed "ex42solution-1.0.0-SNAPSHOT.war" (runtime-name : "ex42solution-1.0.0-SNAPSHOT.war")
+1 20:38:57,478 INFO  [org.jboss.as.server] (management-handler-thread - 1) JBAS018559: Deployed "ex53solution-1.0.0-SNAPSHOT.war" (runtime-name : "ex42solution-1.0.0-SNAPSHOT.war")
 2 20:39:22,813 INFO  [stdout] (Thread-1 (HornetQ-client-global-threads-1648300319)) Got sender: Whiney Whitefoot--ww@gmail.moc
  20:39:22,813 INFO  [stdout] (Thread-1 (HornetQ-client-global-threads-1648300319)) Got comment: I actually love your site!!
 3 20:39:22,814 INFO  [stdout] (Thread-1 (HornetQ-client-global-threads-1648300319)) Hibernate: call next value for hibernate_sequence
@@ -78,9 +89,13 @@ apparently not actually do so; add a debug statement and see if the line
 numbers in the stack trace are affected. If not,
 the solution is to follow the steps "Cleaning Wildfly Configuration".
 
+== WildFly Server
+
+The main log file is in c:\WILDFLY-DIR\standalone\log\server.log
+
 === Restart Issues with Wildfly
 
-When the Wildfly Server won't start after a crash, it usually means that the configuration file has gotten corrupted.
+If the Wildfly Server won't start after a crash, it usually means that the configuration file has gotten corrupted.
 One of the weaknesses of this version of Wildfly is that it both depends upon, and updates, the main configuration file.
 At the end of standalone-full.xml is a list of war/jar files that the server thinks should be deployed.
 Each is represented by a war file and a directory with a name in the tmp/vfs directory.
@@ -88,7 +103,7 @@ If a crash results in the file being listed in this configuration, but not prese
 the server *will not start*. 
 The easy solution is to follow the "Cleaning Wildfly Configuration" steps.
 
-=== Cleaning Wildfly Configuration
+==== Cleaning Wildfly Configuration
 
 * Stop the server (try CTRL/C in the window where it is running).
 * Edit the file WILDFLY_HOME/standalone/configuration/standalone-full.xml
@@ -98,8 +113,8 @@ Make *very sure* you leave it as well-formed XML.
 * Re-start the server.
 * Re-deploy application(s) as needed.
 
-== Database
+== Database Issues
 
 Postgresql runs as a Windows Service, so you can control it from the Services Control Panel.
+It's pretty solid so you shouldn't have to restart it during the week.
 
-Its main log file is in c:\WILDFLY-DIR\standalone\log\server.log

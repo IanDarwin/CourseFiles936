@@ -427,13 +427,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
+<h1>Troubleshooting</h1>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_troubleshooting">Troubleshooting</h2>
+<h2 id="_what_to_ignore">What to ignore?</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_what_to_ignore">What to ignore?</h3>
 <div class="paragraph">
 <p>As much as we hate to advise anyone to ignore errors <em>ever</em>, we have found that
 the following errors from <strong>Eclipse</strong> can be ignored:</p>
@@ -449,8 +448,10 @@ The persistence.xml file does not have supported content for this JPA platform.<
 first opened, because you haven&#8217;t yet written the code. These will go away as you write the code.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_maven_deployment">Maven Deployment</h3>
+</div>
+<div class="sect1">
+<h2 id="_maven_deployment">Maven Deployment</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>When you run <em>mvn wildfly:deploy</em> you should see the message "Build Success" near the end of the Maven output.
 If not, check the following:</p>
@@ -492,10 +493,24 @@ This output is pretty verbose, but the error will usually be called out somewher
 last hundred lines or so. In particular, look for a Java stack trace.
 With practice, the errors will become easier to track down here.</p>
 </div>
-<div class="sect3">
-<h4 id="_maven_bad_advice">Maven: Bad Advice</h4>
+<div class="sect2">
+<h3 id="_wildfly_out_of_memory_metaspace">Wildfly: Out of Memory: MetaSpace</h3>
 <div class="paragraph">
-<p>On most Maven failures, Maven will print this helpful advice:</p>
+<p>Wildfly can run out of "MetaSpace" memory if you do a lot of redeploys. If this happens, your
+app will fail to deploy, and you&#8217;ll see
+a stack trace with this message in the Wildfly console window.</p>
+</div>
+<div class="paragraph">
+<p>Do the following:
+* Type CTRL/C in the Wildfly window. Wait a minute or two.
+* Close the Wildfly window from the titlebar.
+* Start the wildfly server again from the desktop icon.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_maven_bad_advice">Maven: Bad Advice</h3>
+<div class="paragraph">
+<p>On most Maven failures, Maven will print this "helpful" advice:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -504,18 +519,18 @@ With practice, the errors will become easier to track down here.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>99.45% of the time you should just <strong>ignore this advice</strong>. Seeing a stack trace of Maven&#8217;s
-internals isn&#8217;t that interesting.</p>
+<p>99.95% of the time you should just <strong>ignore this advice</strong>. Seeing a stack trace of Maven&#8217;s
+internals really isn&#8217;t that interesting.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_jms_issues_with_wildfly">JMS Issues With WildFly</h4>
+<div class="sect2">
+<h3 id="_jms_issues_with_wildfly">JMS Issues With WildFly</h3>
 <div class="paragraph">
 <p>When you run ex53&#8217;s CommentSender, you should see something like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>1 20:38:57,478 INFO  [org.jboss.as.server] (management-handler-thread - 1) JBAS018559: Deployed "ex42solution-1.0.0-SNAPSHOT.war" (runtime-name : "ex42solution-1.0.0-SNAPSHOT.war")
+<pre>1 20:38:57,478 INFO  [org.jboss.as.server] (management-handler-thread - 1) JBAS018559: Deployed "ex53solution-1.0.0-SNAPSHOT.war" (runtime-name : "ex42solution-1.0.0-SNAPSHOT.war")
 2 20:39:22,813 INFO  [stdout] (Thread-1 (HornetQ-client-global-threads-1648300319)) Got sender: Whiney Whitefoot--ww@gmail.moc
  20:39:22,813 INFO  [stdout] (Thread-1 (HornetQ-client-global-threads-1648300319)) Got comment: I actually love your site!!
 3 20:39:22,814 INFO  [stdout] (Thread-1 (HornetQ-client-global-threads-1648300319)) Hibernate: call next value for hibernate_sequence
@@ -566,10 +581,17 @@ the solution is to follow the steps "Cleaning Wildfly Configuration".</p>
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_wildfly_server">WildFly Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The main log file is in c:\WILDFLY-DIR\standalone\log\server.log</p>
+</div>
 <div class="sect2">
 <h3 id="_restart_issues_with_wildfly">Restart Issues with Wildfly</h3>
 <div class="paragraph">
-<p>When the Wildfly Server won&#8217;t start after a crash, it usually means that the configuration file has gotten corrupted.
+<p>If the Wildfly Server won&#8217;t start after a crash, it usually means that the configuration file has gotten corrupted.
 One of the weaknesses of this version of Wildfly is that it both depends upon, and updates, the main configuration file.
 At the end of standalone-full.xml is a list of war/jar files that the server thinks should be deployed.
 Each is represented by a war file and a directory with a name in the tmp/vfs directory.
@@ -577,9 +599,8 @@ If a crash results in the file being listed in this configuration, but not prese
 the server <strong>will not start</strong>.
 The easy solution is to follow the "Cleaning Wildfly Configuration" steps.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_cleaning_wildfly_configuration">Cleaning Wildfly Configuration</h3>
+<div class="sect3">
+<h4 id="_cleaning_wildfly_configuration">Cleaning Wildfly Configuration</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -606,21 +627,20 @@ Make <strong>very sure</strong> you leave it as well-formed XML.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_database">Database</h2>
+<h2 id="_database_issues">Database Issues</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Postgresql runs as a Windows Service, so you can control it from the Services Control Panel.</p>
-</div>
-<div class="paragraph">
-<p>Its main log file is in c:\WILDFLY-DIR\standalone\log\server.log</p>
+<p>Postgresql runs as a Windows Service, so you can control it from the Services Control Panel.
+It&#8217;s pretty solid so you shouldn&#8217;t have to restart it during the week.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-18 12:27:38 EST
+Last updated 2018-01-18 14:36:16 EST
 </div>
 </div>
 </body>
