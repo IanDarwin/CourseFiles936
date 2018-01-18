@@ -462,7 +462,7 @@ the solutions, so they are always in synch.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_set_up_the_environment_at_home_or_work">Set Up the environment at home or work</h2>
+<h2 id="_set_up_the_environment_at_home_or_work">Set Up the Environment at Home or Work</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To set up the environment at home or work, you should try the following
@@ -521,6 +521,18 @@ done</pre>
 <div class="ulist">
 <ul>
 <li>
+<p>Create a 'student' account inside Postgres:
+psql &lt;&lt;!
+create role student password 'student' login;
+!</p>
+</li>
+<li>
+<p>Install the psql password file for this account:
+mkdir %APPADATA%\postgresql			# Windows step 1
+copy configs\pgpass.conf %APPDATA%\postgresql # Windows step 2
+cp configs/pgpass.conf ~/.pgpass   # *Nix, Mac</p>
+</li>
+<li>
 <p>Create databases:
 psql &lt;&lt;!
 create user student password 'student' login nosuperuser;
@@ -547,6 +559,9 @@ and delete sourcecode/ex53solution</p>
 </li>
 <li>
 <p>If it doesn&#8217;t start successfully, iterate on your configuration.</p>
+</li>
+<li>
+<p>Connect to localhost:8080/jenkins. Enable signup under Global Security. Sign out; sign up as student/student. Disable signups! This is only for isolated machine testing; read up on Jenkins security before deploying even on your intranet!!</p>
 </li>
 <li>
 <p>Install the database driver. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn&#8217;t have 'here documents' (special form of redirection).
@@ -663,7 +678,7 @@ interfere with it working with Eclipse and Maven, please feel free to send a Git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-17 09:37:55 EST
+Last updated 2018-01-17 21:17:05 EST
 </div>
 </div>
 </body>

@@ -20,7 +20,7 @@ https://github.com/IanDarwin/, including jsfdemo jpademo clublist javasrc.
 There is also the _makehandsons_ project which makes the hands-on exercises from 
 the solutions, so they are always in synch.
 
-== Set Up the environment at home or work
+== Set Up the Environment at Home or Work
 
 To set up the environment at home or work, you should try the following
 (the implementing command examples are for Unix, Linux, Mac OS X,
@@ -51,6 +51,14 @@ do
     git clone https://github.com/$repo
 done
 ----
+* Create a 'student' account inside Postgres:
+	psql <<!
+	create role student password 'student' login;
+	!
+* Install the psql password file for this account:
+	mkdir %APPADATA%\postgresql			# Windows step 1
+	copy configs\pgpass.conf %APPDATA%\postgresql # Windows step 2
+	cp configs/pgpass.conf ~/.pgpass   # *Nix, Mac
 * Create databases:
 	psql <<!
 	create user student password 'student' login nosuperuser;
@@ -67,6 +75,7 @@ and delete sourcecode/ex53solution
 * Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
 (if you don't want JMS support omit the -c and the filename).
 * If it doesn't start successfully, iterate on your configuration.
+* Connect to localhost:8080/jenkins. Enable signup under Global Security. Sign out; sign up as student/student. Disable signups! This is only for isolated machine testing; read up on Jenkins security before deploying even on your intranet!!
 * Install the database driver. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn't have 'here documents' (special form of redirection).
 For MySql or its fork MariaDB, follow the steps in configs/mysql-driver.txt.
 * Run the uber-script which, among other things, creates the exercises from the solutions:
