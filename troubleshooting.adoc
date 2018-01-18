@@ -1,5 +1,13 @@
 == Troubleshooting
 
+=== What to ignore?
+
+As much as we hate to advise anyone to ignore errors _ever_, we have found that
+the following errors from *Eclipse* can be ignored:
+
+	This project has the JPA facet, but no JPA project could be created...
+	The persistence.xml file does not have supported content for this JPA platform.
+
 
 === Maven Deployment
 

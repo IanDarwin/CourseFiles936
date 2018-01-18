@@ -433,6 +433,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_troubleshooting">Troubleshooting</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="_what_to_ignore">What to ignore?</h3>
+<div class="paragraph">
+<p>As much as we hate to advise anyone to ignore errors <em>ever</em>, we have found that
+the following errors from <strong>Eclipse</strong> can be ignored:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>This project has the JPA facet, but no JPA project could be created...
+The persistence.xml file does not have supported content for this JPA platform.</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_maven_deployment">Maven Deployment</h3>
 <div class="paragraph">
 <p>When you run <em>mvn wildfly:deploy</em> you should see the message "Build Success" near the end of the Maven output.
@@ -603,7 +616,7 @@ Make <strong>very sure</strong> you leave it as well-formed XML.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-17 21:32:59 EST
+Last updated 2018-01-18 12:13:41 EST
 </div>
 </div>
 </body>
