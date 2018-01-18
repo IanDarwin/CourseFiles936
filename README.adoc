@@ -32,6 +32,7 @@ Maven 3 (https://maven.apache.org),
 a database (https://postgresql.org/)
 and _git_ (https://git-scm.com/)
 installed and on your PATH.
+* Start the postgres database if needed (the installer normally starts it for you).
 * Make sure you have Wildfly installed but not running;
 you could use a different App Server but you'd have to change
 all the Maven deployment configurations (most projects have 
@@ -41,17 +42,17 @@ AND the DataSource configurations (alas, the EE spec doesn't nail down how to do
 ** git
 ** diff
 ** unzip
-* Git clone all the projects into a single parent directory
+* Git clone the following projects into a single parent directory
 (in the course we use C:\ but anyplace *should* work):
 ----
-cd WHERE_YOU_INSTALLED
+cd WHERE_YOU_INSTALL
 for repo in LearningTree/TicketManorJava \
 	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,cdi-ee-exaamples,makehandsons,createprojects}
 do
     git clone https://github.com/$repo
 done
 ----
-* Create a 'student' account inside Postgres:
+* Create a 'student' account inside Postgres, giving the PostGres Admin password;
 	psql <<!
 	create role student password 'student' login;
 	!
