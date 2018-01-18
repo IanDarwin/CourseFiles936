@@ -530,7 +530,8 @@ create role student password 'student' login;
 <p>Install the psql password file for this account:
 mkdir %APPADATA%\postgresql			# Windows step 1
 copy configs\pgpass.conf %APPDATA%\postgresql # Windows step 2
-cp configs/pgpass.conf ~/.pgpass   # *Nix, Mac</p>
+cp configs/pgpass.conf ~/.pgpass	# *Nix, Mac step 1
+chmod 0600 ~/.pgpass				# *Nix, Mac step 2</p>
 </li>
 <li>
 <p>Create databases:
@@ -544,11 +545,12 @@ create database jpa_aggregation owner student;
 !</p>
 </li>
 <li>
-<p>Decide if you want JMS or not. If so, use standalone-full.xml in the following; if not, use standalone.xml
+<p>Decide if you want JMS or not.
+If so, use config file standalone-full.xml in the following; if not, use standalone.xml
 and delete sourcecode/ex53solution</p>
 </li>
 <li>
-<p>Merge configs/datasources into wildfly config file.</p>
+<p>Merge configs/datasources into wildfly config file standalone/configuration/CHOSEN_CONFIG_FILE</p>
 </li>
 <li>
 <p>Download Jenkins (latest LTS jenkins.war) from jenkins.org; copy it to WILDFLY_HOME/standalone/deployments</p>
@@ -580,7 +582,8 @@ sh scripts/all-in</pre>
 </div>
 <div class="paragraph">
 <p>The script produces tons of output so it is set to fail on the first error,
-otherwise error messages would be missed.</p>
+otherwise error messages would be missed. It should end with "BUILD SUCCESS" and reminders
+to clean up.</p>
 </div>
 <div class="sect2">
 <h3 id="_command_line_setup">Command Line setup</h3>
@@ -596,7 +599,7 @@ otherwise error messages would be missed.</p>
 <p>Apache Maven 3.5.x</p>
 </li>
 <li>
-<p>WHERE_YOU_INSTALLED/bats (windows only)</p>
+<p>COURSEFILES936-LOCATION/bats (windows only)</p>
 </li>
 <li>
 <p>postgresql/bin - for psql command</p>
@@ -607,7 +610,7 @@ otherwise error messages would be missed.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>On Windows this may look something like this, though the actual path settings will vary depending on what software releases you&#8217;ve installed.</p>
+<p>On Windows this may look something like the following, though the actual path settings will vary depending on what software releases you&#8217;ve installed.</p>
 </div>
 <div id="path-setting.png" class="imageblock">
 <div class="content">
@@ -678,7 +681,7 @@ interfere with it working with Eclipse and Maven, please feel free to send a Git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-17 21:17:05 EST
+Last updated 2018-01-17 21:30:17 EST
 </div>
 </div>
 </body>

@@ -58,7 +58,8 @@ done
 * Install the psql password file for this account:
 	mkdir %APPADATA%\postgresql			# Windows step 1
 	copy configs\pgpass.conf %APPDATA%\postgresql # Windows step 2
-	cp configs/pgpass.conf ~/.pgpass   # *Nix, Mac
+	cp configs/pgpass.conf ~/.pgpass	# *Nix, Mac step 1
+	chmod 0600 ~/.pgpass				# *Nix, Mac step 2
 * Create databases:
 	psql <<!
 	create user student password 'student' login nosuperuser;
@@ -68,9 +69,10 @@ done
 	create database jpa_inheritance owner student;
 	create database jpa_aggregation owner student;
 	!
-* Decide if you want JMS or not. If so, use standalone-full.xml in the following; if not, use standalone.xml
+* Decide if you want JMS or not.
+If so, use config file standalone-full.xml in the following; if not, use standalone.xml
 and delete sourcecode/ex53solution
-* Merge configs/datasources into wildfly config file.
+* Merge configs/datasources into wildfly config file standalone/configuration/CHOSEN_CONFIG_FILE
 * Download Jenkins (latest LTS jenkins.war) from jenkins.org; copy it to WILDFLY_HOME/standalone/deployments
 * Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
 (if you don't want JMS support omit the -c and the filename).
@@ -84,7 +86,8 @@ cd Coursefiles936
 sh scripts/all-in
 ----
 The script produces tons of output so it is set to fail on the first error,
-otherwise error messages would be missed.
+otherwise error messages would be missed. It should end with "BUILD SUCCESS" and reminders
+to clean up.
 
 === Command Line setup
 
@@ -92,11 +95,11 @@ Add the following to your PATH:
 
 . Java (if not done automatically)
 . Apache Maven 3.5.x
-. WHERE_YOU_INSTALLED/bats (windows only)
+. COURSEFILES936-LOCATION/bats (windows only)
 . postgresql/bin - for psql command
 . cygwin/bin - optional, for Unix compatability
 
-On Windows this may look something like this, though the actual path settings will vary depending on what software releases you've installed.
+On Windows this may look something like the following, though the actual path settings will vary depending on what software releases you've installed.
 
 [[path-setting.png]]
 .Path setting on MS-DOS (YMMV)
