@@ -8,6 +8,8 @@ the following errors from *Eclipse* can be ignored:
 	This project has the JPA facet, but no JPA project could be created...
 	The persistence.xml file does not have supported content for this JPA platform.
 
+As well, some of the projects (notably Exercises 4.1 and 5.2) will have a bunch of red flags when
+first opened, because you haven't yet written the code. These will go away as you write the code.
 
 === Maven Deployment
 
