@@ -118,3 +118,8 @@ Make *very sure* you leave it as well-formed XML.
 Postgresql runs as a Windows Service, so you can control it from the Services Control Panel.
 It's pretty solid so you shouldn't have to restart it during the week.
 
+== vi editor
+
+E309: Unable to open swap file for YOUR_FILE
+
+Ignore this; just press Enter to skip over it.
