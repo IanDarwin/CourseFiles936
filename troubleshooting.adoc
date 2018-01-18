@@ -93,6 +93,11 @@ the solution is to follow the steps "Cleaning Wildfly Configuration".
 
 The main log file is in c:\WILDFLY-DIR\standalone\log\server.log
 
+There are two batch files to help you view this log, np-log (notepad++) and vi-log (vi editor).
+These will take a while to start as the log file is big.
+For Notepad++, keyboard shortcuts CTRL/Home and CTRL/End are your friends for navigation.
+For vi, you just have to know what you're doing :-).
+
 === Restart Issues with Wildfly
 
 If the Wildfly Server won't start after a crash, it usually means that the configuration file has gotten corrupted.
