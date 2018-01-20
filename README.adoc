@@ -79,7 +79,11 @@ and delete sourcecode/ex53solution
 (if you don't want JMS support omit the -c and the filename).
 * If it doesn't start successfully, iterate on your configuration.
 * Connect to localhost:8080/jenkins. Enable signup under Global Security. Sign out; sign up as student/student. Disable signups! This is only for isolated machine testing; read up on Jenkins security before deploying even on your intranet!!
-* Install the database driver. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn't have 'here documents' (special form of redirection).
+* Under _Configure Jenkins_, go to _Manage Plugins_ and install _Development/GIT_ plugin.
+This will offer to restart, but if you're running it under Wildfly from the _deployments_ folder,
+you'll have to restart Wildfly.
+* Now that the git plugin exists, you can re-create the Jenkins jobs for _datamodel_ and _ticketmanor-ee_.
+* Install the database driver into WildFly. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn't have 'here documents' (special form of redirection).
 For MySql or its fork MariaDB, follow the steps in configs/mysql-driver.txt.
 * Run the uber-script which, among other things, creates the exercises from the solutions:
 ----

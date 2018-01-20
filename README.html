@@ -569,7 +569,15 @@ and delete sourcecode/ex53solution</p>
 <p>Connect to localhost:8080/jenkins. Enable signup under Global Security. Sign out; sign up as student/student. Disable signups! This is only for isolated machine testing; read up on Jenkins security before deploying even on your intranet!!</p>
 </li>
 <li>
-<p>Install the database driver. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn&#8217;t have 'here documents' (special form of redirection).
+<p>Under <em>Configure Jenkins</em>, go to <em>Manage Plugins</em> and install <em>Development/GIT</em> plugin.
+This will offer to restart, but if you&#8217;re running it under Wildfly from the <em>deployments</em> folder,
+you&#8217;ll have to restart Wildfly.</p>
+</li>
+<li>
+<p>Now that the git plugin exists, you can re-create the Jenkins jobs for <em>datamodel</em> and <em>ticketmanor-ee</em>.</p>
+</li>
+<li>
+<p>Install the database driver into WildFly. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn&#8217;t have 'here documents' (special form of redirection).
 For MySql or its fork MariaDB, follow the steps in configs/mysql-driver.txt.</p>
 </li>
 <li>
@@ -684,7 +692,7 @@ interfere with it working with Eclipse and Maven, please feel free to send a Git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-18 15:04:06 EST
+Last updated 2018-01-20 18:11:50 EST
 </div>
 </div>
 </body>
