@@ -76,6 +76,14 @@ and delete sourcecode/ex53solution.
 If so, see the README in ex53 for one additional step.
 * Merge configs/datasources into wildfly config file standalone/configuration/CHOSEN_CONFIG_FILE
 * Download Jenkins (latest LTS jenkins.war) from jenkins.org; copy it to WILDFLY_HOME/standalone/deployments
+* You can save a bit of time by pre-creating the _testuser_ account in Wildfly, by pasting
+this line into the file application-users.properties file in the standalone/configuration directory
+	testuser=539580a56fb54850e92d0d2221b47359
+and this line into application-roles.properties.
+	testuser=testuser
+Alternately you can create these manually the way we do in the exercise in the Security chapter.
+but the testuser account is needed by e.g., the JMS exercise.
+Obviously this username and password combination must not be used on any internet-accessible server!
 * Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
 (if you don't want JMS support omit the -c and the filename).
 * If it doesn't start successfully, iterate on your configuration.

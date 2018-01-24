@@ -560,6 +560,16 @@ If so, see the README in ex53 for one additional step.</p>
 <p>Download Jenkins (latest LTS jenkins.war) from jenkins.org; copy it to WILDFLY_HOME/standalone/deployments</p>
 </li>
 <li>
+<p>You can save a bit of time by pre-creating the <em>testuser</em> account in Wildfly, by pasting
+this line into the file application-users.properties file in the standalone/configuration directory
+	testuser=539580a56fb54850e92d0d2221b47359
+and this line into application-roles.properties.
+	testuser=testuser
+Alternately you can create these manually the way we do in the exercise in the Security chapter.
+but the testuser account is needed by e.g., the JMS exercise.
+Obviously this username and password combination must not be used on any internet-accessible server!</p>
+</li>
+<li>
 <p>Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
 (if you don&#8217;t want JMS support omit the -c and the filename).</p>
 </li>
@@ -693,7 +703,7 @@ interfere with it working with Eclipse and Maven, please feel free to send a Git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-22 14:59:14 EST
+Last updated 2018-01-24 11:18:23 EST
 </div>
 </div>
 </body>
