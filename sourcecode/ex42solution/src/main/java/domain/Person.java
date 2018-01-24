@@ -15,9 +15,8 @@ import javax.persistence.Version;
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
 //@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="PType",
-	discriminatorType=DiscriminatorType.CHAR)
-@DiscriminatorValue(value="P")
+// @DiscriminatorColumn(name="PType", discriminatorType=DiscriminatorType.CHAR)
+// @DiscriminatorValue(value="P")
 public class Person {
 
 	int id;
