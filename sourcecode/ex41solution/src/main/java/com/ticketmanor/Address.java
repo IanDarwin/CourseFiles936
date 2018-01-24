@@ -59,6 +59,8 @@ public class Address {
 		return id;
 	}
 	//+
+
+	//T Now delete the setId() method, since the ID is auto-generated.
 	
 	//T Optional: generate hashCode/equals, toString(), etc.
 }
