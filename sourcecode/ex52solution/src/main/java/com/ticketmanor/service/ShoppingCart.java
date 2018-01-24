@@ -13,7 +13,10 @@ import com.ticketmanor.model.Sellable;
 //+
 public interface ShoppingCart {
 
-	//T REPLACE or POPULATE this interface with the methods in ShoppingCartEJB.
+	// This is initially a dummy version that is just here to reduce compilation errors.
+
+	//T Either REPLACE or POPULATE this interface with the methods in ShoppingCartEJB.
+	// For example, delete this file then use the Refactoring to re-create it.
 
 	//-
 	/** Add the item to the cart; if the card already has an OrderItem
