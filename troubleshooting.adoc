@@ -101,6 +101,14 @@ For vi, you just have to know what you're doing :-).
 === Restart Issues with Wildfly
 
 If the Wildfly Server won't start after a crash, it usually means that the configuration file has gotten corrupted.
+In particular, if you accidentally start the server with two different configuration files,
+it will be referring to files whose temporary names are made up by the other instance; you will see this:
+
+----
+10:45:19,801 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([("deployment" => "ticketmanor-javaee-1.0-SNAPSHOT.war")]) - failure description: "WFLYSRV0137: No deployment content with hash 98b47f05c4d6cc43f54219eab0bb1b87bb16983d is available in the deployment content repository for deployment 'ticketmanor-javaee-1.0-SNAPSHOT.war'. This is a fatal boot error. To correct the problem, either restart with the --admin-only switch set and use the CLI to install the missing content or remove it from the configuration, or remove the deployment from the xml configuration file and restart."
+10:45:19,807 FATAL [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0056: Server boot has failed in an unrecoverable manner; exiting. See previous messages for details.
+----
+
 One of the weaknesses of this version of Wildfly is that it both depends upon, and updates, the main configuration file.
 At the end of standalone-full.xml is a list of war/jar files that the server thinks should be deployed.
 Each is represented by a war file and a directory with a name in the tmp/vfs directory.
@@ -111,7 +119,7 @@ The easy solution is to follow the "Cleaning Wildfly Configuration" steps.
 ==== Cleaning Wildfly Configuration
 
 * Stop the server (try CTRL/C in the window where it is running).
-* Edit the file WILDFLY_HOME/standalone/configuration/standalone-full.xml
+* Edit the config file in use, e.g., file WILDFLY_HOME/standalone/configuration/standalone-full.xml
 * Find and remove ALL the deployment elements near the end of the file.
 Make *very sure* you leave it as well-formed XML.
 * Save the file

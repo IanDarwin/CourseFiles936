@@ -598,7 +598,17 @@ For vi, you just have to know what you&#8217;re doing :-).</p>
 <h3 id="_restart_issues_with_wildfly">Restart Issues with Wildfly</h3>
 <div class="paragraph">
 <p>If the Wildfly Server won&#8217;t start after a crash, it usually means that the configuration file has gotten corrupted.
-One of the weaknesses of this version of Wildfly is that it both depends upon, and updates, the main configuration file.
+In particular, if you accidentally start the server with two different configuration files,
+it will be referring to files whose temporary names are made up by the other instance; you will see this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>10:45:19,801 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([("deployment" =&gt; "ticketmanor-javaee-1.0-SNAPSHOT.war")]) - failure description: "WFLYSRV0137: No deployment content with hash 98b47f05c4d6cc43f54219eab0bb1b87bb16983d is available in the deployment content repository for deployment 'ticketmanor-javaee-1.0-SNAPSHOT.war'. This is a fatal boot error. To correct the problem, either restart with the --admin-only switch set and use the CLI to install the missing content or remove it from the configuration, or remove the deployment from the xml configuration file and restart."
+10:45:19,807 FATAL [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0056: Server boot has failed in an unrecoverable manner; exiting. See previous messages for details.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One of the weaknesses of this version of Wildfly is that it both depends upon, and updates, the main configuration file.
 At the end of standalone-full.xml is a list of war/jar files that the server thinks should be deployed.
 Each is represented by a war file and a directory with a name in the tmp/vfs directory.
 If a crash results in the file being listed in this configuration, but not present in unpacked form in tmp/vfs,
@@ -613,7 +623,7 @@ The easy solution is to follow the "Cleaning Wildfly Configuration" steps.</p>
 <p>Stop the server (try CTRL/C in the window where it is running).</p>
 </li>
 <li>
-<p>Edit the file WILDFLY_HOME/standalone/configuration/standalone-full.xml</p>
+<p>Edit the config file in use, e.g., file WILDFLY_HOME/standalone/configuration/standalone-full.xml</p>
 </li>
 <li>
 <p>Find and remove ALL the deployment elements near the end of the file.
@@ -657,7 +667,7 @@ It&#8217;s pretty solid so you shouldn&#8217;t have to restart it during the wee
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-18 15:17:26 EST
+Last updated 2018-01-24 10:48:31 EST
 </div>
 </div>
 </body>
