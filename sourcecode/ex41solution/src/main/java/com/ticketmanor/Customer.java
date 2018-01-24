@@ -29,8 +29,8 @@ public class Customer {
 	//+
 
 	//T Delete city and country, and their accessors
-//	String city;
-//	String country;
+	String city;
+	String country;
 	
 	public String getFirstName() {
 		return firstName;
@@ -43,6 +43,19 @@ public class Customer {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
 	}
 	
 	// For JPA
