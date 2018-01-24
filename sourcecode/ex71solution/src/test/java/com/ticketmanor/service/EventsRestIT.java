@@ -7,7 +7,6 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -21,16 +20,6 @@ public class EventsRestIT {
 	
 	private String URL2 =
 		"http://localhost:8080/ex71solution/rest/events2";
-	
-	//-
-	@Test @Ignore // Doesn't work ATM, problem mapping new LocalDateTime class
-	public void testGetSingleEvent1() {
-		Client cl = ClientBuilder.newClient();
-		WebTarget target = cl.target(URL1 + "/" + 12);
-		Event e = target.request(MediaType.APPLICATION_JSON).get(Event.class);
-		System.out.println("Got one event: " + e);
-	}
-	//+
 	
 	@Test
 	public void testGetEvents1() {
