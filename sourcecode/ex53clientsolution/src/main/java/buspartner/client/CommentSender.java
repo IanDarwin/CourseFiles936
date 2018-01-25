@@ -1,5 +1,7 @@
 package buspartner.client;
 
+import java.util.Hashtable;
+
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
@@ -9,6 +11,9 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+
+import org.apache.activemq.artemis.jms.client.ActiveMQDestination;
+import org.apache.activemq.artemis.jms.client.ActiveMQDestination.TYPE;
 
 import com.ticketmanor.Constants;
 import com.ticketmanor.model.FeedbackForm;
@@ -23,7 +28,12 @@ public class CommentSender {
 			(ConnectionFactory) ctx.lookup("jms/RemoteConnectionFactory");
 		Destination destination = 
 			(Destination) ctx.lookup(Constants.QUEUE_NAME);
-		String username = "testuser", password = "4jelBas";
+		if (destination instanceof ActiveMQDestination) {
+			ActiveMQDestination artemisDestination = (ActiveMQDestination) destination;
+			System.out.println("ActiveMQDestination type = " + artemisDestination.getType());
+		}
+		String username = (String) ctx.getEnvironment().get("java.naming.security.principal");
+		String password = (String) ctx.getEnvironment().get("java.naming.security.credential");
 		Connection connection = connFactory.createConnection(
 				username, password);
 		Session session = connection.createSession(false,
@@ -36,7 +46,7 @@ public class CommentSender {
 		FeedbackForm comment = new FeedbackForm();
 		comment.setCustName("Whiney Whitefoot");
 		comment.setCustEmail("ww@gmail.moc");
-		comment.setComment("I actually love your site!!");
+		comment.setComment("I really love your site!!");
 		
 		//T Create an ObjectMessage, and wrap the above FeedbackForm in it.
 		//-
