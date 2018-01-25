@@ -17,6 +17,7 @@ public interface ShoppingCart {
 
 	//T Either REPLACE or POPULATE this interface with the methods in ShoppingCartEJB.
 	// For example, delete this file then use the Refactoring to re-create it.
+	// If you delete it, remember to add the required class-level annotation.
 
 	//-
 	/** Add the item to the cart; if the card already has an OrderItem
