@@ -1,19 +1,12 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2_1.xsd"
-   version="2.1">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2_2.xsd"
+	version="2.2">
    
 <!--
  *** This is the server-side version of persistence.xml
  -->
-<persistence-unit name="ticketManor">
-	<!-- Uncomment one (and only one) of the following two persistence providers,
-	 *** after making sure that the given provider is on your classpath.
-	 -->
-	<!--
-	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-	-->
-	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+<persistence-unit name="ex61solution">
 
 	<jta-data-source>java:jboss/datasources/TicketManorDataSource</jta-data-source>
 
@@ -36,23 +29,22 @@
 	<exclude-unlisted-classes>false</exclude-unlisted-classes>
 	
 	<properties>
+	<!-- Uncomment one (and only one) of the following two persistence providers,
+	 *** after making sure that the given provider is on your classpath.
+	 -->
+	<!--
+	<property name="javax.persistence.provider" value="org.eclipse.persistence.jpa.PersistenceProvider"/>
+	-->
+	<property name="javax.persistence.provider" value="org.hibernate.ejb.HibernatePersistence"/>
 
 	<!-- Properties for eclipselink -->
-	<!--
 	<property name="eclipselink.target-database"
 	      value="org.eclipse.persistence.platform.database.PostgreSQLPlatform"/>
-	-->
 	<property name="eclipselink.logging.level" value="OFF"/>
 	<property name="eclipselink.orm.throw.exceptions" value="true"/>
-	<property name="eclipselink.ddl-generation" value="update-tables"/>
-	<property name="eclipselink.ddl-generation.output-mode" value="database"/>
 
 	<!-- Properties for Hibernate -->
 	<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-	<!-- When this is set to 'update', the current software throws an exception
-	 *** when re-deploying the app, along the lines of "column am.amcanorder does not exist"
-	 *** If you want to make the data stay, do a web search on that message.  -->
-	<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 	<property name="hibernate.show_sql" value="true"/>
 	<property name="hibernate.format_sql" value="false"/>
 	<property name="hibernate.archive.autodetection" value="class"/>

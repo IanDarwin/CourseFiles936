@@ -18,7 +18,9 @@ import com.ticketmanor.model.Event;
 import com.ticketmanor.model.Venue;
 
 /** 
- * The EJB JPA portion of "Load some fake data". 
+ * The EJB JPA portion of "Load some fake data".
+ * Yes, we know some of the combinations are ridiculous.
+ * In fact, most of them probably are.
  * @author Ian Darwin
  */
 @Stateless
@@ -33,7 +35,7 @@ public class FakeDataLoaderEjb {
 		System.out.println("FakeDataLoaderEjb.loadFakeData()");
 		
 		Act firstAct = em.find(Act.class, 1L); // must exist
-		List<Act> sportsTeams = em.createQuery("from Act act where act.type = ?", Act.class).
+		List<Act> sportsTeams = em.createQuery("from Act act where act.type = ?1", Act.class).
 				setParameter(1, ActType.SPORTS).
 				getResultList();
 		
@@ -42,7 +44,7 @@ public class FakeDataLoaderEjb {
 		// whether there are any events still in the future
 		// (should only invoke once during the week of a course!).
 		LocalDateTime start = LocalDateTime.now().withHour(19).withMinute(0);
-		TypedQuery<Event> findCurrent = em.createQuery("from Event e where e.date > ?", Event.class);
+		TypedQuery<Event> findCurrent = em.createQuery("from Event e where e.date > ?1", Event.class);
 		findCurrent.setParameter(1, start);
 		if (findCurrent.getResultList().size() == 0) {
 			int nTeams = 0, nVenues=0;
