@@ -7,9 +7,9 @@
 		<class>com.ticketmanor.Customer</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
-			<property name="javax.persistence.provider" value="org.hibernate.ejb.HibernatePersistence"/>
-			<!--
 			<property name="javax.persistence.provider" value="org.eclipselink.jpa.provider"/>
+			<!--
+			<property name="javax.persistence.provider" value="org.hibernate.ejb.HibernatePersistence"/>
 			-->
 
 			<property name="javax.persistence.jdbc.driver" value="com.postgresqk.Driver" />
