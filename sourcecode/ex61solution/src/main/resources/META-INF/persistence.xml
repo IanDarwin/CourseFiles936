@@ -37,6 +37,9 @@
 	-->
 	<property name="javax.persistence.provider" value="org.hibernate.ejb.HibernatePersistence"/>
 
+	<!-- No DDL here; it's done in the ticketmanor-ee project, which MUST have been deployed -->
+	<property name="javax.persistence.schema-generation.database.action" value="none"/>
+
 	<!-- Properties for eclipselink -->
 	<property name="eclipselink.target-database"
 	      value="org.eclipse.persistence.platform.database.PostgreSQLPlatform"/>
