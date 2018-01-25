@@ -12,9 +12,6 @@ import javax.jms.TextMessage;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
-import org.apache.activemq.artemis.jms.client.ActiveMQDestination;
-import org.apache.activemq.artemis.jms.client.ActiveMQDestination.TYPE;
-
 import com.ticketmanor.Constants;
 import com.ticketmanor.model.FeedbackForm;
 
@@ -28,10 +25,6 @@ public class CommentSender {
 			(ConnectionFactory) ctx.lookup("jms/RemoteConnectionFactory");
 		Destination destination = 
 			(Destination) ctx.lookup(Constants.QUEUE_NAME);
-		if (destination instanceof ActiveMQDestination) {
-			ActiveMQDestination artemisDestination = (ActiveMQDestination) destination;
-			System.out.println("ActiveMQDestination type = " + artemisDestination.getType());
-		}
 		String username = (String) ctx.getEnvironment().get("java.naming.security.principal");
 		String password = (String) ctx.getEnvironment().get("java.naming.security.credential");
 		Connection connection = connFactory.createConnection(
