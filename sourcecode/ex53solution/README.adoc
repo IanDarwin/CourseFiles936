@@ -10,8 +10,8 @@ $ bin/jboss-cli.sh
 [standalone@localhost:9990 /] connect
 [standalone@localhost:9990 /] # Add a Queue to JMS (does not print anything on success)
 [standalone@localhost:9990 /] jms-queue add --queue-address=feedbackQueue --entries=jms/queue/feedbackQueue,java:jboss/exported/jms/queue/feedbackQueue
-[standalone@localhost:9990 /] # So read it back just to verify (does not seem to work at present??)
-[standalone@localhost:9990 /] /subsystem=messaging/hornetq-server=default/jms-queue=feedbackQueue:read-resource                                        
+[standalone@localhost:9990 /] # So read it back just to verify
+[standalone@localhost:9990 /] /subsystem=messaging-activemq/server=default/jms-queue=feedbackQueue:read-resource
 {
     "outcome" => "success",
     "result" => {
@@ -20,9 +20,11 @@ $ bin/jboss-cli.sh
             "jms/queue/feedbackQueue",
             "java:jboss/exported/jms/queue/feedbackQueue"
         ],
+        "legacy-entries" => undefined,
         "selector" => undefined
     }
 }
+
 [standalone@localhost:9990 /] quit
 $ 
 ----
