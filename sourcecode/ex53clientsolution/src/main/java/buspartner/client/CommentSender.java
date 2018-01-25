@@ -60,11 +60,14 @@ public class CommentSender {
 			session.createTextMessage("Here is a TextMessage just to razz you");
 		producer.send(message2);
 		
+		producer.close();
 		connection.close();
 		session.close();
 		
 		System.out.println("Client Completed. Two Messages sent.");
 		System.err.println("Warning: JMS is one-way communication, so 'no news'\n" + 
 				"is no guarantee of success. Check the server log file!");
+		
+		System.exit(0);
 	}
 }
