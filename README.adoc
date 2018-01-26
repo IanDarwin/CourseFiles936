@@ -48,7 +48,7 @@ AND the DataSource configurations (alas, the EE spec doesn't nail down how to do
 ----
 cd WHERE_YOU_INSTALL
 for repo in LearningTree/TicketManorJava \
-	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,cdi-ee-exaamples,makehandsons,createprojects}
+	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,cdi-ee-examples,makehandsons,createprojects}
 do
     git clone https://github.com/$repo
 done
