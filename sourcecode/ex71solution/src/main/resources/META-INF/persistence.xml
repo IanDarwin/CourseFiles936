@@ -5,6 +5,7 @@
 
 <!--
  *** This is the server-side version of persistence.xml
+ *** MUST run scripts/diff3pus after editing this file!
  -->
 <persistence-unit name="ex71solution">
 
