@@ -490,17 +490,20 @@ GlassFish and Tomcat in <em>pom.xml</em>, but this is unmaintained!!)
 AND the DataSource configurations (alas, the EE spec doesn&#8217;t nail down how to do this).</p>
 </li>
 <li>
-<p>MS-Windows users must also install cygwin, including:</p>
+<p>MS-Windows users must also install Cygwin 64 bit (includes shells and vi), including:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>git</p>
+<p>cygwin base;</p>
 </li>
 <li>
-<p>diff</p>
+<p>git (at least the basic package, under devel);</p>
 </li>
 <li>
 <p>unzip</p>
+</li>
+<li>
+<p>ssh or anything else you want.</p>
 </li>
 </ul>
 </div>
@@ -524,29 +527,53 @@ done</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Create a 'student' account inside Postgres, giving the PostGres Admin password;
-psql &lt;&lt;!
-create role student password 'student' login;
-!</p>
+<p>Create a 'student' account inside Postgres, giving the PostGres Admin password;</p>
 </li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	psql &lt;&lt;!
+	create role student password 'student' login;
+	!</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p>Install the psql password file for this account:
-mkdir %APPADATA%\postgresql			# Windows step 1
-copy configs\pgpass.conf %APPDATA%\postgresql # Windows step 2
-cp configs/pgpass.conf ~/.pgpass	# *Nix, Mac step 1
-chmod 0600 ~/.pgpass				# *Nix, Mac step 2</p>
+<p>Install the psql password file for this account:</p>
 </li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	mkdir %APPADATA%\postgresql			# Windows step 1
+	copy configs\pgpass.conf %APPDATA%\postgresql # Windows step 2
+	cp configs/pgpass.conf ~/.pgpass	# *Nix, Mac step 1
+	chmod 0600 ~/.pgpass				# *Nix, Mac step 2</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p>Create databases:
-psql &lt;&lt;!
-create user student password 'student' login nosuperuser;
-create database ticketmanor owner student;
-create database jpademo owner student;
-create database jpa_basic owner student;
-create database jpa_inheritance owner student;
-create database jpa_aggregation owner student;
-!</p>
+<p>Create databases:</p>
 </li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	psql &lt;&lt;!
+	create user student password 'student' login nosuperuser;
+	create database ticketmanor owner student;
+	create database jpademo owner student;
+	create database jpa_basic owner student;
+	create database jpa_inheritance owner student;
+	create database jpa_aggregation owner student;
+	!</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Decide if you want JMS or not.
 If so, use config file standalone-full.xml in the following; if not, use standalone.xml
@@ -564,7 +591,7 @@ If so, see the README in ex53 for one additional step.</p>
 this line into the file application-users.properties file in the standalone/configuration directory
 	testuser=539580a56fb54850e92d0d2221b47359
 and this line into application-roles.properties.
-	testuser=testuser
+	testuser=guest,testuser
 Alternately you can create these manually the way we do in the exercise in the Security chapter.
 but the testuser account is needed by e.g., the JMS exercise.
 Obviously this username and password combination must not be used on any internet-accessible server!</p>
@@ -703,7 +730,7 @@ interfere with it working with Eclipse and Maven, please feel free to send a Git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-24 11:18:23 EST
+Last updated 2018-01-26 11:10:24 EST
 </div>
 </div>
 </body>
