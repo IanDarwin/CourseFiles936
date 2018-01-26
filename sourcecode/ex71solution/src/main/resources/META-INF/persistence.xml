@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2_2.xsd"
 	version="2.2">
-   
+
 <!--
  *** This is the server-side version of persistence.xml
  -->
@@ -16,6 +16,7 @@
 	<class>com.ticketmanor.model.Address</class>
 	<class>com.ticketmanor.model.Admin</class>
 	<class>com.ticketmanor.model.Auditorium</class>
+	<class>com.ticketmanor.model.Customer</class>
 	<class>com.ticketmanor.model.Event</class>
 	<class>com.ticketmanor.model.FeedbackForm</class>
 	<class>com.ticketmanor.model.Member</class>
@@ -25,32 +26,32 @@
 	<class>com.ticketmanor.model.Person</class>
 	<class>com.ticketmanor.model.Ticket</class>
 	<class>com.ticketmanor.model.Venue</class>
-	
+
 	<exclude-unlisted-classes>false</exclude-unlisted-classes>
-	
+
 	<properties>
-	<!-- Uncomment one (and only one) of the following two persistence providers,
-	 *** after making sure that the given provider is on your classpath.
-	 -->
-	<!--
-	<property name="javax.persistence.provider" value="org.eclipse.persistence.jpa.PersistenceProvider"/>
-	-->
-	<property name="javax.persistence.provider" value="org.hibernate.ejb.HibernatePersistence"/>
+		<!-- Uncomment one (and only one) of the following two persistence providers,
+		 *** after making sure that the given provider is first on your classpath.
+		 -->
+		<!--
+		<property name="javax.persistence.provider" value="org.eclipse.persistence.jpa.PersistenceProvider"/>
+		-->
+		<property name="javax.persistence.provider" value="org.hibernate.ejb.HibernatePersistence"/>
 
-	<!-- No DDL here; it's done in the ticketmanor-ee project, which MUST have been deployed -->
-	<property name="javax.persistence.schema-generation.database.action" value="none"/>
+		<!-- No DDL here; it's done in ticketmanor-ee, which MUST have been deployed -->
+		<property name="javax.persistence.schema-generation.database.action" value="none"/>
 
-	<!-- Properties for eclipselink -->
-	<property name="eclipselink.target-database"
-	      value="org.eclipse.persistence.platform.database.PostgreSQLPlatform"/>
-	<property name="eclipselink.logging.level" value="OFF"/>
-	<property name="eclipselink.orm.throw.exceptions" value="true"/>
+		<!-- Properties for eclipselink -->
+		<property name="eclipselink.target-database"
+			  value="org.eclipse.persistence.platform.database.PostgreSQLPlatform"/>
+		<property name="eclipselink.logging.level" value="OFF"/>
+		<property name="eclipselink.orm.throw.exceptions" value="true"/>
 
-	<!-- Properties for Hibernate -->
-	<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-	<property name="hibernate.show_sql" value="true"/>
-	<property name="hibernate.format_sql" value="false"/>
-	<property name="hibernate.archive.autodetection" value="class"/>
+		<!-- Properties for Hibernate -->
+		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+		<property name="hibernate.show_sql" value="true"/>
+		<property name="hibernate.format_sql" value="false"/>
+		<property name="hibernate.archive.autodetection" value="class"/>
 
 	</properties>
 </persistence-unit>
