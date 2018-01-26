@@ -136,7 +136,9 @@ echo "Showing dependency tree so dependency plugins available offline..."
 # And in the about page
 (
 	echo "<h1>About</h1>"
-	echo "These are the Course Files for Course 936, JPA, EJB, JSF, ..."
+	echo "<p>These are the Course Files for Course 936, JPA, EJB, JSF, ..."
+	echo "<p>To explore the project automation, see the <a href='maint.html'>maint page</a>"
+	echo "and the <a href="scripts/all-in">uber script</a>."
 	echo "<table border='1'><tr><td>Course Author:</td><td>Ian Darwin</td></tr>"
 	echo "<tr><td>Technical Editor:</td><td>Chris Mawata</td></tr>"
 	echo "</table>"
