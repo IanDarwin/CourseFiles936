@@ -11,7 +11,7 @@ them, you should run the following command to be *sure* they are the same, and s
 output:
 
 ----
-$ sh -v scripts/diff3pus
+$ sh -v scripts/check3persist
 + diff3 {../TicketManorJava/ticketmanor-ee,sourcecode/ex[67]1solution}/src/main/resources/META-INF/persistence.xml   
 ====
 1:9c

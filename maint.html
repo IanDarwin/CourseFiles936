@@ -449,7 +449,8 @@ output:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>MacKenzie-LAPTOP-ian $ diff3 {TicketManorJava/ticketmanor-ee,CourseFiles936/sourcecode/ex[67]1solution}/src/main/resources/META-INF/persistence.xml
+<pre>$ sh -v scripts/check3persist
++ diff3 {../TicketManorJava/ticketmanor-ee,sourcecode/ex[67]1solution}/src/main/resources/META-INF/persistence.xml
 ====
 1:9c
   &lt;persistence-unit name="ticketManor"&gt;
@@ -474,7 +475,7 @@ output:</p>
 3:41,42c
   		&lt;!-- No DDL here; it's done in ticketmanor-ee, which MUST have been deployed --&gt;
   		&lt;property name="javax.persistence.schema-generation.database.action" value="none"/&gt;
-MacKenzie-LAPTOP-ian $</pre>
+$</pre>
 </div>
 </div>
 </div>
@@ -511,7 +512,7 @@ you must git pull in this repo before running it.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-26 08:43:46 EST
+Last updated 2018-01-26 11:12:55 EST
 </div>
 </div>
 </body>
