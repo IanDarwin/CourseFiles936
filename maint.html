@@ -438,6 +438,48 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
+<h2 id="_jpa">JPA</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Three projects use the "main" database: TicketManorJava/ticketmanor-ee, ex61solution and ex71solution.
+Their persistence.xml files must be kept in sync, so that there are no differences other than
+the persistence-unit name and the fact that the first one creates the database. After maintaining
+them, you should run the following command to be <strong>sure</strong> they are the same, and should get similar
+output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>MacKenzie-LAPTOP-ian $ diff3 {TicketManorJava/ticketmanor-ee,CourseFiles936/sourcecode/ex[67]1solution}/src/main/resources/META-INF/persistence.xml
+====
+1:9c
+  &lt;persistence-unit name="ticketManor"&gt;
+2:9c
+  &lt;persistence-unit name="ex61solution"&gt;
+3:9c
+  &lt;persistence-unit name="ex71solution"&gt;
+====1
+1:31c
+
+2:31c
+3:31c
+
+====1
+1:41,45c
+  		&lt;!-- Here in TicketManor-EE we create the database --&gt;
+  		&lt;property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/&gt;
+
+  		&lt;!-- And populate it --&gt;
+  		&lt;property name="javax.persistence.sql-load-script-source" value="sql/populate.sql"/&gt;
+2:41,42c
+3:41,42c
+  		&lt;!-- No DDL here; it's done in ticketmanor-ee, which MUST have been deployed --&gt;
+  		&lt;property name="javax.persistence.schema-generation.database.action" value="none"/&gt;
+MacKenzie-LAPTOP-ian $</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_renames">Renames</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -469,7 +511,7 @@ you must git pull in this repo before running it.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-14 21:23:37 EST
+Last updated 2018-01-26 08:43:46 EST
 </div>
 </div>
 </body>

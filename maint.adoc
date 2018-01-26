@@ -2,6 +2,44 @@
 
 This file is intended for use by those developing/testing the course setup and should be ignored by students.
 
+== JPA
+
+Three projects use the "main" database: TicketManorJava/ticketmanor-ee, ex61solution and ex71solution.
+Their persistence.xml files must be kept in sync, so that there are no differences other than
+the persistence-unit name and the fact that the first one creates the database. After maintaining
+them, you should run the following command to be *sure* they are the same, and should get similar
+output:
+
+----
+$ sh -v scripts/diff3pus
++ diff3 {../TicketManorJava/ticketmanor-ee,sourcecode/ex[67]1solution}/src/main/resources/META-INF/persistence.xml   
+====
+1:9c
+  <persistence-unit name="ticketManor">
+2:9c
+  <persistence-unit name="ex61solution">
+3:9c
+  <persistence-unit name="ex71solution">
+====1
+1:31c
+  	
+2:31c
+3:31c
+  
+====1
+1:41,45c
+  		<!-- Here in TicketManor-EE we create the database -->
+  		<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+  
+  		<!-- And populate it -->
+  		<property name="javax.persistence.sql-load-script-source" value="sql/populate.sql"/>
+2:41,42c
+3:41,42c
+  		<!-- No DDL here; it's done in ticketmanor-ee, which MUST have been deployed -->
+  		<property name="javax.persistence.schema-generation.database.action" value="none"/>
+$ 
+----
+
 == Renames
 
 Renaming is my least-fave form of maintenance.

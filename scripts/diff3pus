@@ -1,0 +1,5 @@
+#!/bin/ksh
+
+# diff check that the three Persistence Unit files that need to be in synch, are.
+
+diff3 {../TicketManorJava/ticketmanor-ee/,sourcecode/ex[67]1solution/}src/main/resources/META-INF/persistence.xml
