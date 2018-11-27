@@ -46,9 +46,9 @@ Renaming is my least-fave form of maintenance.
 When you rename a exXXsolution directory (which can only
 be done if chapters are moved in the CN), remember:
 
-1) Update the MA in Adaptalearn.
-2) Find all occurrences of the old in the new, replace most/all. 
-	REMEMBER, e.g.:
+. Update the MA in Adaptalearn.
+. Find all occurrences of the old in the new, replace most/all.  REMEMBER, e.g.:
+
 	grep -r ex51 ex61solution/
 	If none that need to stay (e.g., back- or fwd-refs), add 'l':
 	grep -lr ex51 ex61solution/ 
@@ -57,5 +57,5 @@ be done if chapters are moved in the CN), remember:
 
 == Misc
 
-If you change and push the all-in script from some other computer,
-you must git pull in this repo before running it.
+If you change and push the `all-in` script from some other computer,
+you must `git pull` in this repo before running it.
