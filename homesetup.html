@@ -451,6 +451,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Be sure you have a good relational database (PostgreSQL, or change all the <code>persistence.xml</code> files);</p>
 </li>
 <li>
+<p>Set up the <a href="databases.html">databases</a> used in the projects;</p>
+</li>
+<li>
 <p>Be sure you have a good EE App Server (WildFly, or change all the <code>pom.xml</code> files);</p>
 </li>
 <li>
@@ -461,14 +464,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>Open the <code>sourcecode</code> subdirectory as an Eclipse workspace.
-At this point you should have all the DoNow and ExXX projects.</p>
+At this point you should see all the DoNow and ExXX projects.</p>
+</li>
+<li>
+<p>Configure datasources in your application server.</p>
+</li>
+<li>
+<p>Start your application server.</p>
+</li>
+<li>
+<p>Try deploying ticketmanor: Open the project, RunAs&#8594;Maven Build, set target to wildfly:deploy, click OK.</p>
 </li>
 </ul>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-27 16:48:32 EST
+Last updated 2018-11-27 21:11:14 EST
 </div>
 </div>
 </body>
