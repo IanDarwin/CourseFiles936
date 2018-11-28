@@ -6,7 +6,7 @@ http://learningtree.com/936[Course 936, Enterprise Java Applications: JSF, EJB3,
 
 The _sourcecode_ subdirectory of the current folder is intended to be the root of an Eclipse Workspace
 
-This is for the J.1 Revision (Jan 2018); *do not* try to use this earlier versions as the directory structure has changed.
+This is for the J.2 Revision (2018); *do not* try to use this earlier versions as the directory structure has changed.
 
 All code is copyright (C) by Learning Tree International.
 
@@ -43,6 +43,11 @@ AND the DataSource configurations (alas, the EE spec doesn't nail down how to do
 ** git (at least the basic package, under devel);
 ** unzip
 ** ssh or anything else you want.
+
+From here you can either use `git clone` to download individual pieces and have the option to update
+later using git, or, just download the Zip file from Learning Tree and unzip it.
+For using git:
+
 * Git clone the following projects into a single parent directory
 (in the course we use C:\ but anyplace *should* work):
 ----
@@ -53,16 +58,22 @@ do
     git clone https://github.com/$repo
 done
 ----
-* Create a 'student' account inside Postgres, giving the PostGres Admin password;
+
+Now you have to set up the database:
+
+* Create a 'student' account inside Postgres, giving the PostGres Admin password when prompted;
 ----
 	psql <<!
 	create role student password 'student' login;
 	!
 ----
-* Install the psql password file for this account:
+* Install the psql password file for this account.  For Windows:
 ----
 	mkdir %APPADATA%\postgresql			# Windows step 1
 	copy configs\pgpass.conf %APPDATA%\postgresql # Windows step 2
+----
+For Mac or Unix/Linux:
+----
 	cp configs/pgpass.conf ~/.pgpass	# *Nix, Mac step 1
 	chmod 0600 ~/.pgpass				# *Nix, Mac step 2
 ----
@@ -93,7 +104,7 @@ but the testuser account is needed by e.g., the JMS exercise.
 Obviously this username and password combination must not be used on any internet-accessible server!
 * Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
 (if you don't want JMS support omit the -c and the filename).
-* If it doesn't start successfully, iterate on your configuration.
+* If it doesn't start successfully, troubleshoot your configuration, or hire an overpriced consultant.
 * Connect to localhost:8080/jenkins. Enable signup under Global Security. Sign out; sign up as student/student. Disable signups! This is only for isolated machine testing; read up on Jenkins security before deploying even on your intranet!!
 * Under _Configure Jenkins_, go to _Manage Plugins_ and install _Development/GIT_ plugin.
 This will offer to restart, but if you're running it under Wildfly from the _deployments_ folder,
@@ -101,7 +112,7 @@ you'll have to restart Wildfly.
 * Now that the git plugin exists, you can re-create the Jenkins jobs for _datamodel_ and _ticketmanor-ee_.
 * Install the database driver into WildFly. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn't have 'here documents' (special form of redirection).
 For MySql or its fork MariaDB, follow the steps in configs/mysql-driver.txt.
-* Run the uber-script which, among other things, creates the exercises from the solutions:
+* If you started with the git cloning, you need to run the uber-script which, among other things, creates the exercises from the solutions:
 ----
 cd Coursefiles936
 sh scripts/all-in
@@ -134,8 +145,10 @@ The normal intention is that the _sourcecode_ subdirectory should be the base of
 * If it opens an existing workspace, do File->Switch Workspace. If not it will ask you for the workspace.
 Browse to where you downloaded CourseFiles936, and select (but don't double click 
 on) *CourseFiles936/sourcecode*. Click OK.
-* Then do File->New Project->new Java Project, browse to the TicketManorJava folder, select but don't double-click
-on datamodel,
+* The course projects may appear, or maybe not. If not,
+do `File->New Project->New Java Project`, browse to the `TicketManorJava` folder, 
+select but don't double-click
+on `datamodel`,
 which should cause the dialog to change the text in its bottom panel to something like
  "The wizard will use the existing settings to configure the project". Click Finish.
 * Repeat the above for these projects:
