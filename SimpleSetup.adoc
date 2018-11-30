@@ -1,0 +1,29 @@
+= Setting Up The Environment
+
+You should be able to use the same setup as we have on the course:
+
+* Be sure you have an up-to-date Java SE (Java 8 or later);
+
+* Be sure you have an up-to-date Maven (3.x);
+
+* Be sure you have an up-to-date Eclipse (Photon or later)
+
+* Be sure you have the current M2E plug-in in your Eclipse install;
+
+* Be sure you have a good relational database (PostgreSQL, or change all the persistence.xml files);
+
+* Set up the link:databases.html[databases] used in the projects;
+
+* Be sure you have a good EE App Server (WildFly, or change all the pom.xml files);
+
+* Download the Course Zip file from Learning Tree
+
+* Unzip the CourseFiles.zip into some directory
+
+* Open the sourcecode subdirectory as an Eclipse workspace. At this point you should see all the DoNow and ExXX projects.
+
+* Configure datasources in your application server.
+
+* Start your application server.
+
+* Try deploying ticketmanor: Open the project, RunAs→Maven Build, set target to wildfly:deploy, click OK.

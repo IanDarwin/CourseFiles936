@@ -29,7 +29,10 @@ public class Address {
 		this.country = country;
 	}
 	
-	//T Get your IDE to generate accessors for all.
+	//T Get your IDE to generate accessors for all EXCEPT setId(), or,
+	// just generate them all and delete setId(). We don't want it
+	// since the ID is auto-generated, and since you really don't want a rogue web
+	// page to be able to change the id.
 	//-
 	public String getStreet() {
 		return street;
@@ -59,8 +62,6 @@ public class Address {
 		return id;
 	}
 	//+
-
-	//T Now delete the setId() method, since the ID is auto-generated.
 	
 	//T Optional: generate hashCode/equals, toString(), etc.
 }

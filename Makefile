@@ -1,6 +1,8 @@
-all:	README.html databases.html maint.html passwords.html troubleshooting.html
+all:	README.html homesetup.html databases.html maint.html passwords.html troubleshooting.html
 
 README.html:			README.adoc
+	asciidoctor $?
+homesetup.html:			homesetup.adoc
 	asciidoctor $?
 databases.html:			databases.adoc
 	asciidoctor $?

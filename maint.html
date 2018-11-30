@@ -488,15 +488,24 @@ $</pre>
 When you rename a exXXsolution directory (which can only
 be done if chapters are moved in the CN), remember:</p>
 </div>
-<div class="paragraph">
-<p>1) Update the MA in Adaptalearn.
-2) Find all occurrences of the old in the new, replace most/all.
-	REMEMBER, e.g.:
-	grep -r ex51 ex61solution/
-	If none that need to stay (e.g., back- or fwd-refs), add 'l':
-	grep -lr ex51 ex61solution/
-	If that looks right, run through xargs replace:
-	grep -lr ex51 ex61solution/ | xargs replace ex51 ex61</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Update the MA in Adaptalearn.</p>
+</li>
+<li>
+<p>Find all occurrences of the old in the new, replace most/all.  REMEMBER, e.g.:</p>
+<div class="literalblock">
+<div class="content">
+<pre>grep -r ex51 ex61solution/
+If none that need to stay (e.g., back- or fwd-refs), add 'l':
+grep -lr ex51 ex61solution/
+If that looks right, run through xargs replace:
+grep -lr ex51 ex61solution/ | xargs replace ex51 ex61</pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -504,15 +513,15 @@ be done if chapters are moved in the CN), remember:</p>
 <h2 id="_misc">Misc</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you change and push the all-in script from some other computer,
-you must git pull in this repo before running it.</p>
+<p>If you change and push the <code>all-in</code> script from some other computer,
+you must <code>git pull</code> in this repo before running it.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-26 11:12:55 EST
+Last updated 2018-11-27 16:40:37 EST
 </div>
 </div>
 </body>
