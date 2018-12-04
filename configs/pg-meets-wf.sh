@@ -3,8 +3,7 @@
 # hookup postgresql into wildfly
 
 # version numbers jumped from 9.x to 42.x to avoid implying req't to be in synch w/ PostgreSQL version
-V=9.4.1207
-#V=42.1.4	# use next time
+V=42.1.4
 
 cd /tmp
 ftp https://jdbc.postgresql.org/download/postgresql-#{V}.jar
