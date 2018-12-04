@@ -6,7 +6,7 @@
 V=42.1.4
 
 cd /tmp
-ftp https://jdbc.postgresql.org/download/postgresql-#{V}.jar
+ftp https://jdbc.postgresql.org/download/postgresql-${V}.jar
 cd /wildfly*/wildfly/bin
 ./jboss-cli.sh <<!
 connect
