@@ -2,7 +2,7 @@ all:	README.html homesetup.html databases.html maint.html passwords.html trouble
 
 README.html:			README.adoc
 	asciidoctor $?
-homesetup.html:			homesetup.adoc
+SimpleSetup.html:			SimpleSetup.adoc
 	asciidoctor $?
 databases.html:			databases.adoc
 	asciidoctor $?
