@@ -110,7 +110,7 @@ Obviously this username and password combination must not be used on any interne
 This will offer to restart, but if you're running it under Wildfly from the _deployments_ folder,
 you'll have to restart Wildfly.
 * Now that the git plugin exists, you can re-create the Jenkins jobs for _datamodel_ and _ticketmanor-ee_.
-* Install the database driver into WildFly. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn't have 'here documents' (special form of redirection).
+* Install the database driver (e.g., postgres) into WildFly. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn't have 'here documents' (special form of redirection).
 For MySql or its fork MariaDB, follow the steps in configs/mysql-driver.txt.
 * If you started with the git cloning, you need to run the uber-script which, among other things, creates the exercises from the solutions:
 ----
