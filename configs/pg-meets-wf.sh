@@ -10,8 +10,7 @@ cd /tmp
 ftp https://jdbc.postgresql.org/download/postgresql-${V}.jar
 
 cd /var/wildfly-1?.*/bin
-# If you don't have "doas" yet, use "sudo" in its place
-doas -u _wildfly ./jboss-cli.sh <<!
+./jboss-cli.sh <<!
 connect
 module add --name=org.postgres --resources=/tmp/postgresql-${V}.jar --dependencies=javax.api,javax.transaction.api
 # It's OK if this command fails with "duplicate resource"
