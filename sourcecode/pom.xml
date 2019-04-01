@@ -12,8 +12,10 @@
 	 *** If you are editing this file as part of the work in one of the exercises,
 	 *** STOP RIGHT NOW, you are in the wrong file; DO NOT save any changes here!!!!!!!!!
 	 ***
-	 *** Team Notes: You can use this for 'mvn compile' and 'mvn clean';
-	 *** if you want to do 'mvn test' you have to be running the database
+	 *** Team Notes: You can use this for 'mvn compile' 'mvn clean', 'mvn test', 'mvn verify', etc.
+	 *** Once per release cycle: mvn versions:use-latest-releases (beware that this
+	 *** will run for *hours* stupidly checking poms in parent poms, which it can't update).
+	 *** If you want to do 'mvn test' you have the database installed and running (d'oh!)
 	 *** and you may have to pre-deploy any remaining apps that still have
 	 *** the "client is test" anti-pattern.
 	 -->
