@@ -41,5 +41,6 @@
 		<module>ex71solution</module>
 		<module>ex81solution</module>
 		<!-- There is no solution for ex91 because it is just copying one file in ClubList -->
+		<module>exUPsolution</module>
 	</modules>
 </project>
