@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+ *** This is the start page, a form the user has
+ *** to fill out to get their name checked against the site's DB.
+ *** The current version is fake: any login name and password will do.
+ -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+	<body>
+
+   		<ui:composition template="/templates/standard.xhtml">
+
+			<ui:define name="pageTitle">MicroService Signup Demo</ui:define>
+  
+			<ui:define name="pageHeader">MicroService Signup Demo</ui:define>
+
+			<ui:define name="body">
+				<h:messages globalOnly='true' showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
+				<h:form id="helloForm">
+					<h:panelGrid columns='3'>
+
+					<h:outputText value="First name"/>
+					<h:inputText required="true" id="firstName" value="#{microService.firstName}" />
+					<h:message for="firstName" errorStyle="color:red"/>
+
+					<h:outputText value="Last name"/>
+					<h:inputText required="true" id="lastName" value="#{microService.lastName}" />
+					<h:message for="lastName"  errorStyle="color:red"/>
+
+					<h:outputText value="Email address" required="true" validatorMessage="{javax.faces.validator.LengthValidator.MINIMUM}"/>
+					<h:inputText id='emailTF' value="#{microService.email}" required='true'>
+							<!-- Email: TLDs are no longer limited to 3 or 4 letters; pattern could be more restrictive -->
+							<f:validateRegex pattern="\w+@\w+\.\w+" validatorMessage="That's an Email?"/>
+					</h:inputText>
+					<h:message id='emailMessage' for='emailTF' errorStyle="color:red"/>
+
+					<h:outputText value=""/>
+					<h:commandButton id="submit"
+						action="#{microService.signup}" 
+						value="Sign Up">
+					</h:commandButton>
+					</h:panelGrid>
+				</h:form>
+
+			</ui:define>
+		</ui:composition>
+	</body>
+</html>

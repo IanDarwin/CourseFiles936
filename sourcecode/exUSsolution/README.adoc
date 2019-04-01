@@ -1,0 +1,34 @@
+= MicroService: SpringBoot, JSF, CDI WebApp Demo
+
+https://projects.spring.io/spring-boot[Spring Boot]
+looks like a nice way to get started.
+This is a self-contained microservice created using 
+SpringBoot, Apache embedded Tomcat, JSF and CDI.
+
+== HowTo
+
+	mvn spring-boot:run
+
+Or, in Eclipse with Spring plugin (or "Spring Tool Suite"), 
+right-click project or Application.java, 
+then RunAs->Spring Boot Application
+
+Seconds later, connect to 
+
+http://localhost:8000/
+
+Note: that is port 8000, _not_ the usual 8080, to avoid conflicts.
+Change this in application.properties if you don't like it.
+
+Fill in the form and click Submit.
+
+== War Packaging for EE App Server Deployment
+
+This version has the modifications described in
+the section entitled "Traditional Deployment"--"Create a deployable war file" in
+the spring-boot reference manual (Section 85.1 as of
+this writing).
+It still works in Maven (`mvn package`) and can be run in Eclipse with these settings.
+For WildFly users, the packaged _war_ file has a jboss-web.xml config file
+so it deploys as _/microservicedemo_ when you simply copy the _war_ file to
+WILDFLYHOME/standalone/deployments.
