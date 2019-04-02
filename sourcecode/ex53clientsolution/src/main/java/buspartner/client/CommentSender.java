@@ -40,7 +40,7 @@ public class CommentSender {
 			System.out.println("----------");
 			System.out.println("Getting " + Constants.JMS_REMOTE_CONNECTION_FACTORY);
 			connFactory = (ConnectionFactory) ctx.lookup(Constants.JMS_REMOTE_CONNECTION_FACTORY);
-			System.out.println("Got it: " + connFactory);
+			System.out.println("Got it: " + connFactory.getClass());
 			System.out.println("Getting " + Constants.JMS_QUEUE_NAME);
 			destination = (Destination) ctx.lookup(Constants.JMS_QUEUE_NAME);
 			//destination = (Destination) ctx.lookup("jboss:/" + Constants.JMS_QUEUE_NAME);
