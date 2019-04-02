@@ -6,6 +6,8 @@ package com.ticketmanor;
  */
 public class Constants {
 
-	public final static String QUEUE_NAME = "jms/queue/feedbackQueue";
+	public static final String JMS_REMOTE_CONNECTION_FACTORY = "jms/RemoteConnectionFactory";
+
+	public final static String JMS_QUEUE_NAME = "jms/queue/CommentsQueue";
 	
 }
