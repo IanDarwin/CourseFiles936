@@ -18,6 +18,7 @@ TEST_DIRS="CourseFiles936/sourcecode/donow31solution
 	CourseFiles936/sourcecode/ex31solution 
 	CourseFiles936/sourcecode/ex41solution 
 	CourseFiles936/sourcecode/ex53clientsolution 
+	CourseFiles936/sourcecode/exUSsolution
 	jpademo"
 # Dirs we want to "wildfly:deploy"
 MWD_DIRS="CourseFiles936/site
@@ -28,7 +29,7 @@ MWD_DIRS="CourseFiles936/site
 	CourseFiles936/sourcecode/ex61solution 
 	CourseFiles936/sourcecode/ex71solution 
 	jsfdemo clublist cdi-ee-examples"
-# Dirs we want to "wildfly:deploy" and run integration tests
+# Dirs we want to "wildfly:deploy" AND run integration tests
 MWD_IT_TESTS_DIRS="
 	CourseFiles936/sourcecode/ex51solution
 	CourseFiles936/sourcecode/ex52solution
