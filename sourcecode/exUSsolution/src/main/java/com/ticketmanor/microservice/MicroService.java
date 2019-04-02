@@ -18,15 +18,19 @@ public class MicroService {
 		// Here would be some code to save the signup in a database
 
 		// Here is some display logic
-		int hour = LocalTime.now().getHour();
-		String dayPart = "Morning";
-		if (hour >18) {
-			dayPart = "Evening";
-		} else if (hour > 12) {
-			dayPart = "Afternoon";
-		}
+		String dayPart = dayPart(LocalTime.now().getHour());
 		greeting = String.format("<b>Good %s, %s!!</b>", dayPart, firstName);
 		return "/thanks.web";
+	}
+
+	public static String dayPart(int hour) {
+		if (hour >= 18) {
+			return "Evening";
+		}
+		if (hour >= 12) {
+			return "Afternoon";
+		}
+		return "Morning";
 	}
 
 	public String getFirstName() {
