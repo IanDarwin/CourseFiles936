@@ -1,0 +1,5 @@
+				<!-- Added after existing JMS queues for Course 936 JMS Exercise. The 2nd JNDI binding 
+				"java:/jboss/exported/jms/queue/CommentsQueue" is needed since, on WildFly, JNDI bindings are 
+				only visible remotely if registered under the "java:/jboss/exported" namespace
+				-->
+                <jms-queue name="CommentsQueue" entries="java:/jms/queue/CommentsQueue,java:/jboss/exported/jms/queue/CommentsQueue"/>
