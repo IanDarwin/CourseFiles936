@@ -2,14 +2,14 @@ package exUSsolution;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.ticketmanor.microservice.MicroService;
 
-class MicroServiceTest {
+public class MicroServiceTest {
 
 	@Test
-	void testDayPart() {
+	public void testDayPart() {
 		assertEquals("Morning", MicroService.dayPart(0));
 		assertEquals("Morning", MicroService.dayPart(8));
 		assertEquals("Morning", MicroService.dayPart(11));
