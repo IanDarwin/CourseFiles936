@@ -33,6 +33,13 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- PrimeFaces JSF Add-on -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.1</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
