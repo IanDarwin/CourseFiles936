@@ -65,10 +65,10 @@ public class CommentReceiver
 		try {
 			ObjectMessage wrapper = (ObjectMessage) msg;
 			FeedbackForm comment = (FeedbackForm) wrapper.getObject();
-			System.out.println("Got sender: " + comment.getCustName() + "--" + comment.getCustEmail());
-			System.out.println("Got comment: " + comment.getComment());
+			System.out.printf("Customer %s <%s> said %s%n", 
+					comment.getCustName(), comment.getCustEmail(), comment.getComment());
 			em.persist(comment);
-			System.err.println("Feedback saved to database!");
+			System.out.println("Feedback saved to database!");
 		} catch (JMSException jmsexc) {
 			System.err.println("Failed to get feedback object from wrapper: " + jmsexc);
 			jmsexc.printStackTrace(System.err);
