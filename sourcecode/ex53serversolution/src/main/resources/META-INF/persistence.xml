@@ -19,22 +19,10 @@
     <jta-data-source>java:jboss/datasources/CustFeedbackDataSource</jta-data-source>
 
 	<!-- DataModel is in its own jar so you have to list the classes you need from it -->
-	<class>com.ticketmanor.model.Act</class>
-	<class>com.ticketmanor.model.ActType</class>
-	<class>com.ticketmanor.model.Address</class>
-	<class>com.ticketmanor.model.Admin</class>
-	<class>com.ticketmanor.model.Auditorium</class>
-	<class>com.ticketmanor.model.Event</class>
+	<!-- But this project only uses the FeedbackForm class -->
 	<class>com.ticketmanor.model.FeedbackForm</class>
-	<class>com.ticketmanor.model.Member</class>
-	<class>com.ticketmanor.model.Movie</class>
-	<class>com.ticketmanor.model.Order</class>
-	<class>com.ticketmanor.model.OrderItem</class>
-	<class>com.ticketmanor.model.Person</class>
-	<class>com.ticketmanor.model.Ticket</class>
-	<class>com.ticketmanor.model.Venue</class>
 
-	<exclude-unlisted-classes>false</exclude-unlisted-classes>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
 	<properties>
 
 	<!-- Properties for eclipselink -->
