@@ -13,17 +13,17 @@
 	<f:facet name="header">TicketManor: Customer Feedback (ex53solution - MDB)</f:facet>
 	<p:dataTable var="comment" value="#{commentLister.list()}">
 
-		<p:column width="20%">
+		<p:column width="25%">
 			<f:facet name="header">Date</f:facet>
 			#{comment.date}
 		</p:column>
-		<p:column width="30%">
+		<p:column width="25%">
 			<f:facet name="header">Customer</f:facet>
 			#{comment.custName}
 			<br/>
 			#{comment.custEmail}
 		</p:column>
-		<p:column width="60%">
+		<p:column width="50%">
 			<f:facet name="header">Feedback</f:facet>
 			#{comment.comment}
 		</p:column>
