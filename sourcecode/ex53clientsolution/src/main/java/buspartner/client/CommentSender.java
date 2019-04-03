@@ -40,11 +40,11 @@ public class CommentSender {
 			System.out.println("----------");
 			System.out.println("Getting " + Constants.JMS_REMOTE_CONNECTION_FACTORY);
 			connFactory = (ConnectionFactory) ctx.lookup(Constants.JMS_REMOTE_CONNECTION_FACTORY);
-			System.out.println("Got it: " + connFactory.getClass());
+			System.out.println("Got Factory: " + connFactory.getClass());
 			System.out.println("Getting " + Constants.JMS_QUEUE_NAME);
 			destination = (Destination) ctx.lookup(Constants.JMS_QUEUE_NAME);
 			//destination = (Destination) ctx.lookup("jboss:/" + Constants.JMS_QUEUE_NAME);
-			System.out.println("Got it: " + destination);
+			System.out.println("Got Destination: " + destination);
 			String username = (String) ctx.getEnvironment().get("java.naming.security.principal");
 			String password = (String) ctx.getEnvironment().get("java.naming.security.credential");
 			connection = connFactory.createConnection(
@@ -61,7 +61,7 @@ public class CommentSender {
 			System.exit(1);
 		}
 
-		// Instantiate a FeedbackForm object, populate its fields
+		// Instantiate a FeedbackForm object name comment, populate its fields
 		// with (possibly whimsical) test data
 		FeedbackForm comment = new FeedbackForm();
 		comment.setCustName("Whiney Whitefoot");
@@ -95,7 +95,8 @@ public class CommentSender {
 
 			System.out.println("Client Completed. Two Messages sent.");
 			System.err.println("Warning: JMS is one-way communication, so 'no news'\n" + 
-					"is no guarantee of success. Check the server log file!");
+					"is no guarantee of success. Check the server log file AND \n" +
+					"visit the web page for this exercise.");
 		} catch (JMSException e) {
 			System.out.println("Client messaging failed: " + e);
 			if (debug) {
