@@ -5,28 +5,31 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<title>Ex53solution - MDB</title>
+	<title>TicketManor: Customer Feedback (Ex53solution - MDB)</title>
 </h:head>
 
 <h:body>
-	<h1>The website for ex53solution is deployed</h1>
-
+	<p:panel>
+	<f:facet name="header">TicketManor: Customer Feedback (ex53solution - MDB)</f:facet>
 	<p:dataTable var="comment" value="#{commentLister.list()}">
 
-		<p:column width="10%">
+		<p:column width="20%">
 			<f:facet name="header">Date</f:facet>
 			#{comment.date}
 		</p:column>
 		<p:column width="30%">
 			<f:facet name="header">Customer</f:facet>
 			#{comment.custName}
+			<br/>
+			#{comment.custEmail}
 		</p:column>
-		<p:column width="70%">
+		<p:column width="60%">
 			<f:facet name="header">Feedback</f:facet>
 			#{comment.comment}
 		</p:column>
 
 	</p:dataTable>
+	</p:panel>
 </h:body>
 </ui:composition>
 
