@@ -35,14 +35,24 @@ MWD_IT_TESTS_DIRS="
 	CourseFiles936/sourcecode/ex52solution
 	CourseFiles936/sourcecode/ex71solution"
 # We undeploy what we deployed at the end, so students can have the fun of deploying it.
+
+# Get list of dirs to either do mvn clean or mvn wildfly:undeploy at end of run
 CLEAN_DIRS="jpademo jsfdemo"
 UNDEPLOY_DIRS="TicketManorJava/ticketmanor-ee"
+
 for dir in sourcecode/ex*solution; do
 	if grep -s wildfly-plugin ${dir}/pom.xml; then
 		# Script is run in CourseFiles936 but starts in .. (aka '/'), so prepend
 		UNDEPLOY_DIRS="${UNDEPLOY_DIRS} CourseFiles936/${dir}"
 	else
 		CLEAN_DIRS="${CLEAN_DIRS} CourseFiles936/${dir}"
+	fi
+done
+
+# Make sure all repos are checked out on this machine
+for repo in ${GIT_DIRS}; do
+	if [ ! -d $repo ]; then
+		echo $0: MISSING $repo; exit 1;
 	fi
 done
 
