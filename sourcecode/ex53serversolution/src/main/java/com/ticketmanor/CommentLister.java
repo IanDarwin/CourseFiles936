@@ -14,7 +14,7 @@ public class CommentLister {
 	@PersistenceContext EntityManager em;
 	
 	public List<FeedbackForm> list() {
-		System.err.println("CommentLister.list()");
+		System.out.println("CommentLister.list()");
 		return em.createQuery("from FeedbackForm ff order by ff.date desc", FeedbackForm.class).getResultList();
 	}
 }
