@@ -1,5 +1,0 @@
-If you don't have a ~/.m2/settings.xml file
-	Copy mvn-settings to ~/.m2/settings.xml
-else
-	Merge mvn-settings into ~/.m2/settings.xml
-</if>

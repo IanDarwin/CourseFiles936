@@ -1,13 +1,12 @@
 package jsonb;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 /** Simple test to ensure that JSON-B annotations on Person class are OK. 
  * Also demonstrates how to use JSON-B API at its most basic level. 
@@ -21,12 +20,12 @@ public class PersonTest {
 	
 	Person person;
 	
-	@BeforeAll
+	@Before
 	public static void beforeAll() {
 		jsonb = JsonbBuilder.create(); // omits optional configuration
 	}
 	
-	@BeforeEach
+	@Before
 	public void beforeTest() {
 		person = new Person("Top", "Dog");
 	}

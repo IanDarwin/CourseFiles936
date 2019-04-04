@@ -47,6 +47,23 @@
 			<artifactId>rome</artifactId>
 			<version>1.0</version>
 		</dependency>
+		
+		<!-- JSON-B -->
+		<dependency>
+			<groupId>javax.json.bind</groupId>
+			<artifactId>javax.json.bind-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>yasson</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.json</artifactId>
+			<version>1.1</version>
+		</dependency>
 
 		<!-- Hibernate not needed in WildFly as it is included, but prob. needed on other App Servers-->
 		<dependency>
