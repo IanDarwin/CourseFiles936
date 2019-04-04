@@ -49,16 +49,16 @@ for dir in sourcecode/ex*solution; do
 	fi
 done
 
+# These two CD's are intentional, test on Unix, run on Bash-on-Windows.
+cd
+cd C:/
+
 # Make sure all repos are checked out on this machine
 for repo in ${GIT_DIRS}; do
 	if [ ! -d $repo ]; then
 		echo $0: MISSING $repo; exit 1;
 	fi
 done
-
-# These two CD's are intentional, test on Unix, run on Bash-on-Windows.
-cd
-cd C:/
 
 # Excepting the two CD commands, "none shall fail"
 set -e
