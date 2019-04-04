@@ -4,12 +4,13 @@ import java.util.Collections;
 import java.util.List;
 
 import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
 import com.ticketmanor.model.Event;
 import com.ticketmanor.service.EventsEjb;
 
-@ManagedBean
+@Named @RequestScoped
 public class EventsBean {	 // Should be EventsJsfBean
 
 	@EJB

@@ -1,12 +1,13 @@
 package com.ticketmanor;
 
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
-@ManagedBean
+@Named @SessionScoped
 public class Authenticator {
 
 	public String logout() {
