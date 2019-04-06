@@ -23,8 +23,13 @@ import com.ticketmanor.model.Venue;
  */
 public class ShoppingCartTest {
 	
-	//T Examine the fields we have set up for you.
+	//T AFTER the Unit Tests pass AND you have created an Interface for remote use,
+	// change this from the class to the Interface (if the Refactoring doesn't do it).
+	//-
 	protected ShoppingCart cart;
+	//+
+	//R protected ShoppingCartEjb cart;
+	//T Examine the other fields we have set up for you.
 	static final Act act = new Act(ActType.TROUPE, "The Outliers");
 	static final Venue venue = new Venue("Rectangle Square Gardens");
 	static final Event evt = new Event(act, LocalDateTime.now(), venue);
