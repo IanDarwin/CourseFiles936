@@ -14,9 +14,9 @@
 
    		<ui:composition template="/templates/standard.xhtml">
 
-			<ui:define name="pageTitle">MicroService Signup Demo</ui:define>
+			<ui:define name="pageTitle">Acme Widgets Customer Feedback (MicroService Demo)</ui:define>
   
-			<ui:define name="pageHeader">MicroService Signup Demo</ui:define>
+			<ui:define name="pageHeader">Acme Widgets Customer Feedback (MicroService Demo)</ui:define>
 
 			<ui:define name="body">
 				<h:messages globalOnly='true' showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
@@ -38,13 +38,22 @@
 					</h:inputText>
 					<h:message id='emailMessage' for='emailTF' errorStyle="color:red"/>
 
+					<h:outputText value="Your Comments" required="true"/>
+					<h:inputTextarea id='commentsTF' value="#{microService.comments}" required='true'
+						rows="5" cols="80">
+
+					</h:inputTextarea>
+					<h:message id='commentsMessage' for='commentsTF' errorStyle="color:red"/>
+
 					<h:outputText value=""/>
 					<h:commandButton id="submit"
-						action="#{microService.signup}" 
+						action="#{microService.submit}" 
 						value="Sign Up">
 					</h:commandButton>
 					</h:panelGrid>
 				</h:form>
+
+				<p>Privacy Notice: We will share your feedback with our business partner, TicketManor.com. Thank you.</p>
 
 			</ui:define>
 		</ui:composition>
