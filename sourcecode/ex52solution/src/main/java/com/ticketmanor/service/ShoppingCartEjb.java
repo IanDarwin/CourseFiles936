@@ -19,8 +19,8 @@ public class ShoppingCartEjb implements ShoppingCart {
 	
 	private List<OrderItem> cart = new ArrayList<>(5);
 	
-	// T What is the default transactional state and why do we not need a
-	// Transaction annotation on this method?
+	// T What is the default transactional state for Stateful EJBs,
+	// and why do we not need a Transaction annotation on this method?
 	@Override
 	public void addToCart(Sellable s) {
 		for (OrderItem item : cart) {
@@ -67,6 +67,9 @@ public class ShoppingCartEjb implements ShoppingCart {
 	@Override
 	public double getTotalPrice() {
 		double total = 0;
+		//T Iterate over the items in 'cart'; for each one, add its selling
+		// price (quantity multipled by sellable.price) into 'total'.
+		//-
 		for (OrderItem item : cart) {
 			if (item.getSellable() == null) {
 				throw new IllegalArgumentException("Cart item with null Sellable!");
@@ -76,6 +79,7 @@ public class ShoppingCartEjb implements ShoppingCart {
 			}
 			total += item.getQuantity() * item.getSellable().getPrice();
 		}
+		//+
 		return total;
 	}
 
