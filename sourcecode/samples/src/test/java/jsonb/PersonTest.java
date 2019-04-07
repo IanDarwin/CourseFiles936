@@ -6,6 +6,7 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /** Simple test to ensure that JSON-B annotations on Person class are OK. 
@@ -20,7 +21,7 @@ public class PersonTest {
 	
 	Person person;
 	
-	@Before
+	@BeforeClass
 	public static void beforeAll() {
 		jsonb = JsonbBuilder.create(); // omits optional configuration
 	}
