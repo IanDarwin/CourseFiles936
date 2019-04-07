@@ -16,7 +16,7 @@ public interface ShoppingCart {
 	// This is initially a dummy version that is just here to reduce compilation errors.
 
 	//T Either REPLACE or POPULATE this interface with the methods in ShoppingCartEJB.
-	// For example, delete this file then use the Refactoring to re-create it.
+	// For example, delete this file and use Refactoring->Extract Interface to re-create it.
 	// If you delete it, remember to add the required class-level annotation.
 
 	//-
