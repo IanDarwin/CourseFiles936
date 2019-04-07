@@ -2,7 +2,7 @@
 
 cd
 
-DIRS="CourseFiles936 TicketManorJava jpademo jsfdemo clublist"
+DIRS="CourseFiles936 TicketManorJava jpademo jsfdemo clublist javasrc cdi-ee-examples"
 TARGET_DIR=/tmp/936HOCD
 TARGET_ZIP=/tmp/936HOCD.zip
 
