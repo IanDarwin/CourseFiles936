@@ -47,6 +47,7 @@ public class Main {
 		em = emf.createEntityManager();
 		customer2 = em.find(Customer.class, id);
 		//+
+		//R em = null; // REPLACE THIS
 
 		// Now we'll check that they're the same
 		if (customer.getFullName().equals(customer2.getFullName())) {
