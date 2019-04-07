@@ -58,9 +58,9 @@ public class ShoppingCartTest {
 		//R fail("test not implemented");
 		//-
 		cart.addToCart(product);
-		assertTrue(cart.removeFromCart(product));
+		assertTrue("remove from cart -> true", cart.removeFromCart(product));
 		List<OrderItem> orderItems = cart.getOrderItems();
-		assertEquals(orderItems.size(), 0);
+		assertEquals("add+remove = 0", orderItems.size(), 0);
 		//+
 	}
 
