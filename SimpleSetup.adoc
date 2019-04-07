@@ -2,11 +2,11 @@
 
 You should be able to use the same setup as we have on the course:
 
-* Be sure you have an up-to-date Java SE (Java 8 or later);
+* Be sure you have an up-to-date Java SE (Java 11 or later);
 
-* Be sure you have an up-to-date Maven (3.x);
+* Be sure you have an up-to-date Maven (3.6+);
 
-* Be sure you have an up-to-date Eclipse (Photon or later)
+* Be sure you have an up-to-date Eclipse (2019.03 or later)
 
 * Be sure you have the current M2E plug-in in your Eclipse install;
 
@@ -20,7 +20,8 @@ You should be able to use the same setup as we have on the course:
 
 * Unzip the CourseFiles.zip into some directory
 
-* Open the sourcecode subdirectory as an Eclipse workspace. At this point you should see all the DoNow and ExXX projects.
+* Open the _sourcecode_ subdirectory as an Eclipse workspace. At this point you should see all the DoNow and ExXX projects.
+If not you can add the ones you need; use File->New->Java Project and give the project name, and click Finish.
 
 * Configure datasources in your application server.
 
