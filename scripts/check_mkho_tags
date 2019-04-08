@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# check_mkho_tags - check for the common error of putting a space in "//T" or "//R" tags
+
+grep -r "// [TR+-] " sourcecode/ex*solution
