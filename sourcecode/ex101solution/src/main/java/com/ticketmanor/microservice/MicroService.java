@@ -38,7 +38,7 @@ public class MicroService {
 	public void sendToBusinessPartner(FeedbackForm form) {
 		//T BONUS ONLY Copy all the JMS code from the JMS Client exercise
 		// This is basically all the code in both try/catch statements
-		// But not the form construction (which we've done for you using the
+		// But not the form construction (which we've done for you above, using the
 		// full version of the constructor), and you should also DELETE the 
 		// bogus "second" send of an invalid object.
 		// Near the end of the copied code, use JMS to send the form to TicketManor via JMS.
