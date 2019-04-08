@@ -1,4 +1,4 @@
-all:	README.html homesetup.html databases.html maint.html passwords.html troubleshooting.html
+all:	README.html SimpleSetup.html databases.html maint.html passwords.html troubleshooting.html
 
 README.html:			README.adoc
 	asciidoctor $?

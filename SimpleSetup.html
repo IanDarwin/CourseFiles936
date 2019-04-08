@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<title>CourseFiles936</title>
+<title>Setting Up The Environment</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -427,331 +427,60 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>CourseFiles936</h1>
+<h1>Setting Up The Environment</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
-<p>This directory <em>CourseFiles936</em> contains the web pages and exercise projects for
-<a href="http://learningtree.com">Learning Tree</a>'s
-<a href="http://learningtree.com/936">Course 936, Enterprise Java Applications: JSF, EJB3, JSF and AJAX</a>.</p>
-</div>
-<div class="paragraph">
-<p>The <em>sourcecode</em> subdirectory of the current folder is intended to be the root of an Eclipse Workspace</p>
-</div>
-<div class="paragraph">
-<p>This is for the J.2 Revision (2018); <strong>do not</strong> try to use this earlier versions as the directory structure has changed.</p>
-</div>
-<div class="paragraph">
-<p>All code is copyright &#169; by Learning Tree International.</p>
-</div>
-<div class="paragraph">
-<p>This code won&#8217;t do you much good unless you&#8217;re taking the course.</p>
-</div>
-<div class="paragraph">
-<p>There is one other adjacent folder, TicketManorJava, which is hosted on
-LearningTree&#8217;s GitHub account, <a href="https://github.com/LearningTree/TicketmanorJava/" class="bare">https://github.com/LearningTree/TicketmanorJava/</a>.</p>
-</div>
-<div class="paragraph">
-<p>There are several adjacent folders hosted on the author&#8217;s github,
-<a href="https://github.com/IanDarwin/" class="bare">https://github.com/IanDarwin/</a>, including jsfdemo jpademo clublist javasrc.
-There is also the <em>makehandsons</em> project which makes the hands-on exercises from
-the solutions, so they are always in synch.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_set_up_the_environment_at_home_or_work">Set Up the Environment at Home or Work</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To set up the environment at home or work, you should try the following
-(the implementing command examples are for Unix, Linux, Mac OS X,
-and might work on MS-Windows with CygWin or equivalent):</p>
+<p>You should be able to use the same setup as we have on the course:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Make sure you have
-Java SE (8 or 9),
-Maven 3 (<a href="https://maven.apache.org" class="bare">https://maven.apache.org</a>),
-a database (<a href="https://postgresql.org/" class="bare">https://postgresql.org/</a>)
-and <em>git</em> (<a href="https://git-scm.com/" class="bare">https://git-scm.com/</a>)
-installed and on your PATH.</p>
+<p>Be sure you have an up-to-date Java SE (Java 11 or later);</p>
 </li>
 <li>
-<p>Start the postgres database if needed (the installer normally starts it for you).</p>
+<p>Be sure you have an up-to-date Maven (3.6+);</p>
 </li>
 <li>
-<p>Make sure you have Wildfly installed but not running;
-you could use a different App Server but you&#8217;d have to change
-all the Maven deployment configurations (most projects have
-GlassFish and Tomcat in <em>pom.xml</em>, but this is unmaintained!!)
-AND the DataSource configurations (alas, the EE spec doesn&#8217;t nail down how to do this).</p>
+<p>Be sure you have an up-to-date Eclipse (2019.03 or later)</p>
 </li>
 <li>
-<p>MS-Windows users must also install Cygwin 64 bit (includes shells and vi), including:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>cygwin base;</p>
+<p>Be sure you have the current M2E plug-in in your Eclipse install;</p>
 </li>
 <li>
-<p>git (at least the basic package, under devel);</p>
+<p>Be sure you have a good relational database (PostgreSQL, or change all the persistence.xml files);</p>
 </li>
 <li>
-<p>unzip</p>
+<p>Set up the <a href="databases.html">databases</a> used in the projects;</p>
 </li>
 <li>
-<p>ssh or anything else you want.</p>
+<p>Be sure you have a good EE App Server (WildFly, or change all the pom.xml files);</p>
+</li>
+<li>
+<p>Download the Course Zip file from Learning Tree</p>
+</li>
+<li>
+<p>Unzip the CourseFiles.zip into some directory</p>
+</li>
+<li>
+<p>Open the <em>sourcecode</em> subdirectory as an Eclipse workspace. At this point you should see all the DoNow and ExXX projects.
+If not you can add the ones you need; use File&#8594;New&#8594;Java Project and give the project name, and click Finish.</p>
+</li>
+<li>
+<p>Configure datasources in your application server.</p>
+</li>
+<li>
+<p>Start your application server.</p>
+</li>
+<li>
+<p>Try deploying ticketmanor: Open the project, RunAs→Maven Build, set target to wildfly:deploy, click OK.</p>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>From here you can either use <code>git clone</code> to download individual pieces and have the option to update
-later using git, or, just download the Zip file from Learning Tree and unzip it.
-For using git:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Git clone the following projects into a single parent directory
-(in the course we use C:\ but anyplace <strong>should</strong> work):</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cd WHERE_YOU_INSTALL
-for repo in LearningTree/TicketManorJava \
-	IanDarwin/{CourseFiles936,clublist,javasrc,darwinsys-api,jsfdemo,jpademo,cdi-ee-examples,makehandsons,createprojects}
-do
-    git clone https://github.com/$repo
-done</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Now you have to set up the database:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Create a 'student' account inside Postgres, giving the PostGres Admin password when prompted;</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>	psql &lt;&lt;!
-	create role student password 'student' login;
-	!</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Install the psql password file for this account.  For Windows:</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>	mkdir %APPADATA%\postgresql			# Windows step 1
-	copy configs\pgpass.conf %APPDATA%\postgresql # Windows step 2</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For Mac or Unix/Linux:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>	cp configs/pgpass.conf ~/.pgpass	# *Nix, Mac step 1
-	chmod 0600 ~/.pgpass				# *Nix, Mac step 2</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Create databases:</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>	psql &lt;&lt;!
-	create user student password 'student' login nosuperuser;
-	create database ticketmanor owner student;
-	create database jpademo owner student;
-	create database jpa_basic owner student;
-	create database jpa_inheritance owner student;
-	create database jpa_aggregation owner student;
-	!</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Decide if you want JMS or not.
-If so, use config file standalone-full.xml in the following; if not, use standalone.xml
-and delete sourcecode/ex53solution.
-If so, see the README in ex53 for one additional step.</p>
-</li>
-<li>
-<p>Merge configs/datasources into wildfly config file standalone/configuration/CHOSEN_CONFIG_FILE</p>
-</li>
-<li>
-<p>Download Jenkins (latest LTS jenkins.war) from jenkins.org; copy it to WILDFLY_HOME/standalone/deployments</p>
-</li>
-<li>
-<p>You can save a bit of time by pre-creating the <em>testuser</em> account in Wildfly, by pasting
-this line into the file application-users.properties file in the standalone/configuration directory
-	testuser=539580a56fb54850e92d0d2221b47359
-and this line into application-roles.properties.
-	testuser=guest,testuser
-Alternately you can create these manually the way we do in the exercise in the Security chapter.
-but the testuser account is needed by e.g., the JMS exercise.
-Obviously this username and password combination must not be used on any internet-accessible server!</p>
-</li>
-<li>
-<p>Start Wildfly: cd WILDFLY_HOME; bin/standalone -c standalone-full.xml
-(if you don&#8217;t want JMS support omit the -c and the filename).</p>
-</li>
-<li>
-<p>If it doesn&#8217;t start successfully, troubleshoot your configuration, or hire an overpriced consultant.</p>
-</li>
-<li>
-<p>Connect to localhost:8080/jenkins. Enable signup under Global Security. Sign out; sign up as student/student. Disable signups! This is only for isolated machine testing; read up on Jenkins security before deploying even on your intranet!!</p>
-</li>
-<li>
-<p>Under <em>Configure Jenkins</em>, go to <em>Manage Plugins</em> and install <em>Development/GIT</em> plugin.
-This will offer to restart, but if you&#8217;re running it under Wildfly from the <em>deployments</em> folder,
-you&#8217;ll have to restart Wildfly.</p>
-</li>
-<li>
-<p>Now that the git plugin exists, you can re-create the Jenkins jobs for <em>datamodel</em> and <em>ticketmanor-ee</em>.</p>
-</li>
-<li>
-<p>Install the database driver (e.g., postgres) into WildFly. For postgres, on *Nix, run configs/pg-meets-wf.sh. Postgres on Windows, paste configs/pg-meets-wf.bat into a terminal, since DOS doesn&#8217;t have 'here documents' (special form of redirection).
-For MySql or its fork MariaDB, follow the steps in configs/mysql-driver.txt.</p>
-</li>
-<li>
-<p>If you started with the git cloning, you need to run the uber-script which, among other things, creates the exercises from the solutions:</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cd Coursefiles936
-sh scripts/all-in</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The script produces tons of output so it is set to fail on the first error,
-otherwise error messages would be missed. It should end with "BUILD SUCCESS" and reminders
-to clean up.</p>
-</div>
-<div class="sect2">
-<h3 id="_command_line_setup">Command Line setup</h3>
-<div class="paragraph">
-<p>Add the following to your PATH:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Java (if not done automatically)</p>
-</li>
-<li>
-<p>Apache Maven 3.5.x</p>
-</li>
-<li>
-<p>COURSEFILES936-LOCATION/bats (windows only)</p>
-</li>
-<li>
-<p>postgresql/bin - for psql command</p>
-</li>
-<li>
-<p>cygwin/bin - optional, for Unix compatability</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>On Windows this may look something like the following, though the actual path settings will vary depending on what software releases you&#8217;ve installed.</p>
-</div>
-<div id="path-setting.png" class="imageblock">
-<div class="content">
-<img src="images/path-setting.png" alt="path setting">
-</div>
-<div class="title">Figure 1. Path setting on MS-DOS (YMMV)</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_eclipse_workspace_setup">Eclipse Workspace Setup</h3>
-<div class="paragraph">
-<p>The normal intention is that the <em>sourcecode</em> subdirectory should be the base of an Eclipse workspace.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Start Eclipse</p>
-</li>
-<li>
-<p>If it opens an existing workspace, do File&#8594;Switch Workspace. If not it will ask you for the workspace.
-Browse to where you downloaded CourseFiles936, and select (but don&#8217;t double click
-on) <strong>CourseFiles936/sourcecode</strong>. Click OK.</p>
-</li>
-<li>
-<p>The course projects may appear, or maybe not. If not,
-do <code>File&#8594;New Project&#8594;New Java Project</code>, browse to the <code>TicketManorJava</code> folder,
-select but don&#8217;t double-click
-on <code>datamodel</code>,
-which should cause the dialog to change the text in its bottom panel to something like
- "The wizard will use the existing settings to configure the project". Click Finish.</p>
-</li>
-<li>
-<p>Repeat the above for these projects:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>ticketmanor-ee</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Ditto for cdi-ee-examples, clublist, jsfdemo, jpademo, except they should be in the folder one level up in the filesystem.</p>
-</li>
-<li>
-<p>If you want the javasrc project (code examples from the Java Cookbook) and darwinsys-api (some helper files),
-do the same for them.</p>
-</li>
-<li>
-<p>Finally you have to create the two dozen or so "ex" projects.
-Either do them all by hand as above, or, use our handy Eclipse plugin
-which you get from <a href="https://github.com/IanDarwin/CreateProjects" class="bare">https://github.com/IanDarwin/CreateProjects</a>
-Pro tip: the README there walks you through it; it&#8217;s pretty easy.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>At this point you should have things pretty much set up as in the course.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_using_a_different_ide_workspace_setup">Using a different IDE Workspace Setup</h3>
-<div class="paragraph">
-<p>We don&#8217;t provide instructions for other IDEs. If you get it working in a way that doesn&#8217;t
-interfere with it working with Eclipse and Maven, please feel free to send a Github pull request,</p>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-27 23:35:13 EST
+Last updated 2019-04-07 19:56:48 EDT
 </div>
 </div>
 </body>

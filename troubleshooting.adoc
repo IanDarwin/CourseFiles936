@@ -11,6 +11,17 @@ the following errors from *Eclipse* can be ignored:
 As well, some of the projects (notably Exercises 4.1 and 5.2) will have a bunch of red flags when
 first opened, because you haven't yet written the code. These will go away as you write the code.
 
+== WildFly Server Logs
+
+The main log file is in c:\WILDFLY-DIR\standalone\log\server.log
+
+There is an icon to open this file on the desktop.
+
+There are also two batch files to help you view this log, np-log (notepad++) and vi-log (vi editor).
+These will take a while to start as the log file is big.
+For Notepad++, keyboard shortcuts CTRL/Home and CTRL/End are your friends for navigation.
+For vi, you just have to know what you're doing :-).
+
 == Maven Deployment
 
 When you run _mvn wildfly:deploy_ you should see the message "Build Success" near the end of the Maven output.
@@ -88,15 +99,6 @@ also the JBoss will sometimes tell you it's re-deployed your JMS but
 apparently not actually do so; add a debug statement and see if the line
 numbers in the stack trace are affected. If not,
 the solution is to follow the steps "Cleaning Wildfly Configuration".
-
-== WildFly Server
-
-The main log file is in c:\WILDFLY-DIR\standalone\log\server.log
-
-There are two batch files to help you view this log, np-log (notepad++) and vi-log (vi editor).
-These will take a while to start as the log file is big.
-For Notepad++, keyboard shortcuts CTRL/Home and CTRL/End are your friends for navigation.
-For vi, you just have to know what you're doing :-).
 
 === Restart Issues with Wildfly
 
