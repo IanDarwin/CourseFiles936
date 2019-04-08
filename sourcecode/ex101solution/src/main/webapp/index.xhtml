@@ -25,15 +25,15 @@
 					<h:panelGrid columns='3'>
 
 					<h:outputText value="First name"/>
-					<h:inputText required="true" id="firstName" value="#{microService.firstName}" />
+					<h:inputText size='50' required="true" id="firstName" value="#{microService.firstName}" />
 					<h:message for="firstName" errorStyle="color:red"/>
 
 					<h:outputText value="Last name"/>
-					<h:inputText required="true" id="lastName" value="#{microService.lastName}" />
+					<h:inputText size='50' required="true" id="lastName" value="#{microService.lastName}" />
 					<h:message for="lastName"  errorStyle="color:red"/>
 
 					<h:outputText value="Email address" required="true" validatorMessage="{javax.faces.validator.LengthValidator.MINIMUM}"/>
-					<h:inputText id='emailTF' value="#{microService.email}" required='true'>
+					<h:inputText size='50' id='emailTF' value="#{microService.email}" required='true'>
 							<!-- Email: TLDs are no longer limited to 3 or 4 letters; pattern could be more restrictive -->
 							<f:validateRegex pattern="\w+@\w+\.\w+" validatorMessage="That's an Email?"/>
 					</h:inputText>
