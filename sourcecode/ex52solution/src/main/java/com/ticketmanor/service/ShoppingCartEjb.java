@@ -19,7 +19,7 @@ public class ShoppingCartEjb implements ShoppingCart {
 	
 	private List<OrderItem> cart = new ArrayList<>(5);
 	
-	// T What is the default transactional state for Stateful EJBs,
+	//T What is the default transactional state for Stateful EJBs,
 	// and why do we not need a Transaction annotation on this method?
 	@Override
 	public void addToCart(Sellable s) {
@@ -67,7 +67,7 @@ public class ShoppingCartEjb implements ShoppingCart {
 	@Override
 	public double getTotalPrice() {
 		double total = 0;
-		//T Iterate over the items in 'cart'; for each one, add its selling
+		//T Iterate over the OrderItems in 'cart'; for each one, add its selling
 		// price (quantity multipled by sellable.price) into 'total'.
 		//-
 		for (OrderItem item : cart) {
@@ -103,7 +103,7 @@ public class ShoppingCartEjb implements ShoppingCart {
 		return n;
 	}
 
-	// T Imagine that there is a saveCartForLater() method that persists
+	//T Imagine that there is a saveCartForLater() method that persists
 	// the user's cart into the database with JPA. What annotation(s) would it need?
 	//-
 	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
@@ -112,7 +112,7 @@ public class ShoppingCartEjb implements ShoppingCart {
 		// This would write cart contents to JPA
 	}
 
-	// T @Remove methods may not be transactional. What additional annotation
+	//T @Remove methods may not be transactional. What additional annotation
 	// should be applied here to say that we don't want Tx for this method?
 	@Remove
 	//-
