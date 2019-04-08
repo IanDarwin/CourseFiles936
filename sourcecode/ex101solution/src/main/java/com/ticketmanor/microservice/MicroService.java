@@ -26,17 +26,22 @@ public class MicroService {
 		FeedbackForm form = 
 			new FeedbackForm(0, getName(), email, LocalDateTime.now(), comments);
 
+		// Some business logic
+		sendToBusinessPartner(form);
+
+		// Here is some display logic
+		String dayPart = dayPart(LocalTime.now().getHour());
+		greeting = String.format("<b>Good %s, %s!!</b>", dayPart, firstName);
+		return "/thanks.web";
+	}
+	
+	public void sendToBusinessPartner(FeedbackForm form) {
 		//T BONUS ONLY Copy all the JMS code from the JMS Client exercise
 		// This is basically all the code in both try/catch statements
 		// But not the form construction (which we've done for you using the
 		// full version of the constructor), and you should also DELETE the 
 		// bogus "second" send of an invalid object.
 		// Near the end of the copied code, use JMS to send the form to TicketManor via JMS.
-
-		// Here is some display logic
-		String dayPart = dayPart(LocalTime.now().getHour());
-		greeting = String.format("<b>Good %s, %s!!</b>", dayPart, firstName);
-		return "/thanks.web";
 	}
 
 	public static String dayPart(int hour) {
