@@ -13,7 +13,9 @@ GIT_DIRS="TicketManorJava CourseFiles936 javasrc jpademo jsfdemo clublist cdi-ee
 # Dirs we have to do "mvn install"
 INSTALL_DIRS="TicketManorJava/datamodel makehandsons"
 # Dirs to just run "mvn test" in
-TEST_DIRS="CourseFiles936/sourcecode/donow31solution 
+TEST_DIRS="
+	CourseFiles936/sourcecode/donow21solution 
+	CourseFiles936/sourcecode/donow31solution 
 	CourseFiles936/sourcecode/ex21solution 
 	CourseFiles936/sourcecode/ex31solution 
 	CourseFiles936/sourcecode/ex41solution 
