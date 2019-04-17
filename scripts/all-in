@@ -19,6 +19,7 @@ TEST_DIRS="CourseFiles936/sourcecode/donow31solution
 	CourseFiles936/sourcecode/ex41solution 
 	CourseFiles936/sourcecode/ex53clientsolution 
 	CourseFiles936/sourcecode/ex101solution
+	CourseFiles936/sourcecode/minimal
 	CourseFiles936/sourcecode/samples
 	jpademo"
 # Dirs we want to "wildfly:deploy"
