@@ -11,6 +11,6 @@ import javax.persistence.Id;
 @Entity		// One of these two must
 @Embeddable	// be commented out for JPA to work
 public class Duration {
-	@Id Long id;
+	@Id Long id;	// Remove if using @Embeddable
 	int hours, minutes, seconds;
 }
