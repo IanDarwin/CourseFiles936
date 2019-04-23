@@ -166,10 +166,10 @@ echo "
 
 Remember to execute the following steps:
 	In Eclipse:
-		open all non-ex* Eclipse projects;
-		refresh each one;
-		do Project->Clean->All Projects;
-		close all projects again;
+		Window->Show View->Course Maintenance->Create Projects View.
+		In Create Projects, do Create All. Wait a while.
+		Close the ones that have legit errors (ex42 and 51??)
+		Close all projects again;
 		Close the Create Projects View.
 	Close all windows but Chrome; only Home Page showing, centered.
 "
