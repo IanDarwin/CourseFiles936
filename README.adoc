@@ -37,7 +37,7 @@ installed and on your PATH.
 you could use a different App Server but you'd have to change
 all the Maven deployment configurations (most projects have 
 GlassFish and Tomcat in _pom.xml_, but this is unmaintained!!)
-AND the DataSource configurations (alas, the EE spec doesn't nail down how to do this).
+AND the DataSource and any other configurations in _configs/wildfly_ (alas, the EE spec doesn't nail down how to do this).
 * MS-Windows users must also install Cygwin 64 bit (includes shells and vi), including:
 ** cygwin base;
 ** git (at least the basic package, under devel);
