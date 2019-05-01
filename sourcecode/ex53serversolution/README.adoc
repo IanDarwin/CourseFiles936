@@ -8,7 +8,7 @@ On Wildfly you can set up the queue like so:
 $ $WF_HOME/bin/jboss-cli.sh < wf-jms-queue.txt
 ----
 
-On DOS/Windows use `%WF_HOME%\\bin\\jboss-cli.bat < wf-jms-queue.txt`
+On DOS/Windows use `%WF_HOME%\bin\jboss-cli.bat < wf-jms-queue.txt`
 
 In either case you have to replace WF_HOME with the directory where Wildfly is installed.
 
@@ -21,16 +21,16 @@ You are disconnected at the moment. Type 'connect' to connect to the server or '
 [disconnected /] # Starts off disconnected, so connect
 [disconnected /] connect
 [standalone@localhost:9990 /] # Add a Queue to JMS 
-[standalone@localhost:9990 /] jms-queue add --queue-address=feedbackQueue --entries=jms/queue/feedbackQueue,java:jboss/exported/jms/queue/feedbackQueue
+[standalone@localhost:9990 /] jms-queue add --queue-address=CommentsQueue --entries=jms/queue/CommentsQueue,java:jboss/exported/jms/queue/CommentsQueue
 [standalone@localhost:9990 /] # "add" does not print anything on success, so read it back just to verify
-[standalone@localhost:9990 /] /subsystem=messaging-activemq/server=default/jms-queue=feedbackQueue:read-resource
+[standalone@localhost:9990 /] /subsystem=messaging-activemq/server=default/jms-queue=CommentsQueue:read-resource
 {
     "outcome" => "success",
     "result" => {
         "durable" => true,
         "entries" => [
-            "jms/queue/feedbackQueue",
-            "java:jboss/exported/jms/queue/feedbackQueue"
+            "jms/queue/CommentsQueue",
+            "java:jboss/exported/jms/queue/CommentsQueue"
         ],
         "legacy-entries" => undefined,
         "selector" => undefined

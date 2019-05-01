@@ -3,6 +3,6 @@
 # Starts off disconnected, so connect
 connect
 # Add a Queue to JMS (does not print anything on success)
-jms-queue add --queue-address=feedbackQueue --entries=jms/queue/feedbackQueue,java:jboss/exported/jms/queue/feedbackQueue
+jms-queue add --queue-address=CommentsQueue --entries=jms/queue/CommentsQueue,java:jboss/exported/jms/queue/CommentsQueue
 # "add" does not print anything on success, so read it back just to verify
-/subsystem=messaging-activemq/server=default/jms-queue=feedbackQueue:read-resource
+/subsystem=messaging-activemq/server=default/jms-queue=CommentsQueue:read-resource
