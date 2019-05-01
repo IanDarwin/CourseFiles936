@@ -1,16 +1,28 @@
-== Ex53solution -- Message Driven Bean
+== Ex53 -- Message Driven Bean
 
-To run this at home you will have to do some configuration!
+To run this at home you will have to do some configuration to create the JMS Queue.
 
-On wildfly you can set up the queue like so:
+On Wildfly you can set up the queue like so:
 
 ----
-$ bin/jboss-cli.sh
-[standalone@localhost:9990 /] # Starts off disconnected, so connect
-[standalone@localhost:9990 /] connect
-[standalone@localhost:9990 /] # Add a Queue to JMS (does not print anything on success)
+$ $WF_HOME/bin/jboss-cli.sh < wf-jms-queue.txt
+----
+
+On DOS/Windows use `%WF_HOME%\\bin\\jboss-cli.bat < wf-jms-queue.txt`
+
+In either case you have to replace WF_HOME with the directory where Wildfly is installed.
+
+The outputs should look something like the following. Lines with "#" are comments.
+
+----
+You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
+[disconnected /] # Commands for Wildfly jboss-cli program
+[disconnected /] 
+[disconnected /] # Starts off disconnected, so connect
+[disconnected /] connect
+[standalone@localhost:9990 /] # Add a Queue to JMS 
 [standalone@localhost:9990 /] jms-queue add --queue-address=feedbackQueue --entries=jms/queue/feedbackQueue,java:jboss/exported/jms/queue/feedbackQueue
-[standalone@localhost:9990 /] # So read it back just to verify
+[standalone@localhost:9990 /] # "add" does not print anything on success, so read it back just to verify
 [standalone@localhost:9990 /] /subsystem=messaging-activemq/server=default/jms-queue=feedbackQueue:read-resource
 {
     "outcome" => "success",
@@ -24,9 +36,7 @@ $ bin/jboss-cli.sh
         "selector" => undefined
     }
 }
-
-[standalone@localhost:9990 /] quit
-$ 
+[standalone@localhost:9990 /] MacKenzie-LAPTOP-ex53server $
 ----
 
 This is based upon https://docs.jboss.org/author/display/WFLY8/Messaging+configuration

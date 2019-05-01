@@ -1,0 +1,8 @@
+# Commands for Wildfly jboss-cli program
+
+# Starts off disconnected, so connect
+connect
+# Add a Queue to JMS (does not print anything on success)
+jms-queue add --queue-address=feedbackQueue --entries=jms/queue/feedbackQueue,java:jboss/exported/jms/queue/feedbackQueue
+# "add" does not print anything on success, so read it back just to verify
+/subsystem=messaging-activemq/server=default/jms-queue=feedbackQueue:read-resource
