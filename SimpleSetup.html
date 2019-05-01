@@ -454,7 +454,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Set up the <a href="databases.html">databases</a> used in the projects;</p>
 </li>
 <li>
-<p>Be sure you have a good EE App Server (WildFly, or change all the pom.xml files);</p>
+<p>Be sure you have a good EE App Server (WildFly, or change all the pom.xml files and be aware of any other config issues);</p>
 </li>
 <li>
 <p>Download the Course Zip file from Learning Tree</p>
@@ -475,12 +475,16 @@ If not you can add the ones you need; use File&#8594;New&#8594;Java Project and 
 <li>
 <p>Try deploying ticketmanor: Open the project, RunAs→Maven Build, set target to wildfly:deploy, click OK.</p>
 </li>
+<li>
+<p>If you are going to use JMS (used in the MDB exercise and the Microservice exercise bonus),
+see the extra step in the MDB exercise README file to create the JMS queue.</p>
+</li>
 </ul>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-07 19:56:48 EDT
+Last updated 2019-05-01 09:46:57 EDT
 </div>
 </div>
 </body>

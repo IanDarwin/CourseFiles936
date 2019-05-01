@@ -14,7 +14,7 @@ You should be able to use the same setup as we have on the course:
 
 * Set up the link:databases.html[databases] used in the projects;
 
-* Be sure you have a good EE App Server (WildFly, or change all the pom.xml files);
+* Be sure you have a good EE App Server (WildFly, or change all the pom.xml files and be aware of any other config issues);
 
 * Download the Course Zip file from Learning Tree
 
@@ -28,3 +28,6 @@ If not you can add the ones you need; use File->New->Java Project and give the p
 * Start your application server.
 
 * Try deploying ticketmanor: Open the project, RunAs→Maven Build, set target to wildfly:deploy, click OK.
+
+* If you are going to use JMS (used in the MDB exercise and the Microservice exercise bonus),
+see the extra step in the MDB exercise README file to create the JMS queue. 
