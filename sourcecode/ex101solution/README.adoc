@@ -9,6 +9,9 @@ SpringBoot, Apache embedded Tomcat, JSF and CDI.
 
 	mvn spring-boot:run
 
+Or, in Eclipse, right click on Application.java,
+then RunAs->Java Application.
+
 Or, in Eclipse with Spring plugin (or "Spring Tool Suite"), 
 right-click project or Application.java, 
 then RunAs->Spring Boot Application
