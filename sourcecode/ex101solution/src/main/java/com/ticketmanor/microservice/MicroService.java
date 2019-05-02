@@ -1,12 +1,22 @@
 package com.ticketmanor.microservice;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
-
-import com.ticketmanor.model.FeedbackForm;
-
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+import javax.jms.Connection;
+import javax.jms.ConnectionFactory;
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.MessageProducer;
+import javax.jms.Session;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import com.ticketmanor.Constants;
+import com.ticketmanor.model.FeedbackForm;
 
 /**
  * CDI Bean
@@ -42,6 +52,33 @@ public class MicroService {
 		// full version of the constructor), and you should also DELETE the 
 		// bogus "second" send of an invalid object.
 		// Near the end of the copied code, use JMS to send the form to TicketManor via JMS.
+		//
+		//-
+		// Bonus Only!
+		// TODO Note the ton of JMS API that we are using just to connect:
+		try {
+			Context ctx = new InitialContext();
+			
+			System.out.println("----------");
+			System.out.println("Getting " + Constants.JMS_REMOTE_CONNECTION_FACTORY);
+			ConnectionFactory connFactory = (ConnectionFactory) ctx.lookup(Constants.JMS_REMOTE_CONNECTION_FACTORY);
+			System.out.println("Got Factory: " + connFactory.getClass());
+			System.out.println("Getting " + Constants.JMS_QUEUE_NAME);
+			Destination destination = (Destination) ctx.lookup(Constants.JMS_QUEUE_NAME);
+			System.out.println("Got Destination: " + destination);
+			String username = (String) ctx.getEnvironment().get("java.naming.security.principal");
+			String password = (String) ctx.getEnvironment().get("java.naming.security.credential");
+			Connection connection = connFactory.createConnection(
+					username, password);
+			Session session = connection.createSession(false,
+					Session.AUTO_ACKNOWLEDGE);
+			MessageProducer producer = session.createProducer(destination);
+			producer.send(session.createObjectMessage(form));
+			System.out.println("Feedback Form sent to partner TicketManor via JMS");
+		} catch (NamingException | JMSException e) {
+			throw new RuntimeException("JMS setup did NOT complete: " + e, e);
+		}
+		//+
 	}
 
 	public static String dayPart(int hour) {
