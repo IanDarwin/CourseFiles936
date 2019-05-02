@@ -27,11 +27,8 @@ TEST_DIRS="
 # Dirs we want to "wildfly:deploy"
 MWD_DIRS="CourseFiles936/site
 	TicketManorJava/ticketmanor-ee 
-	CourseFiles936/sourcecode/ex51solution
-	CourseFiles936/sourcecode/ex52solution
-	CourseFiles936/sourcecode/ex53serversolution
+	CourseFiles936/sourcecode/ex53solution
 	CourseFiles936/sourcecode/ex61solution 
-	CourseFiles936/sourcecode/ex71solution 
 	jsfdemo clublist cdi-ee-examples"
 # Dirs we want to "wildfly:deploy" AND run integration tests
 MWD_IT_TESTS_DIRS="
