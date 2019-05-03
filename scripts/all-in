@@ -169,5 +169,7 @@ Remember to execute the following steps:
 		Investigate any others that have errors (try Project->Clean)
 		Close all projects again;
 		Close the Create Projects View.
+		Remove any makehandsons.log files in \CourseFiles
 	Close all windows but Chrome; only Home Page showing, centered.
+	Export hands-on HOCD Zip File, upload to host VM.
 "
