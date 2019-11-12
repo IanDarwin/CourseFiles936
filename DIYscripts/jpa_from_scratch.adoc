@@ -1,0 +1,72 @@
+= Optional Instructor Demo: Create a JPA project From Scratch
+
+New Maven Project
+	new Project->Other->Maven->Maven Project
+	Simple - no artifact.
+	Next
+	Make up values for coordinates.
+	name => Demo Project
+	Leave Parent blank.
+	Finish
+
+Open project in Eclipse. Close other projects.
+
+Five steps needed:
+	1) Add JPA support in pom
+	2) Add driver on pom
+	3) Persistence.xml
+	4) Create an Entity
+	5) Create a driver "main"
+
+1) Right click on Project. Maven->Add Dependency.
+	Enter groupid, ... field: type JPA, press ENTER
+	Select org.eclipse.persistence (just the first one).
+	Click OK.
+	Done
+
+2) Sadly, eclipse is blocked form downloading other indexes, do #2 manually
+	Open jpademo project if not already open.
+	Open jpademo pom.xml
+	select and copy the "h2" driver dependency
+	back in newproject, paste h2 dependency after other deps in pom.xml
+	^A^I to fix indentation.
+
+3) There's not yet a persistence.xml generator wizard in our eclipse.
+	Copy persistence.xml from jpademo into newproject
+	Make sure it goes in src/main/resources/META-INF/persistence.xml
+	Open it.
+	Change the persistence unit name to "demo"
+	In the H2 URL config, change the db name from jpademo to demo.
+	DELETE the 2 lines and 1 comment around "import.sql"
+		or create a dummy
+		or be really brave and create a real import.sql on the fly.
+			You don't know your entity fields until you do your Entity in 4.
+			Don't use an id of 1.
+
+4) Create an Entity.
+	New->Class. Call it Coffee. Add one or more fields (Flavor?).
+	Add "long id"
+	Annotate with @Id and @GeneratedValue.
+	Add toString to print "Coffee of flavor %s" or something
+
+5) Driver program.
+	New->Class. Demo. Check "main" box.
+	In main:
+		create entitymanagerfactory("demo")
+		create entitymanager
+		Coffee coffee = new Coffee();
+		assign fields...
+		getTransaction
+		begin
+		em.persist(coffee);
+		tx.commit
+		get id from coffee object
+		print id and toString.
+
+Now you're done? Try running it. I got it to run on my 3rd try
+but I had missed two steps that are now included in this script.
+
+As they say with all demos: Good luck!
+
+Ian
+
