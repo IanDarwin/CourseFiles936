@@ -1,5 +1,9 @@
 = Optional Instructor Demo: Create a JPA project From Scratch
 
+NB These directions are for a person who has done this before;
+it is not expected that students new to JPA will be able to
+follow this script until the end of the chapter!
+
 New Maven Project
 	new Project->Other->Maven->Maven Project
 	Simple project (skip artifact selection).
