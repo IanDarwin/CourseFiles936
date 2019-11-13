@@ -2,10 +2,11 @@
 
 New Maven Project
 	new Project->Other->Maven->Maven Project
-	Simple - no artifact.
+	Simple project (skip artifact selection).
 	Next
-	Make up values for coordinates.
-	name => Demo Project
+	Coordinates: GroupId com.sample?, Artifact samplemavenjpa
+	NB ArtifactID become Eclipse Project name
+	Name => Sample Maven JPA Project
 	Leave Parent blank.
 	Finish
 
