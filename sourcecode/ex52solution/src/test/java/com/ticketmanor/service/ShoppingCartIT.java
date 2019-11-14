@@ -25,7 +25,6 @@ public class ShoppingCartIT extends ShoppingCartTest {
 	//T Create an @Before method to look up the shopping cart
 	// and assign it to the existing "cart", using the LOOKUP_STRING
 	// defined above. 
-	// H Ideally, override parent's @Before method to reduce overhead
 	//-
 	@Before @Override
 	public void init() throws Exception {

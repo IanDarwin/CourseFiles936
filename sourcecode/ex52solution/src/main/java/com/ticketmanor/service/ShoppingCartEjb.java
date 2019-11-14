@@ -68,7 +68,7 @@ public class ShoppingCartEjb implements ShoppingCart {
 	public double getTotalPrice() {
 		double total = 0;
 		//T Iterate over the OrderItems in 'cart'; for each one, add its selling
-		// price (quantity multipled by sellable.price) into 'total'.
+		// price (quantity multiplied by sellable.price) into 'total'.
 		//-
 		for (OrderItem item : cart) {
 			if (item.getSellable() == null) {
