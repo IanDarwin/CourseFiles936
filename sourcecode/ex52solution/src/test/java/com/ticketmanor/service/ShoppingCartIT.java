@@ -32,5 +32,9 @@ public class ShoppingCartIT extends ShoppingCartTest {
 	}
 	//+
 
+	//T BONUS: You should @remove a SFSB when done with it.
+	// Add a method to be run at the end of each test to invoke
+	// the @Remove-annotated method on the cart EJB.
+
 	//T If you followed our advice above, you don't have to write any @Test methods!
 }
