@@ -18,6 +18,17 @@ import com.ticketmanor.model.Sellable;
 public class ShoppingCartEjb implements ShoppingCart {
 	
 	private List<OrderItem> cart = new ArrayList<>(5);
+
+	//H Add a no-argument constructor with a println to show where
+	// the class is running: if it appears in the Eclipse Console
+	// or Maven output, it's running locally. If it appears in the
+	// Wildfly terminal window, it's running remotely.
+	//-
+	public ShoppingCartEjb() {
+		System.out.println("ShoppingCartEjb()");
+	}
+	//+
+
 	
 	//T What is the default transactional state for Stateful EJBs,
 	// and why do we not need a Transaction annotation on this method?
