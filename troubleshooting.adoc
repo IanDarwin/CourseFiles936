@@ -11,6 +11,13 @@ the following errors from *Eclipse* can be ignored:
 As well, some of the projects (notably Exercises 4.1 and 5.2) will have a bunch of red flags when
 first opened, because you haven't yet written the code. These will go away as you write the code.
 
+== JSF
+
+"View has expired..." - just reload the page.
+
+Null pointer or "Object did not resolve" - make sure you've
+used a valid annotation set like `@Named` and `@RequestScoped` on the bean.
+
 == WildFly Server Logs
 
 The main log file is in c:\WILDFLY-DIR\standalone\log\server.log
