@@ -1,5 +1,7 @@
 package com.ticketmanor;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -8,7 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
 @Named @SessionScoped
-public class Authenticator {
+public class Authenticator implements Serializable {
 
 	public String logout() {
 		FacesContext ctx = FacesContext.getCurrentInstance();
