@@ -1,3 +1,5 @@
+package dao;
+
 import javax.sql.*;
 
 public class ChapterDaoJDBC {   // far from complete code
