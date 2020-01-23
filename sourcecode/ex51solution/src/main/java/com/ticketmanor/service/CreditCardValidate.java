@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 /**
  * Credit Card Validation
  */
+//T Turn this standalone class into an SLSB.
 //-
 @Stateless
 //+
