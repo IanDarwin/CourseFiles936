@@ -29,7 +29,7 @@ public class ShoppingCartTest {
 	protected ShoppingCart cart;
 	//+
 	//R protected ShoppingCartEjb cart;
-	//T Examine the other fields we have set up for you.
+	
 	static final Act act = new Act(ActType.TROUPE, "The Outliers");
 	static final Venue venue = new Venue("Rectangle Square Gardens");
 	static final Event evt = new Event(act, LocalDateTime.now(), venue);
@@ -42,35 +42,27 @@ public class ShoppingCartTest {
 
 	@Test
 	public void testAddToCart() {
-		//T Add 'product' to the cart, check that getOrderItems().size is 1
-		//R fail("test not implemented");
-		//-
+		// Add 'product' to the cart, check that getOrderItems().size is 1
 		cart.addToCart(product);
 		List<OrderItem> orderItems = cart.getOrderItems();
 		assertEquals(1, orderItems.size());
 		assertEquals(product, orderItems.get(0).getSellable());
-		//+
 	}
 
 	@Test
 	public void testRemoveFromCart() {
-		//T Check that adding then removing a product leaves 0 items in cart
-		//R fail("test not implemented");
-		//-
+		// Check that adding then removing a product leaves 0 items in cart
 		cart.addToCart(product);
 		assertTrue("remove from cart -> true", cart.removeFromCart(product));
 		List<OrderItem> orderItems = cart.getOrderItems();
 		assertEquals("add+remove = 0", orderItems.size(), 0);
-		//+
 	}
 
 	@Test
 	public void testGetCartSizeAndItemCount() {
-		//T Add the product TWICE to the cart; ensure that now:
+		// Add the product TWICE to the cart; ensure that now:
 		// getCartSize() returns 1
 		// getItemCount() returns 2
-		//R fail("test not implemented");
-		//-
 		// "Make that a pair of tickets"
 		cart.addToCart(product);
 		cart.addToCart(product);
@@ -80,7 +72,6 @@ public class ShoppingCartTest {
 
 		// Adding an existing object should bump total quantity.
 		assertEquals(2, cart.getItemCount());
-		//+
 	}
 
 	@Test
