@@ -1,0 +1,99 @@
+= Optional Instructor Demo: Create an EJB project From Scratch
+
+NB These directions are for a person who has done this before;
+it is not expected that students new to EJB will be able to
+follow this script until the end of the chapter!
+
+New Maven Project
+	new Project->Other->Maven->Maven Project
+	Simple project (skip artifact selection).
+	Next
+	Coordinates: GroupId com.sample?, Artifact samplemavenejbproject
+	NB ArtifactID become Eclipse Project name
+	Name => Sample Maven JPA Project
+	Leave Parent blank.
+	Finish
+
+Open project in Eclipse. Close other projects.
+
+Five steps needed:
+	1) In pom, Add EJB, JUnit, optional H2, support 
+	2) Persistence.xml (not needed for helloworld app)
+	3) Create an EJB
+	4) Add App Server support in pom
+	5) Fixup Maven Properties
+	6) Deploy
+	7) Optional: Create a driver "main"
+
+1) Right click on Project. Maven->Add Dependency.
+	Group: javax, Artifact javaee-web-api, Vers 8.0, Scope provided, OK
+	Repeat: com.h2database, h2, 1.4.199, Scope default, OK.
+	Repeat: junit, junit, 4.13-beta-3, Scope test, OK.
+	Talk about the scopes while doing this.
+
+2) There's not yet a persistence.xml generator wizard in our eclipse.
+	Copy persistence.xml from jpademo into new project
+	Make sure it goes in src/main/resources/META-INF/persistence.xml
+	Open it.
+		Change the persistence unit name to "samplemavenejb"
+		In the H2 config, change db name from "jpademo" to "samplemavenejb".
+		DELETE the 2 lines and 1 comment around "import.sql"
+			or create a dummy
+			or be really brave and create a real import.sql on the fly.
+				You don't know your entity fields until you do your Entity in 4.
+				Don't use an id of 1.
+
+3) Create an EJB
+	New->Class. Call it SampleEJB.
+	Annotate with @Stateless
+	Add sayHello(String name) to return "Hello " + name or something
+
+4) Add App Server plugin.
+	Right click on project. Maven->Add PlugIn (not Dependency).
+	Add: org.wildfly.plugins:wildfly-maven-plugin:1.2.1.Final
+
+5) Fixup Maven Properties
+	For some reason Maven still defaults to Java SE 1.5.
+	Open the pom file. Copy this entire (and fairly canonical) 
+	<properties> section, and paste it into the pom file, before 
+	the <dependencies> section.
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8
+			</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8
+			</project.reporting.outputEncoding>
+		<javase.version>1.8</javase.version> <!-- OR 11 ? -->
+		<maven.compiler.source>${javase.version}</maven.compiler.source>
+		<maven.compiler.target>${javase.version}</maven.compiler.target>
+		<maven.compiler.testSource>${javase.version}</maven.compiler.testSource>
+		<maven.compiler.testTarget>${javase.version}</maven.compiler.testTarget>
+		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
+	</properties>
+
+6) Deploy
+	Run Maven (in Eclipse Run As or in terminal window)
+		wildfly:deploy
+	Should work with no errors.
+
+	Show console output w/ BUILD SUCCESS, then switch to terminal
+	window from Wildfly and show EJB JNDI/RMI lookups.
+	Select and copy one of these.
+
+7) RMI Driver program (Optional - extra time).
+	Back in the EJB:
+		Extract interface; add @Remote; add "throws Remote" to method
+	New->Class. Demo. Check "main" box.
+	In main:
+		create InitialContext
+		Lookup EJB JNDI name
+		Greeting greeting = (Greeting) lookedUp;
+		String ret = greeting.sayHello("MYNAME");
+		sysout<CTRL/SPACE) ret
+
+That's all I hope! Try running it.
+
+As they say with all demos: Good luck!
+
+Ian
+

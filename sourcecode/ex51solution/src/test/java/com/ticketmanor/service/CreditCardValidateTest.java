@@ -39,7 +39,7 @@ public class CreditCardValidateTest {
 			{ "79927398719", false },
 	};
 
-	@Parameters
+	@Parameters(name="{0}")
 	public static List<Object[]> getSamples() {
 		return Arrays.asList(samplesCheck);
 	}

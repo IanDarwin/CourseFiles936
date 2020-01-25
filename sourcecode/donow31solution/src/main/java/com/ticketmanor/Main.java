@@ -41,15 +41,20 @@ public class Main {
 		// All done. But let's read it back to verify
 		long id = customer.getId();
 		
-		//T Let's set "em" to a newly-created EntityManager, use it to "find" the Customer object
-		// identified by "id", and save it in the variable "customer2" declared above
+		//T Let's close "em" AND set "em" to a newly-created EntityManager
 		//-
+		em.close();
 		em = emf.createEntityManager();
-		customer2 = em.find(Customer.class, id);
 		//+
 		//R em = null; // REPLACE THIS
 
-		// Now we'll check that they're the same
+		// Now use the newly-resurrected "em" to "find" the Customer object
+		// identified by "id", and save it in the variable "customer2" declared above
+		//-
+		customer2 = em.find(Customer.class, id);
+		//+
+
+		// Now we'll check that they're the same (try using "=="?)
 		if (customer.getFullName().equals(customer2.getFullName())) {
 			System.out.println("They match");
 		} else {
@@ -67,5 +72,7 @@ public class Main {
 		
 		// All done? Close the EntityManager
 		em.close();
+		// And the Factory
+		emf.close();
 	}
 }

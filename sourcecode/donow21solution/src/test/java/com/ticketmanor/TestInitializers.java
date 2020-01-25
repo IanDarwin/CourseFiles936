@@ -3,17 +3,18 @@ package com.ticketmanor;
 import static org.junit.Assert.*;
 import org.junit.*;
 
+/** Structure of JUnit class for testing any factory-based object */
 public class TestInitializers {
 
 	static MyFactory factory;
 	ClassUnderTest target;
 
-	@BeforeClass
+	@BeforeClass // Runs once, has only to create/initialize the factory
 	public static void initMyStaticStuff() {
 		factory = new MyFactory();
 	}
 
-	@Before
+	@Before // Runs before each @Test method, uses factory to create target
 	public void setUpMore() {
 		target = factory.createObject();
 	}
@@ -25,7 +26,7 @@ public class TestInitializers {
 		assertTrue(f.contains("Ian"));
 	}
 	
-	@AfterClass
+	@AfterClass // Cleanup: close factory to free resources
 	public static void closeDown() {
 		factory.close();
 	}

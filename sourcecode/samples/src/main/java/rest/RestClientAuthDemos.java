@@ -30,8 +30,8 @@ public class RestClientAuthDemos {
 		URLConnection conn = url.openConnection();
 		if (userName != null || password != null) {
 			String cred = userName + ":" + password;
-			String auth = "Basic " + Base64.getEncoder().encode(cred.getBytes());
-			conn.setRequestProperty("Authorization", "Basic " + auth);
+			conn.setRequestProperty("Authorization",
+				"Basic " + Base64.getEncoder().encode(cred.getBytes()));
 		}
 		// Get the data and convert it to an event
 		// ...
