@@ -1,8 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 		http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
 	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.ticketmanor</groupId>
+		<artifactId>sourcecode</artifactId>
+		<version>1.0</version>
+	</parent>
 
 	<groupId>com.ticketmanor</groupId>
 	<artifactId>ex52solution</artifactId>
@@ -47,13 +52,6 @@
 			<artifactId>wildfly-ejb-client-bom</artifactId>
 			<version>16.0.0.Final</version>
 			<type>pom</type>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
 			<scope>test</scope>
 		</dependency>
 

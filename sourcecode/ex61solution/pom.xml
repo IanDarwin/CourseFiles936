@@ -4,6 +4,12 @@
 	http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>com.ticketmanor</groupId>
+		<artifactId>sourcecode</artifactId>
+		<version>1.0</version>
+	</parent>
+
 	<groupId>com.ticketmanor</groupId>
 	<artifactId>ex61solution</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -58,14 +64,6 @@
 		  <artifactId>hibernate-entitymanager</artifactId>
 		  <version>5.2.12.Final</version>
 		  <scope>provided</scope>
-		</dependency>
-
-		<!-- testing -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- Database driver -->

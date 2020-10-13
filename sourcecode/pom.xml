@@ -21,11 +21,12 @@
 	 -->
 	<groupId>com.ticketmanor</groupId>
 	<artifactId>sourcecode</artifactId>
-	<packaging>pom</packaging>
 	<version>1.0</version>
+	<packaging>pom</packaging>
 	<name>Course 936 Parent Project</name>
 
 	<modules>
+		<!-- NB Only include solutions, not the student versions! -->
 		<module>minimal</module>
 		<module>donow21solution</module>
 		<module>donow31solution</module>
@@ -41,6 +42,18 @@
 		<module>ex71solution</module>
 		<module>ex81solution</module>
 		<!-- There is no solution for ex91 because it is just copying one file in ClubList -->
+		<!--
 		<module>exUPsolution</module>
+		-->
 	</modules>
+
+	<dependencies>
+        <!-- testing... needed in almost every module -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
 </project>
