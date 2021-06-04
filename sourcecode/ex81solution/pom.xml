@@ -27,7 +27,7 @@
 		<maven.compiler.target>${javase.version}</maven.compiler.target>
 		<maven.compiler.testSource>${javase.version}</maven.compiler.testSource>
 		<maven.compiler.testTarget>${javase.version}</maven.compiler.testTarget>
-		<primefaces.version>5.2</primefaces.version>
+		<primefaces.version>6.0</primefaces.version>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<build.plugins.plugin.version>1.0.1</build.plugins.plugin.version>
 	</properties>
