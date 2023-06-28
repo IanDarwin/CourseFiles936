@@ -21,6 +21,7 @@ public class CreditCardValidateTest {
 	static final Object[][] samplesCheck  = {
 			{ "79927398713", true },
 			{ "4111111111111111", true },
+			{ "4444444444444444", false },
 			{ "1076211283172708", true },
 			{ "4417123456789113", true },
 			{ "4417123456789112", false },
