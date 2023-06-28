@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
-			<version>7.0</version>
+			<version>8.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -49,20 +49,20 @@
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>6.1</version>
+			<version>13.0.0-RC2</version>
 		</dependency>
 
 		<!-- Hibernate not needed in WildFly as it is included, but prob. needed on other App Servers-->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.4.24.Final</version>
+			<version>6.2.5.Final</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 		  <groupId>org.hibernate</groupId>
 		  <artifactId>hibernate-entitymanager</artifactId>
-		  <version>5.2.12.Final</version>
+		  <version>6.0.0.Alpha7</version>
 		  <scope>provided</scope>
 		</dependency>
 
@@ -70,7 +70,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.28</version>
+			<version>8.0.33</version>
 			<scope>provided</scope>
 		</dependency>
 		
